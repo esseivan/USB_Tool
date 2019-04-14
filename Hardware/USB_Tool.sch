@@ -1,15 +1,16 @@
 EESchema Schematic File Version 4
+LIBS:USB_Tool-cache
 EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 1
-Title ""
-Date ""
-Rev ""
-Comp ""
-Comment1 ""
-Comment2 ""
+Sheet 1 2
+Title "USB_Tool"
+Date "2019-04-14"
+Rev "00"
+Comp "EsseivaN"
+Comment1 "Author : Esseiva Nicolas"
+Comment2 "Description here"
 Comment3 ""
 Comment4 ""
 $EndDescr
@@ -304,7 +305,7 @@ L 0EsseivaN_Lib:R R4
 U 1 1 5CB6108A
 P 4600 1750
 F 0 "R4" H 4531 1704 50  0000 R CNN
-F 1 "R" H 4531 1795 50  0000 R CNN
+F 1 "1k" H 4531 1795 50  0000 R CNN
 F 2 "" V 4530 1750 50  0000 C CNN
 F 3 "" H 4600 1750 50  0000 C CNN
 	1    4600 1750
@@ -513,7 +514,7 @@ L 0EsseivaN_Lib:LED P1
 U 1 1 5CBEA842
 P 3050 2400
 F 0 "P1" V 2997 2478 60  0000 L CNN
-F 1 "LED" V 3103 2478 60  0000 L CNN
+F 1 "2V" V 3103 2478 60  0000 L CNN
 F 2 "" H 3050 2400 60  0000 C CNN
 F 3 "" H 3050 2400 60  0000 C CNN
 	1    3050 2400
@@ -524,7 +525,7 @@ L 0EsseivaN_Lib:R R2
 U 1 1 5CBEC042
 P 3050 2100
 F 0 "R2" H 3120 2146 50  0000 L CNN
-F 1 "R" H 3120 2055 50  0000 L CNN
+F 1 "560R" H 3120 2055 50  0000 L CNN
 F 2 "" V 2980 2100 50  0000 C CNN
 F 3 "" H 3050 2100 50  0000 C CNN
 	1    3050 2100
