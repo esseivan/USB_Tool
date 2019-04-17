@@ -62,17 +62,17 @@ Wire Wire Line
 	4350 2950 4350 3400
 Wire Wire Line
 	4350 3400 4550 3400
-Text GLabel 1800 1000 2    50   Input ~ 0
+Text GLabel 1800 1000 2    50   BiDi ~ 0
 D+
-Text GLabel 1800 1100 2    50   Input ~ 0
+Text GLabel 1800 1100 2    50   BiDi ~ 0
 D-
-Text GLabel 5750 3200 2    50   Output ~ 0
+Text GLabel 5750 3200 2    50   BiDi ~ 0
 D+
 Wire Wire Line
 	1500 1000 1800 1000
 Wire Wire Line
 	1800 1100 1500 1100
-Text GLabel 5750 3300 2    50   Output ~ 0
+Text GLabel 5750 3300 2    50   BiDi ~ 0
 D-
 $Comp
 L USB_Tool-rescue:CAPA-0EsseivaN_Lib C5
@@ -131,17 +131,6 @@ F 1 "3V3" H 4117 2520 45  0000 C CNN
 F 2 "" H 4100 2350 50  0000 C CNN
 F 3 "" H 4100 2350 50  0000 C CNN
 	1    4100 2350
-	1    0    0    -1  
-$EndComp
-$Comp
-L USB_Tool-rescue:3V3-0EsseivaN_Lib #PWR0108
-U 1 1 5CB77A8B
-P 6100 2850
-F 0 "#PWR0108" H 6100 2700 50  0001 C CNN
-F 1 "3V3" H 6117 3020 45  0000 C CNN
-F 2 "" H 6100 2850 50  0000 C CNN
-F 3 "" H 6100 2850 50  0000 C CNN
-	1    6100 2850
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -306,14 +295,6 @@ F 3 "" H 800 2400 60  0000 C CNN
 	1    800  2400
 	1    0    0    -1  
 $EndComp
-Text GLabel 1800 800  2    50   Input ~ 0
-V_BUS
-Wire Wire Line
-	1500 800  1800 800 
-Text GLabel 1400 2300 2    50   Input ~ 0
-V_ICSP
-Wire Wire Line
-	1400 2300 1100 2300
 $Comp
 L USB_Tool-rescue:GND-0EsseivaN_Lib #PWR0113
 U 1 1 5CBC32A7
@@ -330,83 +311,56 @@ Wire Wire Line
 Wire Wire Line
 	1200 2400 1100 2400
 Wire Wire Line
-	2400 600  2450 600 
+	2950 900  3050 900 
 Wire Wire Line
-	2400 800  2400 600 
-Wire Wire Line
-	2350 800  2400 800 
-Wire Wire Line
-	2400 1000 2350 1000
-Wire Wire Line
-	2400 1200 2400 1000
-Wire Wire Line
-	2450 1200 2400 1200
-Text GLabel 2450 600  2    50   Output ~ 0
-V_BUS
-Text GLabel 2450 1200 2    50   Output ~ 0
-V_ICSP
-Wire Wire Line
-	2350 900  2450 900 
-$Comp
-L USB_Tool-rescue:CONN_01X03-0EsseivaN_Lib X1
-U 1 1 5CBB3016
-P 2150 800
-F 0 "X1" H 2067 667 50  0000 C CNN
-F 1 "CONN_01X03" H 2227 940 50  0001 L CNN
-F 2 "" H 2150 650 50  0000 C CNN
-F 3 "" H 2000 600 50  0000 C CNN
-	1    2150 800 
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	2850 900  3050 900 
+	3450 900  3650 900 
 $Comp
 L USB_Tool-rescue:Fuse-0EsseivaN_Lib F1
 U 1 1 5CB94C5C
-P 2650 900
-F 0 "F1" V 2453 900 50  0000 C CNN
-F 1 "630mA" V 2544 900 50  0000 C CNN
-F 2 "" V 2580 900 50  0000 C CNN
-F 3 "" H 2650 900 50  0000 C CNN
-	1    2650 900 
+P 3250 900
+F 0 "F1" V 3053 900 50  0000 C CNN
+F 1 "630mA" V 3144 900 50  0000 C CNN
+F 2 "" V 3180 900 50  0000 C CNN
+F 3 "" H 3250 900 50  0000 C CNN
+	1    3250 900 
 	0    1    1    0   
 $EndComp
-Connection ~ 3050 900 
+Connection ~ 3650 900 
 Wire Wire Line
-	3050 950  3050 900 
+	3650 950  3650 900 
 $Comp
 L USB_Tool-rescue:GND-0EsseivaN_Lib #PWR0114
 U 1 1 5CB90A85
-P 3050 1250
-F 0 "#PWR0114" H 3050 950 50  0001 C CNN
-F 1 "GND" H 3050 1050 50  0001 C CNN
-F 2 "" H 3050 1250 50  0000 C CNN
-F 3 "" H 3050 1250 50  0000 C CNN
-	1    3050 1250
+P 3650 1400
+F 0 "#PWR0114" H 3650 1100 50  0001 C CNN
+F 1 "GND" H 3650 1200 50  0001 C CNN
+F 2 "" H 3650 1400 50  0000 C CNN
+F 3 "" H 3650 1400 50  0000 C CNN
+	1    3650 1400
 	1    0    0    -1  
 $EndComp
 $Comp
 L USB_Tool-rescue:CAPA_P-0EsseivaN_Lib C2
 U 1 1 5CB87644
-P 3050 1050
-F 0 "C2" V 3014 1158 60  0000 L CNN
-F 1 "10uF" V 3120 1158 60  0000 L CNN
-F 2 "" H 3050 1050 60  0000 C CNN
-F 3 "" H 3050 1050 60  0000 C CNN
-	1    3050 1050
+P 3650 1050
+F 0 "C2" V 3614 1158 60  0000 L CNN
+F 1 "10uF" V 3720 1158 60  0000 L CNN
+F 2 "" H 3650 1050 60  0000 C CNN
+F 3 "" H 3650 1050 60  0000 C CNN
+	1    3650 1050
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	3050 850  3050 900 
+	3650 850  3650 900 
 $Comp
 L USB_Tool-rescue:5V-0EsseivaN_Lib #PWR0115
 U 1 1 5CB6770D
-P 3050 850
-F 0 "#PWR0115" H 3050 700 50  0001 C CNN
-F 1 "5V" H 3067 1020 45  0000 C CNN
-F 2 "" H 3050 850 50  0000 C CNN
-F 3 "" H 3050 850 50  0000 C CNN
-	1    3050 850 
+P 3650 850
+F 0 "#PWR0115" H 3650 700 50  0001 C CNN
+F 1 "5V" H 3667 1020 45  0000 C CNN
+F 2 "" H 3650 850 50  0000 C CNN
+F 3 "" H 3650 850 50  0000 C CNN
+	1    3650 850 
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -473,7 +427,7 @@ Text Label 6900 4400 2    50   ~ 0
 SDI
 Text Label 6900 4200 2    50   ~ 0
 SDO
-Text Label 2900 900  0    50   ~ 0
+Text Label 3500 900  0    50   ~ 0
 5V
 Text Label 1550 800  0    50   ~ 0
 VBus
@@ -481,10 +435,8 @@ Text Label 1550 1000 0    50   ~ 0
 D+
 Text Label 1550 1100 0    50   ~ 0
 D-
-Text Label 900  1850 0    50   ~ 0
-GND
 Wire Wire Line
-	3050 1150 3050 1250
+	3650 1150 3650 1350
 Text Label 4500 3900 2    50   ~ 0
 SDI
 NoConn ~ 4550 3500
@@ -492,17 +444,17 @@ NoConn ~ 4550 3600
 NoConn ~ 5550 3700
 Wire Wire Line
 	3300 2500 3300 2550
-Text GLabel 1400 2500 2    50   Input ~ 0
+Text GLabel 1400 2500 2    50   BiDi ~ 0
 ICSPDAT
-Text GLabel 1400 2600 2    50   Input ~ 0
+Text GLabel 1400 2600 2    50   BiDi ~ 0
 ICSPCLK
 Wire Wire Line
 	1400 2500 1100 2500
-Text GLabel 1400 2200 2    50   Input ~ 0
+Text GLabel 1400 2200 2    50   BiDi ~ 0
 VPP
-Text GLabel 6850 4900 0    50   Output ~ 0
+Text GLabel 6850 4900 0    50   BiDi ~ 0
 ICSPDAT
-Text GLabel 6850 4800 0    50   Output ~ 0
+Text GLabel 6850 4800 0    50   BiDi ~ 0
 ICSPCLK
 Wire Wire Line
 	1100 2200 1400 2200
@@ -514,10 +466,6 @@ Text Label 6900 4700 2    50   ~ 0
 SDA
 Text Label 5600 3800 0    50   ~ 0
 SDO
-Text Notes 6300 4100 0    50   ~ 0
-MASTER #2 SPI
-Text Notes 6200 4800 0    50   ~ 0
-I2C
 Wire Wire Line
 	5950 4300 5950 4000
 Wire Wire Line
@@ -526,12 +474,6 @@ Text Label 5600 4000 0    50   ~ 0
 SCK
 Wire Wire Line
 	4050 4400 4050 3900
-Text Label 6900 4500 2    50   ~ 0
-~CS~_RF
-Text Notes 4725 4350 0    50   ~ 0
-MASTER #1 SPI
-Text Notes 4000 5450 0    50   ~ 0
-SLAVE SPI
 Wire Wire Line
 	6000 3400 6000 3600
 Wire Wire Line
@@ -546,7 +488,6 @@ Wire Wire Line
 	5650 3400 5650 2850
 Wire Wire Line
 	5650 2850 6100 2850
-Connection ~ 6100 2850
 Wire Wire Line
 	5550 3100 6100 3100
 Wire Wire Line
@@ -572,10 +513,6 @@ Wire Wire Line
 	6850 4800 7000 4800
 NoConn ~ 7000 5100
 NoConn ~ 7000 5200
-Wire Wire Line
-	7000 4500 6550 4500
-Wire Wire Line
-	7000 4400 6050 4400
 $Comp
 L 0EsseivaN_Lib_2:PIC18F45K40_44 U?
 U 1 1 5CB7FF60
@@ -589,12 +526,8 @@ F 3 "https://www.digikey.ch/product-detail/en/microchip-technology/PIC18F45K40-I
 $EndComp
 Wire Wire Line
 	8700 5400 8600 5400
-Text GLabel 8700 5400 2    50   Output ~ 0
+Text GLabel 8700 5400 2    50   BiDi ~ 0
 VPP
-Text Label 8650 3300 0    50   ~ 0
-SCL
-Text Label 8650 3400 0    50   ~ 0
-SDA
 Wire Wire Line
 	7800 5900 7900 5900
 Connection ~ 7800 5900
@@ -684,12 +617,6 @@ Text Label 6900 3700 2    50   ~ 0
 ~SSPND
 Text Label 6900 3600 2    50   ~ 0
 ~LOWPWR
-Wire Notes Line
-	6550 3200 6550 3750
-Wire Notes Line
-	6950 3750 6950 3200
-Text Notes 6600 3200 0    50   ~ 0
-USB IO
 Wire Wire Line
 	4100 4250 6100 4250
 Wire Wire Line
@@ -698,49 +625,7 @@ Wire Wire Line
 	5550 3800 6000 3800
 Wire Wire Line
 	6000 3800 6000 4200
-Wire Notes Line
-	6200 4525 6950 4525
-Wire Notes Line
-	6950 4100 6950 4725
-Wire Notes Line
-	6200 4100 6200 4725
-$Comp
-L Connector_Generic:Conn_01x04 J?
-U 1 1 5CC3AA8D
-P 650 3200
-F 0 "J?" H 568 3517 50  0000 C CNN
-F 1 "Extender_1" H 568 3426 50  0000 C CNN
-F 2 "" H 650 3200 50  0001 C CNN
-F 3 "~" H 650 3200 50  0001 C CNN
-	1    650  3200
-	-1   0    0    -1  
-$EndComp
-$Comp
-L Connector_Generic:Conn_01x04 J?
-U 1 1 5CC3C98F
-P 650 3850
-F 0 "J?" H 568 4167 50  0000 C CNN
-F 1 "Extender_2" H 568 4076 50  0000 C CNN
-F 2 "" H 650 3850 50  0001 C CNN
-F 3 "~" H 650 3850 50  0001 C CNN
-	1    650  3850
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	850  3400 1100 3400
-Wire Wire Line
-	1100 3400 1100 4050
-Wire Wire Line
-	1100 4050 850  4050
-Wire Wire Line
-	850  3100 1200 3100
-Wire Wire Line
-	1200 3100 1200 3750
-Wire Wire Line
-	1200 3750 850  3750
-Text Label 900  3100 0    50   ~ 0
-5V
-Text Label 900  3750 0    50   ~ 0
+Text Label 950  3150 0    50   ~ 0
 5V
 $Comp
 L USB_Tool-rescue:5V-0EsseivaN_Lib #PWR?
@@ -767,145 +652,400 @@ F 3 "" H 1200 3000 50  0000 C CNN
 	1    1200 3000
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	1200 3000 1200 3100
-Connection ~ 1200 3100
-$Comp
-L USB_Tool-rescue:GND-0EsseivaN_Lib #PWR?
-U 1 1 5CC51187
-P 1100 4800
-F 0 "#PWR?" H 1100 4500 50  0001 C CNN
-F 1 "GND-0EsseivaN_Lib" H 1100 4600 50  0001 C CNN
-F 2 "" H 1100 4800 50  0000 C CNN
-F 3 "" H 1100 4800 50  0000 C CNN
-	1    1100 4800
-	1    0    0    -1  
-$EndComp
-Connection ~ 1100 4050
-Text GLabel 1500 3200 2    50   Output ~ 0
-SDA
-Text GLabel 1500 3300 2    50   Output ~ 0
+Text GLabel 1500 3450 2    50   BiDi ~ 0
 SCL
-Wire Wire Line
-	850  3200 1300 3200
-Wire Wire Line
-	850  3850 1300 3850
-Wire Wire Line
-	1300 3850 1300 3200
-Connection ~ 1300 3200
-Wire Wire Line
-	1300 3200 1500 3200
-Wire Wire Line
-	1500 3300 1400 3300
-Wire Wire Line
-	850  3950 1400 3950
-Wire Wire Line
-	1400 3950 1400 3300
-Connection ~ 1400 3300
-Wire Wire Line
-	1400 3300 850  3300
-$Comp
-L Connector_Generic:Conn_01x04 J?
-U 1 1 5CC63CDB
-P 650 4500
-F 0 "J?" H 568 4817 50  0000 C CNN
-F 1 "Extender_3" H 568 4726 50  0000 C CNN
-F 2 "" H 650 4500 50  0001 C CNN
-F 3 "~" H 650 4500 50  0001 C CNN
-	1    650  4500
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	850  4700 1100 4700
-Wire Wire Line
-	1100 4050 1100 4700
-Wire Wire Line
-	850  4400 1200 4400
-Wire Wire Line
-	1200 4400 1200 3750
-Connection ~ 1200 3750
-Wire Wire Line
-	850  4500 1300 4500
-Wire Wire Line
-	1300 4500 1300 3850
-Connection ~ 1300 3850
-Wire Wire Line
-	850  4600 1400 4600
-Wire Wire Line
-	1400 4600 1400 3950
-Connection ~ 1400 3950
-Wire Wire Line
-	1100 4700 1100 4800
-Connection ~ 1100 4700
-Text GLabel 6650 4700 0    50   Input ~ 0
+Text GLabel 6650 4700 0    50   BiDi ~ 0
 SDA
 Wire Wire Line
 	6650 4700 7000 4700
-Text GLabel 6650 4600 0    50   Input ~ 0
+Text GLabel 6650 4600 0    50   BiDi ~ 0
 SCL
 Wire Wire Line
 	6650 4600 7000 4600
 $Comp
 L 0EsseivaN_Lib_2:MRF89XAM8A U?
 U 1 1 5CCB5FB4
-P 3550 5750
-F 0 "U?" H 3550 6431 50  0000 C CNN
-F 1 "MRF89XAM8A" H 3550 6340 50  0000 C CNN
-F 2 "" H 3550 5750 50  0001 C CNN
-F 3 "" H 3550 5750 50  0001 C CNN
-	1    3550 5750
+P 3550 5500
+F 0 "U?" H 3300 6050 50  0000 C CNN
+F 1 "MRF89XAM8A" H 3200 5950 50  0000 C CNN
+F 2 "" H 3550 5500 50  0001 C CNN
+F 3 "" H 3550 5500 50  0001 C CNN
+	1    3550 5500
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3950 5550 6000 5550
+	3950 5300 6000 5300
 Wire Wire Line
-	6000 5550 6000 4200
-Connection ~ 6000 4200
+	3950 5500 6050 5500
 Wire Wire Line
-	3950 5750 6050 5750
+	3950 5400 5950 5400
 Wire Wire Line
-	6050 5750 6050 4400
-Connection ~ 6050 4400
+	3450 6100 3450 6200
 Wire Wire Line
-	6050 4400 4050 4400
+	3450 6200 3550 6200
 Wire Wire Line
-	3950 5650 5950 5650
+	3650 6200 3650 6100
 Wire Wire Line
-	5950 5650 5950 4300
-Connection ~ 5950 4300
+	3550 6100 3550 6200
+Connection ~ 3550 6200
 Wire Wire Line
-	3450 6350 3450 6450
-Wire Wire Line
-	3450 6450 3550 6450
-Wire Wire Line
-	3650 6450 3650 6350
-Wire Wire Line
-	3550 6350 3550 6450
-Connection ~ 3550 6450
-Wire Wire Line
-	3550 6450 3650 6450
+	3550 6200 3650 6200
 $Comp
 L USB_Tool-rescue:GND-0EsseivaN_Lib #PWR?
 U 1 1 5CCD241E
-P 3550 6500
-F 0 "#PWR?" H 3550 6200 50  0001 C CNN
-F 1 "GND-0EsseivaN_Lib" H 3550 6300 50  0001 C CNN
-F 2 "" H 3550 6500 50  0000 C CNN
-F 3 "" H 3550 6500 50  0000 C CNN
-	1    3550 6500
+P 3550 6250
+F 0 "#PWR?" H 3550 5950 50  0001 C CNN
+F 1 "GND-0EsseivaN_Lib" H 3550 6050 50  0001 C CNN
+F 2 "" H 3550 6250 50  0000 C CNN
+F 3 "" H 3550 6250 50  0000 C CNN
+	1    3550 6250
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3550 6450 3550 6500
+	3550 6200 3550 6250
 $Comp
 L USB_Tool-rescue:3V3-0EsseivaN_Lib #PWR?
 U 1 1 5CCDE1A2
-P 3350 5150
-F 0 "#PWR?" H 3350 5000 50  0001 C CNN
-F 1 "3V3" H 3367 5320 45  0000 C CNN
-F 2 "" H 3350 5150 50  0000 C CNN
-F 3 "" H 3350 5150 50  0000 C CNN
-	1    3350 5150
+P 3550 4750
+F 0 "#PWR?" H 3550 4600 50  0001 C CNN
+F 1 "3V3" H 3567 4920 45  0000 C CNN
+F 2 "" H 3550 4750 50  0000 C CNN
+F 3 "" H 3550 4750 50  0000 C CNN
+	1    3550 4750
 	1    0    0    -1  
 $EndComp
+$Comp
+L USB_Tool-rescue:CAPA-0EsseivaN_Lib C?
+U 1 1 5CB772E2
+P 3950 4900
+F 0 "C?" V 3897 5008 60  0000 L CNN
+F 1 "4.7uF" V 4003 5008 60  0000 L CNN
+F 2 "" H 3950 4900 60  0000 C CNN
+F 3 "" H 3950 4900 60  0000 C CNN
+	1    3950 4900
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3550 4750 3550 4800
+Wire Wire Line
+	3550 4800 3950 4800
+Connection ~ 3550 4800
+Wire Wire Line
+	3550 4800 3550 5000
+$Comp
+L USB_Tool-rescue:GND-0EsseivaN_Lib #PWR?
+U 1 1 5CB84231
+P 3950 5000
+F 0 "#PWR?" H 3950 4700 50  0001 C CNN
+F 1 "GND-0EsseivaN_Lib" H 3950 4800 50  0001 C CNN
+F 2 "" H 3950 5000 50  0000 C CNN
+F 3 "" H 3950 5000 50  0000 C CNN
+	1    3950 5000
+	1    0    0    -1  
+$EndComp
+Text Label 6900 3800 2    50   ~ 0
+~CSCON
+Text Label 6900 3900 2    50   ~ 0
+~CSDAT
+Wire Wire Line
+	7000 3800 6200 3800
+Wire Wire Line
+	6200 5700 3950 5700
+Wire Wire Line
+	7000 3900 6250 3900
+Wire Wire Line
+	6250 5600 3950 5600
+Wire Wire Line
+	3150 5400 2700 5400
+Wire Wire Line
+	2700 4450 6300 4450
+Wire Wire Line
+	6300 4450 6300 4000
+Wire Wire Line
+	6300 4000 7000 4000
+Text Label 6900 4500 2    50   ~ 0
+RESET_USB
+Wire Wire Line
+	3900 4500 3900 3550
+Wire Wire Line
+	4350 3550 4350 3400
+Connection ~ 4350 3400
+Text Label 6900 4000 2    50   ~ 0
+RESET_RF
+Wire Wire Line
+	4050 4400 6050 4400
+Wire Wire Line
+	2700 4450 2700 5400
+Wire Wire Line
+	6000 5300 6000 4200
+Connection ~ 6000 4200
+Connection ~ 5950 4300
+Wire Wire Line
+	5950 4300 5950 5400
+Wire Wire Line
+	6050 5500 6050 4400
+Connection ~ 6050 4400
+Wire Wire Line
+	6050 4400 7000 4400
+Wire Wire Line
+	6250 5600 6250 3900
+Wire Wire Line
+	6200 3800 6200 5700
+Wire Wire Line
+	3150 5600 2750 5600
+Wire Wire Line
+	2750 5600 2750 6350
+Wire Wire Line
+	2750 6350 9000 6350
+Wire Wire Line
+	9000 6350 9000 5100
+Wire Wire Line
+	9000 5100 8600 5100
+Wire Wire Line
+	8600 5200 8950 5200
+Wire Wire Line
+	8950 5200 8950 6400
+Wire Wire Line
+	8950 6400 2700 6400
+Wire Wire Line
+	2700 6400 2700 5500
+Wire Wire Line
+	2700 5500 3150 5500
+Text Label 3100 5500 2    50   ~ 0
+IRQ0
+Text Label 3100 5600 2    50   ~ 0
+IRQ1
+Text Label 3100 5400 2    50   ~ 0
+RESET_RF
+Wire Wire Line
+	3900 3550 4350 3550
+Text Notes 3500 3650 0    50   ~ 0
+12MHz\noscillator
+$Comp
+L 0EsseivaN_Lib_2:NCP114 U?
+U 1 1 5CC9D2C7
+P 4500 1000
+F 0 "U?" H 4700 1350 50  0000 C CNN
+F 1 "NCP114" H 4700 1250 50  0000 C CNN
+F 2 "" H 4400 1000 50  0001 C CNN
+F 3 "" H 4400 1000 50  0001 C CNN
+	1    4500 1000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4100 900  4000 900 
+Wire Wire Line
+	3650 1350 4500 1350
+Wire Wire Line
+	4500 1350 4500 1300
+Connection ~ 3650 1350
+Wire Wire Line
+	3650 1400 3650 1350
+Wire Wire Line
+	4900 1000 5150 1000
+$Comp
+L USB_Tool-rescue:3V3-0EsseivaN_Lib #PWR?
+U 1 1 5CCD0867
+P 5150 950
+F 0 "#PWR?" H 5150 800 50  0001 C CNN
+F 1 "3V3" H 5167 1120 45  0000 C CNN
+F 2 "" H 5150 950 50  0000 C CNN
+F 3 "" H 5150 950 50  0000 C CNN
+	1    5150 950 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5150 950  5150 1000
+$Comp
+L USB_Tool-rescue:CAPA_P-0EsseivaN_Lib C?
+U 1 1 5CCD94D7
+P 5150 1150
+F 0 "C?" V 5114 1258 60  0000 L CNN
+F 1 "1uF" V 5220 1258 60  0000 L CNN
+F 2 "" H 5150 1150 60  0000 C CNN
+F 3 "" H 5150 1150 60  0000 C CNN
+	1    5150 1150
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4500 1350 5150 1350
+Wire Wire Line
+	5150 1350 5150 1250
+Connection ~ 4500 1350
+Wire Wire Line
+	5150 1000 5150 1050
+Connection ~ 5150 1000
+Text Label 4950 1000 0    50   ~ 0
+3V3
+Text Label 4200 1350 0    50   ~ 0
+GND
+Text Notes 4200 1450 0    50   ~ 0
+5V TO 3V3 LDO
+Wire Wire Line
+	4100 1100 4000 1100
+Wire Wire Line
+	4000 1100 4000 900 
+Connection ~ 4000 900 
+Wire Wire Line
+	4000 900  3650 900 
+$Comp
+L Connector_Generic:Conn_01x05 J?
+U 1 1 5CD07818
+P 650 3350
+F 0 "J?" H 568 3767 50  0000 C CNN
+F 1 "Extender 1" H 568 3676 50  0000 C CNN
+F 2 "" H 650 3350 50  0001 C CNN
+F 3 "~" H 650 3350 50  0001 C CNN
+	1    650  3350
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	850  3350 1300 3350
+Wire Wire Line
+	850  3450 1350 3450
+Wire Wire Line
+	850  3150 1200 3150
+Wire Wire Line
+	1200 3150 1200 3000
+$Comp
+L USB_Tool-rescue:3V3-0EsseivaN_Lib #PWR?
+U 1 1 5CD41FD0
+P 1350 3000
+F 0 "#PWR?" H 1350 2850 50  0001 C CNN
+F 1 "3V3" H 1367 3170 45  0000 C CNN
+F 2 "" H 1350 3000 50  0000 C CNN
+F 3 "" H 1350 3000 50  0000 C CNN
+	1    1350 3000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	850  3250 1250 3250
+Wire Wire Line
+	1350 3250 1350 3000
+Text Label 950  3250 0    50   ~ 0
+3V3
+Text Label 950  3350 0    50   ~ 0
+SDA
+Text Label 950  3450 0    50   ~ 0
+SCL
+Text Label 950  3550 0    50   ~ 0
+GND
+$Comp
+L Connector_Generic:Conn_01x05 J?
+U 1 1 5CD4A4FD
+P 650 4100
+F 0 "J?" H 568 4517 50  0000 C CNN
+F 1 "Extender 2" H 568 4426 50  0000 C CNN
+F 2 "" H 650 4100 50  0001 C CNN
+F 3 "~" H 650 4100 50  0001 C CNN
+	1    650  4100
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x05 J?
+U 1 1 5CD4ABB8
+P 650 4850
+F 0 "J?" H 568 5267 50  0000 C CNN
+F 1 "Extender 3" H 568 5176 50  0000 C CNN
+F 2 "" H 650 4850 50  0001 C CNN
+F 3 "~" H 650 4850 50  0001 C CNN
+	1    650  4850
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	850  3900 1200 3900
+Wire Wire Line
+	1200 3900 1200 3150
+Connection ~ 1200 3150
+Wire Wire Line
+	850  4000 1250 4000
+Connection ~ 1250 3250
+Wire Wire Line
+	1250 3250 1350 3250
+Wire Wire Line
+	850  4100 1300 4100
+Wire Wire Line
+	1300 4100 1300 3350
+Connection ~ 1300 3350
+Wire Wire Line
+	1300 3350 1500 3350
+Wire Wire Line
+	850  4200 1350 4200
+Wire Wire Line
+	1350 4200 1350 3450
+Connection ~ 1350 3450
+Wire Wire Line
+	1350 3450 1500 3450
+Wire Wire Line
+	850  4300 1400 4300
+Wire Wire Line
+	1400 4300 1400 3550
+Wire Wire Line
+	850  3550 1400 3550
+Wire Wire Line
+	1400 3550 1550 3550
+Connection ~ 1400 3550
+$Comp
+L USB_Tool-rescue:GND-0EsseivaN_Lib #PWR?
+U 1 1 5CD7F211
+P 1550 3600
+F 0 "#PWR?" H 1550 3300 50  0001 C CNN
+F 1 "GND" H 1550 3400 50  0001 C CNN
+F 2 "" H 1550 3600 50  0000 C CNN
+F 3 "" H 1550 3600 50  0000 C CNN
+	1    1550 3600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1550 3600 1550 3550
+Wire Wire Line
+	850  4650 1200 4650
+Wire Wire Line
+	1200 4650 1200 3900
+Connection ~ 1200 3900
+Wire Wire Line
+	850  4750 1250 4750
+Wire Wire Line
+	1250 3250 1250 4000
+Connection ~ 1250 4000
+Wire Wire Line
+	1250 4000 1250 4750
+Wire Wire Line
+	850  4850 1300 4850
+Wire Wire Line
+	1300 4850 1300 4100
+Connection ~ 1300 4100
+Wire Wire Line
+	850  4950 1350 4950
+Wire Wire Line
+	1350 4950 1350 4200
+Connection ~ 1350 4200
+Wire Wire Line
+	850  5050 1400 5050
+Wire Wire Line
+	1400 5050 1400 4300
+Connection ~ 1400 4300
+$Comp
+L 0EsseivaN_Lib_2:SW_2TO1 SW?
+U 1 1 5CDC9373
+P 2750 900
+F 0 "SW?" H 2750 1181 50  0000 C CNN
+F 1 "SW_2TO1" H 2750 1090 50  0000 C CNN
+F 2 "" H 2750 900 50  0001 C CNN
+F 3 "" H 2750 900 50  0001 C CNN
+	1    2750 900 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1500 800  2550 800 
+Wire Wire Line
+	2050 2300 2050 1000
+Wire Wire Line
+	1100 2300 2050 2300
+Wire Wire Line
+	2050 1000 2550 1000
+Wire Wire Line
+	3900 4500 7000 4500
+Text GLabel 1500 3350 2    50   BiDi ~ 0
+SDA
 $EndSCHEMATC
