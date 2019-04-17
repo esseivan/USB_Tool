@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name USB_Tool-rescue)(type Legacy)(uri ${KIPRJMOD}/USB_Tool-rescue.lib)(options "")(descr ""))
+  (lib (name 0EsseivaN_Lib_2)(type Legacy)(uri ${KIPRJMOD}/0EsseivaN_Lib_2.lib)(options "")(descr ""))
+)
