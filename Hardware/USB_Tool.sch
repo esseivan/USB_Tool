@@ -1063,7 +1063,7 @@ Text Label 10600 3850 2    50   ~ 0
 Text Label 10600 3750 2    50   ~ 0
 5V
 Text Label 10600 3950 2    50   ~ 0
-DAC1
+INT
 Text Label 10600 4050 2    50   ~ 0
 CLK
 Text Label 10600 4250 2    50   ~ 0
@@ -1670,7 +1670,7 @@ D1
 Text Label 7900 4050 0    50   ~ 0
 CLK
 Text Label 7900 3950 0    50   ~ 0
-DAC1
+INT
 $Comp
 L 0EsseivaN_Lib:CONN_01X02 X5
 U 1 1 5CBFA677
@@ -1905,6 +1905,17 @@ Wire Wire Line
 	8000 2400 8000 2650
 Wire Wire Line
 	7750 2400 7750 2700
+$Comp
+L 0EsseivaN_Lib:VCC #PWR0116
+U 1 1 5D080FD6
+P 2150 2300
+F 0 "#PWR0116" H 2150 2150 50  0001 C CNN
+F 1 "VCC" H 2097 2337 50  0000 R CNN
+F 2 "" H 2150 2300 50  0000 C CNN
+F 3 "" H 2150 2300 50  0000 C CNN
+	1    2150 2300
+	1    0    0    -1  
+$EndComp
 Wire Bus Line
 	1850 4500 4200 4500
 Wire Bus Line
@@ -1923,15 +1934,4 @@ Wire Bus Line
 	4200 3500 4200 4500
 Wire Bus Line
 	4600 4250 4600 6700
-$Comp
-L 0EsseivaN_Lib:VCC #PWR?
-U 1 1 5D080FD6
-P 2150 2300
-F 0 "#PWR?" H 2150 2150 50  0001 C CNN
-F 1 "VCC" H 2097 2337 50  0000 R CNN
-F 2 "" H 2150 2300 50  0000 C CNN
-F 3 "" H 2150 2300 50  0000 C CNN
-	1    2150 2300
-	1    0    0    -1  
-$EndComp
 $EndSCHEMATC
