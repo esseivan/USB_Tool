@@ -1,0 +1,132 @@
+Version 4.0 HI-TECH Software Intermediate Code
+[v F385 `(v ~T0 @X0 0 tf ]
+[v F387 `(a ~T0 @X0 0 tf ]
+[v F389 `(uc ~T0 @X0 0 tf1`uc ]
+[v F392 `(v ~T0 @X0 0 tf2`*v`ui ]
+[v F396 `(v ~T0 @X0 0 tf2`*v`ui ]
+[v F400 `(v ~T0 @X0 0 tf2`*v`ui ]
+[v F404 `(v ~T0 @X0 0 tf1`uc ]
+[v F407 `(uc ~T0 @X0 0 tf ]
+[v F410 `(v ~T0 @X0 0 tf ]
+[v F409 `(v ~T0 @X0 0 tf1`*F410 ]
+[v F413 `(v ~T0 @X0 0 tf ]
+"37 mcc_generated_files/drivers/spi_master.h
+[; ;mcc_generated_files/drivers/spi_master.h: 37: typedef struct { void (*spiClose)(void);
+[s S3 `*F385 1 `*F387 1 `*F389 1 `*F392 1 `*F396 1 `*F400 1 `*F404 1 `*F407 1 `*F409 1 `*F413 1 ]
+[n S3 . spiClose spiOpen exchangeByte exchangeBlock writeBlock readBlock writeByte readByte setSpiISR spiISR ]
+[v F358 `(v ~T0 @X0 1 tf ]
+"35 mcc_generated_files/drivers/../spi2_driver.h
+[; ;mcc_generated_files/drivers/../spi2_driver.h: 35: __attribute__((inline)) void spi2_close(void);
+[v _spi2_close `TF358 ~T0 @X0 0 e ]
+[v F420 `(a ~T0 @X0 1 tf ]
+"29 mcc_generated_files/drivers/spi_master.c
+[; ;mcc_generated_files/drivers/spi_master.c: 29: __attribute__((inline)) _Bool MASTER_open(void);
+[v _MASTER_open `TF420 ~T0 @X0 0 e ]
+"39 mcc_generated_files/drivers/../spi2_driver.h
+[; ;mcc_generated_files/drivers/../spi2_driver.h: 39: uint8_t spi2_exchangeByte(uint8_t b);
+[v _spi2_exchangeByte `(uc ~T0 @X0 0 ef1`uc ]
+"41
+[; ;mcc_generated_files/drivers/../spi2_driver.h: 41: void spi2_exchangeBlock(void *block, size_t blockSize);
+[v _spi2_exchangeBlock `(v ~T0 @X0 0 ef2`*v`ui ]
+"42
+[; ;mcc_generated_files/drivers/../spi2_driver.h: 42: void spi2_writeBlock(void *block, size_t blockSize);
+[v _spi2_writeBlock `(v ~T0 @X0 0 ef2`*v`ui ]
+"43
+[; ;mcc_generated_files/drivers/../spi2_driver.h: 43: void spi2_readBlock(void *block, size_t blockSize);
+[v _spi2_readBlock `(v ~T0 @X0 0 ef2`*v`ui ]
+"45
+[; ;mcc_generated_files/drivers/../spi2_driver.h: 45: void spi2_writeByte(uint8_t byte);
+[v _spi2_writeByte `(v ~T0 @X0 0 ef1`uc ]
+"46
+[; ;mcc_generated_files/drivers/../spi2_driver.h: 46: uint8_t spi2_readByte(void);
+[v _spi2_readByte `(uc ~T0 @X0 0 ef ]
+[v F377 `(v ~T0 @X0 0 tf ]
+"49
+[; ;mcc_generated_files/drivers/../spi2_driver.h: 49: void spi2_setSpiISR(void(*handler)(void));
+[v _spi2_setSpiISR `(v ~T0 @X0 0 ef1`*F377 ]
+"48
+[; ;mcc_generated_files/drivers/../spi2_driver.h: 48: void spi2_isr(void);
+[v _spi2_isr `(v ~T0 @X0 0 ef ]
+"36 mcc_generated_files/drivers/spi_master.c
+[; ;mcc_generated_files/drivers/spi_master.c: 36:     return spi2_open(MASTER_CONFIG);
+[c E353 0 1 .. ]
+[n E353 . MASTER_CONFIG SPI2_DEFAULT  ]
+"37 mcc_generated_files/drivers/../spi2_driver.h
+[; ;mcc_generated_files/drivers/../spi2_driver.h: 37: _Bool spi2_open(spi2_modes spiUniqueConfiguration);
+[v _spi2_open `(a ~T0 @X0 0 ef1`E353 ]
+"40 mcc_generated_files/drivers/spi_master.c
+[; ;mcc_generated_files/drivers/spi_master.c: 40: __attribute__((inline)) _Bool spi_master_open(spi_master_configurations_t config){
+[c E380 0 .. ]
+[n E380 . MASTER  ]
+"31 mcc_generated_files/drivers/spi_master.c
+[; ;mcc_generated_files/drivers/spi_master.c: 31: const spi_master_functions_t spiMaster[] = {
+[v _spiMaster `CS3 ~T0 @X0 -> -> 1 `i `ux e ]
+[i _spiMaster
+:U ..
+:U ..
+&U _spi2_close
+&U _MASTER_open
+&U _spi2_exchangeByte
+&U _spi2_exchangeBlock
+&U _spi2_writeBlock
+&U _spi2_readBlock
+&U _spi2_writeByte
+&U _spi2_readByte
+&U _spi2_setSpiISR
+&U _spi2_isr
+..
+..
+]
+[v F443 `(a ~T0 @X0 1 tf ]
+"35
+[; ;mcc_generated_files/drivers/spi_master.c: 35: __attribute__((inline)) _Bool MASTER_open(void){
+[v _MASTER_open `TF443 ~T0 @X0 1 e ]
+{
+[e :U _MASTER_open ]
+[f ]
+"36
+[; ;mcc_generated_files/drivers/spi_master.c: 36:     return spi2_open(MASTER_CONFIG);
+[e ) ( _spi2_open (1 . `E353 0 ]
+[e $UE 4  ]
+"37
+[; ;mcc_generated_files/drivers/spi_master.c: 37: }
+[e :UE 4 ]
+}
+[v F445 `(a ~T0 @X0 1 tf1`E380 ]
+"40
+[; ;mcc_generated_files/drivers/spi_master.c: 40: __attribute__((inline)) _Bool spi_master_open(spi_master_configurations_t config){
+[v _spi_master_open `TF445 ~T0 @X0 1 e ]
+{
+[e :U _spi_master_open ]
+[v _config `E380 ~T0 @X0 1 r1 ]
+[f ]
+"41
+[; ;mcc_generated_files/drivers/spi_master.c: 41:     switch(config){
+[e $U 7  ]
+{
+"42
+[; ;mcc_generated_files/drivers/spi_master.c: 42:         case MASTER:
+[e :U 8 ]
+"43
+[; ;mcc_generated_files/drivers/spi_master.c: 43:             return MASTER_open();
+[e ) ( _MASTER_open ..  ]
+[e $UE 5  ]
+"44
+[; ;mcc_generated_files/drivers/spi_master.c: 44:         default:
+[e :U 9 ]
+"45
+[; ;mcc_generated_files/drivers/spi_master.c: 45:             return 0;
+[e ) -> -> 0 `i `a ]
+[e $UE 5  ]
+"46
+[; ;mcc_generated_files/drivers/spi_master.c: 46:     }
+}
+[e $U 6  ]
+[e :U 7 ]
+[e [\ -> _config `ui , $ -> . `E380 0 `ui 8
+ 9 ]
+[e :U 6 ]
+"47
+[; ;mcc_generated_files/drivers/spi_master.c: 47: }
+[e :UE 5 ]
+}

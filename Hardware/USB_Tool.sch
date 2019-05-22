@@ -770,8 +770,6 @@ F 3 "" H 8500 1300 50  0000 C CNN
 	1    8500 1300
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	7550 3650 7150 3650
 $Comp
 L 0EsseivaN_Lib:CONN_01X08 X2
 U 1 1 5CBD6E7C
@@ -1064,28 +1062,6 @@ Text Label 10600 3850 2    50   ~ 0
 3V3
 Text Label 10600 3750 2    50   ~ 0
 5V
-Wire Wire Line
-	7150 3750 7600 3750
-Wire Wire Line
-	7600 3750 7600 2500
-Wire Wire Line
-	7600 2500 8000 2500
-Wire Wire Line
-	8000 2500 8000 2400
-Wire Wire Line
-	7150 3850 7650 3850
-Wire Wire Line
-	7650 3850 7650 2550
-Wire Wire Line
-	7650 2550 8250 2550
-Wire Wire Line
-	8250 2550 8250 2400
-Text Label 7200 3650 0    50   ~ 0
-LED_0
-Text Label 7200 3750 0    50   ~ 0
-LED_1
-Text Label 7200 3850 0    50   ~ 0
-LED_2
 Text Label 10600 3950 2    50   ~ 0
 DAC1
 Text Label 10600 4050 2    50   ~ 0
@@ -1110,11 +1086,11 @@ Text Label 9400 3500 2    50   ~ 0
 GND
 Text Label 9400 3600 2    50   ~ 0
 GND
-Text Label 7200 5450 0    50   ~ 0
+Text Label 7200 3650 0    50   ~ 0
 IRQ0
-Text Label 7200 5550 0    50   ~ 0
+Text Label 7200 3750 0    50   ~ 0
 IRQ1
-Text Label 7200 5650 0    50   ~ 0
+Text Label 7200 3850 0    50   ~ 0
 CS_EXT
 Text Label 3800 5350 0    50   ~ 0
 CS_EXT
@@ -1290,17 +1266,17 @@ Wire Bus Line
 	4600 6700 6800 6700
 Connection ~ 4600 6700
 Entry Wire Line
-	7550 5450 7650 5550
+	7550 3650 7650 3550
 Entry Wire Line
-	7550 5550 7650 5650
+	7550 3750 7650 3650
 Entry Wire Line
-	7550 5650 7650 5750
+	7550 3850 7650 3750
 Wire Wire Line
-	7550 5550 7150 5550
+	7550 3750 7150 3750
 Wire Wire Line
-	7150 5450 7550 5450
+	7150 3650 7550 3650
 Wire Wire Line
-	7550 5650 7150 5650
+	7550 3850 7150 3850
 Wire Bus Line
 	5300 2800 7800 2800
 Wire Bus Line
@@ -1320,7 +1296,7 @@ Wire Wire Line
 Wire Wire Line
 	5200 3850 5550 3850
 Text Label 5500 3850 2    50   ~ 0
-DAC1
+INT
 Text Label 5500 4250 2    50   ~ 0
 CLK
 Entry Wire Line
@@ -1331,8 +1307,6 @@ Entry Wire Line
 	7800 3950 7900 4050
 Wire Wire Line
 	7700 4050 7150 4050
-Wire Wire Line
-	7150 3950 7700 3950
 Entry Wire Line
 	7700 3950 7800 3850
 Entry Wire Line
@@ -1728,12 +1702,6 @@ F 3 "" H 8100 1900 60  0000 C CNN
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	7550 2450 7750 2450
-Wire Wire Line
-	7750 2450 7750 2400
-Wire Wire Line
-	7550 2450 7550 3650
-Wire Wire Line
 	7750 2000 7750 1900
 Wire Wire Line
 	8000 1900 8000 2000
@@ -1859,17 +1827,6 @@ F 3 "" H 3050 2050 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L 0EsseivaN_Lib:5V #PWR0116
-U 1 1 5CBEEF46
-P 2150 2300
-F 0 "#PWR0116" H 2150 2150 50  0001 C CNN
-F 1 "5V" H 2097 2337 45  0000 R CNN
-F 2 "" H 2150 2300 50  0000 C CNN
-F 3 "" H 2150 2300 50  0000 C CNN
-	1    2150 2300
-	1    0    0    -1  
-$EndComp
-$Comp
 L 0EsseivaN_Lib:VCC #PWR0122
 U 1 1 5CDA9820
 P 6600 3050
@@ -1919,6 +1876,35 @@ Wire Wire Line
 	6350 900  6350 1050
 Wire Wire Line
 	6350 1050 6000 1050
+Connection ~ 6000 1050
+Wire Wire Line
+	7150 3950 7700 3950
+Text Label 7200 5450 0    50   ~ 0
+LED_B
+Text Label 7200 5550 0    50   ~ 0
+LED_G
+Text Label 7200 5650 0    50   ~ 0
+LED_R
+Wire Wire Line
+	7150 5450 8150 5450
+Wire Wire Line
+	8150 5450 8150 2700
+Wire Wire Line
+	8150 2700 7750 2700
+Wire Wire Line
+	7150 5550 8200 5550
+Wire Wire Line
+	8200 5550 8200 2650
+Wire Wire Line
+	8200 2650 8000 2650
+Wire Wire Line
+	7150 5650 8250 5650
+Wire Wire Line
+	8250 2400 8250 5650
+Wire Wire Line
+	8000 2400 8000 2650
+Wire Wire Line
+	7750 2400 7750 2700
 Wire Bus Line
 	1850 4500 4200 4500
 Wire Bus Line
@@ -1926,7 +1912,7 @@ Wire Bus Line
 Wire Bus Line
 	1200 5950 1200 6700
 Wire Bus Line
-	7650 5550 7650 6350
+	7650 3550 7650 6350
 Wire Bus Line
 	5000 3450 5300 3450
 Wire Bus Line
@@ -1937,5 +1923,15 @@ Wire Bus Line
 	4200 3500 4200 4500
 Wire Bus Line
 	4600 4250 4600 6700
-Connection ~ 6000 1050
+$Comp
+L 0EsseivaN_Lib:VCC #PWR?
+U 1 1 5D080FD6
+P 2150 2300
+F 0 "#PWR?" H 2150 2150 50  0001 C CNN
+F 1 "VCC" H 2097 2337 50  0000 R CNN
+F 2 "" H 2150 2300 50  0000 C CNN
+F 3 "" H 2150 2300 50  0000 C CNN
+	1    2150 2300
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
