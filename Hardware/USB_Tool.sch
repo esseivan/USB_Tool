@@ -6,8 +6,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "USB_Tool"
-Date "2019-04-28"
-Rev "00"
+Date "2019-05-22"
+Rev "02"
 Comp "EsseivaN"
 Comment1 "Author : Esseiva Nicolas"
 Comment2 "USB Tool"
