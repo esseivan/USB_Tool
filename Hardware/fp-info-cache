@@ -1,4 +1,4 @@
-272786998413973
+277636726634688
 0EsseivaN_Lib
 2conn
 
@@ -50,6 +50,13 @@ BoardCutter_1
 0
 0EsseivaN_Lib
 BoardCutter_2
+
+
+0
+0
+0
+0EsseivaN_Lib
+BoardCutter_10
 
 
 0
@@ -252,6 +259,13 @@ DC_DC
 8
 4
 0EsseivaN_Lib
+DFN-6-1EP_3x3mm_Pitch0.95mm
+DFN6 3*3 MM, 0.95 PITCH; CASE 506AH-01 (see ON Semiconductor 506AH.PDF)
+DFN 0.95
+0
+7
+7
+0EsseivaN_Lib
 DIP-18
 18-lead though-hole mounted DIP package, row spacing 7.62 mm (300 mils), Socket, LongPads
 THT DIP DIL PDIP 2.54mm 7.62mm 300mil Socket LongPads
@@ -297,6 +311,13 @@ FuseHolder_Schurter
 Fuse_SMD1206_HandSoldering
 Fuse, Sicherung, SMD1206, Littlefuse-Wickmann 433 Series, Hand Soldering,
 Fuse Sicherung SMD1206 Littlefuse-Wickmann 433 Series Hand Soldering 
+0
+2
+2
+0EsseivaN_Lib
+Fuse_SMD2410_HandSoldering
+
+
 0
 2
 2

@@ -1,7 +1,7 @@
 Eviter de mettre des composants sur Bot
-Pattern LED RGB incorrect, espace entre pads un peu trop grand
-Ajouter une led constante indiquant si le courant est la (indépendante du uc)
-Pattern Fusible 500mA incorrect, espace entre pads trop petit
-Si possible remplacer le condensateur tht par un smd
+OK	Pattern LED RGB incorrect, espace entre pads un peu trop grand
+OK	Ajouter une led constante indiquant si le courant est la (indépendante du uc)
+OK	Pattern Fusible 500mA incorrect, espace entre pads trop petit
+OK	Si possible remplacer le condensateur tht par un smd
 Commander pieds 
 commander Soldering iron tip
