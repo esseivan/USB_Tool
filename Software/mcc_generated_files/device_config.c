@@ -51,7 +51,7 @@
 #pragma config RSTOSC = HFINTOSC_64MHZ    // ->HFINTOSC with HFFRQ = 64 MHz and CDIV = 1:1
 
 // CONFIG1H
-#pragma config CLKOUTEN = ON    // ->CLKOUT function is enabled
+#pragma config CLKOUTEN = OFF    // ->CLKOUT function is disabled
 #pragma config CSWEN = ON    // ->Writing to NOSC and NDIV is allowed
 #pragma config FCMEN = ON    // Fail-Safe Clock Monitor Enable bit->Fail-Safe Clock Monitor enabled
 

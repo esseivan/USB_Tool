@@ -1,4 +1,4 @@
-update=22.05.2019 11:14:20
+update=23.06.2019 21:53:37
 version=1
 last_client=kicad
 [general]
@@ -57,14 +57,26 @@ OthersTextUpright=1
 SolderMaskClearance=0.051
 SolderMaskMinWidth=0.25
 SolderPasteClearance=0
-SolderPasteRatio=0
+SolderPasteRatio=-0
+[pcbnew/Netclasses]
+[pcbnew/Netclasses/1]
+Name=USB_Unprotected
+Clearance=0.2
+TrackWidth=0.45
+ViaDiameter=1
+ViaDrill=0.6
+uViaDiameter=0.3
+uViaDrill=0.1
+dPairWidth=0.2
+dPairGap=0.25
+dPairViaGap=0.25
 [schematic_editor]
 version=1
 PageLayoutDescrFile=
 PlotDirectoryName=../Fabrication/PDF/
 SubpartIdSeparator=0
 SubpartFirstId=65
-NetFmtName=
+NetFmtName=Pcbnew
 SpiceAjustPassiveValues=0
 LabSize=50
 ERC_TestSimilarLabels=1

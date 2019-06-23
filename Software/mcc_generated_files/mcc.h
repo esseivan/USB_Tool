@@ -52,11 +52,15 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include "interrupt_manager.h"
-#include "spi2_driver.h"
 #include "i2c1_driver.h"
-#include "ext_int.h"
+#include "spi2_driver.h"
+#include "tmr4.h"
 #include "tmr2.h"
-#include "drivers/i2c_master.h"
+#include "fvr.h"
+#include "dac1.h"
+#include "ext_int.h"
+#include "eusart1.h"
+#include "clkref.h"
 
 
 

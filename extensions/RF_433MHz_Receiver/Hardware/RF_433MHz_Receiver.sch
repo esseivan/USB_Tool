@@ -1,0 +1,574 @@
+EESchema Schematic File Version 4
+LIBS:RF_433MHz_Receiver-cache
+EELAYER 29 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "RF_433MHz_Receiver"
+Date "2019-06-23"
+Rev "00"
+Comp "EsseivaN"
+Comment1 "Author : Esseiva Nicolas"
+Comment2 "RF 433MHz Receiver extension"
+Comment3 ""
+Comment4 ""
+$EndDescr
+Text Label 2700 4500 0    50   ~ 0
+SDA
+Text Label 2700 4600 0    50   ~ 0
+SCL
+$Comp
+L 0EsseivaN_Lib:RF_RECEIVER U2
+U 1 1 5CF432A1
+P 6700 3300
+F 0 "U2" H 6372 3353 60  0000 R CNN
+F 1 "RF_RECEIVER" H 6372 3247 60  0000 R CNN
+F 2 "0EsseivaN_Lib:RF_RECEIVER" H 6700 3300 60  0001 C CNN
+F 3 "" H 6700 3300 60  0001 C CNN
+	1    6700 3300
+	-1   0    0    -1  
+$EndComp
+$Comp
+L 0EsseivaN_Lib:GND #PWR010
+U 1 1 5CF474BB
+P 6700 3950
+F 0 "#PWR010" H 6700 3650 50  0001 C CNN
+F 1 "GND" H 6700 3750 50  0001 C CNN
+F 2 "" H 6700 3950 50  0000 C CNN
+F 3 "" H 6700 3950 50  0000 C CNN
+	1    6700 3950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6700 3950 6700 3900
+$Comp
+L 0EsseivaN_Lib:5V #PWR09
+U 1 1 5CF4A0A7
+P 6700 2350
+F 0 "#PWR09" H 6700 2200 50  0001 C CNN
+F 1 "5V" H 6717 2520 45  0000 C CNN
+F 2 "" H 6700 2350 50  0000 C CNN
+F 3 "" H 6700 2350 50  0000 C CNN
+	1    6700 2350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6700 2350 6700 2400
+$Comp
+L 0EsseivaN_Lib:GND #PWR07
+U 1 1 5CF41834
+P 4350 3300
+F 0 "#PWR07" H 4350 3000 50  0001 C CNN
+F 1 "GND" H 4350 3100 50  0001 C CNN
+F 2 "" H 4350 3300 50  0000 C CNN
+F 3 "" H 4350 3300 50  0000 C CNN
+	1    4350 3300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4350 3300 4350 3250
+$Comp
+L 0EsseivaN_Lib:CAPA C1
+U 1 1 5CF44CD7
+P 4600 2050
+F 0 "C1" V 4547 2158 60  0000 L CNN
+F 1 "100nF" V 4653 2158 60  0000 L CNN
+F 2 "0EsseivaN_Lib:C_1206_HandSoldering" H 4600 2050 60  0001 C CNN
+F 3 "" H 4600 2050 60  0000 C CNN
+	1    4600 2050
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4350 2400 4350 1850
+Wire Wire Line
+	4600 1850 4600 1950
+Wire Wire Line
+	4350 1850 4600 1850
+$Comp
+L 0EsseivaN_Lib:PIC16F15323 U1
+U 1 1 5CF40580
+P 4350 2850
+F 0 "U1" H 4450 3400 50  0000 C CNN
+F 1 "PIC16F15323" H 4650 3300 50  0000 C CNN
+F 2 "0EsseivaN_Lib:SOIC-14" H 3300 3600 50  0001 L BNN
+F 3 "" H 3300 3500 50  0001 L BNN
+	1    4350 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L 0EsseivaN_Lib:CONN_01X05 J1
+U 1 1 5CF4C2C1
+P 2200 2800
+F 0 "J1" H 2278 2948 60  0000 L CNN
+F 1 "CONN_ICSP" H 2278 2842 60  0000 L CNN
+F 2 "0EsseivaN_Lib:Pin_Header_Straight_1x05_Pitch2.54mm" H 2200 2950 60  0001 C CNN
+F 3 "" H 2200 2950 60  0000 C CNN
+	1    2200 2800
+	-1   0    0    -1  
+$EndComp
+$Comp
+L 0EsseivaN_Lib:R R1
+U 1 1 5CF4DFA6
+P 2600 2200
+F 0 "R1" H 2670 2246 50  0000 L CNN
+F 1 "27k" H 2670 2155 50  0000 L CNN
+F 2 "0EsseivaN_Lib:R_0603_HandSoldering" V 2530 2200 50  0001 C CNN
+F 3 "" H 2600 2200 50  0000 C CNN
+	1    2600 2200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2400 2500 2600 2500
+Wire Wire Line
+	2600 2500 2600 2400
+$Comp
+L 0EsseivaN_Lib:GND #PWR01
+U 1 1 5CF4FFDE
+P 2500 3100
+F 0 "#PWR01" H 2500 2800 50  0001 C CNN
+F 1 "GND" H 2500 2900 50  0001 C CNN
+F 2 "" H 2500 3100 50  0000 C CNN
+F 3 "" H 2500 3100 50  0000 C CNN
+	1    2500 3100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2500 3100 2500 2700
+Wire Wire Line
+	2500 2700 2400 2700
+Text GLabel 3950 2600 0    50   BiDi ~ 0
+ICSPDAT
+Text GLabel 3950 2700 0    50   Input ~ 0
+ICSPCLK
+Text GLabel 3750 2900 0    50   UnSpc ~ 0
+VPP
+Text GLabel 4750 2600 2    50   BiDi ~ 0
+SCL
+Text GLabel 4750 2700 2    50   BiDi ~ 0
+SDA
+Wire Wire Line
+	4650 2600 4750 2600
+Wire Wire Line
+	4650 2700 4750 2700
+Text GLabel 3600 4050 0    50   BiDi ~ 0
+SCL
+Text GLabel 3600 4200 0    50   BiDi ~ 0
+SDA
+Wire Wire Line
+	3850 2800 4050 2800
+Wire Wire Line
+	3950 2700 4050 2700
+Wire Wire Line
+	3950 2600 4050 2600
+Text GLabel 2700 2800 2    50   BiDi ~ 0
+ICSPDAT
+Text GLabel 2700 2900 2    50   Output ~ 0
+ICSPCLK
+Wire Wire Line
+	2400 2900 2700 2900
+Wire Wire Line
+	2400 2800 2700 2800
+Text GLabel 2700 2500 2    50   UnSpc ~ 0
+VPP
+Wire Wire Line
+	2600 2500 2700 2500
+Connection ~ 2600 2500
+Wire Wire Line
+	2600 1950 2600 2000
+Wire Wire Line
+	3750 2900 4050 2900
+$Comp
+L 0EsseivaN_Lib:GND #PWR08
+U 1 1 5CF5DA37
+P 4600 2200
+F 0 "#PWR08" H 4600 1900 50  0001 C CNN
+F 1 "GND" H 4600 2000 50  0001 C CNN
+F 2 "" H 4600 2200 50  0000 C CNN
+F 3 "" H 4600 2200 50  0000 C CNN
+	1    4600 2200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4600 2200 4600 2150
+Wire Wire Line
+	4350 1750 4350 1850
+Connection ~ 4350 1850
+$Comp
+L 0EsseivaN_Lib:CAPA C2
+U 1 1 5CF63129
+P 6850 2550
+F 0 "C2" V 6797 2658 60  0000 L CNN
+F 1 "100nF" V 6903 2658 60  0000 L CNN
+F 2 "0EsseivaN_Lib:C_1206_HandSoldering" H 6850 2550 60  0001 C CNN
+F 3 "" H 6850 2550 60  0000 C CNN
+	1    6850 2550
+	0    1    1    0   
+$EndComp
+$Comp
+L 0EsseivaN_Lib:GND #PWR011
+U 1 1 5CF645F7
+P 6850 2700
+F 0 "#PWR011" H 6850 2400 50  0001 C CNN
+F 1 "GND" H 6850 2500 50  0001 C CNN
+F 2 "" H 6850 2700 50  0000 C CNN
+F 3 "" H 6850 2700 50  0000 C CNN
+	1    6850 2700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6850 2700 6850 2650
+Wire Wire Line
+	6850 2450 6850 2400
+Wire Wire Line
+	6850 2400 6700 2400
+Connection ~ 6700 2400
+Wire Wire Line
+	6700 2400 6700 2700
+$Comp
+L 0EsseivaN_Lib:R R2
+U 1 1 5CF67EFE
+P 6050 2900
+F 0 "R2" V 5950 2900 50  0001 C CNN
+F 1 "1k" V 5934 2900 50  0001 C CNN
+F 2 "0EsseivaN_Lib:R_0603_HandSoldering" V 5980 2900 50  0001 C CNN
+F 3 "" H 6050 2900 50  0000 C CNN
+	1    6050 2900
+	0    1    1    0   
+$EndComp
+$Comp
+L 0EsseivaN_Lib:R R3
+U 1 1 5CF688FE
+P 6050 3100
+F 0 "R3" V 5950 3100 50  0001 C CNN
+F 1 "1k" V 5934 3100 50  0001 C CNN
+F 2 "0EsseivaN_Lib:R_0603_HandSoldering" V 5980 3100 50  0001 C CNN
+F 3 "" H 6050 3100 50  0000 C CNN
+	1    6050 3100
+	0    1    1    0   
+$EndComp
+$Comp
+L 0EsseivaN_Lib:R R4
+U 1 1 5CF68E0D
+P 6050 3300
+F 0 "R4" V 5950 3300 50  0001 C CNN
+F 1 "1k" V 5934 3300 50  0001 C CNN
+F 2 "0EsseivaN_Lib:R_0603_HandSoldering" V 5980 3300 50  0001 C CNN
+F 3 "" H 6050 3300 50  0000 C CNN
+	1    6050 3300
+	0    1    1    0   
+$EndComp
+$Comp
+L 0EsseivaN_Lib:R R5
+U 1 1 5CF68EEE
+P 6050 3500
+F 0 "R5" V 5950 3500 50  0001 C CNN
+F 1 "1k" V 5934 3500 50  0001 C CNN
+F 2 "0EsseivaN_Lib:R_0603_HandSoldering" V 5980 3500 50  0001 C CNN
+F 3 "" H 6050 3500 50  0000 C CNN
+	1    6050 3500
+	0    1    1    0   
+$EndComp
+$Comp
+L 0EsseivaN_Lib:R R6
+U 1 1 5CF690B5
+P 6050 3700
+F 0 "R6" V 5950 3700 50  0001 C CNN
+F 1 "1k" V 5934 3700 50  0001 C CNN
+F 2 "0EsseivaN_Lib:R_0603_HandSoldering" V 5980 3700 50  0001 C CNN
+F 3 "" H 6050 3700 50  0000 C CNN
+	1    6050 3700
+	0    1    1    0   
+$EndComp
+Text Notes 5950 2800 0    50   ~ 0
+R2..6\n5x1k
+Wire Wire Line
+	6250 2900 6300 2900
+Wire Wire Line
+	6250 3100 6300 3100
+Wire Wire Line
+	6250 3300 6300 3300
+Wire Wire Line
+	6250 3500 6300 3500
+Wire Wire Line
+	6250 3700 6300 3700
+Wire Wire Line
+	3850 2800 3850 3700
+Wire Wire Line
+	5800 3400 5800 3300
+Wire Wire Line
+	5800 3300 5850 3300
+Wire Wire Line
+	5800 3000 5800 2900
+Wire Wire Line
+	5800 2900 5850 2900
+$Comp
+L 0EsseivaN_Lib:LED P1
+U 1 1 5CF9D78A
+P 5150 1750
+F 0 "P1" V 5097 1828 60  0000 L CNN
+F 1 "1V8" V 5203 1828 60  0000 L CNN
+F 2 "0EsseivaN_Lib:D_0603_HandSoldering" H 5150 1750 60  0001 C CNN
+F 3 "" H 5150 1750 60  0000 C CNN
+	1    5150 1750
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5150 1600 5150 1650
+Wire Wire Line
+	4650 3000 5800 3000
+Wire Wire Line
+	4650 3100 5850 3100
+Wire Wire Line
+	3950 3400 5800 3400
+Wire Wire Line
+	3900 3500 5850 3500
+Wire Wire Line
+	3850 3700 5850 3700
+Wire Wire Line
+	4650 2900 5150 2900
+Wire Wire Line
+	5150 2900 5150 2300
+$Comp
+L 0EsseivaN_Lib:R R7
+U 1 1 5CFAF9F9
+P 5150 2100
+F 0 "R7" H 5220 2146 50  0000 L CNN
+F 1 "150R" H 5220 2055 50  0000 L CNN
+F 2 "0EsseivaN_Lib:R_0603_HandSoldering" V 5080 2100 50  0001 C CNN
+F 3 "" H 5150 2100 50  0000 C CNN
+	1    5150 2100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5150 1850 5150 1900
+Wire Wire Line
+	3950 3000 4050 3000
+Wire Wire Line
+	3950 3000 3950 3400
+Wire Wire Line
+	3900 3100 4050 3100
+Wire Wire Line
+	3900 3100 3900 3500
+$Comp
+L 0EsseivaN_Lib:5V #PWR03
+U 1 1 5CF61D6B
+P 3100 4200
+F 0 "#PWR03" H 3100 4050 50  0001 C CNN
+F 1 "5V" H 3117 4370 45  0000 C CNN
+F 2 "" H 3100 4200 50  0000 C CNN
+F 3 "" H 3100 4200 50  0000 C CNN
+	1    3100 4200
+	1    0    0    -1  
+$EndComp
+$Comp
+L 0EsseivaN_Lib:3V3 #PWR0102
+U 1 1 5D14A384
+P 4350 1750
+F 0 "#PWR0102" H 4350 1600 50  0001 C CNN
+F 1 "3V3" H 4367 1920 45  0000 C CNN
+F 2 "" H 4350 1750 50  0000 C CNN
+F 3 "" H 4350 1750 50  0000 C CNN
+	1    4350 1750
+	1    0    0    -1  
+$EndComp
+$Comp
+L 0EsseivaN_Lib:3V3 #PWR0103
+U 1 1 5D14B8D3
+P 5150 1600
+F 0 "#PWR0103" H 5150 1450 50  0001 C CNN
+F 1 "3V3" H 5167 1770 45  0000 C CNN
+F 2 "" H 5150 1600 50  0000 C CNN
+F 3 "" H 5150 1600 50  0000 C CNN
+	1    5150 1600
+	1    0    0    -1  
+$EndComp
+$Comp
+L 0EsseivaN_Lib:3V3 #PWR0104
+U 1 1 5D164061
+P 2600 1950
+F 0 "#PWR0104" H 2600 1800 50  0001 C CNN
+F 1 "3V3" H 2617 2120 45  0000 C CNN
+F 2 "" H 2600 1950 50  0000 C CNN
+F 3 "" H 2600 1950 50  0000 C CNN
+	1    2600 1950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2400 2600 2500 2600
+Wire Wire Line
+	2500 2600 2500 2000
+Wire Wire Line
+	2500 2000 2600 2000
+Connection ~ 2600 2000
+$Comp
+L 0EsseivaN_Lib:GND #PWR0105
+U 1 1 5D458095
+P 3100 5200
+F 0 "#PWR0105" H 3100 4900 50  0001 C CNN
+F 1 "GND" H 3100 5000 50  0001 C CNN
+F 2 "" H 3100 5200 50  0000 C CNN
+F 3 "" H 3100 5200 50  0000 C CNN
+	1    3100 5200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3100 5200 3100 5100
+Connection ~ 3100 5100
+Wire Wire Line
+	3100 5100 2550 5100
+Wire Wire Line
+	3100 4200 3100 4300
+Connection ~ 3100 4300
+Wire Wire Line
+	3100 4300 2550 4300
+$Comp
+L 0EsseivaN_Lib:3V3 #PWR0101
+U 1 1 5D147F7F
+P 3250 4200
+F 0 "#PWR0101" H 3250 4050 50  0001 C CNN
+F 1 "3V3" H 3267 4370 45  0000 C CNN
+F 2 "" H 3250 4200 50  0000 C CNN
+F 3 "" H 3250 4200 50  0000 C CNN
+	1    3250 4200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3250 4200 3250 4400
+Connection ~ 3250 4400
+Wire Wire Line
+	3250 4400 2550 4400
+Wire Wire Line
+	3600 4200 3700 4200
+Wire Wire Line
+	3700 4200 3700 4500
+Connection ~ 3700 4500
+Wire Wire Line
+	3700 4500 2550 4500
+Wire Wire Line
+	3600 4050 3800 4050
+Wire Wire Line
+	3800 4050 3800 4600
+Connection ~ 3800 4600
+Wire Wire Line
+	3800 4600 2550 4600
+Text Label 2700 4400 0    50   ~ 0
+3V3
+Text Label 2700 4300 0    50   ~ 0
+5V
+Text Label 2700 5100 0    50   ~ 0
+GND
+Text Label 2700 4800 0    50   ~ 0
+DAC_OUT
+Text Label 2700 4700 0    50   ~ 0
+CLKR
+$Comp
+L 0EsseivaN_Lib:CONN_01X09 X4
+U 1 1 5D0B8851
+P 6300 4700
+F 0 "X4" H 6378 4741 50  0000 L CNN
+F 1 "Extension" H 6378 4650 50  0000 L CNN
+F 2 "0EsseivaN_Lib:Pin_Header_Straight_1x09_Pitch2.54mm" H 6300 4700 50  0001 C CNN
+F 3 "" H 6300 4700 50  0000 C CNN
+	1    6300 4700
+	1    0    0    -1  
+$EndComp
+$Comp
+L 0EsseivaN_Lib:CONN_01X09 X3
+U 1 1 5D0BDDCA
+P 4450 4700
+F 0 "X3" H 4367 5315 50  0000 C CNN
+F 1 "Extension" H 4367 5224 50  0000 C CNN
+F 2 "0EsseivaN_Lib:Pin_Header_Straight_1x09_Pitch2.54mm" H 4450 4700 50  0001 C CNN
+F 3 "" H 4450 4700 50  0000 C CNN
+	1    4450 4700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3800 4600 4250 4600
+Wire Wire Line
+	3700 4500 4250 4500
+Wire Wire Line
+	3250 4400 4250 4400
+Wire Wire Line
+	3100 4300 4250 4300
+Wire Wire Line
+	3100 5100 4250 5100
+Text Label 5200 4300 0    50   ~ 0
+D0
+Text Label 5200 4400 0    50   ~ 0
+D1
+Text Label 5200 4500 0    50   ~ 0
+D2
+Text Label 5200 4600 0    50   ~ 0
+D3
+Text Label 5200 4700 0    50   ~ 0
+D4
+Text Label 5200 4800 0    50   ~ 0
+D5
+Text Label 5200 5000 0    50   ~ 0
+~INT1
+Text Label 5200 5100 0    50   ~ 0
+~INT2
+Wire Wire Line
+	5150 4300 6100 4300
+Wire Wire Line
+	5150 4400 6100 4400
+Wire Wire Line
+	5150 4500 6100 4500
+Wire Wire Line
+	5150 4600 6100 4600
+Wire Wire Line
+	5150 4700 6100 4700
+Wire Wire Line
+	5150 4800 6100 4800
+Wire Wire Line
+	5150 5000 6100 5000
+Wire Wire Line
+	5150 5100 6100 5100
+Text Notes 5150 5300 2    59   ~ 0
+3V3 MAX !
+Text Notes 2550 5250 2    59   ~ 0
+3V3 MAX !
+Wire Wire Line
+	2550 4800 4250 4800
+Wire Wire Line
+	2550 5000 4250 5000
+Wire Wire Line
+	2550 4900 4250 4900
+Wire Wire Line
+	5150 4900 5500 4900
+Text Label 5200 4900 0    50   ~ 0
+~INT0
+Wire Wire Line
+	2550 4700 4250 4700
+Wire Wire Line
+	5500 2800 5500 4900
+Wire Wire Line
+	4650 2800 5500 2800
+Connection ~ 5500 4900
+Wire Wire Line
+	5500 4900 6100 4900
+$Comp
+L 0EsseivaN_Lib:Extension_1 X1
+U 1 1 5D16C65E
+P 2350 4700
+F 0 "X1" H 2453 5325 50  0000 C CNN
+F 1 "Extension_1" H 2453 5234 50  0000 C CNN
+F 2 "0EsseivaN_Lib:Pin_Header_Straight_1x09_Pitch2.54mm" H 2350 4750 50  0001 C CNN
+F 3 "" H 2350 4750 50  0000 C CNN
+	1    2350 4700
+	-1   0    0    -1  
+$EndComp
+$Comp
+L 0EsseivaN_Lib:Extension_2 X2
+U 1 1 5D1726CD
+P 4950 4700
+F 0 "X2" H 4978 5325 50  0000 C CNN
+F 1 "Extension_2" H 4978 5234 50  0000 C CNN
+F 2 "0EsseivaN_Lib:Pin_Header_Straight_1x09_Pitch2.54mm" H 4950 4750 50  0001 C CNN
+F 3 "" H 4950 4750 50  0000 C CNN
+	1    4950 4700
+	-1   0    0    -1  
+$EndComp
+$EndSCHEMATC

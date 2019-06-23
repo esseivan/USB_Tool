@@ -38,8 +38,7 @@ inline void spi2_close(void)
 //con1 == SSPxCON1, stat == SSPxSTAT, add == SSPxADD, operation == Master/Slave
 typedef struct { uint8_t con1; uint8_t stat; uint8_t add; uint8_t operation; } spi2_configuration_t;
 static const spi2_configuration_t spi2_configuration[] = {
-    { 0xa, 0x40, 0x13, 0 },
-    { 0xa, 0x40, 0x13, 0 }
+    { 0xa, 0x40, 0xe, 0 }
 };
 
 //Setup SPI
@@ -48,10 +47,10 @@ bool spi2_open(spi2_modes spiUniqueConfiguration)
     if(!SSP2CON1bits.SSPEN)
     {
         //setup PPS pins
-        SSP2CLKPPS = 9;
-        SSP2DATPPS = 10;
-        RB1PPS = 17;
-        RB0PPS = 18;
+        SSP2CLKPPS = 24;
+        SSP2DATPPS = 25;
+        RD0PPS = 17;
+        RD2PPS = 18;
 
         //setup SPI
         SSP2STAT = spi2_configuration[spiUniqueConfiguration].stat;
@@ -59,7 +58,7 @@ bool spi2_open(spi2_modes spiUniqueConfiguration)
         SSP2CON2 = 0x00;
         SSP2ADD  = (uint8_t)(spi2_configuration[spiUniqueConfiguration].add);
 
-        TRISBbits.TRISB1 = (uint8_t)(spi2_configuration[spiUniqueConfiguration].operation);
+        TRISDbits.TRISD0 = (uint8_t)(spi2_configuration[spiUniqueConfiguration].operation);
         return true;
     }
     return false;

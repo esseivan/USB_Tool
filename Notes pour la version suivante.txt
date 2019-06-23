@@ -1,4 +1,4 @@
-Eviter de mettre des composants sur Bot
+OK	Eviter de mettre des composants sur Bot
 OK	Pattern LED RGB incorrect, espace entre pads un peu trop grand
 OK	Ajouter une led constante indiquant si le courant est la (indépendante du uc)
 OK	Pattern Fusible 500mA incorrect, espace entre pads trop petit

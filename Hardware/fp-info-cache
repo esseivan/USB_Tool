@@ -1,4 +1,4 @@
-277636726634688
+280782278202532
 0EsseivaN_Lib
 2conn
 
@@ -287,6 +287,13 @@ capacitor 0603
 2
 2
 0EsseivaN_Lib
+D_0805_HandSoldering
+Resistor SMD 0805, hand soldering
+resistor 0805
+0
+2
+2
+0EsseivaN_Lib
 D_DO-35_SOD27_P10.16mm_Horizontal
 D, DO-35_SOD27 series, Axial, Horizontal, pin pitch=10.16mm, , length*diameter=4*2mm^2, , http://www.diodes.com/_files/packages/DO-35.pdf
 D DO-35_SOD27 series Axial Horizontal pin pitch 10.16mm  length 4mm diameter 2mm
@@ -482,6 +489,13 @@ Through hole pin header THT 1x03 2.54mm single row
 0
 3
 3
+0EsseivaN_Lib
+Pin_Header_Straight_1x05_Pitch2.54mm
+Through hole straight pin header, 1x06, 2.54mm pitch, single row
+Through hole pin header THT 1x06 2.54mm single row
+0
+5
+5
 0EsseivaN_Lib
 Pin_Header_Straight_1x06_Pitch2.54mm
 Through hole straight pin header, 1x06, 2.54mm pitch, single row
