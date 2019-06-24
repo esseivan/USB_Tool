@@ -6,7 +6,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "RF_433MHz_Receiver"
-Date "2019-06-23"
+Date "2019-06-24"
 Rev "00"
 Comp "EsseivaN"
 Comment1 "Author : Esseiva Nicolas"
@@ -14,9 +14,9 @@ Comment2 "RF 433MHz Receiver extension"
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Label 2700 4500 0    50   ~ 0
+Text Label 2700 4500 0    50   ~ 6
 SDA
-Text Label 2700 4600 0    50   ~ 0
+Text Label 2700 4600 0    50   ~ 6
 SCL
 $Comp
 L 0EsseivaN_Lib:RF_RECEIVER U2
@@ -137,23 +137,23 @@ Wire Wire Line
 	2500 3100 2500 2700
 Wire Wire Line
 	2500 2700 2400 2700
-Text GLabel 3950 2600 0    50   BiDi ~ 0
+Text GLabel 3950 2600 0    50   BiDi ~ 6
 ICSPDAT
-Text GLabel 3950 2700 0    50   Input ~ 0
+Text GLabel 3950 2700 0    50   Input ~ 6
 ICSPCLK
-Text GLabel 3750 2900 0    50   UnSpc ~ 0
+Text GLabel 3750 2900 0    50   UnSpc ~ 6
 VPP
-Text GLabel 4750 2600 2    50   BiDi ~ 0
+Text GLabel 4750 2600 2    50   BiDi ~ 6
 SCL
-Text GLabel 4750 2700 2    50   BiDi ~ 0
+Text GLabel 4750 2700 2    50   BiDi ~ 6
 SDA
 Wire Wire Line
 	4650 2600 4750 2600
 Wire Wire Line
 	4650 2700 4750 2700
-Text GLabel 3600 4050 0    50   BiDi ~ 0
+Text GLabel 3600 4050 0    50   BiDi ~ 6
 SCL
-Text GLabel 3600 4200 0    50   BiDi ~ 0
+Text GLabel 3600 4200 0    50   BiDi ~ 6
 SDA
 Wire Wire Line
 	3850 2800 4050 2800
@@ -161,15 +161,15 @@ Wire Wire Line
 	3950 2700 4050 2700
 Wire Wire Line
 	3950 2600 4050 2600
-Text GLabel 2700 2800 2    50   BiDi ~ 0
+Text GLabel 2700 2800 2    50   BiDi ~ 6
 ICSPDAT
-Text GLabel 2700 2900 2    50   Output ~ 0
+Text GLabel 2700 2900 2    50   Output ~ 6
 ICSPCLK
 Wire Wire Line
 	2400 2900 2700 2900
 Wire Wire Line
 	2400 2800 2700 2800
-Text GLabel 2700 2500 2    50   UnSpc ~ 0
+Text GLabel 2700 2500 2    50   UnSpc ~ 6
 VPP
 Wire Wire Line
 	2600 2500 2700 2500
@@ -280,7 +280,7 @@ F 3 "" H 6050 3700 50  0000 C CNN
 	1    6050 3700
 	0    1    1    0   
 $EndComp
-Text Notes 5950 2800 0    50   ~ 0
+Text Notes 5950 2800 0    50   ~ 6
 R2..6\n5x1k
 Wire Wire Line
 	6250 2900 6300 2900
@@ -452,15 +452,15 @@ Wire Wire Line
 Connection ~ 3800 4600
 Wire Wire Line
 	3800 4600 2550 4600
-Text Label 2700 4400 0    50   ~ 0
+Text Label 2700 4400 0    50   ~ 6
 3V3
-Text Label 2700 4300 0    50   ~ 0
+Text Label 2700 4300 0    50   ~ 6
 5V
-Text Label 2700 5100 0    50   ~ 0
+Text Label 2700 5100 0    50   ~ 6
 GND
-Text Label 2700 4800 0    50   ~ 0
+Text Label 2700 4800 0    50   ~ 6
 DAC_OUT
-Text Label 2700 4700 0    50   ~ 0
+Text Label 2700 4700 0    50   ~ 6
 CLKR
 $Comp
 L 0EsseivaN_Lib:CONN_01X09 X4
@@ -494,21 +494,21 @@ Wire Wire Line
 	3100 4300 4250 4300
 Wire Wire Line
 	3100 5100 4250 5100
-Text Label 5200 4300 0    50   ~ 0
+Text Label 5200 4300 0    50   ~ 6
 D0
-Text Label 5200 4400 0    50   ~ 0
+Text Label 5200 4400 0    50   ~ 6
 D1
-Text Label 5200 4500 0    50   ~ 0
+Text Label 5200 4500 0    50   ~ 6
 D2
-Text Label 5200 4600 0    50   ~ 0
+Text Label 5200 4600 0    50   ~ 6
 D3
-Text Label 5200 4700 0    50   ~ 0
+Text Label 5200 4700 0    50   ~ 6
 D4
-Text Label 5200 4800 0    50   ~ 0
+Text Label 5200 4800 0    50   ~ 6
 D5
-Text Label 5200 5000 0    50   ~ 0
+Text Label 5200 5000 0    50   ~ 6
 ~INT1
-Text Label 5200 5100 0    50   ~ 0
+Text Label 5200 5100 0    50   ~ 6
 ~INT2
 Wire Wire Line
 	5150 4300 6100 4300
@@ -526,9 +526,9 @@ Wire Wire Line
 	5150 5000 6100 5000
 Wire Wire Line
 	5150 5100 6100 5100
-Text Notes 5150 5300 2    59   ~ 0
+Text Notes 5150 5300 2    59   ~ 6
 3V3 MAX !
-Text Notes 2550 5250 2    59   ~ 0
+Text Notes 2550 5250 2    59   ~ 6
 3V3 MAX !
 Wire Wire Line
 	2550 4800 4250 4800
@@ -538,7 +538,7 @@ Wire Wire Line
 	2550 4900 4250 4900
 Wire Wire Line
 	5150 4900 5500 4900
-Text Label 5200 4900 0    50   ~ 0
+Text Label 5200 4900 0    50   ~ 6
 ~INT0
 Wire Wire Line
 	2550 4700 4250 4700
