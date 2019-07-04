@@ -6,36 +6,17 @@
  */
 
 #include "mcc_generated_files/mcc.h"
+#include "main.h"
+#include "LedBlink.h"
+#include "commands.h"
+#include "ext_rf_receiver.h"
+
 
 /*
-                         Main application
+    Main application
  */
-void spi_isr(void);
-void Delay_Xms(long delay);
 
-void SetLed(bool R, bool G, bool B) {
-    if(R)
-        LED2_SetLow();
-    else
-        LED2_SetHigh();
-    
-    if(G)
-        LED1_SetLow();
-    else
-        LED1_SetHigh();
-    
-    if(B)
-        LED0_SetLow();
-    else
-        LED0_SetHigh();
-}
-
-void spi_isr(void) {
-    SetLed(true, false, false);
-    Delay_Xms(100);
-    SetLed(false, false, false);
-    Delay_Xms(100);
-}
+char SentI2CCmd = 0;
 
 void Delay_Xms(long delay) {
     for(long i = 0; i < delay; i++) {
@@ -43,15 +24,30 @@ void Delay_Xms(long delay) {
     }
 }
 
+void INT0_Custom_ISR(void) {
+    // Request module index over I2C
+    
+    unsigned char index = I2C_SendCommand(EXT_TARGET_RF_RX,CMD2_GET_MODULE_INDEX);
+    
+    if(index == EXT_INDEX_RF_RX) {
+        ext_rf_runcmd();
+    }
+    // Wait for answer
+    ToggleLed(R);
+}
 
-void ledBlink_RGB(long delay){
-    SetLed(true, false, false);
-    Delay_Xms(delay);
-    SetLed(false, true, false);
-    Delay_Xms(delay);
-    SetLed(false, false, true);
-    Delay_Xms(delay);
-    SetLed(false, false, false);
+void RunLoop(void) {
+    // Check if uart data received
+    if(EUSART1_is_rx_ready() != 0) {
+        // Blink led
+        SetLedBlink(B, 5, 95, 0, 1);
+        while(EUSART1_is_rx_ready() != 0)
+        {
+            while(!EUSART1_is_tx_ready());
+            
+            EUSART1_Write(EUSART1_Read());
+        }
+    }
 }
 
 void main(void)
@@ -60,7 +56,7 @@ void main(void)
     SYSTEM_Initialize();
 
     // Init
-    
+    ext_rf_initialize();
     
     // If using interrupts in PIC18 High/Low Priority Mode you need to enable the Global High and Low Interrupts
     // If using interrupts in PIC Mid-Range Compatibility Mode you need to enable the Global and Peripheral Interrupts
@@ -69,27 +65,45 @@ void main(void)
     // Enable the Global Interrupts
     INTERRUPT_GlobalInterruptEnable();
 
-    // Disable the Global Interrupts
-    INTERRUPT_GlobalInterruptDisable();
-
     // Enable the Peripheral Interrupts
-    //INTERRUPT_PeripheralInterruptEnable();
-
+    INTERRUPT_PeripheralInterruptEnable();
+    
+    // Disable the Global Interrupts
+    //INTERRUPT_GlobalInterruptDisable();
+    
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
-
-    ledBlink_RGB(200);
-        
+    
+    TMR2_SetInterruptHandler(TMR2_Custom_ISR);
+    INT0_SetInterruptHandler(INT0_Custom_ISR);
+    
+    // Enabled MCP2221
+    RESET_USB_SetHigh();
+    RESET_RF_SetLow();
+    
+    // Enable Led blink in background
+    
+    SetLedBlink(RGB_R,20,40,0,2);
+    SetLedBlink(RGB_G,20,40,20,2);
+    SetLedBlink(RGB_B,20,40,40,2);
+    
+    SetLedBlink(R,20,40,0,2);
+    SetLedBlink(G,20,40,20,2);
+    SetLedBlink(B,20,40,40,2);
+    
+    Delay_Xms(1200);
+    // Disable leds blink
+    SetLedBlink(G,5,95,0,-1);
+    
     while (1)
     {
-        SetLed(false,true,false);
+        RunLoop();
         Delay_Xms(100);
-        SetLed(false,false,false);
-        Delay_Xms(900);
     }
     
     while (1);
 }
+
 /**
  End of File
 */

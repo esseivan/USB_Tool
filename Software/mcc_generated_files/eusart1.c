@@ -14,7 +14,7 @@
     This source file provides APIs for EUSART1.
     Generation Information :
         Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.76
-        Device            :  PIC18F46K40
+        Device            :  PIC18LF46K40
         Driver Version    :  2.1.0
     The generated drivers are tested against the following:
         Compiler          :  XC8 2.00
@@ -48,13 +48,14 @@
   Section: Included Files
 */
 #include "eusart1.h"
-
+#include "../main.h"
+#include "../LedBlink.h"
 /**
   Section: Macro Declarations
 */
 
-#define EUSART1_TX_BUFFER_SIZE 8
-#define EUSART1_RX_BUFFER_SIZE 8
+#define EUSART1_TX_BUFFER_SIZE 64
+#define EUSART1_RX_BUFFER_SIZE 64
 
 /**
   Section: Global Variables
@@ -91,17 +92,17 @@ void EUSART1_Initialize(void)
     EUSART1_SetTxInterruptHandler(EUSART1_Transmit_ISR);
     // Set the EUSART1 module to the options selected in the user interface.
 
-    // ABDOVF no_overflow; SCKP Non-Inverted; BRG16 16bit_generator; WUE enabled; ABDEN enabled; 
-    BAUD1CON = 0x0B;
+    // ABDOVF no_overflow; SCKP Non-Inverted; BRG16 16bit_generator; WUE disabled; ABDEN disabled; 
+    BAUD1CON = 0x08;
 
-    // SPEN enabled; RX9 8-bit; CREN enabled; ADDEN enabled; SREN disabled; 
-    RC1STA = 0x98;
+    // SPEN enabled; RX9 8-bit; CREN enabled; ADDEN disabled; SREN disabled; 
+    RC1STA = 0x90;
 
     // TX9 8-bit; TX9D 0; SENDB sync_break_complete; TXEN disabled; SYNC asynchronous; BRGH hi_speed; CSRC slave; 
     TX1STA = 0x04;
 
-    // SP1BRGL 12; 
-    SP1BRGL = 0x0C;
+    // SP1BRGL 51; 
+    SP1BRGL = 0x33;
 
     // SP1BRGH 0; 
     SP1BRGH = 0x00;
@@ -232,6 +233,7 @@ void EUSART1_Receive_ISR(void)
     }
     
     // or set custom function using EUSART1_SetRxInterruptHandler()
+    //ToggleLed(B);
 }
 
 void EUSART1_RxDataHandler(void){

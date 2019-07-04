@@ -4,7 +4,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "51
 [p x RSTOSC=HFINTOSC_64MHZ ]
 "54
-[p x CLKOUTEN=ON ]
+[p x CLKOUTEN=OFF ]
 "55
 [p x CSWEN=ON ]
 "56
@@ -18,7 +18,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "62
 [p x BOREN=SBORDIS ]
 "65
-[p x BORV=VBOR_2P45 ]
+[p x BORV=VBOR_190 ]
 "66
 [p x ZCD=OFF ]
 "67

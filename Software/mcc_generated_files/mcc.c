@@ -14,7 +14,7 @@
     This header file provides implementations for driver APIs for all modules selected in the GUI.
     Generation Information :
         Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.76
-        Device            :  PIC18F46K40
+        Device            :  PIC18LF46K40
         Driver Version    :  2.00
     The generated drivers are tested against the following:
         Compiler          :  XC8 2.00 or later
@@ -45,6 +45,7 @@
 */
 
 #include "mcc.h"
+#include "../LedBlink.h"
 
 
 void SYSTEM_Initialize(void)
@@ -60,6 +61,8 @@ void SYSTEM_Initialize(void)
     EXT_INT_Initialize();
     EUSART1_Initialize();
     CLKREF_Initialize();
+    I2C1_Initialize();
+    SPI2_Initialize();
 }
 
 void OSCILLATOR_Initialize(void)
@@ -92,6 +95,13 @@ void PMD_Initialize(void)
     PMD5 = 0x00;
 }
 
+void I2C1_Initialize(void) {
+    I2C_Master_Init();
+}
+
+void SPI2_Initialize(void) {
+    spi2_open(SPI2_DEFAULT);
+}
 
 /**
  End of File

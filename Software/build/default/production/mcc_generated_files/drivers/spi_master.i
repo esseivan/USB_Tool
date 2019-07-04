@@ -177,6 +177,7 @@ void spi2_writeByte(uint8_t byte);
 uint8_t spi2_readByte(void);
 
 void spi2_isr(void);
+void spi2_runIsr(void);
 void spi2_setSpiISR(void(*handler)(void));
 
 # 33 "mcc_generated_files/drivers/spi_master.h"

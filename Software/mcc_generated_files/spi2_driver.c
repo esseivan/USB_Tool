@@ -38,6 +38,7 @@ inline void spi2_close(void)
 //con1 == SSPxCON1, stat == SSPxSTAT, add == SSPxADD, operation == Master/Slave
 typedef struct { uint8_t con1; uint8_t stat; uint8_t add; uint8_t operation; } spi2_configuration_t;
 static const spi2_configuration_t spi2_configuration[] = {
+    { 0xa, 0x40, 0xe, 0 },
     { 0xa, 0x40, 0xe, 0 }
 };
 
@@ -116,10 +117,14 @@ uint8_t spi2_readByte(void){
  */
 void spi2_isr(void){
     if(PIR3bits.SSP2IF == 1){
-        if(spi2_interruptHandler){
-            spi2_interruptHandler();
-        }
+        spi2_runIsr();
         PIR3bits.SSP2IF = 0;
+    }
+}
+
+void spi2_runIsr(void) {
+    if(spi2_interruptHandler){
+        spi2_interruptHandler();
     }
 }
 

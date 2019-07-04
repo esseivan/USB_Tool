@@ -14,7 +14,7 @@
     This header file provides implementations for pin APIs for all pins selected in the GUI.
     Generation Information :
         Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.76
-        Device            :  PIC18F46K40
+        Device            :  PIC18LF46K40
         Driver Version    :  2.11
     The generated drivers are tested against the following:
         Compiler          :  XC8 2.00
@@ -202,20 +202,22 @@ void PIN_MANAGER_Initialize(void)
     PIE0bits.IOCIE = 1; 
     
 	
-    SSP1CLKPPS = 0x0A;   //RB2->MSSP1:SCL1;    
-    SSP2DATPPS = 0x19;   //RD1->MSSP2:SDI2;    
+    SSP1CLKPPS = 0x0A;   //RB2->MSSP1:SCL1;   
+    RB2PPS = 0x0F;   //RB2->MSSP1:SCL1;    
+    SSP1DATPPS = 0x0B;   //RB3->MSSP1:SDA1;   
+    RB3PPS = 0x00;   //RB3->MSSP1:SDA1;    
+    
+    SSP2CLKPPS = 0x18;   //RD0->MSSP2:SCK2;      
+    RD0PPS = 0x11;   //RD0->MSSP2:SCK2;   
+    SSP2DATPPS = 0x19;   //RD1->MSSP2:SDI2;  
+    RD2PPS = 0x12;   //RD2->MSSP2:SDO2;     
+    
     INT0PPS = 0x05;   //RA5->EXT_INT:INT0;    
     RB4PPS = 0x14;   //RB4->CLKREF:CLKR;    
     INT2PPS = 0x07;   //RA7->EXT_INT:INT2;    
-    INT1PPS = 0x06;   //RA6->EXT_INT:INT1;    
-    SSP1DATPPS = 0x0B;   //RB3->MSSP1:SDA1;    
-    SSP2CLKPPS = 0x18;   //RD0->MSSP2:SCK2;    
-    RD2PPS = 0x12;   //RD2->MSSP2:SDO2;    
+    INT1PPS = 0x06;   //RA6->EXT_INT:INT1;     
     RX1PPS = 0x08;   //RB0->EUSART1:RX1;    
-    RB1PPS = 0x09;   //RB1->EUSART1:TX1;    
-    RB2PPS = 0x0F;   //RB2->MSSP1:SCL1;    
-    RB3PPS = 0x10;   //RB3->MSSP1:SDA1;    
-    RD0PPS = 0x11;   //RD0->MSSP2:SCK2;    
+    RB1PPS = 0x09;   //RB1->EUSART1:TX1;   
 }
   
 void PIN_MANAGER_IOC(void)

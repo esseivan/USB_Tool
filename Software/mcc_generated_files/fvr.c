@@ -14,7 +14,7 @@
     This source file provides APIs for FVR.
     Generation Information :
         Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.76
-        Device            :  PIC18F46K40
+        Device            :  PIC18LF46K40
         Driver Version    :  2.01
     The generated drivers are tested against the following:
         Compiler          :  XC8 2.00
@@ -57,8 +57,8 @@
 
 void FVR_Initialize(void)
 {
-    // FVRRDY disabled; CDAFVR 4x; EN enabled; TSRNG Lo_range; ADFVR off; TSEN disabled; 
-    FVRCON = 0x8C;
+    // FVRRDY disabled; CDAFVR 1x; EN enabled; TSRNG Lo_range; ADFVR off; TSEN disabled; 
+    FVRCON = 0x84;
 }
 
 bool FVR_IsOutputReady(void)

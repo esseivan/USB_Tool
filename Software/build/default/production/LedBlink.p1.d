@@ -1,0 +1,19 @@
+ build/default/production/LedBlink.d  \
+ build/default/production/LedBlink.p1:  \
+ LedBlink.c  \
+mcc_generated_files/fvr.h  \
+mcc_generated_files/clkref.h  \
+mcc_generated_files/mcc.h  \
+main.h  \
+mcc_generated_files/eusart1.h  \
+mcc_generated_files/dac1.h  \
+mcc_generated_files/../iic.h  \
+mcc_generated_files/device_config.h  \
+mcc_generated_files/ext_int.h  \
+mcc_generated_files/spi2_types.h  \
+LedBlink.h  \
+mcc_generated_files/spi2_driver.h  \
+mcc_generated_files/interrupt_manager.h  \
+mcc_generated_files/tmr2.h  \
+mcc_generated_files/tmr4.h  \
+mcc_generated_files/pin_manager.h 

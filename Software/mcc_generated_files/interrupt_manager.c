@@ -16,7 +16,7 @@
     all modules selected in the GUI.
     Generation Information :
         Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.76
-        Device            :  PIC18F46K40
+        Device            :  PIC18LF46K40
         Driver Version    :  2.03
     The generated drivers are tested against the following:
         Compiler          :  XC8 2.00 or later
@@ -78,12 +78,8 @@ void __interrupt() INTERRUPT_InterruptManager (void)
     {
         if(PIE3bits.BCL1IE == 1 && PIR3bits.BCL1IF == 1)
         {
-            i2c1_driver_busCollisionISR();
-        } 
-        else if(PIE3bits.SSP1IE == 1 && PIR3bits.SSP1IF == 1)
-        {
-            i2c1_driver_i2cISR();
-        } 
+            I2C_BusCollisionISR();
+        }
         else if(PIE3bits.TX1IE == 1 && PIR3bits.TX1IF == 1)
         {
             EUSART1_TxDefaultInterruptHandler();
@@ -95,6 +91,10 @@ void __interrupt() INTERRUPT_InterruptManager (void)
         else if(PIE4bits.TMR4IE == 1 && PIR4bits.TMR4IF == 1)
         {
             TMR4_ISR();
+        } 
+        else if(PIE4bits.TMR2IE == 1 && PIR4bits.TMR2IF == 1)
+        {
+            TMR2_ISR();
         } 
         else
         {

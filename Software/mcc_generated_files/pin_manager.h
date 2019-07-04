@@ -14,7 +14,7 @@
     This header file provides APIs for driver for .
     Generation Information :
         Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.76
-        Device            :  PIC18F46K40
+        Device            :  PIC18LF46K40
         Driver Version    :  2.11
     The generated drivers are tested against the following:
         Compiler          :  XC8 2.00
@@ -589,65 +589,65 @@
 #define CSCON_SetAnalogMode()      do { ANSELDbits.ANSELD4 = 1; } while(0)
 #define CSCON_SetDigitalMode()     do { ANSELDbits.ANSELD4 = 0; } while(0)
 
-// get/set LED0 aliases
-#define LED0_TRIS                 TRISDbits.TRISD5
-#define LED0_LAT                  LATDbits.LATD5
-#define LED0_PORT                 PORTDbits.RD5
-#define LED0_WPU                  WPUDbits.WPUD5
-#define LED0_OD                   ODCONDbits.ODCD5
-#define LED0_ANS                  ANSELDbits.ANSELD5
-#define LED0_SetHigh()            do { LATDbits.LATD5 = 1; } while(0)
-#define LED0_SetLow()             do { LATDbits.LATD5 = 0; } while(0)
-#define LED0_Toggle()             do { LATDbits.LATD5 = ~LATDbits.LATD5; } while(0)
-#define LED0_GetValue()           PORTDbits.RD5
-#define LED0_SetDigitalInput()    do { TRISDbits.TRISD5 = 1; } while(0)
-#define LED0_SetDigitalOutput()   do { TRISDbits.TRISD5 = 0; } while(0)
-#define LED0_SetPullup()          do { WPUDbits.WPUD5 = 1; } while(0)
-#define LED0_ResetPullup()        do { WPUDbits.WPUD5 = 0; } while(0)
-#define LED0_SetPushPull()        do { ODCONDbits.ODCD5 = 0; } while(0)
-#define LED0_SetOpenDrain()       do { ODCONDbits.ODCD5 = 1; } while(0)
-#define LED0_SetAnalogMode()      do { ANSELDbits.ANSELD5 = 1; } while(0)
-#define LED0_SetDigitalMode()     do { ANSELDbits.ANSELD5 = 0; } while(0)
+// get/set LED_R aliases
+#define LED_R_TRIS                 TRISDbits.TRISD5
+#define LED_R_LAT                  LATDbits.LATD5
+#define LED_R_PORT                 PORTDbits.RD5
+#define LED_R_WPU                  WPUDbits.WPUD5
+#define LED_R_OD                   ODCONDbits.ODCD5
+#define LED_R_ANS                  ANSELDbits.ANSELD5
+#define LED_R_SetHigh()            do { LATDbits.LATD5 = 1; } while(0)
+#define LED_R_SetLow()             do { LATDbits.LATD5 = 0; } while(0)
+#define LED_R_Toggle()             do { LATDbits.LATD5 = ~LATDbits.LATD5; } while(0)
+#define LED_R_GetValue()           PORTDbits.RD5
+#define LED_R_SetDigitalInput()    do { TRISDbits.TRISD5 = 1; } while(0)
+#define LED_R_SetDigitalOutput()   do { TRISDbits.TRISD5 = 0; } while(0)
+#define LED_R_SetPullup()          do { WPUDbits.WPUD5 = 1; } while(0)
+#define LED_R_ResetPullup()        do { WPUDbits.WPUD5 = 0; } while(0)
+#define LED_R_SetPushPull()        do { ODCONDbits.ODCD5 = 0; } while(0)
+#define LED_R_SetOpenDrain()       do { ODCONDbits.ODCD5 = 1; } while(0)
+#define LED_R_SetAnalogMode()      do { ANSELDbits.ANSELD5 = 1; } while(0)
+#define LED_R_SetDigitalMode()     do { ANSELDbits.ANSELD5 = 0; } while(0)
 
-// get/set LED1 aliases
-#define LED1_TRIS                 TRISDbits.TRISD6
-#define LED1_LAT                  LATDbits.LATD6
-#define LED1_PORT                 PORTDbits.RD6
-#define LED1_WPU                  WPUDbits.WPUD6
-#define LED1_OD                   ODCONDbits.ODCD6
-#define LED1_ANS                  ANSELDbits.ANSELD6
-#define LED1_SetHigh()            do { LATDbits.LATD6 = 1; } while(0)
-#define LED1_SetLow()             do { LATDbits.LATD6 = 0; } while(0)
-#define LED1_Toggle()             do { LATDbits.LATD6 = ~LATDbits.LATD6; } while(0)
-#define LED1_GetValue()           PORTDbits.RD6
-#define LED1_SetDigitalInput()    do { TRISDbits.TRISD6 = 1; } while(0)
-#define LED1_SetDigitalOutput()   do { TRISDbits.TRISD6 = 0; } while(0)
-#define LED1_SetPullup()          do { WPUDbits.WPUD6 = 1; } while(0)
-#define LED1_ResetPullup()        do { WPUDbits.WPUD6 = 0; } while(0)
-#define LED1_SetPushPull()        do { ODCONDbits.ODCD6 = 0; } while(0)
-#define LED1_SetOpenDrain()       do { ODCONDbits.ODCD6 = 1; } while(0)
-#define LED1_SetAnalogMode()      do { ANSELDbits.ANSELD6 = 1; } while(0)
-#define LED1_SetDigitalMode()     do { ANSELDbits.ANSELD6 = 0; } while(0)
+// get/set LED_G aliases
+#define LED_G_TRIS                 TRISDbits.TRISD6
+#define LED_G_LAT                  LATDbits.LATD6
+#define LED_G_PORT                 PORTDbits.RD6
+#define LED_G_WPU                  WPUDbits.WPUD6
+#define LED_G_OD                   ODCONDbits.ODCD6
+#define LED_G_ANS                  ANSELDbits.ANSELD6
+#define LED_G_SetHigh()            do { LATDbits.LATD6 = 1; } while(0)
+#define LED_G_SetLow()             do { LATDbits.LATD6 = 0; } while(0)
+#define LED_G_Toggle()             do { LATDbits.LATD6 = ~LATDbits.LATD6; } while(0)
+#define LED_G_GetValue()           PORTDbits.RD6
+#define LED_G_SetDigitalInput()    do { TRISDbits.TRISD6 = 1; } while(0)
+#define LED_G_SetDigitalOutput()   do { TRISDbits.TRISD6 = 0; } while(0)
+#define LED_G_SetPullup()          do { WPUDbits.WPUD6 = 1; } while(0)
+#define LED_G_ResetPullup()        do { WPUDbits.WPUD6 = 0; } while(0)
+#define LED_G_SetPushPull()        do { ODCONDbits.ODCD6 = 0; } while(0)
+#define LED_G_SetOpenDrain()       do { ODCONDbits.ODCD6 = 1; } while(0)
+#define LED_G_SetAnalogMode()      do { ANSELDbits.ANSELD6 = 1; } while(0)
+#define LED_G_SetDigitalMode()     do { ANSELDbits.ANSELD6 = 0; } while(0)
 
-// get/set LED2 aliases
-#define LED2_TRIS                 TRISDbits.TRISD7
-#define LED2_LAT                  LATDbits.LATD7
-#define LED2_PORT                 PORTDbits.RD7
-#define LED2_WPU                  WPUDbits.WPUD7
-#define LED2_OD                   ODCONDbits.ODCD7
-#define LED2_ANS                  ANSELDbits.ANSELD7
-#define LED2_SetHigh()            do { LATDbits.LATD7 = 1; } while(0)
-#define LED2_SetLow()             do { LATDbits.LATD7 = 0; } while(0)
-#define LED2_Toggle()             do { LATDbits.LATD7 = ~LATDbits.LATD7; } while(0)
-#define LED2_GetValue()           PORTDbits.RD7
-#define LED2_SetDigitalInput()    do { TRISDbits.TRISD7 = 1; } while(0)
-#define LED2_SetDigitalOutput()   do { TRISDbits.TRISD7 = 0; } while(0)
-#define LED2_SetPullup()          do { WPUDbits.WPUD7 = 1; } while(0)
-#define LED2_ResetPullup()        do { WPUDbits.WPUD7 = 0; } while(0)
-#define LED2_SetPushPull()        do { ODCONDbits.ODCD7 = 0; } while(0)
-#define LED2_SetOpenDrain()       do { ODCONDbits.ODCD7 = 1; } while(0)
-#define LED2_SetAnalogMode()      do { ANSELDbits.ANSELD7 = 1; } while(0)
-#define LED2_SetDigitalMode()     do { ANSELDbits.ANSELD7 = 0; } while(0)
+// get/set LED_B aliases
+#define LED_B_TRIS                 TRISDbits.TRISD7
+#define LED_B_LAT                  LATDbits.LATD7
+#define LED_B_PORT                 PORTDbits.RD7
+#define LED_B_WPU                  WPUDbits.WPUD7
+#define LED_B_OD                   ODCONDbits.ODCD7
+#define LED_B_ANS                  ANSELDbits.ANSELD7
+#define LED_B_SetHigh()            do { LATDbits.LATD7 = 1; } while(0)
+#define LED_B_SetLow()             do { LATDbits.LATD7 = 0; } while(0)
+#define LED_B_Toggle()             do { LATDbits.LATD7 = ~LATDbits.LATD7; } while(0)
+#define LED_B_GetValue()           PORTDbits.RD7
+#define LED_B_SetDigitalInput()    do { TRISDbits.TRISD7 = 1; } while(0)
+#define LED_B_SetDigitalOutput()   do { TRISDbits.TRISD7 = 0; } while(0)
+#define LED_B_SetPullup()          do { WPUDbits.WPUD7 = 1; } while(0)
+#define LED_B_ResetPullup()        do { WPUDbits.WPUD7 = 0; } while(0)
+#define LED_B_SetPushPull()        do { ODCONDbits.ODCD7 = 0; } while(0)
+#define LED_B_SetOpenDrain()       do { ODCONDbits.ODCD7 = 1; } while(0)
+#define LED_B_SetAnalogMode()      do { ANSELDbits.ANSELD7 = 1; } while(0)
+#define LED_B_SetDigitalMode()     do { ANSELDbits.ANSELD7 = 0; } while(0)
 
 // get/set LEDRGB_B aliases
 #define LEDRGB_B_TRIS                 TRISEbits.TRISE0

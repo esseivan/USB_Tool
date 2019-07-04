@@ -14,9 +14,9 @@ Comment2 "RF 433MHz Receiver extension"
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Label 2700 4500 0    50   ~ 6
+Text Label 2700 4500 0    50   ~ 10
 SDA
-Text Label 2700 4600 0    50   ~ 6
+Text Label 2700 4600 0    50   ~ 10
 SCL
 $Comp
 L 0EsseivaN_Lib:RF_RECEIVER U2
@@ -42,17 +42,6 @@ F 3 "" H 6700 3950 50  0000 C CNN
 $EndComp
 Wire Wire Line
 	6700 3950 6700 3900
-$Comp
-L 0EsseivaN_Lib:5V #PWR09
-U 1 1 5CF4A0A7
-P 6700 2350
-F 0 "#PWR09" H 6700 2200 50  0001 C CNN
-F 1 "5V" H 6717 2520 45  0000 C CNN
-F 2 "" H 6700 2350 50  0000 C CNN
-F 3 "" H 6700 2350 50  0000 C CNN
-	1    6700 2350
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	6700 2350 6700 2400
 $Comp
@@ -137,23 +126,23 @@ Wire Wire Line
 	2500 3100 2500 2700
 Wire Wire Line
 	2500 2700 2400 2700
-Text GLabel 3950 2600 0    50   BiDi ~ 6
+Text GLabel 3950 2600 0    50   BiDi ~ 10
 ICSPDAT
-Text GLabel 3950 2700 0    50   Input ~ 6
+Text GLabel 3950 2700 0    50   Input ~ 10
 ICSPCLK
-Text GLabel 3750 2900 0    50   UnSpc ~ 6
+Text GLabel 3750 2900 0    50   UnSpc ~ 10
 VPP
-Text GLabel 4750 2600 2    50   BiDi ~ 6
+Text GLabel 4750 2600 2    50   BiDi ~ 10
 SCL
-Text GLabel 4750 2700 2    50   BiDi ~ 6
+Text GLabel 4750 2700 2    50   BiDi ~ 10
 SDA
 Wire Wire Line
 	4650 2600 4750 2600
 Wire Wire Line
 	4650 2700 4750 2700
-Text GLabel 3600 4050 0    50   BiDi ~ 6
+Text GLabel 3600 4050 0    50   BiDi ~ 10
 SCL
-Text GLabel 3600 4200 0    50   BiDi ~ 6
+Text GLabel 3600 4200 0    50   BiDi ~ 10
 SDA
 Wire Wire Line
 	3850 2800 4050 2800
@@ -161,15 +150,15 @@ Wire Wire Line
 	3950 2700 4050 2700
 Wire Wire Line
 	3950 2600 4050 2600
-Text GLabel 2700 2800 2    50   BiDi ~ 6
+Text GLabel 2700 2800 2    50   BiDi ~ 10
 ICSPDAT
-Text GLabel 2700 2900 2    50   Output ~ 6
+Text GLabel 2700 2900 2    50   Output ~ 10
 ICSPCLK
 Wire Wire Line
 	2400 2900 2700 2900
 Wire Wire Line
 	2400 2800 2700 2800
-Text GLabel 2700 2500 2    50   UnSpc ~ 6
+Text GLabel 2700 2500 2    50   UnSpc ~ 10
 VPP
 Wire Wire Line
 	2600 2500 2700 2500
@@ -280,7 +269,7 @@ F 3 "" H 6050 3700 50  0000 C CNN
 	1    6050 3700
 	0    1    1    0   
 $EndComp
-Text Notes 5950 2800 0    50   ~ 6
+Text Notes 5950 2800 0    50   ~ 10
 R2..6\n5x1k
 Wire Wire Line
 	6250 2900 6300 2900
@@ -452,15 +441,15 @@ Wire Wire Line
 Connection ~ 3800 4600
 Wire Wire Line
 	3800 4600 2550 4600
-Text Label 2700 4400 0    50   ~ 6
+Text Label 2700 4400 0    50   ~ 10
 3V3
-Text Label 2700 4300 0    50   ~ 6
+Text Label 2700 4300 0    50   ~ 10
 5V
-Text Label 2700 5100 0    50   ~ 6
+Text Label 2700 5100 0    50   ~ 10
 GND
-Text Label 2700 4800 0    50   ~ 6
+Text Label 2700 4800 0    50   ~ 10
 DAC_OUT
-Text Label 2700 4700 0    50   ~ 6
+Text Label 2700 4700 0    50   ~ 10
 CLKR
 $Comp
 L 0EsseivaN_Lib:CONN_01X09 X4
@@ -494,21 +483,21 @@ Wire Wire Line
 	3100 4300 4250 4300
 Wire Wire Line
 	3100 5100 4250 5100
-Text Label 5200 4300 0    50   ~ 6
+Text Label 5200 4300 0    50   ~ 10
 D0
-Text Label 5200 4400 0    50   ~ 6
+Text Label 5200 4400 0    50   ~ 10
 D1
-Text Label 5200 4500 0    50   ~ 6
+Text Label 5200 4500 0    50   ~ 10
 D2
-Text Label 5200 4600 0    50   ~ 6
+Text Label 5200 4600 0    50   ~ 10
 D3
-Text Label 5200 4700 0    50   ~ 6
+Text Label 5200 4700 0    50   ~ 10
 D4
-Text Label 5200 4800 0    50   ~ 6
+Text Label 5200 4800 0    50   ~ 10
 D5
-Text Label 5200 5000 0    50   ~ 6
+Text Label 5200 5000 0    50   ~ 10
 ~INT1
-Text Label 5200 5100 0    50   ~ 6
+Text Label 5200 5100 0    50   ~ 10
 ~INT2
 Wire Wire Line
 	5150 4300 6100 4300
@@ -526,9 +515,9 @@ Wire Wire Line
 	5150 5000 6100 5000
 Wire Wire Line
 	5150 5100 6100 5100
-Text Notes 5150 5300 2    59   ~ 6
+Text Notes 5150 5300 2    59   ~ 12
 3V3 MAX !
-Text Notes 2550 5250 2    59   ~ 6
+Text Notes 2550 5250 2    59   ~ 12
 3V3 MAX !
 Wire Wire Line
 	2550 4800 4250 4800
@@ -538,7 +527,7 @@ Wire Wire Line
 	2550 4900 4250 4900
 Wire Wire Line
 	5150 4900 5500 4900
-Text Label 5200 4900 0    50   ~ 6
+Text Label 5200 4900 0    50   ~ 10
 ~INT0
 Wire Wire Line
 	2550 4700 4250 4700
@@ -570,5 +559,16 @@ F 2 "0EsseivaN_Lib:Pin_Header_Straight_1x09_Pitch2.54mm" H 4950 4750 50  0001 C 
 F 3 "" H 4950 4750 50  0000 C CNN
 	1    4950 4700
 	-1   0    0    -1  
+$EndComp
+$Comp
+L 0EsseivaN_Lib:3V3 #PWR?
+U 1 1 5D1CEA9A
+P 6700 2350
+F 0 "#PWR?" H 6700 2200 50  0001 C CNN
+F 1 "3V3" H 6717 2520 45  0000 C CNN
+F 2 "" H 6700 2350 50  0000 C CNN
+F 3 "" H 6700 2350 50  0000 C CNN
+	1    6700 2350
+	1    0    0    -1  
 $EndComp
 $EndSCHEMATC

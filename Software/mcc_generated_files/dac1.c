@@ -14,7 +14,7 @@
     This source file provides APIs for DAC1.
     Generation Information :
         Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.76
-        Device            :  PIC18F46K40
+        Device            :  PIC18LF46K40
         Driver Version    :  2.10
     The generated drivers are tested against the following:
         Compiler          :  XC8 2.00
@@ -59,8 +59,8 @@ void DAC1_Initialize(void)
 {
     // DAC1EN enabled; NSS VSS; PSS FVR_buf2; OE1 enabled; OE2 disabled; 
     DAC1CON0 = 0xA8;
-    // DAC1R 8; 
-    DAC1CON1 = 0x08;
+    // DAC1R 31; 
+    DAC1CON1 = 0x1F;
 }
 
 void DAC1_SetOutput(uint8_t inputData)

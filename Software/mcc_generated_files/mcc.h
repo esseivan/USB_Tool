@@ -14,7 +14,7 @@
     This header file provides implementations for driver APIs for all modules selected in the GUI.
     Generation Information :
         Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.76
-        Device            :  PIC18F46K40
+        Device            :  PIC18LF46K40
         Driver Version    :  2.00
     The generated drivers are tested against the following:
         Compiler          :  XC8 2.00 or later
@@ -52,17 +52,19 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include "interrupt_manager.h"
-#include "i2c1_driver.h"
 #include "spi2_driver.h"
 #include "tmr4.h"
 #include "tmr2.h"
 #include "fvr.h"
 #include "dac1.h"
 #include "ext_int.h"
+#include "dac1.h"
 #include "eusart1.h"
 #include "clkref.h"
+#include "../iic.h"
 
 
+#define I2C_Address 0x60
 
 /**
  * @Param
@@ -102,7 +104,8 @@ void OSCILLATOR_Initialize(void);
     PMD_Initialize(void);
  */
 void PMD_Initialize(void);
-
+void I2C1_Initialize(void);
+void SPI2_Initialize(void);
 
 #endif	/* MCC_H */
 /**

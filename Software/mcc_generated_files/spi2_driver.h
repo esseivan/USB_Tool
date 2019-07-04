@@ -46,6 +46,7 @@ void spi2_writeByte(uint8_t byte);
 uint8_t spi2_readByte(void);
 
 void spi2_isr(void);
+void spi2_runIsr(void);
 void spi2_setSpiISR(void(*handler)(void));
 
 #endif // __SPI2_DRIVER_H

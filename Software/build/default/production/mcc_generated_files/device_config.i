@@ -7,7 +7,7 @@
 #pragma config RSTOSC = HFINTOSC_64MHZ
 
 
-#pragma config CLKOUTEN = ON
+#pragma config CLKOUTEN = OFF
 #pragma config CSWEN = ON
 #pragma config FCMEN = ON
 
@@ -18,7 +18,7 @@
 #pragma config BOREN = SBORDIS
 
 
-#pragma config BORV = VBOR_2P45
+#pragma config BORV = VBOR_190
 #pragma config ZCD = OFF
 #pragma config PPS1WAY = ON
 #pragma config STVREN = ON

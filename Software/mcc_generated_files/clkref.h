@@ -14,7 +14,7 @@
     This header file provides APIs for driver for CLKREF.
     Generation Information :
         Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.76
-        Device            :  PIC18F46K40
+        Device            :  PIC18LF46K40
         Driver Version    :  2.01
     The generated drivers are tested against the following:
         Compiler          :  XC8 2.00
