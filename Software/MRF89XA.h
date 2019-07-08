@@ -31,6 +31,8 @@
 #ifndef MRF89XA_H
 #define	MRF89XA_H
 
+#define MRF_DEBUG 0
+
 enum MRF89XA_Mode {
     MRF89XA_MODE_RX,
     MRF89XA_MODE_TX,
@@ -41,14 +43,19 @@ enum MRF89XA_Mode {
     MRF89XA_MODULATION_OOK,
 };
 
+#if MRF_DEBUG == 1
+unsigned char readBuffer[32] = {0};
+void MRF89XA_ReadAllConfigs(void);
+void MRF89XA_ReadAllFifo(void);
+#endif
+
 void MRF89XA_Initialize(unsigned char Address, unsigned char Mode, unsigned char Modulation);
 void MRF89XA_SetMode(unsigned char Mode);
 void MRF89XA_SetModulation(unsigned char Modulation);
 unsigned char MRF89XA_WriteConfig(unsigned char Address, unsigned char Data);
 unsigned char MRF89XA_ReadConfig(unsigned char Address);
-void MRF89XA_ReadAllConfigs(void);
 unsigned char MRF89XA_ReadFifo(void);
-void MRF89XA_WriteFifo(unsigned char Data);
+unsigned char MRF89XA_WriteFifo(unsigned char Data);
 unsigned char MRF89XA_ExchangeFifo(unsigned char Data);
 void MRF89XA_SendData(unsigned char TargetAddress, unsigned char Data);
 void MRF89XA_SendCommand(unsigned char TargetAddress, unsigned char Command, unsigned char Param);
@@ -56,6 +63,10 @@ unsigned char MRF89XA_IsPLRReady(void);
 unsigned char MRF89XA_IsCRCOK(void);
 unsigned char MRF89XA_IsFIFO_THRESHOLD(void);
 unsigned char MRF89XA_IsTxDone(void);
+unsigned char MRF89XA_IsFifoEmpty(void);
+unsigned char MRF89XA_IsFifoFull(void);
+unsigned char MRF89XA_IsFifoOverrun(void);
+
 
 #define REG_MASK_READ           0b01000000
 #define REG_MASK_WRITE          0b00000000
@@ -227,25 +238,25 @@ unsigned char MRF89XA_IsTxDone(void);
  *                                +++------ OOKTHSV2..0 = 0b000 : OOK Threshold Step Value
  */
 // Sync word 3
-#define REG_SYNCV31REG_VALUE    0xAA  // 0x00, Edited
+#define REG_SYNCV31REG_VALUE    0x00  // 0x00, Edited
 /*                                ++++++++- SYNCV31..24 = 0 :  SYNC First Byte Value
  */
 // Sync word 2
-#define REG_SYNCV23REG_VALUE    0x55  // 0x00, Edited
+#define REG_SYNCV23REG_VALUE    0x00  // 0x00, Edited
 /*                                ++++++++- SYNCV23..16 = 0 :  SYNC Second Byte Value
  */
 // Sync word 1
-#define REG_SYNCV15REG_VALUE    0xAA  // 0x00, Edited
-/*                                ++++++++- SYNCV15..8 = 0 :  SYNC Third Byte Value
+#define REG_SYNCV15REG_VALUE    0x45  // 0x00, Edited
+/*                                ++++++++- SYNCV15..8 = 0x45 ('E') :  SYNC Third Byte Value
  */
 // Sync word 0
-#define REG_SYNCV07REG_VALUE    0x55  // 0x00, Edited
-/*                                ++++++++- SYNCV7..0 = 0 :  SYNC Fourth Byte Value
+#define REG_SYNCV07REG_VALUE    0x01  // 0x00, Edited
+/*                                ++++++++- SYNCV7..0 = 0x01 :  SYNC Fourth Byte Value
  */
 // Transmit power 13dBm, filter 200kHz
-#define REG_TXCONREG_VALUE      0b01110010  // 0x72, Edited
+#define REG_TXCONREG_VALUE      0b01110000  // 0x72, Edited
 /*                                |||||||+- RESERVED
- *                                ||||+++-- TXOPVAL2..0  = 0b001 : Transmit Output Power Value
+ *                                ||||+++-- TXOPVAL2..0  = 0b000 : Transmit Output Power Value
  *                                ++++----- TXIPOLFV3..0 = 0b0111 : Transmission Interpolation Filter Cut Off Frequency Value
  */
 // Clkout off
@@ -254,9 +265,9 @@ unsigned char MRF89XA_IsTxDone(void);
  *                                |+++++--- CLKOFREQ4..0 = 0b01111 : Clock Out Frequency
  *                                +-------- CLKOCNTRL    = 0 : Clock Output Control
  */
-// Manchester encoding off, Payload length is 2 max
-#define REG_PLOADREG_VALUE      0b00000010  // 0x00
-/*                                |+++++++- PLDPLEN6..0 = 0x02 : Payload Packet Length
+// Manchester encoding off, Payload length is 4 max
+#define REG_PLOADREG_VALUE      0b00000100  // 0x00
+/*                                |+++++++- PLDPLEN6..0 = 0x04 : Payload Packet Length
  *                                +-------- MCHSTREN    = 0 : Manchester Encoding/Decoding Enable
  */
 // Local address
@@ -264,9 +275,9 @@ unsigned char MRF89XA_IsTxDone(void);
 /*                                ++++++++- NLADDR7..0  = 0x40 : Node Local Address
  */
 // Packet length fixed, Preamble size 2, Whitening OFF, CRC OFF, Adress local & 0x00
-#define REG_PKTCREG_VALUE       0b00100100  // 0x48
+#define REG_PKTCREG_VALUE       0b00100010  // 0x48
 /*                                |||||||+- STSCRCEN    = 0 : Status Check CRC Enable
- *                                |||||++-- ADDFIL1..0  = 0b10 : Address Filtering
+ *                                |||||++-- ADDFIL1..0  = 0b01 : Address Filtering
  *                                ||||+---- CHKCRCEN    = 0 : Check (or Calculation) CRC Enable
  *                                |||+----- WHITEON     = 0 : Whitening/Dewhitening Process Enable
  *                                |++------ PRESIZE1..0 = 0b01 : Preamble Size

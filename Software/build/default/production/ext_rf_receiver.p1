@@ -13,11 +13,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "23 ext_rf_receiver.c
 [c E10442 0 1 2 3 4 5 .. ]
 [n E10442 ledIndex R G B RGB_R RGB_G RGB_B  ]
-"49 MRF89XA.h
-[v _MRF89XA_ReadAllConfigs `(v ~T0 @X0 0 ef ]
 "39 LedBlink.h
 [v _SetLedBlink `(v ~T0 @X0 0 ef5`i`i`i`i`i ]
-"53 MRF89XA.h
+"60 MRF89XA.h
 [v _MRF89XA_SendData `(v ~T0 @X0 0 ef2`uc`uc ]
 [; ;xc.h: 18: extern const char __xc8_OPTIM_SPEED;
 [; ;xc.h: 20: extern double __fpnormalize(double);
@@ -11882,29 +11880,31 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ext_rf_receiver.h: 37: unsigned char EXT_TARGET_RF_RX = 0;
 [; ;ext_rf_receiver.h: 39: void ext_rf_initialize(void);
 [; ;ext_rf_receiver.h: 40: void ext_rf_runcmd(void);
-[; ;MRF89XA.h: 34: enum MRF89XA_Mode {
-[; ;MRF89XA.h: 35: MRF89XA_MODE_RX,
-[; ;MRF89XA.h: 36: MRF89XA_MODE_TX,
-[; ;MRF89XA.h: 37: MRF89XA_MODE_STANDBY,
-[; ;MRF89XA.h: 38: MRF89XA_MODE_SLEEP,
-[; ;MRF89XA.h: 40: MRF89XA_MODULATION_FSK,
-[; ;MRF89XA.h: 41: MRF89XA_MODULATION_OOK,
-[; ;MRF89XA.h: 42: };
-[; ;MRF89XA.h: 44: void MRF89XA_Initialize(unsigned char Address, unsigned char Mode, unsigned char Modulation);
-[; ;MRF89XA.h: 45: void MRF89XA_SetMode(unsigned char Mode);
-[; ;MRF89XA.h: 46: void MRF89XA_SetModulation(unsigned char Modulation);
-[; ;MRF89XA.h: 47: unsigned char MRF89XA_WriteConfig(unsigned char Address, unsigned char Data);
-[; ;MRF89XA.h: 48: unsigned char MRF89XA_ReadConfig(unsigned char Address);
-[; ;MRF89XA.h: 49: void MRF89XA_ReadAllConfigs(void);
-[; ;MRF89XA.h: 50: unsigned char MRF89XA_ReadFifo(void);
-[; ;MRF89XA.h: 51: void MRF89XA_WriteFifo(unsigned char Data);
-[; ;MRF89XA.h: 52: unsigned char MRF89XA_ExchangeFifo(unsigned char Data);
-[; ;MRF89XA.h: 53: void MRF89XA_SendData(unsigned char TargetAddress, unsigned char Data);
-[; ;MRF89XA.h: 54: void MRF89XA_SendCommand(unsigned char TargetAddress, unsigned char Command, unsigned char Param);
-[; ;MRF89XA.h: 55: unsigned char MRF89XA_IsPLRReady(void);
-[; ;MRF89XA.h: 56: unsigned char MRF89XA_IsCRCOK(void);
-[; ;MRF89XA.h: 57: unsigned char MRF89XA_IsFIFO_THRESHOLD(void);
-[; ;MRF89XA.h: 58: unsigned char MRF89XA_IsTxDone(void);
+[; ;MRF89XA.h: 36: enum MRF89XA_Mode {
+[; ;MRF89XA.h: 37: MRF89XA_MODE_RX,
+[; ;MRF89XA.h: 38: MRF89XA_MODE_TX,
+[; ;MRF89XA.h: 39: MRF89XA_MODE_STANDBY,
+[; ;MRF89XA.h: 40: MRF89XA_MODE_SLEEP,
+[; ;MRF89XA.h: 42: MRF89XA_MODULATION_FSK,
+[; ;MRF89XA.h: 43: MRF89XA_MODULATION_OOK,
+[; ;MRF89XA.h: 44: };
+[; ;MRF89XA.h: 52: void MRF89XA_Initialize(unsigned char Address, unsigned char Mode, unsigned char Modulation);
+[; ;MRF89XA.h: 53: void MRF89XA_SetMode(unsigned char Mode);
+[; ;MRF89XA.h: 54: void MRF89XA_SetModulation(unsigned char Modulation);
+[; ;MRF89XA.h: 55: unsigned char MRF89XA_WriteConfig(unsigned char Address, unsigned char Data);
+[; ;MRF89XA.h: 56: unsigned char MRF89XA_ReadConfig(unsigned char Address);
+[; ;MRF89XA.h: 57: unsigned char MRF89XA_ReadFifo(void);
+[; ;MRF89XA.h: 58: unsigned char MRF89XA_WriteFifo(unsigned char Data);
+[; ;MRF89XA.h: 59: unsigned char MRF89XA_ExchangeFifo(unsigned char Data);
+[; ;MRF89XA.h: 60: void MRF89XA_SendData(unsigned char TargetAddress, unsigned char Data);
+[; ;MRF89XA.h: 61: void MRF89XA_SendCommand(unsigned char TargetAddress, unsigned char Command, unsigned char Param);
+[; ;MRF89XA.h: 62: unsigned char MRF89XA_IsPLRReady(void);
+[; ;MRF89XA.h: 63: unsigned char MRF89XA_IsCRCOK(void);
+[; ;MRF89XA.h: 64: unsigned char MRF89XA_IsFIFO_THRESHOLD(void);
+[; ;MRF89XA.h: 65: unsigned char MRF89XA_IsTxDone(void);
+[; ;MRF89XA.h: 66: unsigned char MRF89XA_IsFifoEmpty(void);
+[; ;MRF89XA.h: 67: unsigned char MRF89XA_IsFifoFull(void);
+[; ;MRF89XA.h: 68: unsigned char MRF89XA_IsFifoOverrun(void);
 "15 ext_rf_receiver.c
 [v _ext_rf_initialize `(v ~T0 @X0 1 ef ]
 {
@@ -11958,26 +11958,23 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ext_rf_receiver.c: 29: {
 "29
 {
-[; ;ext_rf_receiver.c: 30: MRF89XA_ReadAllConfigs();
-"30
-[e ( _MRF89XA_ReadAllConfigs ..  ]
-[; ;ext_rf_receiver.c: 32: SetLedBlink(B,20,20,0,-1);
-"32
+[; ;ext_rf_receiver.c: 31: SetLedBlink(B,20,20,0,-1);
+"31
 [e ( _SetLedBlink (4 , , , , -> . `E10442 2 `i -> 20 `i -> 20 `i -> 0 `i -U -> 1 `i ]
-[; ;ext_rf_receiver.c: 33: MRF89XA_SendData(0x00, 0x55);
-"33
-[e ( _MRF89XA_SendData (2 , -> -> 0 `i `uc -> -> 85 `i `uc ]
-[; ;ext_rf_receiver.c: 35: SetLedBlink(B,20,0,0,1);
-"35
+[; ;ext_rf_receiver.c: 32: MRF89XA_SendData(0x41, 0x55);
+"32
+[e ( _MRF89XA_SendData (2 , -> -> 65 `i `uc -> -> 85 `i `uc ]
+[; ;ext_rf_receiver.c: 34: SetLedBlink(B,20,0,0,1);
+"34
 [e ( _SetLedBlink (4 , , , , -> . `E10442 2 `i -> 20 `i -> 0 `i -> 0 `i -> 1 `i ]
-"36
+"35
 }
 [e :U 1494 ]
-"37
+"36
 [e :U 1493 ]
 [e :U 1491 ]
 [e :U 1489 ]
+[; ;ext_rf_receiver.c: 35: }
 [; ;ext_rf_receiver.c: 36: }
-[; ;ext_rf_receiver.c: 37: }
 [e :UE 1487 ]
 }

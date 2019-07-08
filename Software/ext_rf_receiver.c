@@ -27,7 +27,6 @@ void ext_rf_runcmd(void) {
         ToggleLed(RGB_B);
     else if ((dx & 0b1000) > 0)
     {
-        MRF89XA_ReadAllConfigs();
         // Indicate interrupt received with one Blue blink
         SetLedBlink(B,20,20,0,-1);
         MRF89XA_SendData(0x41, 0x55);

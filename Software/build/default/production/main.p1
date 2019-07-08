@@ -25,7 +25,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _EUSART1_Write `(v ~T0 @X0 0 ef1`uc ]
 "338
 [v _EUSART1_Read `(uc ~T0 @X0 0 ef ]
-"50 MRF89XA.h
+"57 MRF89XA.h
 [v _MRF89XA_ReadFifo `(uc ~T0 @X0 0 ef ]
 "17609 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18lf46k40.h
 [s S862 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -82,7 +82,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S1451 . . . . ]
 "27750
 [v _INTCONbits `VS1451 ~T0 @X0 0 e@4082 ]
-"44 MRF89XA.h
+"52 MRF89XA.h
 [v _MRF89XA_Initialize `(v ~T0 @X0 0 ef3`uc`uc`uc ]
 "121 main.c
 [c E10528 0 1 2 3 4 5 .. ]
@@ -11958,29 +11958,31 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ext_rf_receiver.h: 37: unsigned char EXT_TARGET_RF_RX = 0;
 [; ;ext_rf_receiver.h: 39: void ext_rf_initialize(void);
 [; ;ext_rf_receiver.h: 40: void ext_rf_runcmd(void);
-[; ;MRF89XA.h: 34: enum MRF89XA_Mode {
-[; ;MRF89XA.h: 35: MRF89XA_MODE_RX,
-[; ;MRF89XA.h: 36: MRF89XA_MODE_TX,
-[; ;MRF89XA.h: 37: MRF89XA_MODE_STANDBY,
-[; ;MRF89XA.h: 38: MRF89XA_MODE_SLEEP,
-[; ;MRF89XA.h: 40: MRF89XA_MODULATION_FSK,
-[; ;MRF89XA.h: 41: MRF89XA_MODULATION_OOK,
-[; ;MRF89XA.h: 42: };
-[; ;MRF89XA.h: 44: void MRF89XA_Initialize(unsigned char Address, unsigned char Mode, unsigned char Modulation);
-[; ;MRF89XA.h: 45: void MRF89XA_SetMode(unsigned char Mode);
-[; ;MRF89XA.h: 46: void MRF89XA_SetModulation(unsigned char Modulation);
-[; ;MRF89XA.h: 47: unsigned char MRF89XA_WriteConfig(unsigned char Address, unsigned char Data);
-[; ;MRF89XA.h: 48: unsigned char MRF89XA_ReadConfig(unsigned char Address);
-[; ;MRF89XA.h: 49: void MRF89XA_ReadAllConfigs(void);
-[; ;MRF89XA.h: 50: unsigned char MRF89XA_ReadFifo(void);
-[; ;MRF89XA.h: 51: void MRF89XA_WriteFifo(unsigned char Data);
-[; ;MRF89XA.h: 52: unsigned char MRF89XA_ExchangeFifo(unsigned char Data);
-[; ;MRF89XA.h: 53: void MRF89XA_SendData(unsigned char TargetAddress, unsigned char Data);
-[; ;MRF89XA.h: 54: void MRF89XA_SendCommand(unsigned char TargetAddress, unsigned char Command, unsigned char Param);
-[; ;MRF89XA.h: 55: unsigned char MRF89XA_IsPLRReady(void);
-[; ;MRF89XA.h: 56: unsigned char MRF89XA_IsCRCOK(void);
-[; ;MRF89XA.h: 57: unsigned char MRF89XA_IsFIFO_THRESHOLD(void);
-[; ;MRF89XA.h: 58: unsigned char MRF89XA_IsTxDone(void);
+[; ;MRF89XA.h: 36: enum MRF89XA_Mode {
+[; ;MRF89XA.h: 37: MRF89XA_MODE_RX,
+[; ;MRF89XA.h: 38: MRF89XA_MODE_TX,
+[; ;MRF89XA.h: 39: MRF89XA_MODE_STANDBY,
+[; ;MRF89XA.h: 40: MRF89XA_MODE_SLEEP,
+[; ;MRF89XA.h: 42: MRF89XA_MODULATION_FSK,
+[; ;MRF89XA.h: 43: MRF89XA_MODULATION_OOK,
+[; ;MRF89XA.h: 44: };
+[; ;MRF89XA.h: 52: void MRF89XA_Initialize(unsigned char Address, unsigned char Mode, unsigned char Modulation);
+[; ;MRF89XA.h: 53: void MRF89XA_SetMode(unsigned char Mode);
+[; ;MRF89XA.h: 54: void MRF89XA_SetModulation(unsigned char Modulation);
+[; ;MRF89XA.h: 55: unsigned char MRF89XA_WriteConfig(unsigned char Address, unsigned char Data);
+[; ;MRF89XA.h: 56: unsigned char MRF89XA_ReadConfig(unsigned char Address);
+[; ;MRF89XA.h: 57: unsigned char MRF89XA_ReadFifo(void);
+[; ;MRF89XA.h: 58: unsigned char MRF89XA_WriteFifo(unsigned char Data);
+[; ;MRF89XA.h: 59: unsigned char MRF89XA_ExchangeFifo(unsigned char Data);
+[; ;MRF89XA.h: 60: void MRF89XA_SendData(unsigned char TargetAddress, unsigned char Data);
+[; ;MRF89XA.h: 61: void MRF89XA_SendCommand(unsigned char TargetAddress, unsigned char Command, unsigned char Param);
+[; ;MRF89XA.h: 62: unsigned char MRF89XA_IsPLRReady(void);
+[; ;MRF89XA.h: 63: unsigned char MRF89XA_IsCRCOK(void);
+[; ;MRF89XA.h: 64: unsigned char MRF89XA_IsFIFO_THRESHOLD(void);
+[; ;MRF89XA.h: 65: unsigned char MRF89XA_IsTxDone(void);
+[; ;MRF89XA.h: 66: unsigned char MRF89XA_IsFifoEmpty(void);
+[; ;MRF89XA.h: 67: unsigned char MRF89XA_IsFifoFull(void);
+[; ;MRF89XA.h: 68: unsigned char MRF89XA_IsFifoOverrun(void);
 "19 main.c
 [v _SentI2CCmd `uc ~T0 @X0 1 e ]
 [i _SentI2CCmd

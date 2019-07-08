@@ -17903,7 +17903,7 @@ unsigned char EXT_TARGET_RF_RX = 0;
 void ext_rf_initialize(void);
 void ext_rf_runcmd(void);
 
-# 34 "MRF89XA.h"
+# 36 "MRF89XA.h"
 enum MRF89XA_Mode {
 MRF89XA_MODE_RX,
 MRF89XA_MODE_TX,
@@ -17914,14 +17914,14 @@ MRF89XA_MODULATION_FSK,
 MRF89XA_MODULATION_OOK,
 };
 
+# 52
 void MRF89XA_Initialize(unsigned char Address, unsigned char Mode, unsigned char Modulation);
 void MRF89XA_SetMode(unsigned char Mode);
 void MRF89XA_SetModulation(unsigned char Modulation);
 unsigned char MRF89XA_WriteConfig(unsigned char Address, unsigned char Data);
 unsigned char MRF89XA_ReadConfig(unsigned char Address);
-void MRF89XA_ReadAllConfigs(void);
 unsigned char MRF89XA_ReadFifo(void);
-void MRF89XA_WriteFifo(unsigned char Data);
+unsigned char MRF89XA_WriteFifo(unsigned char Data);
 unsigned char MRF89XA_ExchangeFifo(unsigned char Data);
 void MRF89XA_SendData(unsigned char TargetAddress, unsigned char Data);
 void MRF89XA_SendCommand(unsigned char TargetAddress, unsigned char Command, unsigned char Param);
@@ -17929,6 +17929,9 @@ unsigned char MRF89XA_IsPLRReady(void);
 unsigned char MRF89XA_IsCRCOK(void);
 unsigned char MRF89XA_IsFIFO_THRESHOLD(void);
 unsigned char MRF89XA_IsTxDone(void);
+unsigned char MRF89XA_IsFifoEmpty(void);
+unsigned char MRF89XA_IsFifoFull(void);
+unsigned char MRF89XA_IsFifoOverrun(void);
 
 # 15 "ext_rf_receiver.c"
 void ext_rf_initialize(void) {
@@ -17946,10 +17949,9 @@ else if ((dx & 0b0100) > 0)
 ToggleLed(RGB_B);
 else if ((dx & 0b1000) > 0)
 {
-MRF89XA_ReadAllConfigs();
 
 SetLedBlink(B,20,20,0,-1);
-MRF89XA_SendData(0x00, 0x55);
+MRF89XA_SendData(0x41, 0x55);
 
 SetLedBlink(B,20,0,0,1);
 }
