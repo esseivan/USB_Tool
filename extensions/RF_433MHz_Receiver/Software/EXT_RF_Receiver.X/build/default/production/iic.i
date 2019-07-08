@@ -25,8 +25,6 @@ void I2C_WriteData(unsigned char Target, unsigned char Data);
 
 void I2C_WriteLength(unsigned char Target, unsigned char Length, unsigned char *Data);
 
-unsigned char I2C_ReadData(unsigned char Target);
-
 void I2C_ReadLength(unsigned char Target, unsigned char Length, unsigned char *Output);
 
 unsigned char I2C_SendCommand(unsigned char Target, unsigned char CMD);
@@ -36,6 +34,7 @@ void I2C_SendCommand_L(unsigned char Target, unsigned char CMD, unsigned char Le
 void I2C_BusCollisionISR(void);
 
 unsigned char GetTarget(unsigned char Address);
+
 void I2C_Slave_ISR(void);
 # 11 "iic.c" 2
 
@@ -10733,6 +10732,7 @@ unsigned char d1 = 0;
 unsigned char d2 = 0;
 unsigned char d3 = 0;
 
+void Delay_Xms(long delay);
 void I2C_RX_Handler(void);
 void I2C_TX_Handler(void);
 # 13 "iic.c" 2
@@ -10742,32 +10742,42 @@ void I2C_TX_Handler(void);
 
 
 
-void I2C_Master_Wait(void);
-
 void I2C_Master_RepeatedStart(void);
 
 void I2C_Master_Start(void);
 
 void I2C_Master_Stop(void);
 
-unsigned char I2C_Master_Read(unsigned char Ack);
+void I2C_Master_Send_ACK(unsigned char Ack);
+void I2C_Slave_Send_ACK(unsigned char Ack);
 
-void I2C_Master_Write(unsigned char d);
-# 39 "iic.c"
+void I2C_Master_Write(unsigned char data);
+# 37 "iic.c"
 void I2C_Master_Init(void) {
 
-    do { TRISCbits.TRISC0 = 1; } while(0);
     do { ANSELCbits.ANSC0 = 0; } while(0);
-    do { TRISCbits.TRISC1 = 1; } while(0);
+    do { TRISCbits.TRISC0 = 1; } while(0);
+    SSP1CLKPPS = 0x10;
+    RC0PPS = 0x15;
+
     do { ANSELCbits.ANSC1 = 0; } while(0);
+    do { TRISCbits.TRISC1 = 1; } while(0);
+    SSP1DATPPS = 0x11;
+    RC1PPS = 0x16;
 
-    SSP1STAT = 0x00;
+    SSP1STAT = 0b00000000;
+# 60 "iic.c"
+    SSP1CON1 = 0b00100110;
 
-    SSP1CON1 = 0x28;
-    SSP1CON2 = 0x00;
 
-    SSP1CON3 = 0x00;
 
+
+
+
+    SSP1CON2 = 0b00000000;
+# 77 "iic.c"
+    SSP1CON3 = 0b00000000;
+# 89 "iic.c"
     SSP1ADD = 0x3b;
 
     PIR3bits.BCL1IF = 0;
@@ -10775,25 +10785,37 @@ void I2C_Master_Init(void) {
     PIE3bits.BCL1IE = 1;
 }
 
+
+
+
 void I2C_Slave_Init(void) {
 
-    do { TRISCbits.TRISC0 = 1; } while(0);
     do { ANSELCbits.ANSC0 = 0; } while(0);
-    do { TRISCbits.TRISC1 = 1; } while(0);
+    do { TRISCbits.TRISC0 = 1; } while(0);
+    SSP1CLKPPS = 0x10;
+    RC0PPS = 0x15;
+
     do { ANSELCbits.ANSC1 = 0; } while(0);
+    do { TRISCbits.TRISC1 = 1; } while(0);
+    SSP1DATPPS = 0x11;
+    RC1PPS = 0x16;
 
-    SSP1STAT = 0x00;
+    SSP1STAT = 0b00000000;
+# 122 "iic.c"
+    SSP1CON1 = 0b00100110;
 
-    SSP1CON1 = 0x26;
-    SSP1CON2 = 0x00;
 
-    SSP1CON3 = 0x24;
 
-    SSP1ADD = 0x7F << 1;
+
+
+
+    SSP1CON2 = 0b10000000;
+# 139 "iic.c"
+    SSP1CON3 = 0b00100100;
+# 151 "iic.c"
+    SSP1ADD = 0x70 << 1;
 
     SSP1MSK = 0xFF;
-
-    SSP1CON3bits.SCIE = 1;
 
     PIR3bits.BCL1IF = 0;
 
@@ -10805,118 +10827,199 @@ void I2C_Slave_Init(void) {
 
 
 
-
-void I2C_Master_Wait(void) {
-    while ((SSP1STAT & 0x04) || (SSP1CON2 & 0x1F));
-}
-
-
-
-
 void I2C_Master_RepeatedStart(void) {
-    I2C_Master_Wait();
     SSP1CON2bits.RSEN = 1;
+    while(SSP1CON2bits.RSEN);
+    PIR3bits.SSP1IF = 0;
 }
 
 
 
 
 void I2C_Master_Start(void) {
-    I2C_Master_Wait();
     SSP1CON2bits.SEN = 1;
+    while(SSP1CON2bits.SEN);
+    PIR3bits.SSP1IF = 0;
 }
 
 
 
 
 void I2C_Master_Stop(void) {
-    I2C_Master_Wait();
     SSP1CON2bits.PEN = 1;
+    while(SSP1CON2bits.PEN);
 }
 
 
 
 
-unsigned char I2C_Master_Read(unsigned char Ack) {
-    unsigned char temp;
-    I2C_Master_Wait();
-    SSP1CON2bits.RCEN = 1;
-    I2C_Master_Wait();
-    temp = SSP1BUF;
-    I2C_Master_Wait();
+void I2C_Master_Send_ACK(unsigned char Ack) {
     SSP1CON2bits.ACKDT = Ack ? 0 : 1;
     SSP1CON2bits.ACKEN = 1;
-
-    return temp;
+    while(SSP1CON2bits.ACKEN);
 }
 
 
 
 
-void I2C_Master_Write(unsigned char d) {
-    I2C_Master_Wait();
-    SSP1BUF = d;
+void I2C_Slave_Send_ACK(unsigned char Ack) {
+    if(Ack == 0) {
+        do { LATCbits.LATC1 = 0; } while(0);
+    }
+    while(!PIR3bits.SSP1IF);
+    PIR3bits.SSP1IF = 0;
+    do { LATCbits.LATC1 = 1; } while(0);
 }
-# 150 "iic.c"
+
+
+
+
+void I2C_Master_Write(unsigned char data) {
+    SSP1BUF = data;
+    while(!PIR3bits.SSP1IF);
+}
+
+
+
+
+
+
+
 void I2C_WriteData(unsigned char Target, unsigned char Data) {
     I2C_Master_Start();
+
     I2C_Master_Write(Target);
+    if(SSP1CON2bits.ACKSTAT) {
+
+        I2C_Master_Stop();
+        return;
+    }
+
     I2C_Master_Write(Data);
+
     I2C_Master_Stop();
 }
-# 165 "iic.c"
+# 245 "iic.c"
 void I2C_WriteLength(unsigned char Target, unsigned char Length, unsigned char *Data) {
     I2C_Master_Start();
+
     I2C_Master_Write(Target);
+    if(SSP1CON2bits.ACKSTAT) {
+
+        I2C_Master_Stop();
+        return;
+    }
 
     for (unsigned char i = 0; i < Length; i++) {
         I2C_Master_Write(Data[i]);
+        if(SSP1CON2bits.ACKSTAT) {
+
+            I2C_Master_Stop();
+            return;
+        }
     }
 
     I2C_Master_Stop();
 }
-# 183 "iic.c"
+
+
+
+
+
+
+
 unsigned char I2C_ReadData(unsigned char Target) {
     I2C_Master_Start();
-    I2C_Master_Write(Target);
 
-    I2C_Master_RepeatedStart();
 
     I2C_Master_Write(Target | 0x01);
-    unsigned char result = I2C_Master_Read(0);
+    if(SSP1CON2bits.ACKSTAT) {
+
+        I2C_Master_Stop();
+        return 0xFF;
+    }
+
+
+    SSP1CON2bits.RCEN = 1;
+
+
+    while(!SSP1STATbits.BF);
+
+
+    unsigned char result = SSP1BUF;
+
+
+    I2C_Master_Send_ACK(1);
+
+
     I2C_Master_Stop();
+
     return result;
 }
-# 203 "iic.c"
+# 309 "iic.c"
 void I2C_ReadLength(unsigned char Target, unsigned char Length, unsigned char *Output) {
     I2C_Master_Start();
-    I2C_Master_Write(Target);
 
-    I2C_Master_RepeatedStart();
 
     I2C_Master_Write(Target | 0x01);
+    if(SSP1CON2bits.ACKSTAT) {
+
+        I2C_Master_Stop();
+        return;
+    }
+
+
+    SSP1CON2bits.RCEN = 1;
 
     for (unsigned char i = 0; i < Length; i++) {
-        Output[i] = I2C_Master_Read(((i + 1) == Length) ? 0 : 1);
+
+        while(!SSP1STATbits.BF);
+
+
+        Output[i] = SSP1BUF;
+
+
+        I2C_Master_Send_ACK(((i + 1) == Length) ? 1 : 0);
     }
     Output[Length] = 0x00;
 
+
     I2C_Master_Stop();
 }
-# 227 "iic.c"
+# 346 "iic.c"
 unsigned char I2C_SendCommand(unsigned char Target, unsigned char CMD) {
+
     I2C_Master_Start();
+
+
     I2C_Master_Write(Target);
+    if(SSP1CON2bits.ACKSTAT) {
+
+        SSP1CON2bits.PEN = 1;
+        while(SSP1CON2bits.PEN);
+        return 0xFF;
+    }
+
+
     I2C_Master_Write(CMD);
+    if(SSP1CON2bits.ACKSTAT) {
+
+        SSP1CON2bits.PEN = 1;
+        while(SSP1CON2bits.PEN);
+        return 0xFF;
+    }
 
     I2C_Master_RepeatedStart();
 
     I2C_Master_Write(Target | 0x01);
-    unsigned char result = I2C_Master_Read(0);
+    unsigned char result = SSP1BUF;
+
+    I2C_Master_Send_ACK(1);
+
     I2C_Master_Stop();
     return result;
 }
-# 249 "iic.c"
+# 386 "iic.c"
 void I2C_SendCommand_L(unsigned char Target, unsigned char CMD, unsigned char Length, unsigned char *Output) {
     I2C_Master_Start();
     I2C_Master_Write(Target);
@@ -10927,13 +11030,19 @@ void I2C_SendCommand_L(unsigned char Target, unsigned char CMD, unsigned char Le
     I2C_Master_Write(Target | 0x01);
 
     for (unsigned char i = 0; i < Length; i++) {
-        Output[i] = I2C_Master_Read(((i + 1) == Length) ? 0 : 1);
+
+        while(!SSP1STATbits.BF);
+
+
+        Output[i] = SSP1BUF;
+
+
+        I2C_Master_Send_ACK(((i + 1) == Length) ? 1 : 0);
     }
     Output[Length] = 0x00;
 
     I2C_Master_Stop();
 }
-
 
 
 
@@ -10946,12 +11055,14 @@ void I2C_BusCollisionISR(void) {
 
 
 
-
 unsigned char GetTarget(unsigned char Address) {
     unsigned char ret = Address << 1;
     ret = ret & 0b11111110;
     return ret;
 }
+
+
+
 
 void I2C_Slave_ISR(void) {
     PIR3bits.SSP1IF = 0;
@@ -10960,11 +11071,9 @@ void I2C_Slave_ISR(void) {
     if(SSP1STATbits.S == 1) {
 
 
-        SSP1CON2bits.ACKDT = 0;
-        SSP1CON2bits.ACKEN = 1;
 
-        while(!PIR3bits.SSP1IF);
-        PIR3bits.SSP1IF = 0;
+        I2C_Slave_Send_ACK(0);
+
 
         unsigned char data = SSP1BUF;
 
@@ -10979,22 +11088,35 @@ void I2C_Slave_ISR(void) {
                 SSP1BUF = dx;
             }
 
+            Delay_Xms(1);
 
-            while(!PIR3bits.SSP1IF);
-            PIR3bits.SSP1IF = 0;
-
-
-        } else {
 
             SSP1CON1bits.CKP = 1;
 
-            while(!SSP1STATbits.BF);
-
-            SSP1CON2bits.ACKDT = 0;
-            SSP1CON2bits.ACKEN = 1;
 
             while(!PIR3bits.SSP1IF);
             PIR3bits.SSP1IF = 0;
+
+
+            while(!SSP1CON2bits.ACKSTAT) {
+
+                SSP1BUF = 0xFF;
+
+                Delay_Xms(1);
+
+
+                SSP1CON1bits.CKP = 1;
+
+
+                while(!PIR3bits.SSP1IF);
+                PIR3bits.SSP1IF = 0;
+            }
+        } else {
+
+
+            while(!SSP1STATbits.BF);
+
+            I2C_Slave_Send_ACK(0);
 
             I2C_RX_CMD = SSP1BUF;
         }

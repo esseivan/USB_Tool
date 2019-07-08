@@ -36,17 +36,16 @@ INLINE void spi2_close(void);
 
 bool spi2_open(spi2_modes spiUniqueConfiguration);
 /* SPI native data exchange function */
-uint8_t spi2_exchangeByte(uint8_t b);
+unsigned char spi2_exchangeByte(unsigned char b);
 /* SPI Block move functions }(future DMA support will be here) */
 void spi2_exchangeBlock(void *block, size_t blockSize);
 void spi2_writeBlock(void *block, size_t blockSize);
 void spi2_readBlock(void *block, size_t blockSize);
 
-void spi2_writeByte(uint8_t byte);
-uint8_t spi2_readByte(void);
+void spi2_writeByte(unsigned char byte);
+unsigned char spi2_readByte(void);
 
 void spi2_isr(void);
-void spi2_runIsr(void);
 void spi2_setSpiISR(void(*handler)(void));
 
 #endif // __SPI2_DRIVER_H

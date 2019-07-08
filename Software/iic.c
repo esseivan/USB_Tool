@@ -12,22 +12,21 @@
 #include "mcc_generated_files/mcc.h"
 #include "main.h"
 #include "commands.h"
+#include "LedBlink.h"
 
 //##############################################################################
 // Fonctions (Prototypes)
 //##############################################################################
-// Attente
-void I2C_Master_Wait(void);
-// Restart
+// Repeated Start
 void I2C_Master_RepeatedStart(void);
 // Start
 void I2C_Master_Start(void);
 // Stop
 void I2C_Master_Stop(void);
-// Read
-unsigned char I2C_Master_Read(unsigned char Ack);
+// Send Acknowledge
+void I2C_Master_Send_ACK(unsigned char Ack);
 // Write
-void I2C_Master_Write(unsigned char d);
+void I2C_Master_Write(unsigned char data);
 
 //##############################################################################
 // Fonctions (implémentation)
@@ -36,45 +35,105 @@ void I2C_Master_Write(unsigned char d);
 //******************************************************************************
 // Initialisation en mode Master 
 //******************************************************************************
-
 void I2C_Master_Init(void) {
     // Set SCL and SDA as inputs
-    SCL_SetDigitalInput();
     SCL_SetDigitalMode();
-    SDA_SetDigitalInput();
+    SCL_SetDigitalInput();
+    SSP1CLKPPS = 0b00001010; // MSSP1 : CLK -> RB2
+    RB2PPS = 0x0F;           // RB2 -> CLK
+    
     SDA_SetDigitalMode();
-    // R_nW write_noTX; P stopbit_notdetected; S startbit_notdetected; BF RCinprocess_TXcomplete; SMP High Speed; UA dontupdate; CKE disabled; D_nA lastbyte_address; 
-    SSP1STAT = 0x00;
-    // SSPEN enabled; WCOL no_collision; CKP Idle:Low, Active:High; SSPM FOSC/4_SSPxADD_I2C; SSPOV no_overflow; 
-    SSP1CON1 = 0x28;
-    SSP1CON2 = 0x00;
+    SDA_SetDigitalInput();
+    SSP1DATPPS = 0b00001011; // MSSP1 : DAT -> RB3
+    RB3PPS = 0x10;           // RB3 -> DAT
+
+    SSP1STAT = 0b00000000;
+//               ||||||||
+//               |||||||+- BF       = 0 : Buffer Full, if SSPBUF is full
+//               ||||||+-- UA       = 0 : 
+//               |||||+--- R_nW     = 0 : #Slave mode : Indicate if master want Read or Write
+//               |||||                    #Master mode : Indicate if transmit is in progress
+//               ||||+---- S        = 0 : Start last detected
+//               |||+----- P        = 0 : Stop last detected
+//               ||+------ D_nA     = 0 : Last received byte is Data or Address
+//               |+------- CKE      = 0 : SMBus support
+//               +-------- SMP      = 0 : Sample bit, slew rate control
+    SSP1CON1 = 0b00101000;
+//               ||||||||
+//               ||||++++- SSPM3..0 = 0b1000 : Master mode fosc/4
+//               |||+----- CKP      = 0 : Clock stretching (hold the clock)
+//               ||+------ SSPEN    = 1 : Enable the I2C module
+//               |+------- SSPOV    = 0 : Indicator that byte was received while SSPBUF was full
+//               +-------- WCOL     = 0 : Indicator that transmission was established in invalid conditions
+    SSP1CON2 = 0b00000000;
+//               ||||||||
+//               |||||||+- SEN      = 0 : Initiate Start condition (Master only)
+//               ||||||+-- RSEN     = 0 : Initiate Repeated Start condition (Master only)
+//               |||||+--- PEN      = 0 : Initiate Stop condition (Master only)
+//               ||||+---- RCEN     = 0 : Enable RX mode (Master only)
+//               |||+----- ACKEN    = 0 : Send the ACK (or nACK) on the bus (Master RX only)
+//               ||+------ ACKDT    = 0 : Indicate if we send ACK or nACK (Master RX only)
+//               |+------- ACKSTAT  = 0 : Indicate the acknowledge status bit received (Master TX only)
+//               +-------- GCEN     = 0 : General call, responds to address 0x00 (Slave only))
     // ACKTIM ackseq; SBCDE disabled; BOEN disabled; SCIE disabled; PCIE disabled; DHEN disabled; SDAHT 100ns; AHEN disabled; 
     SSP1CON3 = 0x00;
-    // SSP1ADD 100kHz 
-    SSP1ADD = 0x3b;
+    // SSP1ADD 25kHz 
+    SSP1ADD = 0xEF;
 
     PIR3bits.BCL1IF = 0;
 
     PIE3bits.BCL1IE = 1;
 }
 
+//******************************************************************************
+// Initialisation en mode Slave 
+//******************************************************************************
 void I2C_Slave_Init(void) {
     // Set SCL and SDA as inputs
     SCL_SetDigitalInput();
     SCL_SetDigitalMode();
+    SSP1CLKPPS = 0b00001010; // MSSP1 : CLK -> RB2
+    RB2PPS = 0x0F;           // RB2 -> CLK
+    
     SDA_SetDigitalInput();
     SDA_SetDigitalMode();
-    // R_nW write_noTX; P stopbit_notdetected; S startbit_notdetected; BF RCinprocess_TXcomplete; SMP High Speed; UA dontupdate; CKE disabled; D_nA lastbyte_address; 
-    SSP1STAT = 0x00;
-    // SSPEN enabled; WCOL no_collision; CKP Idle:Low, Active:High; SSPM I2C Slave (7-bit Addressing); SSPOV no_overflow; 
-    SSP1CON1 = 0x26;
-    SSP1CON2 = 0x00;
+    SSP1DATPPS = 0b00001011; // MSSP1 : DAT -> RB3
+    RB3PPS = 0x10;           // RB3 -> DAT
+    
+    SSP1STAT = 0b00000000;
+//               ||||||||
+//               |||||||+- BF       = 0 : Buffer Full, if SSPBUF is full
+//               ||||||+-- UA       = 0 : 
+//               |||||+--- R_nW     = 0 : #Slave mode : Indicate if master want Read or Write
+//               |||||                    #Master mode : Indicate if transmit is in progress
+//               ||||+---- S        = 0 : Start last detected
+//               |||+----- P        = 0 : Stop last detected
+//               ||+------ D_nA     = 0 : Last received byte is Data or Address
+//               |+------- CKE      = 0 : SMBus support
+//               +-------- SMP      = 0 : Sample bit, slew rate control
+    SSP1CON1 = 0b00100110;
+//               ||||||||
+//               ||||++++- SSPM3..0 = 0b0110 : Slave mode 7-bit address
+//               |||+----- CKP      = 0 : Clock stretching (hold the clock)
+//               ||+------ SSPEN    = 1 : Enable the I2C module
+//               |+------- SSPOV    = 0 : Indicator that byte was received while SSPBUF was full
+//               +-------- WCOL     = 0 : Indicator that transmission was established in invalid conditions
+    SSP1CON2 = 0b10000000;
+//               ||||||||
+//               |||||||+- SEN      = 0 : Initiate Start condition (Master only)
+//               ||||||+-- RSEN     = 0 : Initiate Repeated Start condition (Master only)
+//               |||||+--- PEN      = 0 : Initiate Stop condition (Master only)
+//               ||||+---- RCEN     = 0 : Enable RX mode (Master only)
+//               |||+----- ACKEN    = 0 : Send the ACK (or nACK) on the bus (Master RX only)
+//               ||+------ ACKDT    = 0 : Indicate if we send ACK or nACK (Master RX only)
+//               |+------- ACKSTAT  = 0 : Indicate the acknowledge status bit received (Master TX only)
+//               +-------- GCEN     = 0 : General call, responds to address 0x00 (Slave only))
     // ACKTIM ackseq; SBCDE enabled; BOEN disabled; SCIE enabled; PCIE disabled; DHEN disabled; SDAHT 100ns; AHEN disabled; 
     SSP1CON3 = 0x24;
     // Device address    
-    SSP1ADD = I2C_SLAVE_ADDRESS << 1;
+    SSP1ADD = 0x00 << 1;
     // Address mask
-    SSP1MSK = I2C_SLAVE_MASK;
+    SSP1MSK = 0x00;
 
     SSP1CON3bits.SCIE = 1;
     
@@ -86,59 +145,53 @@ void I2C_Slave_Init(void) {
 }
 
 //******************************************************************************
-// Attente
+// Repeated start
 //******************************************************************************
-
-void I2C_Master_Wait(void) {
-    while ((SSP1STAT & 0x04) || (SSP1CON2 & 0x1F)); //Transmit is in progress
-}
-//******************************************************************************
-// Restart
-//******************************************************************************
-
 void I2C_Master_RepeatedStart(void) {
-    I2C_Master_Wait();
     SSP1CON2bits.RSEN = 1; //Initiate repeated start condition
+    while(SSP1CON2bits.RSEN);
+    PIR3bits.SSP1IF = 0;
 }
+
 //******************************************************************************
 // Start
 //******************************************************************************
-
 void I2C_Master_Start(void) {
-    I2C_Master_Wait();
     SSP1CON2bits.SEN = 1; //Initiate start condition
+    while(SSP1CON2bits.SEN);
+    PIR3bits.SSP1IF = 0;
 }
+
 //******************************************************************************
 // Stop
 //******************************************************************************
-
 void I2C_Master_Stop(void) {
-    I2C_Master_Wait();
     SSP1CON2bits.PEN = 1; //Initiate stop condition
+    while(SSP1CON2bits.PEN);
+    PIR3bits.SSP1IF = 0;
 }
-//******************************************************************************
-// Read
-//******************************************************************************
 
-unsigned char I2C_Master_Read(unsigned char Ack) {
-    unsigned char temp;
-    I2C_Master_Wait();
-    SSP1CON2bits.RCEN = 1;
-    I2C_Master_Wait();
-    temp = SSP1BUF; //Read data from SSPBUF
-    I2C_Master_Wait();
-    SSP1CON2bits.ACKDT = Ack ? 0 : 1; //Acknowledge bit
+//******************************************************************************
+// Send Acknowledge
+//******************************************************************************
+void I2C_Master_Send_ACK(unsigned char Ack) {
+    SSP1CON2bits.ACKDT = Ack == 0 ? 0 : 1; //Acknowledge bit
     SSP1CON2bits.ACKEN = 1; //Acknowledge sequence
-    //while(SSP1CON2bits.ACKEN == 1);
-    return temp;
+    while(SSP1CON2bits.ACKEN);
+    PIR3bits.SSP1IF = 0;
 }
-//******************************************************************************
-// Write
-//******************************************************************************
 
-void I2C_Master_Write(unsigned char d) {
-    I2C_Master_Wait();
-    SSP1BUF = d; //Write data to SSPBUF
+//******************************************************************************
+// Write to buffer
+//******************************************************************************
+void I2C_Master_Write(unsigned char data) {
+    SSP1BUF = data;
+    if(SSP1CON1bits.WCOL) {
+        SSP1CON1bits.WCOL = 0;
+        SetLedBlink(R,1000,0,0,1);
+    } else {
+        while(!PIR3bits.SSP1IF);
+    }
 }
 
 //******************************************************************************
@@ -147,11 +200,18 @@ void I2C_Master_Write(unsigned char d) {
 //      Target  : Adresse de la cible
 //      Data    : Donnée
 //******************************************************************************
-
 void I2C_WriteData(unsigned char Target, unsigned char Data) {
     I2C_Master_Start();
+    
     I2C_Master_Write(Target);
+    if(SSP1CON2bits.ACKSTAT) {
+        // NACK, initiate stop
+        I2C_Master_Stop();
+        return;
+    }
+    
     I2C_Master_Write(Data);
+    
     I2C_Master_Stop();
 }
 
@@ -162,13 +222,23 @@ void I2C_WriteData(unsigned char Target, unsigned char Data) {
 //      Length  : Taille du tableau
 //      Data    : Tableau de donnée
 //******************************************************************************
-
 void I2C_WriteLength(unsigned char Target, unsigned char Length, unsigned char *Data) {
     I2C_Master_Start();
+    
     I2C_Master_Write(Target);
-
+    if(SSP1CON2bits.ACKSTAT) {
+        // NACK, initiate stop
+        I2C_Master_Stop();
+        return;
+    }
+    
     for (unsigned char i = 0; i < Length; i++) {
         I2C_Master_Write(Data[i]);
+        if(SSP1CON2bits.ACKSTAT) {
+            // NACK, initiate stop
+            I2C_Master_Stop();
+            return;
+        }
     }
 
     I2C_Master_Stop();
@@ -180,16 +250,33 @@ void I2C_WriteLength(unsigned char Target, unsigned char Length, unsigned char *
 //      Target  : Adresse de la cible
 // Retour : Valeur lue
 //******************************************************************************
-
 unsigned char I2C_ReadData(unsigned char Target) {
     I2C_Master_Start();
-    I2C_Master_Write(Target);
-
-    I2C_Master_RepeatedStart();
-
+    
+    // Transmit address with read flag
     I2C_Master_Write(Target | 0x01);
-    unsigned char result = I2C_Master_Read(0);
+    if(SSP1CON2bits.ACKSTAT) {
+        // NACK, initiate stop
+        I2C_Master_Stop();
+        return 0xFF;
+    }
+    
+    // Enable receive mode
+    SSP1CON2bits.RCEN = 1;
+    
+    // Wait for data to be received
+    while(!SSP1STATbits.BF);
+    PIR3bits.SSP1IF = 0;
+    
+    // Read data
+    unsigned char result = SSP1BUF;
+    
+    // Send not acknowledge
+    I2C_Master_Send_ACK(1);
+    
+    // Stop condition
     I2C_Master_Stop();
+    
     return result;
 }
 
@@ -200,20 +287,34 @@ unsigned char I2C_ReadData(unsigned char Target) {
 //      Length  : Taille du tableau
 //      Output  : Tableau de sortie
 //******************************************************************************
-
 void I2C_ReadLength(unsigned char Target, unsigned char Length, unsigned char *Output) {
     I2C_Master_Start();
-    I2C_Master_Write(Target);
-
-    I2C_Master_RepeatedStart();
-
+    
+    // Transmit address with read flag
     I2C_Master_Write(Target | 0x01);
-
+    if(SSP1CON2bits.ACKSTAT) {
+        // NACK, initiate stop
+        I2C_Master_Stop();
+        return;
+    }
+    
+    // Enable receive mode
+    SSP1CON2bits.RCEN = 1;
+    
     for (unsigned char i = 0; i < Length; i++) {
-        Output[i] = I2C_Master_Read(((i + 1) == Length) ? 0 : 1);
+        // Wait for data to be received
+        while(!SSP1STATbits.BF);
+        PIR3bits.SSP1IF = 0;
+        
+        // Add data to output
+        Output[i] = SSP1BUF;
+        
+        // Ack
+        I2C_Master_Send_ACK(((i + 1) == Length) ? 1 : 0);
     }
     Output[Length] = 0x00;
-
+    
+    // Stop condition
     I2C_Master_Stop();
 }
 
@@ -224,20 +325,56 @@ void I2C_ReadLength(unsigned char Target, unsigned char Length, unsigned char *O
 //      CMD     : Commande
 // Retour : Valeur lue
 //******************************************************************************
-
 unsigned char I2C_SendCommand(unsigned char Target, unsigned char CMD) {
+    // Start condition
     I2C_Master_Start();
+    
+    // Send target address with R_nW flag
     I2C_Master_Write(Target);
+    if(SSP1CON2bits.ACKSTAT) {
+        // NACK, initiate stop
+        SSP1CON2bits.PEN = 1;
+        while(SSP1CON2bits.PEN);
+        return 0xFF;
+    }
+    
+    // Send command
     I2C_Master_Write(CMD);
-
-    I2C_Master_RepeatedStart();
+    if(SSP1CON2bits.ACKSTAT) {
+        // NACK, initiate stop
+        SSP1CON2bits.PEN = 1;
+        while(SSP1CON2bits.PEN);
+        return 0xFF;
+    }
+    
+    I2C_Master_Stop();
+    
+    Delay_Xms(5);
+    
+    I2C_Master_Start();
 
     I2C_Master_Write(Target | 0x01);
-    unsigned char result = I2C_Master_Read(0);
+    if(SSP1CON2bits.ACKSTAT) {
+        // NACK, initiate stop
+        SSP1CON2bits.PEN = 1;
+        while(SSP1CON2bits.PEN);
+        return 0xFF;
+    }
+    
+    // Enable reception
+    SSP1CON2bits.RCEN = 1;
+    
+    // Wait for data to be received
+    while(!SSP1STATbits.BF);
+    PIR3bits.SSP1IF = 0;
+        
+    unsigned char result = SSP1BUF;
+    
+    I2C_Master_Send_ACK(1);
+    
     I2C_Master_Stop();
     return result;
 }
-
 //******************************************************************************
 // Envoi d'une commande et attente d'une réponse sous forme de tableau
 // Paramètres :
@@ -246,18 +383,50 @@ unsigned char I2C_SendCommand(unsigned char Target, unsigned char CMD) {
 //      Length  : Taille du tableau
 //      Output  : Tableau de sortie
 //******************************************************************************
-
 void I2C_SendCommand_L(unsigned char Target, unsigned char CMD, unsigned char Length, unsigned char *Output) {
     I2C_Master_Start();
     I2C_Master_Write(Target);
+    if(SSP1CON2bits.ACKSTAT) {
+        // NACK, initiate stop
+        SSP1CON2bits.PEN = 1;
+        while(SSP1CON2bits.PEN);
+        return;
+    }
     I2C_Master_Write(CMD);
+    if(SSP1CON2bits.ACKSTAT) {
+        // NACK, initiate stop
+        SSP1CON2bits.PEN = 1;
+        while(SSP1CON2bits.PEN);
+        return;
+    }
 
-    I2C_Master_RepeatedStart();
+    I2C_Master_Stop();
+    
+    Delay_Xms(5);
+    
+    I2C_Master_Start();
 
     I2C_Master_Write(Target | 0x01);
+    if(SSP1CON2bits.ACKSTAT) {
+        // NACK, initiate stop
+        SSP1CON2bits.PEN = 1;
+        while(SSP1CON2bits.PEN);
+        return;
+    }
 
+    // Enable reception
+    SSP1CON2bits.RCEN = 1;
+    
     for (unsigned char i = 0; i < Length; i++) {
-        Output[i] = I2C_Master_Read(((i + 1) == Length) ? 0 : 1);
+        // Wait for data to be received
+        while(!SSP1STATbits.BF);
+        PIR3bits.SSP1IF = 0;
+        
+        // Add data to output
+        Output[i] = SSP1BUF;
+        
+        // Ack
+        I2C_Master_Send_ACK(((i + 1) == Length) ? 1 : 0);
     }
     Output[Length] = 0x00;
 
@@ -267,7 +436,6 @@ void I2C_SendCommand_L(unsigned char Target, unsigned char CMD, unsigned char Le
 //******************************************************************************
 // Contrôle l'erreur de collision de bus
 //******************************************************************************
-
 void I2C_BusCollisionISR(void) {
     // enter bus collision handling code here
     PIR3bits.BCL1IF = 0;
@@ -276,13 +444,15 @@ void I2C_BusCollisionISR(void) {
 //******************************************************************************
 // Retourne l'adresse avec le flag R_nW mis à 0
 //******************************************************************************
-
 unsigned char GetTarget(unsigned char Address) {
     unsigned char ret = Address << 1;
     ret = ret & 0b11111110;
     return ret;
 }
 
+//******************************************************************************
+// Retourne l'adresse avec le flag R_nW mis à 0
+//******************************************************************************
 void I2C_Slave_ISR(void) {
     PIR3bits.SSP1IF = 0;
     
@@ -290,6 +460,7 @@ void I2C_Slave_ISR(void) {
     if(SSP1STATbits.S == 1) {
         // Start condition, address valid
         // Send Acknowledge
+        
         SSP1CON2bits.ACKDT = 0; //Acknowledge bit
         SSP1CON2bits.ACKEN = 1; //Acknowledge sequence
         // Wait for acknowledge sent
@@ -301,32 +472,10 @@ void I2C_Slave_ISR(void) {
         // Check if read or write
         if(SSP1STATbits.R_nW == 1) {
             // Read
-            // Process last command
-            if(I2C_RX_CMD == CMD2_GET_MODULE_INDEX) {
-                SSP1BUF = MODULE_INDEX_RF_RECEIVER;
-            } else if (I2C_RX_CMD == CMD2_GET_DATA) {
-                unsigned char dx = d0 * 1 + d1 * 2 + d2 * 4 + d3 * 8;
-                SSP1BUF = dx;
-            }
-            
-            // Wait for acknowledge sent
-            while(!PIR3bits.SSP1IF);
-            PIR3bits.SSP1IF = 0;
-            // Check ack or nack to send more data
             
         } else {
             // Write
-            SSP1CON1bits.CKP = 1;
-            // Wait for new data received
-            while(!SSP1STATbits.BF);
-            // Send acknowldege
-            SSP1CON2bits.ACKDT = 0; //Acknowledge bit
-            SSP1CON2bits.ACKEN = 1; //Acknowledge sequence
-            // Wait for acknowledge sent
-            while(!PIR3bits.SSP1IF);
-            PIR3bits.SSP1IF = 0;
-            // Read command
-            I2C_RX_CMD = SSP1BUF;
+            
         }
     }
 }

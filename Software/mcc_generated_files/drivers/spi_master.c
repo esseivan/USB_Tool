@@ -26,21 +26,21 @@
 
 #include "spi_master.h"
 
-inline bool MASTER0_open(void);
+inline bool MASTER_open(void);
 
 const spi_master_functions_t spiMaster[] = {   
-    { spi2_close, MASTER0_open, spi2_exchangeByte, spi2_exchangeBlock, spi2_writeBlock, spi2_readBlock, spi2_writeByte, spi2_readByte, spi2_setSpiISR, spi2_isr }
+    { spi2_close, MASTER_open, spi2_exchangeByte, spi2_exchangeBlock, spi2_writeBlock, spi2_readBlock, spi2_writeByte, spi2_readByte, spi2_setSpiISR, spi2_isr }
 };
 
-inline bool MASTER0_open(void){
-    return spi2_open(MASTER0_CONFIG);
+inline bool MASTER_open(void){
+    return spi2_open(MASTER_CONFIG);
 }
 
 //This function serves keep backwards compatibility with older api users
 inline bool spi_master_open(spi_master_configurations_t config){
     switch(config){
-        case MASTER0:
-            return MASTER0_open();
+        case MASTER:
+            return MASTER_open();
         default:
             return 0;
     }

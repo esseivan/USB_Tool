@@ -2,16 +2,11 @@
 # 1 "iic.c"
 
 # 22 "iic.h"
-unsigned char I2C_RX_CMD = 0;
-
-# 29
 void I2C_Master_Init(void);
 
 void I2C_WriteData(unsigned char Target, unsigned char Data);
 
 void I2C_WriteLength(unsigned char Target, unsigned char Length, unsigned char *Data);
-
-unsigned char I2C_ReadData(unsigned char Target);
 
 void I2C_ReadLength(unsigned char Target, unsigned char Length, unsigned char *Output);
 
@@ -22,6 +17,8 @@ void I2C_SendCommand_L(unsigned char Target, unsigned char CMD, unsigned char Le
 void I2C_BusCollisionISR(void);
 
 unsigned char GetTarget(unsigned char Address);
+
+void I2C_Slave_ISR(void);
 
 # 18 "C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\xc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -17214,96 +17211,6 @@ typedef unsigned char bool;
 # 110 "mcc_generated_files/interrupt_manager.h"
 void INTERRUPT_Initialize (void);
 
-# 4 "C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\__size_t.h"
-typedef unsigned size_t;
-
-# 7 "C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c90\stdarg.h"
-typedef void * va_list[1];
-
-#pragma intrinsic(__va_start)
-extern void * __va_start(void);
-
-#pragma intrinsic(__va_arg)
-extern void * __va_arg(void *, ...);
-
-# 43 "C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c90\stdio.h"
-struct __prbuf
-{
-char * ptr;
-void (* func)(char);
-};
-
-# 29 "C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c90\errno.h"
-extern int errno;
-
-# 12 "C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c90\conio.h"
-extern void init_uart(void);
-
-extern char getch(void);
-extern char getche(void);
-extern void putch(char);
-extern void ungetch(char);
-
-extern __bit kbhit(void);
-
-# 23
-extern char * cgets(char *);
-extern void cputs(const char *);
-
-# 88 "C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c90\stdio.h"
-extern int cprintf(char *, ...);
-#pragma printf_check(cprintf)
-
-
-
-extern int _doprnt(struct __prbuf *, const register char *, register va_list);
-
-
-# 180
-#pragma printf_check(vprintf) const
-#pragma printf_check(vsprintf) const
-
-extern char * gets(char *);
-extern int puts(const char *);
-extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
-extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
-extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
-extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
-extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
-extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
-
-#pragma printf_check(printf) const
-#pragma printf_check(sprintf) const
-extern int sprintf(char *, const char *, ...);
-extern int printf(const char *, ...);
-
-# 15 "C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c90\stdbool.h"
-typedef unsigned char bool;
-
-# 27 "mcc_generated_files/spi2_types.h"
-typedef enum {
-MASTER0_CONFIG,
-SPI2_DEFAULT
-} spi2_modes;
-
-# 35 "mcc_generated_files/spi2_driver.h"
-inline void spi2_close(void);
-
-bool spi2_open(spi2_modes spiUniqueConfiguration);
-
-uint8_t spi2_exchangeByte(uint8_t b);
-
-void spi2_exchangeBlock(void *block, size_t blockSize);
-void spi2_writeBlock(void *block, size_t blockSize);
-void spi2_readBlock(void *block, size_t blockSize);
-
-void spi2_writeByte(uint8_t byte);
-uint8_t spi2_readByte(void);
-
-void spi2_isr(void);
-void spi2_runIsr(void);
-void spi2_setSpiISR(void(*handler)(void));
-
 # 15 "C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c90\stdbool.h"
 typedef unsigned char bool;
 
@@ -17776,6 +17683,119 @@ typedef unsigned char bool;
 # 92 "mcc_generated_files/clkref.h"
 void CLKREF_Initialize(void);
 
+# 15 "C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c90\stdbool.h"
+typedef unsigned char bool;
+
+# 4 "C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\__size_t.h"
+typedef unsigned size_t;
+
+# 7 "C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c90\stdarg.h"
+typedef void * va_list[1];
+
+#pragma intrinsic(__va_start)
+extern void * __va_start(void);
+
+#pragma intrinsic(__va_arg)
+extern void * __va_arg(void *, ...);
+
+# 43 "C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c90\stdio.h"
+struct __prbuf
+{
+char * ptr;
+void (* func)(char);
+};
+
+# 29 "C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c90\errno.h"
+extern int errno;
+
+# 12 "C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c90\conio.h"
+extern void init_uart(void);
+
+extern char getch(void);
+extern char getche(void);
+extern void putch(char);
+extern void ungetch(char);
+
+extern __bit kbhit(void);
+
+# 23
+extern char * cgets(char *);
+extern void cputs(const char *);
+
+# 88 "C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c90\stdio.h"
+extern int cprintf(char *, ...);
+#pragma printf_check(cprintf)
+
+
+
+extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+
+
+# 180
+#pragma printf_check(vprintf) const
+#pragma printf_check(vsprintf) const
+
+extern char * gets(char *);
+extern int puts(const char *);
+extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+
+#pragma printf_check(printf) const
+#pragma printf_check(sprintf) const
+extern int sprintf(char *, const char *, ...);
+extern int printf(const char *, ...);
+
+# 15 "C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c90\stdbool.h"
+typedef unsigned char bool;
+
+# 27 "mcc_generated_files/drivers/../spi2_types.h"
+typedef enum {
+MASTER_CONFIG,
+SPI2_DEFAULT
+} spi2_modes;
+
+# 35 "mcc_generated_files/drivers/../spi2_driver.h"
+inline void spi2_close(void);
+
+bool spi2_open(spi2_modes spiUniqueConfiguration);
+
+unsigned char spi2_exchangeByte(unsigned char b);
+
+void spi2_exchangeBlock(void *block, size_t blockSize);
+void spi2_writeBlock(void *block, size_t blockSize);
+void spi2_readBlock(void *block, size_t blockSize);
+
+void spi2_writeByte(unsigned char byte);
+unsigned char spi2_readByte(void);
+
+void spi2_isr(void);
+void spi2_setSpiISR(void(*handler)(void));
+
+# 33 "mcc_generated_files/drivers/spi_master.h"
+typedef enum {
+MASTER
+} spi_master_configurations_t;
+
+typedef struct { void (*spiClose)(void);
+bool (*spiOpen)(void);
+uint8_t (*exchangeByte)(uint8_t b);
+void (*exchangeBlock)(void * block, size_t blockSize);
+void (*writeBlock)(void * block, size_t blockSize);
+void (*readBlock)(void * block, size_t blockSize);
+void (*writeByte)(uint8_t byte);
+uint8_t (*readByte)(void);
+void (*setSpiISR)(void(*handler)(void));
+void (*spiISR)(void);
+} spi_master_functions_t;
+
+extern const spi_master_functions_t spiMaster[];
+
+inline bool spi_master_open(spi_master_configurations_t config);
+
 # 80 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
 
@@ -17784,8 +17804,6 @@ void OSCILLATOR_Initialize(void);
 
 # 106
 void PMD_Initialize(void);
-void I2C1_Initialize(void);
-void SPI2_Initialize(void);
 
 # 34 "main.h"
 enum LedStateMode {
@@ -17805,61 +17823,151 @@ RGB_B,
 };
 
 void Delay_Xms(long delay);
+void Delay_Xus(long delay);
 void INT0_Custom_ISR(void);
 void I2C_Custom_ISR(void);
 
-# 20 "iic.c"
-void I2C_Master_Wait(void);
+# 36 "LedBlink.h"
+void SetLed(int ledIndex, int Mode);
+int GetLed(int ledIndex);
+int ToggleLed(int ledIndex);
+void SetLedBlink(int ledIndex, int OnTime, int OffTime, int StartAfter, int BlinkCount);
+void SetLedBlinkMode(int ledIndex, int BlinkEnabled);
+void TMR2_Custom_ISR(void);
 
+
+int R_OnTime = 0;
+
+int R_OffTime = 0;
+
+int R_Enabled = 0;
+
+int R_Counter = 0;
+
+int R_StartAfter = 0;
+
+int R_BlinkCount = 0;
+
+int R_BlinkCounter = 0;
+
+int R_State = UNIDENTIFIED;
+
+int G_OnTime = 0;
+int G_OffTime = 0;
+int G_Enabled = 0;
+int G_Counter = 0;
+int G_StartAfter = 0;
+int G_BlinkCount = 0;
+int G_BlinkCounter = 0;
+int G_State = UNIDENTIFIED;
+
+int B_OnTime = 0;
+int B_OffTime = 0;
+int B_Enabled = 0;
+int B_Counter = 0;
+int B_StartAfter = 0;
+int B_BlinkCount = 0;
+int B_BlinkCounter = 0;
+int B_State = UNIDENTIFIED;
+
+int RGB_R_OnTime = 0;
+int RGB_R_OffTime = 0;
+int RGB_R_Enabled = 0;
+int RGB_R_Counter = 0;
+int RGB_R_StartAfter = 0;
+int RGB_R_BlinkCount = 0;
+int RGB_R_BlinkCounter = 0;
+int RGB_R_State = UNIDENTIFIED;
+
+int RGB_G_OnTime = 0;
+int RGB_G_OffTime = 0;
+int RGB_G_Enabled = 0;
+int RGB_G_Counter = 0;
+int RGB_G_StartAfter = 0;
+int RGB_G_BlinkCount = 0;
+int RGB_G_BlinkCounter = 0;
+int RGB_G_State = UNIDENTIFIED;
+
+int RGB_B_OnTime = 0;
+int RGB_B_OffTime = 0;
+int RGB_B_Enabled = 0;
+int RGB_B_Counter = 0;
+int RGB_B_StartAfter = 0;
+int RGB_B_BlinkCount = 0;
+int RGB_B_BlinkCounter = 0;
+int RGB_B_State = UNIDENTIFIED;
+
+# 21 "iic.c"
 void I2C_Master_RepeatedStart(void);
 
 void I2C_Master_Start(void);
 
 void I2C_Master_Stop(void);
 
-unsigned char I2C_Master_Read(unsigned char Ack);
+void I2C_Master_Send_ACK(unsigned char Ack);
 
-void I2C_Master_Write(unsigned char d);
+void I2C_Master_Write(unsigned char data);
 
-# 40
+# 38
 void I2C_Master_Init(void) {
 
-do { TRISBbits.TRISB2 = 1; } while(0);
 do { ANSELBbits.ANSELB2 = 0; } while(0);
-do { TRISBbits.TRISB3 = 1; } while(0);
+do { TRISBbits.TRISB2 = 1; } while(0);
+SSP1CLKPPS = 0b00001010;
+RB2PPS = 0x0F;
+
 do { ANSELBbits.ANSELB3 = 0; } while(0);
+do { TRISBbits.TRISB3 = 1; } while(0);
+SSP1DATPPS = 0b00001011;
+RB3PPS = 0x10;
 
-SSP1STAT = 0x00;
+SSP1STAT = 0b00000000;
 
-SSP1CON1 = 0x28;
-SSP1CON2 = 0x00;
+# 61
+SSP1CON1 = 0b00101000;
 
+# 68
+SSP1CON2 = 0b00000000;
+
+# 79
 SSP1CON3 = 0x00;
 
-SSP1ADD = 0x3b;
+SSP1ADD = 0xEF;
 
 PIR3bits.BCL1IF = 0;
 
 PIE3bits.BCL1IE = 1;
 }
 
+
+
+
 void I2C_Slave_Init(void) {
 
 do { TRISBbits.TRISB2 = 1; } while(0);
 do { ANSELBbits.ANSELB2 = 0; } while(0);
+SSP1CLKPPS = 0b00001010;
+RB2PPS = 0x0F;
+
 do { TRISBbits.TRISB3 = 1; } while(0);
 do { ANSELBbits.ANSELB3 = 0; } while(0);
+SSP1DATPPS = 0b00001011;
+RB3PPS = 0x10;
 
-SSP1STAT = 0x00;
+SSP1STAT = 0b00000000;
 
-SSP1CON1 = 0x26;
-SSP1CON2 = 0x00;
+# 114
+SSP1CON1 = 0b00100110;
 
+# 121
+SSP1CON2 = 0b10000000;
+
+# 132
 SSP1CON3 = 0x24;
 
-SSP1ADD = 0x7F << 1;
+SSP1ADD = 0x00 << 1;
 
-SSP1MSK = 0xFF;
+SSP1MSK = 0x00;
 
 SSP1CON3bits.SCIE = 1;
 
@@ -17870,159 +17978,287 @@ PIE3bits.BCL1IE = 1;
 PIE3bits.SSP1IE = 1;
 }
 
-# 92
-void I2C_Master_Wait(void) {
-while ((SSP1STAT & 0x04) || (SSP1CON2 & 0x1F));
-}
-
 
 
 
 void I2C_Master_RepeatedStart(void) {
-I2C_Master_Wait();
 SSP1CON2bits.RSEN = 1;
+while(SSP1CON2bits.RSEN);
+PIR3bits.SSP1IF = 0;
 }
 
 
 
 
 void I2C_Master_Start(void) {
-I2C_Master_Wait();
 SSP1CON2bits.SEN = 1;
+while(SSP1CON2bits.SEN);
+PIR3bits.SSP1IF = 0;
 }
 
 
 
 
 void I2C_Master_Stop(void) {
-I2C_Master_Wait();
 SSP1CON2bits.PEN = 1;
+while(SSP1CON2bits.PEN);
+PIR3bits.SSP1IF = 0;
 }
 
 
 
 
-unsigned char I2C_Master_Read(unsigned char Ack) {
-unsigned char temp;
-I2C_Master_Wait();
-SSP1CON2bits.RCEN = 1;
-I2C_Master_Wait();
-temp = SSP1BUF;
-I2C_Master_Wait();
-SSP1CON2bits.ACKDT = Ack ? 0 : 1;
+void I2C_Master_Send_ACK(unsigned char Ack) {
+SSP1CON2bits.ACKDT = Ack == 0 ? 0 : 1;
 SSP1CON2bits.ACKEN = 1;
-
-return temp;
+while(SSP1CON2bits.ACKEN);
+PIR3bits.SSP1IF = 0;
 }
 
 
 
 
-void I2C_Master_Write(unsigned char d) {
-I2C_Master_Wait();
-SSP1BUF = d;
+void I2C_Master_Write(unsigned char data) {
+SSP1BUF = data;
+if(SSP1CON1bits.WCOL) {
+SSP1CON1bits.WCOL = 0;
+SetLedBlink(R,1000,0,0,1);
+} else {
+while(!PIR3bits.SSP1IF);
+}
 }
 
-# 151
+# 203
 void I2C_WriteData(unsigned char Target, unsigned char Data) {
 I2C_Master_Start();
+
 I2C_Master_Write(Target);
+if(SSP1CON2bits.ACKSTAT) {
+
+I2C_Master_Stop();
+return;
+}
+
 I2C_Master_Write(Data);
+
 I2C_Master_Stop();
 }
 
-# 166
+# 225
 void I2C_WriteLength(unsigned char Target, unsigned char Length, unsigned char *Data) {
 I2C_Master_Start();
+
 I2C_Master_Write(Target);
+if(SSP1CON2bits.ACKSTAT) {
+
+I2C_Master_Stop();
+return;
+}
 
 for (unsigned char i = 0; i < Length; i++) {
 I2C_Master_Write(Data[i]);
+if(SSP1CON2bits.ACKSTAT) {
+
+I2C_Master_Stop();
+return;
+}
 }
 
 I2C_Master_Stop();
 }
 
-# 184
+# 253
 unsigned char I2C_ReadData(unsigned char Target) {
 I2C_Master_Start();
-I2C_Master_Write(Target);
 
-I2C_Master_RepeatedStart();
 
 I2C_Master_Write(Target | 0x01);
-unsigned char result = I2C_Master_Read(0);
+if(SSP1CON2bits.ACKSTAT) {
+
 I2C_Master_Stop();
+return 0xFF;
+}
+
+
+SSP1CON2bits.RCEN = 1;
+
+
+while(!SSP1STATbits.BF);
+PIR3bits.SSP1IF = 0;
+
+
+unsigned char result = SSP1BUF;
+
+
+I2C_Master_Send_ACK(1);
+
+
+I2C_Master_Stop();
+
 return result;
 }
 
-# 204
+# 290
 void I2C_ReadLength(unsigned char Target, unsigned char Length, unsigned char *Output) {
 I2C_Master_Start();
-I2C_Master_Write(Target);
 
-I2C_Master_RepeatedStart();
 
 I2C_Master_Write(Target | 0x01);
+if(SSP1CON2bits.ACKSTAT) {
+
+I2C_Master_Stop();
+return;
+}
+
+
+SSP1CON2bits.RCEN = 1;
 
 for (unsigned char i = 0; i < Length; i++) {
-Output[i] = I2C_Master_Read(((i + 1) == Length) ? 0 : 1);
+
+while(!SSP1STATbits.BF);
+PIR3bits.SSP1IF = 0;
+
+
+Output[i] = SSP1BUF;
+
+
+I2C_Master_Send_ACK(((i + 1) == Length) ? 1 : 0);
 }
 Output[Length] = 0x00;
 
+
 I2C_Master_Stop();
 }
 
-# 228
+# 328
 unsigned char I2C_SendCommand(unsigned char Target, unsigned char CMD) {
-I2C_Master_Start();
-I2C_Master_Write(Target);
-I2C_Master_Write(CMD);
 
-I2C_Master_RepeatedStart();
+I2C_Master_Start();
+
+
+I2C_Master_Write(Target);
+if(SSP1CON2bits.ACKSTAT) {
+
+SSP1CON2bits.PEN = 1;
+while(SSP1CON2bits.PEN);
+return 0xFF;
+}
+
+
+I2C_Master_Write(CMD);
+if(SSP1CON2bits.ACKSTAT) {
+
+SSP1CON2bits.PEN = 1;
+while(SSP1CON2bits.PEN);
+return 0xFF;
+}
+
+I2C_Master_Stop();
+
+Delay_Xms(5);
+
+I2C_Master_Start();
 
 I2C_Master_Write(Target | 0x01);
-unsigned char result = I2C_Master_Read(0);
+if(SSP1CON2bits.ACKSTAT) {
+
+SSP1CON2bits.PEN = 1;
+while(SSP1CON2bits.PEN);
+return 0xFF;
+}
+
+
+SSP1CON2bits.RCEN = 1;
+
+
+while(!SSP1STATbits.BF);
+PIR3bits.SSP1IF = 0;
+
+unsigned char result = SSP1BUF;
+
+I2C_Master_Send_ACK(1);
+
 I2C_Master_Stop();
 return result;
 }
 
-# 250
+# 386
 void I2C_SendCommand_L(unsigned char Target, unsigned char CMD, unsigned char Length, unsigned char *Output) {
 I2C_Master_Start();
 I2C_Master_Write(Target);
-I2C_Master_Write(CMD);
+if(SSP1CON2bits.ACKSTAT) {
 
-I2C_Master_RepeatedStart();
+SSP1CON2bits.PEN = 1;
+while(SSP1CON2bits.PEN);
+return;
+}
+I2C_Master_Write(CMD);
+if(SSP1CON2bits.ACKSTAT) {
+
+SSP1CON2bits.PEN = 1;
+while(SSP1CON2bits.PEN);
+return;
+}
+
+I2C_Master_Stop();
+
+Delay_Xms(5);
+
+I2C_Master_Start();
 
 I2C_Master_Write(Target | 0x01);
+if(SSP1CON2bits.ACKSTAT) {
+
+SSP1CON2bits.PEN = 1;
+while(SSP1CON2bits.PEN);
+return;
+}
+
+
+SSP1CON2bits.RCEN = 1;
 
 for (unsigned char i = 0; i < Length; i++) {
-Output[i] = I2C_Master_Read(((i + 1) == Length) ? 0 : 1);
+
+while(!SSP1STATbits.BF);
+PIR3bits.SSP1IF = 0;
+
+
+Output[i] = SSP1BUF;
+
+
+I2C_Master_Send_ACK(((i + 1) == Length) ? 1 : 0);
 }
 Output[Length] = 0x00;
 
 I2C_Master_Stop();
 }
 
-# 271
+
+
+
 void I2C_BusCollisionISR(void) {
 
 PIR3bits.BCL1IF = 0;
 }
 
-# 280
+
+
+
 unsigned char GetTarget(unsigned char Address) {
 unsigned char ret = Address << 1;
 ret = ret & 0b11111110;
 return ret;
 }
 
+
+
+
 void I2C_Slave_ISR(void) {
 PIR3bits.SSP1IF = 0;
 
 
 if(SSP1STATbits.S == 1) {
+
 
 
 SSP1CON2bits.ACKDT = 0;
@@ -18037,31 +18273,9 @@ unsigned char data = SSP1BUF;
 if(SSP1STATbits.R_nW == 1) {
 
 
-if(I2C_RX_CMD == 0x50) {
-SSP1BUF = 0x01;
-} else if (I2C_RX_CMD == 0x51) {
-unsigned char dx = d0 * 1 + d1 * 2 + d2 * 4 + d3 * 8;
-SSP1BUF = dx;
-}
-
-
-while(!PIR3bits.SSP1IF);
-PIR3bits.SSP1IF = 0;
-
-
 } else {
 
-SSP1CON1bits.CKP = 1;
 
-while(!SSP1STATbits.BF);
-
-SSP1CON2bits.ACKDT = 0;
-SSP1CON2bits.ACKEN = 1;
-
-while(!PIR3bits.SSP1IF);
-PIR3bits.SSP1IF = 0;
-
-I2C_RX_CMD = SSP1BUF;
 }
 }
 }

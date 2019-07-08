@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-[v F9987 `(v ~T0 @X0 0 tf ]
+[v F9985 `(v ~T0 @X0 0 tf ]
 "924 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18lf46k40.h
 [s S56 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S56 . SSPM CKP SSPEN SSPOV WCOL ]
@@ -19,7 +19,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S1484 . con1 stat add operation ]
 "47
 [c E9954 0 1 .. ]
-[n E9954 . MASTER0_CONFIG SPI2_DEFAULT  ]
+[n E9954 . MASTER_CONFIG SPI2_DEFAULT  ]
 "152 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18lf46k40.h
 [v _SSP2CLKPPS `Vuc ~T0 @X0 0 e@3727 ]
 "186
@@ -57,9 +57,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S308 . . . ]
 "4955
 [v _PIR3bits `VS308 ~T0 @X0 0 e@3789 ]
-"49 mcc_generated_files/spi2_driver.h
-[v _spi2_runIsr `(v ~T0 @X0 0 ef ]
-[v F9984 `(v ~T0 @X0 0 tf ]
+[v F9982 `(v ~T0 @X0 0 tf ]
 [; ;__size_t.h: 4: typedef unsigned size_t;
 [; ;stdarg.h: 7: typedef void * va_list[1];
 [; ;stdarg.h: 10: extern void * __va_start(void);
@@ -11346,24 +11344,23 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 187: extern __nonreentrant void _delay3(unsigned char);
 [; ;stdbool.h: 15: typedef unsigned char bool;
 [; ;spi2_types.h: 27: typedef enum {
-[; ;spi2_types.h: 28: MASTER0_CONFIG,
+[; ;spi2_types.h: 28: MASTER_CONFIG,
 [; ;spi2_types.h: 29: SPI2_DEFAULT
 [; ;spi2_types.h: 30: } spi2_modes;
 [; ;spi2_driver.h: 35: inline void spi2_close(void);
 [; ;spi2_driver.h: 37: bool spi2_open(spi2_modes spiUniqueConfiguration);
-[; ;spi2_driver.h: 39: uint8_t spi2_exchangeByte(uint8_t b);
+[; ;spi2_driver.h: 39: unsigned char spi2_exchangeByte(unsigned char b);
 [; ;spi2_driver.h: 41: void spi2_exchangeBlock(void *block, size_t blockSize);
 [; ;spi2_driver.h: 42: void spi2_writeBlock(void *block, size_t blockSize);
 [; ;spi2_driver.h: 43: void spi2_readBlock(void *block, size_t blockSize);
-[; ;spi2_driver.h: 45: void spi2_writeByte(uint8_t byte);
-[; ;spi2_driver.h: 46: uint8_t spi2_readByte(void);
+[; ;spi2_driver.h: 45: void spi2_writeByte(unsigned char byte);
+[; ;spi2_driver.h: 46: unsigned char spi2_readByte(void);
 [; ;spi2_driver.h: 48: void spi2_isr(void);
-[; ;spi2_driver.h: 49: void spi2_runIsr(void);
-[; ;spi2_driver.h: 50: void spi2_setSpiISR(void(*handler)(void));
+[; ;spi2_driver.h: 49: void spi2_setSpiISR(void(*handler)(void));
 "29 mcc_generated_files/spi2_driver.c
 [p n 520 ]
 "31
-[v _spi2_interruptHandler `*F9987 ~T0 @X0 1 e ]
+[v _spi2_interruptHandler `*F9985 ~T0 @X0 1 e ]
 [; ;spi2_driver.c: 31: void (*spi2_interruptHandler)(void);
 [v F9960 `(v ~T0 @X0 1 tf ]
 "33
@@ -11381,7 +11378,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "36
 [e :UE 1483 ]
 }
-[; ;spi2_driver.c: 39: typedef struct { uint8_t con1; uint8_t stat; uint8_t add; uint8_t operation; } spi2_configuration_t;
+[; ;spi2_driver.c: 39: typedef struct { unsigned char con1; unsigned char stat; unsigned char add; unsigned char operation; } spi2_configuration_t;
 "40
 [v _spi2_configuration `CS1484 ~T0 @X0 -> 0 `x s ]
 [i _spi2_configuration
@@ -11390,21 +11387,21 @@ Version 3.2 HI-TECH Software Intermediate Code
 "41
 -> -> 10 `i `uc
 -> -> 64 `i `uc
--> -> 14 `i `uc
+-> -> 59 `i `uc
 -> -> 0 `i `uc
 ..
 :U ..
 "42
 -> -> 10 `i `uc
 -> -> 64 `i `uc
--> -> 14 `i `uc
+-> -> 59 `i `uc
 -> -> 0 `i `uc
 ..
 ..
 ]
 [; ;spi2_driver.c: 40: static const spi2_configuration_t spi2_configuration[] = {
-[; ;spi2_driver.c: 41: { 0xa, 0x40, 0xe, 0 },
-[; ;spi2_driver.c: 42: { 0xa, 0x40, 0xe, 0 }
+[; ;spi2_driver.c: 41: { 0xa, 0x40, 0x3b, 0 },
+[; ;spi2_driver.c: 42: { 0xa, 0x40, 0x3b, 0 }
 [; ;spi2_driver.c: 43: };
 "46
 [v _spi2_open `(uc ~T0 @X0 1 ef1`E9954 ]
@@ -11438,16 +11435,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;spi2_driver.c: 57: SSP2STAT = spi2_configuration[spiUniqueConfiguration].stat;
 "57
 [e = _SSP2STAT . *U + &U _spi2_configuration * -> _spiUniqueConfiguration `ux -> -> # *U &U _spi2_configuration `ui `ux 1 ]
-[; ;spi2_driver.c: 58: SSP2CON1 = (uint8_t)(spi2_configuration[spiUniqueConfiguration].con1 | 0x20);
+[; ;spi2_driver.c: 58: SSP2CON1 = (unsigned char)(spi2_configuration[spiUniqueConfiguration].con1 | 0x20);
 "58
 [e = _SSP2CON1 -> | -> . *U + &U _spi2_configuration * -> _spiUniqueConfiguration `ux -> -> # *U &U _spi2_configuration `ui `ux 0 `i -> 32 `i `uc ]
 [; ;spi2_driver.c: 59: SSP2CON2 = 0x00;
 "59
 [e = _SSP2CON2 -> -> 0 `i `uc ]
-[; ;spi2_driver.c: 60: SSP2ADD = (uint8_t)(spi2_configuration[spiUniqueConfiguration].add);
+[; ;spi2_driver.c: 60: SSP2ADD = (unsigned char)(spi2_configuration[spiUniqueConfiguration].add);
 "60
 [e = _SSP2ADD . *U + &U _spi2_configuration * -> _spiUniqueConfiguration `ux -> -> # *U &U _spi2_configuration `ui `ux 2 ]
-[; ;spi2_driver.c: 62: TRISDbits.TRISD0 = (uint8_t)(spi2_configuration[spiUniqueConfiguration].operation);
+[; ;spi2_driver.c: 62: TRISDbits.TRISD0 = (unsigned char)(spi2_configuration[spiUniqueConfiguration].operation);
 "62
 [e = . . _TRISDbits 0 0 . *U + &U _spi2_configuration * -> _spiUniqueConfiguration `ux -> -> # *U &U _spi2_configuration `ui `ux 3 ]
 [; ;spi2_driver.c: 63: return 1;
@@ -11470,7 +11467,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _spi2_exchangeByte `(uc ~T0 @X0 1 ef1`uc ]
 "70
 {
-[; ;spi2_driver.c: 69: uint8_t spi2_exchangeByte(uint8_t b)
+[; ;spi2_driver.c: 69: unsigned char spi2_exchangeByte(unsigned char b)
 [; ;spi2_driver.c: 70: {
 [e :U _spi2_exchangeByte ]
 "69
@@ -11512,7 +11509,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 "79
 [v _data `*uc ~T0 @X0 1 a ]
-[; ;spi2_driver.c: 79: uint8_t *data = block;
+[; ;spi2_driver.c: 79: unsigned char *data = block;
 [e = _data -> _block `*uc ]
 [; ;spi2_driver.c: 80: while(blockSize--)
 "80
@@ -11552,7 +11549,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 "90
 [v _data `*uc ~T0 @X0 1 a ]
-[; ;spi2_driver.c: 90: uint8_t *data = block;
+[; ;spi2_driver.c: 90: unsigned char *data = block;
 [e = _data -> _block `*uc ]
 [; ;spi2_driver.c: 91: while(blockSize--)
 "91
@@ -11589,7 +11586,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [f ]
 "99
 [v _data `*uc ~T0 @X0 1 a ]
-[; ;spi2_driver.c: 99: uint8_t *data = block;
+[; ;spi2_driver.c: 99: unsigned char *data = block;
 [e = _data -> _block `*uc ]
 [; ;spi2_driver.c: 100: while(blockSize--)
 "100
@@ -11615,7 +11612,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "106
 [v _spi2_writeByte `(v ~T0 @X0 1 ef1`uc ]
 {
-[; ;spi2_driver.c: 106: void spi2_writeByte(uint8_t byte){
+[; ;spi2_driver.c: 106: void spi2_writeByte(unsigned char byte){
 [e :U _spi2_writeByte ]
 [v _byte `uc ~T0 @X0 1 r1 ]
 [f ]
@@ -11629,7 +11626,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "110
 [v _spi2_readByte `(uc ~T0 @X0 1 ef ]
 {
-[; ;spi2_driver.c: 110: uint8_t spi2_readByte(void){
+[; ;spi2_driver.c: 110: unsigned char spi2_readByte(void){
 [e :U _spi2_readByte ]
 [f ]
 [; ;spi2_driver.c: 111: return SSP2BUF;
@@ -11650,53 +11647,40 @@ Version 3.2 HI-TECH Software Intermediate Code
 "119
 [e $ ! == -> . . _PIR3bits 0 2 `i -> 1 `i 1506  ]
 {
-[; ;spi2_driver.c: 120: spi2_runIsr();
+[; ;spi2_driver.c: 120: if(spi2_interruptHandler){
 "120
-[e ( _spi2_runIsr ..  ]
-[; ;spi2_driver.c: 121: PIR3bits.SSP2IF = 0;
+[e $ ! != _spi2_interruptHandler -> -> 0 `i `*F9985 1507  ]
+{
+[; ;spi2_driver.c: 121: spi2_interruptHandler();
 "121
-[e = . . _PIR3bits 0 2 -> -> 0 `i `uc ]
+[e ( *U _spi2_interruptHandler ..  ]
 "122
 }
-[e :U 1506 ]
+[e :U 1507 ]
 [; ;spi2_driver.c: 122: }
-[; ;spi2_driver.c: 123: }
+[; ;spi2_driver.c: 123: PIR3bits.SSP2IF = 0;
 "123
+[e = . . _PIR3bits 0 2 -> -> 0 `i `uc ]
+"124
+}
+[e :U 1506 ]
+[; ;spi2_driver.c: 124: }
+[; ;spi2_driver.c: 125: }
+"125
 [e :UE 1505 ]
 }
-"125
-[v _spi2_runIsr `(v ~T0 @X0 1 ef ]
-{
-[; ;spi2_driver.c: 125: void spi2_runIsr(void) {
-[e :U _spi2_runIsr ]
-[f ]
-[; ;spi2_driver.c: 126: if(spi2_interruptHandler){
-"126
-[e $ ! != _spi2_interruptHandler -> -> 0 `i `*F9987 1508  ]
-{
-[; ;spi2_driver.c: 127: spi2_interruptHandler();
 "127
-[e ( *U _spi2_interruptHandler ..  ]
+[v _spi2_setSpiISR `(v ~T0 @X0 1 ef1`*F9982 ]
+{
+[; ;spi2_driver.c: 127: void spi2_setSpiISR(void(*handler)(void)){
+[e :U _spi2_setSpiISR ]
+[v F10014 `(v ~T0 @X0 0 tf ]
+[v _handler `*F10014 ~T0 @X0 1 r1 ]
+[f ]
+[; ;spi2_driver.c: 128: spi2_interruptHandler = handler;
 "128
-}
-[e :U 1508 ]
-[; ;spi2_driver.c: 128: }
+[e = _spi2_interruptHandler _handler ]
 [; ;spi2_driver.c: 129: }
 "129
-[e :UE 1507 ]
-}
-"131
-[v _spi2_setSpiISR `(v ~T0 @X0 1 ef1`*F9984 ]
-{
-[; ;spi2_driver.c: 131: void spi2_setSpiISR(void(*handler)(void)){
-[e :U _spi2_setSpiISR ]
-[v F10017 `(v ~T0 @X0 0 tf ]
-[v _handler `*F10017 ~T0 @X0 1 r1 ]
-[f ]
-[; ;spi2_driver.c: 132: spi2_interruptHandler = handler;
-"132
-[e = _spi2_interruptHandler _handler ]
-[; ;spi2_driver.c: 133: }
-"133
-[e :UE 1509 ]
+[e :UE 1508 ]
 }

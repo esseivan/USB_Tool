@@ -17121,7 +17121,7 @@ LATE = 0x07;
 LATD = 0xF8;
 LATA = 0x00;
 LATB = 0x00;
-LATC = 0x00;
+LATC = 0x02;
 
 # 80
 TRISE = 0x00;
@@ -17237,22 +17237,16 @@ IOCCF7_SetInterruptHandler(IOCCF7_DefaultInterruptHandler);
 PIE0bits.IOCIE = 1;
 
 
-SSP1CLKPPS = 0x0A;
-RB2PPS = 0x0F;
-SSP1DATPPS = 0x0B;
-RB3PPS = 0x00;
-
-SSP2CLKPPS = 0x18;
-RD0PPS = 0x11;
-SSP2DATPPS = 0x19;
 RD2PPS = 0x12;
-
+RX1PPS = 0x08;
+SSP2DATPPS = 0x19;
+RB1PPS = 0x09;
 INT0PPS = 0x05;
 RB4PPS = 0x14;
+RD0PPS = 0x11;
 INT2PPS = 0x07;
 INT1PPS = 0x06;
-RX1PPS = 0x08;
-RB1PPS = 0x09;
+SSP2CLKPPS = 0x18;
 }
 
 void PIN_MANAGER_IOC(void)
@@ -17309,7 +17303,7 @@ IOCCF7_ISR();
 }
 }
 
-# 280
+# 274
 void IOCAF0_ISR(void) {
 
 
@@ -17322,18 +17316,18 @@ IOCAF0_InterruptHandler();
 IOCAFbits.IOCAF0 = 0;
 }
 
-# 295
+# 289
 void IOCAF0_SetInterruptHandler(void (* InterruptHandler)(void)){
 IOCAF0_InterruptHandler = InterruptHandler;
 }
 
-# 302
+# 296
 void IOCAF0_DefaultInterruptHandler(void){
 
 
 }
 
-# 310
+# 304
 void IOCAF1_ISR(void) {
 
 
@@ -17346,18 +17340,18 @@ IOCAF1_InterruptHandler();
 IOCAFbits.IOCAF1 = 0;
 }
 
-# 325
+# 319
 void IOCAF1_SetInterruptHandler(void (* InterruptHandler)(void)){
 IOCAF1_InterruptHandler = InterruptHandler;
 }
 
-# 332
+# 326
 void IOCAF1_DefaultInterruptHandler(void){
 
 
 }
 
-# 340
+# 334
 void IOCAF3_ISR(void) {
 
 
@@ -17370,18 +17364,18 @@ IOCAF3_InterruptHandler();
 IOCAFbits.IOCAF3 = 0;
 }
 
-# 355
+# 349
 void IOCAF3_SetInterruptHandler(void (* InterruptHandler)(void)){
 IOCAF3_InterruptHandler = InterruptHandler;
 }
 
-# 362
+# 356
 void IOCAF3_DefaultInterruptHandler(void){
 
 
 }
 
-# 370
+# 364
 void IOCAF4_ISR(void) {
 
 
@@ -17394,18 +17388,18 @@ IOCAF4_InterruptHandler();
 IOCAFbits.IOCAF4 = 0;
 }
 
-# 385
+# 379
 void IOCAF4_SetInterruptHandler(void (* InterruptHandler)(void)){
 IOCAF4_InterruptHandler = InterruptHandler;
 }
 
-# 392
+# 386
 void IOCAF4_DefaultInterruptHandler(void){
 
 
 }
 
-# 400
+# 394
 void IOCBF5_ISR(void) {
 
 
@@ -17418,18 +17412,18 @@ IOCBF5_InterruptHandler();
 IOCBFbits.IOCBF5 = 0;
 }
 
-# 415
+# 409
 void IOCBF5_SetInterruptHandler(void (* InterruptHandler)(void)){
 IOCBF5_InterruptHandler = InterruptHandler;
 }
 
-# 422
+# 416
 void IOCBF5_DefaultInterruptHandler(void){
 
 
 }
 
-# 430
+# 424
 void IOCCF3_ISR(void) {
 
 
@@ -17442,18 +17436,18 @@ IOCCF3_InterruptHandler();
 IOCCFbits.IOCCF3 = 0;
 }
 
-# 445
+# 439
 void IOCCF3_SetInterruptHandler(void (* InterruptHandler)(void)){
 IOCCF3_InterruptHandler = InterruptHandler;
 }
 
-# 452
+# 446
 void IOCCF3_DefaultInterruptHandler(void){
 
 
 }
 
-# 460
+# 454
 void IOCCF4_ISR(void) {
 
 
@@ -17466,18 +17460,18 @@ IOCCF4_InterruptHandler();
 IOCCFbits.IOCCF4 = 0;
 }
 
-# 475
+# 469
 void IOCCF4_SetInterruptHandler(void (* InterruptHandler)(void)){
 IOCCF4_InterruptHandler = InterruptHandler;
 }
 
-# 482
+# 476
 void IOCCF4_DefaultInterruptHandler(void){
 
 
 }
 
-# 490
+# 484
 void IOCCF5_ISR(void) {
 
 
@@ -17490,18 +17484,18 @@ IOCCF5_InterruptHandler();
 IOCCFbits.IOCCF5 = 0;
 }
 
-# 505
+# 499
 void IOCCF5_SetInterruptHandler(void (* InterruptHandler)(void)){
 IOCCF5_InterruptHandler = InterruptHandler;
 }
 
-# 512
+# 506
 void IOCCF5_DefaultInterruptHandler(void){
 
 
 }
 
-# 520
+# 514
 void IOCCF6_ISR(void) {
 
 
@@ -17514,18 +17508,18 @@ IOCCF6_InterruptHandler();
 IOCCFbits.IOCCF6 = 0;
 }
 
-# 535
+# 529
 void IOCCF6_SetInterruptHandler(void (* InterruptHandler)(void)){
 IOCCF6_InterruptHandler = InterruptHandler;
 }
 
-# 542
+# 536
 void IOCCF6_DefaultInterruptHandler(void){
 
 
 }
 
-# 550
+# 544
 void IOCCF7_ISR(void) {
 
 
@@ -17538,12 +17532,12 @@ IOCCF7_InterruptHandler();
 IOCCFbits.IOCCF7 = 0;
 }
 
-# 565
+# 559
 void IOCCF7_SetInterruptHandler(void (* InterruptHandler)(void)){
 IOCCF7_InterruptHandler = InterruptHandler;
 }
 
-# 572
+# 566
 void IOCCF7_DefaultInterruptHandler(void){
 
 

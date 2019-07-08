@@ -1,24 +1,24 @@
 Version 3.2 HI-TECH Software Intermediate Code
-[v F129 `(v ~T0 @X0 0 tf ]
-[v F132 `(uc ~T0 @X0 0 tf ]
-[v F135 `(uc ~T0 @X0 0 tf1`uc ]
-[v F138 `(v ~T0 @X0 0 tf2`*v`ui ]
-[v F142 `(v ~T0 @X0 0 tf2`*v`ui ]
-[v F146 `(v ~T0 @X0 0 tf2`*v`ui ]
-[v F150 `(v ~T0 @X0 0 tf1`uc ]
-[v F153 `(uc ~T0 @X0 0 tf ]
-[v F158 `(v ~T0 @X0 0 tf ]
-[v F156 `(v ~T0 @X0 0 tf1`*F158 ]
-[v F161 `(v ~T0 @X0 0 tf ]
+[v F127 `(v ~T0 @X0 0 tf ]
+[v F130 `(uc ~T0 @X0 0 tf ]
+[v F133 `(uc ~T0 @X0 0 tf1`uc ]
+[v F136 `(v ~T0 @X0 0 tf2`*v`ui ]
+[v F140 `(v ~T0 @X0 0 tf2`*v`ui ]
+[v F144 `(v ~T0 @X0 0 tf2`*v`ui ]
+[v F148 `(v ~T0 @X0 0 tf1`uc ]
+[v F151 `(uc ~T0 @X0 0 tf ]
+[v F156 `(v ~T0 @X0 0 tf ]
+[v F154 `(v ~T0 @X0 0 tf1`*F156 ]
+[v F159 `(v ~T0 @X0 0 tf ]
 "37 mcc_generated_files/drivers/spi_master.h
-[s S2 `*F129 1 `*F132 1 `*F135 1 `*F138 1 `*F142 1 `*F146 1 `*F150 1 `*F153 1 `*F156 1 `*F161 1 ]
+[s S2 `*F127 1 `*F130 1 `*F133 1 `*F136 1 `*F140 1 `*F144 1 `*F148 1 `*F151 1 `*F154 1 `*F159 1 ]
 [n S2 . spiClose spiOpen exchangeByte exchangeBlock writeBlock readBlock writeByte readByte setSpiISR spiISR ]
 [v F98 `(v ~T0 @X0 1 tf ]
 "35 mcc_generated_files/drivers/../spi2_driver.h
 [v _spi2_close `TF98 ~T0 @X0 0 e ]
-[v F170 `(uc ~T0 @X0 1 tf ]
+[v F168 `(uc ~T0 @X0 1 tf ]
 "29 mcc_generated_files/drivers/spi_master.c
-[v _MASTER0_open `TF170 ~T0 @X0 0 e ]
+[v _MASTER_open `TF168 ~T0 @X0 0 e ]
 "39 mcc_generated_files/drivers/../spi2_driver.h
 [v _spi2_exchangeByte `(uc ~T0 @X0 0 ef1`uc ]
 "41
@@ -31,19 +31,19 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _spi2_writeByte `(v ~T0 @X0 0 ef1`uc ]
 "46
 [v _spi2_readByte `(uc ~T0 @X0 0 ef ]
-[v F122 `(v ~T0 @X0 0 tf ]
-"50
-[v _spi2_setSpiISR `(v ~T0 @X0 0 ef1`*F122 ]
+[v F120 `(v ~T0 @X0 0 tf ]
+"49
+[v _spi2_setSpiISR `(v ~T0 @X0 0 ef1`*F120 ]
 "48
 [v _spi2_isr `(v ~T0 @X0 0 ef ]
 "36 mcc_generated_files/drivers/spi_master.c
 [c E92 0 1 .. ]
-[n E92 . MASTER0_CONFIG SPI2_DEFAULT  ]
+[n E92 . MASTER_CONFIG SPI2_DEFAULT  ]
 "37 mcc_generated_files/drivers/../spi2_driver.h
 [v _spi2_open `(uc ~T0 @X0 0 ef1`E92 ]
 "40 mcc_generated_files/drivers/spi_master.c
-[c E124 0 .. ]
-[n E124 . MASTER0  ]
+[c E122 0 .. ]
+[n E122 . MASTER  ]
 [; ;stdint.h: 13: typedef signed char int8_t;
 [; ;stdint.h: 20: typedef signed int int16_t;
 [; ;stdint.h: 28: typedef __int24 int24_t;
@@ -105,22 +105,21 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdio.h: 195: extern int printf(const char *, ...);
 [; ;stdbool.h: 15: typedef unsigned char bool;
 [; ;spi2_types.h: 27: typedef enum {
-[; ;spi2_types.h: 28: MASTER0_CONFIG,
+[; ;spi2_types.h: 28: MASTER_CONFIG,
 [; ;spi2_types.h: 29: SPI2_DEFAULT
 [; ;spi2_types.h: 30: } spi2_modes;
 [; ;spi2_driver.h: 35: inline void spi2_close(void);
 [; ;spi2_driver.h: 37: bool spi2_open(spi2_modes spiUniqueConfiguration);
-[; ;spi2_driver.h: 39: uint8_t spi2_exchangeByte(uint8_t b);
+[; ;spi2_driver.h: 39: unsigned char spi2_exchangeByte(unsigned char b);
 [; ;spi2_driver.h: 41: void spi2_exchangeBlock(void *block, size_t blockSize);
 [; ;spi2_driver.h: 42: void spi2_writeBlock(void *block, size_t blockSize);
 [; ;spi2_driver.h: 43: void spi2_readBlock(void *block, size_t blockSize);
-[; ;spi2_driver.h: 45: void spi2_writeByte(uint8_t byte);
-[; ;spi2_driver.h: 46: uint8_t spi2_readByte(void);
+[; ;spi2_driver.h: 45: void spi2_writeByte(unsigned char byte);
+[; ;spi2_driver.h: 46: unsigned char spi2_readByte(void);
 [; ;spi2_driver.h: 48: void spi2_isr(void);
-[; ;spi2_driver.h: 49: void spi2_runIsr(void);
-[; ;spi2_driver.h: 50: void spi2_setSpiISR(void(*handler)(void));
+[; ;spi2_driver.h: 49: void spi2_setSpiISR(void(*handler)(void));
 [; ;spi_master.h: 33: typedef enum {
-[; ;spi_master.h: 34: MASTER0
+[; ;spi_master.h: 34: MASTER
 [; ;spi_master.h: 35: } spi_master_configurations_t;
 [; ;spi_master.h: 37: typedef struct { void (*spiClose)(void);
 [; ;spi_master.h: 38: bool (*spiOpen)(void);
@@ -135,15 +134,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;spi_master.h: 47: } spi_master_functions_t;
 [; ;spi_master.h: 49: extern const spi_master_functions_t spiMaster[];
 [; ;spi_master.h: 51: inline bool spi_master_open(spi_master_configurations_t config);
-[; ;spi_master.c: 29: inline bool MASTER0_open(void);
+[; ;spi_master.c: 29: inline bool MASTER_open(void);
 "31 mcc_generated_files/drivers/spi_master.c
 [v _spiMaster `CS2 ~T0 @X0 -> 0 `x e ]
 [i _spiMaster
 :U ..
 :U ..
 "32
--> &U _spi2_close `*F129
--> &U _MASTER0_open `*F132
+-> &U _spi2_close `*F127
+-> &U _MASTER_open `*F130
 &U _spi2_exchangeByte
 &U _spi2_exchangeBlock
 &U _spi2_writeBlock
@@ -156,15 +155,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 ..
 ]
 [; ;spi_master.c: 31: const spi_master_functions_t spiMaster[] = {
-[; ;spi_master.c: 32: { spi2_close, MASTER0_open, spi2_exchangeByte, spi2_exchangeBlock, spi2_writeBlock, spi2_readBlock, spi2_writeByte, spi2_readByte, spi2_setSpiISR, spi2_isr }
+[; ;spi_master.c: 32: { spi2_close, MASTER_open, spi2_exchangeByte, spi2_exchangeBlock, spi2_writeBlock, spi2_readBlock, spi2_writeByte, spi2_readByte, spi2_setSpiISR, spi2_isr }
 [; ;spi_master.c: 33: };
 "35
-[v _MASTER0_open `TF170 ~T0 @X0 1 e ]
+[v _MASTER_open `TF168 ~T0 @X0 1 e ]
 {
-[; ;spi_master.c: 35: inline bool MASTER0_open(void){
-[e :U _MASTER0_open ]
+[; ;spi_master.c: 35: inline bool MASTER_open(void){
+[e :U _MASTER_open ]
 [f ]
-[; ;spi_master.c: 36: return spi2_open(MASTER0_CONFIG);
+[; ;spi_master.c: 36: return spi2_open(MASTER_CONFIG);
 "36
 [e ) ( _spi2_open (1 . `E92 0 ]
 [e $UE 3  ]
@@ -172,24 +171,24 @@ Version 3.2 HI-TECH Software Intermediate Code
 "37
 [e :UE 3 ]
 }
-[v F167 `(uc ~T0 @X0 1 tf1`E124 ]
+[v F165 `(uc ~T0 @X0 1 tf1`E122 ]
 "40
-[v _spi_master_open `TF167 ~T0 @X0 1 e ]
+[v _spi_master_open `TF165 ~T0 @X0 1 e ]
 {
 [; ;spi_master.c: 40: inline bool spi_master_open(spi_master_configurations_t config){
 [e :U _spi_master_open ]
-[v _config `E124 ~T0 @X0 1 r1 ]
+[v _config `E122 ~T0 @X0 1 r1 ]
 [f ]
 [; ;spi_master.c: 41: switch(config){
 "41
 [e $U 6  ]
 {
-[; ;spi_master.c: 42: case MASTER0:
+[; ;spi_master.c: 42: case MASTER:
 "42
 [e :U 7 ]
-[; ;spi_master.c: 43: return MASTER0_open();
+[; ;spi_master.c: 43: return MASTER_open();
 "43
-[e ) ( _MASTER0_open ..  ]
+[e ) ( _MASTER_open ..  ]
 [e $UE 4  ]
 [; ;spi_master.c: 44: default:
 "44
@@ -204,7 +203,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $U 5  ]
 "41
 [e :U 6 ]
-[e [\ _config , $ . `E124 0 7
+[e [\ _config , $ . `E122 0 7
  8 ]
 "46
 [e :U 5 ]

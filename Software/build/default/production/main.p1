@@ -1,35 +1,71 @@
 Version 3.2 HI-TECH Software Intermediate Code
-[v F10315 `(v ~T0 @X0 0 tf ]
-[v F10318 `(v ~T0 @X0 0 tf ]
+[v F10221 `(v ~T0 @X0 0 tf ]
+[v F10224 `(v ~T0 @X0 0 tf ]
 "58 LedBlink.h
-[c E10400 0 1 2 3 .. ]
-[n E10400 LedStateMode HOLD ON OFF UNIDENTIFIED  ]
+[c E10437 0 1 2 3 .. ]
+[n E10437 LedStateMode HOLD ON OFF UNIDENTIFIED  ]
 [v F9856 `(v ~T0 @X0 1 tf1`ul ]
 "183 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18.h
 [v __delay `JF9856 ~T0 @X0 0 e ]
 [p i __delay ]
-"39 mcc_generated_files/../iic.h
+"30 mcc_generated_files/../iic.h
 [v _I2C_SendCommand `(uc ~T0 @X0 0 ef2`uc`uc ]
 "40 ext_rf_receiver.h
 [v _ext_rf_runcmd `(v ~T0 @X0 0 ef ]
-"38 LedBlink.h
-[v _ToggleLed `(i ~T0 @X0 0 ef1`i ]
-"36 main.c
-[c E10405 0 1 2 3 4 5 .. ]
-[n E10405 ledIndex R G B RGB_R RGB_G RGB_B  ]
 "223 mcc_generated_files/eusart1.h
 [v _EUSART1_is_rx_ready `(uc ~T0 @X0 0 ef ]
 "39 LedBlink.h
 [v _SetLedBlink `(v ~T0 @X0 0 ef5`i`i`i`i`i ]
+"46 main.c
+[c E10442 0 1 2 3 4 5 .. ]
+[n E10442 ledIndex R G B RGB_R RGB_G RGB_B  ]
 "171 mcc_generated_files/eusart1.h
 [v _EUSART1_is_tx_ready `(uc ~T0 @X0 0 ef ]
 "358
 [v _EUSART1_Write `(v ~T0 @X0 0 ef1`uc ]
 "338
 [v _EUSART1_Read `(uc ~T0 @X0 0 ef ]
+"50 MRF89XA.h
+[v _MRF89XA_ReadFifo `(uc ~T0 @X0 0 ef ]
+"17609 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18lf46k40.h
+[s S862 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S862 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
+"17619
+[s S863 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S863 . . CCP2 PA1 ]
+"17624
+[s S864 :1 `uc 1 :1 `uc 1 ]
+[n S864 . . PA2 ]
+"17608
+[u S861 `S862 1 `S863 1 `S864 1 ]
+[n S861 . . . . ]
+"17629
+[v _PORTCbits `VS861 ~T0 @X0 0 e@3983 ]
+"16695
+[s S825 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S825 . LATD0 LATD1 LATD2 LATD3 LATD4 LATD5 LATD6 LATD7 ]
+"16705
+[s S826 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S826 . LD0 LD1 LD2 LD3 LD4 LD5 LD6 LD7 ]
+"16694
+[u S824 `S825 1 `S826 1 ]
+[n S824 . . . ]
+"16716
+[v _LATDbits `VS824 ~T0 @X0 0 e@3974 ]
 [p mainexit ]
 "80 mcc_generated_files/mcc.h
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
+"16583 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18lf46k40.h
+[s S822 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S822 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
+"16593
+[s S823 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S823 . LC0 LC1 LC2 LC3 LC4 LC5 LC6 LC7 ]
+"16582
+[u S821 `S822 1 `S823 1 ]
+[n S821 . . . ]
+"16604
+[v _LATCbits `VS821 ~T0 @X0 0 e@3973 ]
 "39 ext_rf_receiver.h
 [v _ext_rf_initialize `(v ~T0 @X0 0 ef ]
 "27730 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18lf46k40.h
@@ -46,25 +82,19 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S1451 . . . . ]
 "27750
 [v _INTCONbits `VS1451 ~T0 @X0 0 e@4082 ]
-[v F10245 `(v ~T0 @X0 0 tf ]
+"44 MRF89XA.h
+[v _MRF89XA_Initialize `(v ~T0 @X0 0 ef3`uc`uc`uc ]
+"121 main.c
+[c E10528 0 1 2 3 4 5 .. ]
+[n E10528 MRF89XA_Mode MRF89XA_MODE_RX MRF89XA_MODE_TX MRF89XA_MODE_STANDBY MRF89XA_MODE_SLEEP MRF89XA_MODULATION_FSK MRF89XA_MODULATION_OOK  ]
+[v F10151 `(v ~T0 @X0 0 tf ]
 "805 mcc_generated_files/tmr2.h
-[v _TMR2_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F10245 ]
+[v _TMR2_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F10151 ]
 "41 LedBlink.h
 [v _TMR2_Custom_ISR `(v ~T0 @X0 0 ef ]
-[v F10270 `(v ~T0 @X0 0 tf ]
+[v F10176 `(v ~T0 @X0 0 tf ]
 "631 mcc_generated_files/ext_int.h
-[v _INT0_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F10270 ]
-"16583 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18lf46k40.h
-[s S822 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S822 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
-"16593
-[s S823 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S823 . LC0 LC1 LC2 LC3 LC4 LC5 LC6 LC7 ]
-"16582
-[u S821 `S822 1 `S823 1 ]
-[n S821 . . . ]
-"16604
-[v _LATCbits `VS821 ~T0 @X0 0 e@3973 ]
+[v _INT0_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F10176 ]
 [; ;xc.h: 18: extern const char __xc8_OPTIM_SPEED;
 [; ;xc.h: 20: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -11362,52 +11392,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 294: typedef uint16_t uintptr_t;
 [; ;stdbool.h: 15: typedef unsigned char bool;
 [; ;interrupt_manager.h: 110: void INTERRUPT_Initialize (void);
-[; ;__size_t.h: 4: typedef unsigned size_t;
-[; ;stdarg.h: 7: typedef void * va_list[1];
-[; ;stdarg.h: 10: extern void * __va_start(void);
-[; ;stdarg.h: 13: extern void * __va_arg(void *, ...);
-[; ;stdio.h: 43: struct __prbuf
-[; ;stdio.h: 44: {
-[; ;stdio.h: 45: char * ptr;
-[; ;stdio.h: 46: void (* func)(char);
-[; ;stdio.h: 47: };
-[; ;errno.h: 29: extern int errno;
-[; ;conio.h: 12: extern void init_uart(void);
-[; ;conio.h: 14: extern char getch(void);
-[; ;conio.h: 15: extern char getche(void);
-[; ;conio.h: 16: extern void putch(char);
-[; ;conio.h: 17: extern void ungetch(char);
-[; ;conio.h: 19: extern __bit kbhit(void);
-[; ;conio.h: 23: extern char * cgets(char *);
-[; ;conio.h: 24: extern void cputs(const char *);
-[; ;stdio.h: 88: extern int cprintf(char *, ...);
-[; ;stdio.h: 93: extern int _doprnt(struct __prbuf *, const register char *, register va_list);
-[; ;stdio.h: 183: extern char * gets(char *);
-[; ;stdio.h: 184: extern int puts(const char *);
-[; ;stdio.h: 185: extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
-[; ;stdio.h: 186: extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
-[; ;stdio.h: 187: extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
-[; ;stdio.h: 188: extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
-[; ;stdio.h: 189: extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
-[; ;stdio.h: 190: extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
-[; ;stdio.h: 194: extern int sprintf(char *, const char *, ...);
-[; ;stdio.h: 195: extern int printf(const char *, ...);
-[; ;stdbool.h: 15: typedef unsigned char bool;
-[; ;spi2_types.h: 27: typedef enum {
-[; ;spi2_types.h: 28: MASTER0_CONFIG,
-[; ;spi2_types.h: 29: SPI2_DEFAULT
-[; ;spi2_types.h: 30: } spi2_modes;
-[; ;spi2_driver.h: 35: inline void spi2_close(void);
-[; ;spi2_driver.h: 37: bool spi2_open(spi2_modes spiUniqueConfiguration);
-[; ;spi2_driver.h: 39: uint8_t spi2_exchangeByte(uint8_t b);
-[; ;spi2_driver.h: 41: void spi2_exchangeBlock(void *block, size_t blockSize);
-[; ;spi2_driver.h: 42: void spi2_writeBlock(void *block, size_t blockSize);
-[; ;spi2_driver.h: 43: void spi2_readBlock(void *block, size_t blockSize);
-[; ;spi2_driver.h: 45: void spi2_writeByte(uint8_t byte);
-[; ;spi2_driver.h: 46: uint8_t spi2_readByte(void);
-[; ;spi2_driver.h: 48: void spi2_isr(void);
-[; ;spi2_driver.h: 49: void spi2_runIsr(void);
-[; ;spi2_driver.h: 50: void spi2_setSpiISR(void(*handler)(void));
 [; ;stdbool.h: 15: typedef unsigned char bool;
 [; ;tmr4.h: 79: typedef enum
 [; ;tmr4.h: 80: {
@@ -11558,10 +11542,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eusart1.h: 88: extern volatile uint8_t eusart1TxBufferRemaining;
 [; ;eusart1.h: 89: extern volatile uint8_t eusart1RxCount;
 "95 mcc_generated_files/eusart1.h
-[v _EUSART1_TxDefaultInterruptHandler `*F10315 ~T0 @X0 1 e ]
+[v _EUSART1_TxDefaultInterruptHandler `*F10221 ~T0 @X0 1 e ]
 [; ;eusart1.h: 95: void (*EUSART1_TxDefaultInterruptHandler)(void);
 "96
-[v _EUSART1_RxDefaultInterruptHandler `*F10318 ~T0 @X0 1 e ]
+[v _EUSART1_RxDefaultInterruptHandler `*F10224 ~T0 @X0 1 e ]
 [; ;eusart1.h: 96: void (*EUSART1_RxDefaultInterruptHandler)(void);
 [; ;eusart1.h: 118: void EUSART1_Initialize(void);
 [; ;eusart1.h: 171: uint8_t EUSART1_is_tx_ready(void);
@@ -11580,26 +11564,80 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eusart1.h: 515: void EUSART1_SetRxInterruptHandler(void (* interruptHandler)(void));
 [; ;stdbool.h: 15: typedef unsigned char bool;
 [; ;clkref.h: 92: void CLKREF_Initialize(void);
-"22 mcc_generated_files/../iic.h
-[v _I2C_RX_CMD `uc ~T0 @X0 1 e ]
-[i _I2C_RX_CMD
--> -> 0 `i `uc
-]
-[; ;iic.h: 22: unsigned char I2C_RX_CMD = 0;
-[; ;iic.h: 29: void I2C_Master_Init(void);
-[; ;iic.h: 31: void I2C_WriteData(unsigned char Target, unsigned char Data);
-[; ;iic.h: 33: void I2C_WriteLength(unsigned char Target, unsigned char Length, unsigned char *Data);
-[; ;iic.h: 35: unsigned char I2C_ReadData(unsigned char Target);
-[; ;iic.h: 37: void I2C_ReadLength(unsigned char Target, unsigned char Length, unsigned char *Output);
-[; ;iic.h: 39: unsigned char I2C_SendCommand(unsigned char Target, unsigned char CMD);
-[; ;iic.h: 41: void I2C_SendCommand_L(unsigned char Target, unsigned char CMD, unsigned char Length, unsigned char *Output);
-[; ;iic.h: 43: void I2C_BusCollisionISR(void);
-[; ;iic.h: 45: unsigned char GetTarget(unsigned char Address);
+[; ;iic.h: 22: void I2C_Master_Init(void);
+[; ;iic.h: 24: void I2C_WriteData(unsigned char Target, unsigned char Data);
+[; ;iic.h: 26: void I2C_WriteLength(unsigned char Target, unsigned char Length, unsigned char *Data);
+[; ;iic.h: 28: void I2C_ReadLength(unsigned char Target, unsigned char Length, unsigned char *Output);
+[; ;iic.h: 30: unsigned char I2C_SendCommand(unsigned char Target, unsigned char CMD);
+[; ;iic.h: 32: void I2C_SendCommand_L(unsigned char Target, unsigned char CMD, unsigned char Length, unsigned char *Output);
+[; ;iic.h: 34: void I2C_BusCollisionISR(void);
+[; ;iic.h: 36: unsigned char GetTarget(unsigned char Address);
+[; ;iic.h: 38: void I2C_Slave_ISR(void);
+[; ;stdbool.h: 15: typedef unsigned char bool;
+[; ;__size_t.h: 4: typedef unsigned size_t;
+[; ;stdarg.h: 7: typedef void * va_list[1];
+[; ;stdarg.h: 10: extern void * __va_start(void);
+[; ;stdarg.h: 13: extern void * __va_arg(void *, ...);
+[; ;stdio.h: 43: struct __prbuf
+[; ;stdio.h: 44: {
+[; ;stdio.h: 45: char * ptr;
+[; ;stdio.h: 46: void (* func)(char);
+[; ;stdio.h: 47: };
+[; ;errno.h: 29: extern int errno;
+[; ;conio.h: 12: extern void init_uart(void);
+[; ;conio.h: 14: extern char getch(void);
+[; ;conio.h: 15: extern char getche(void);
+[; ;conio.h: 16: extern void putch(char);
+[; ;conio.h: 17: extern void ungetch(char);
+[; ;conio.h: 19: extern __bit kbhit(void);
+[; ;conio.h: 23: extern char * cgets(char *);
+[; ;conio.h: 24: extern void cputs(const char *);
+[; ;stdio.h: 88: extern int cprintf(char *, ...);
+[; ;stdio.h: 93: extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+[; ;stdio.h: 183: extern char * gets(char *);
+[; ;stdio.h: 184: extern int puts(const char *);
+[; ;stdio.h: 185: extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+[; ;stdio.h: 186: extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+[; ;stdio.h: 187: extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+[; ;stdio.h: 188: extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+[; ;stdio.h: 189: extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+[; ;stdio.h: 190: extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+[; ;stdio.h: 194: extern int sprintf(char *, const char *, ...);
+[; ;stdio.h: 195: extern int printf(const char *, ...);
+[; ;stdbool.h: 15: typedef unsigned char bool;
+[; ;spi2_types.h: 27: typedef enum {
+[; ;spi2_types.h: 28: MASTER_CONFIG,
+[; ;spi2_types.h: 29: SPI2_DEFAULT
+[; ;spi2_types.h: 30: } spi2_modes;
+[; ;spi2_driver.h: 35: inline void spi2_close(void);
+[; ;spi2_driver.h: 37: bool spi2_open(spi2_modes spiUniqueConfiguration);
+[; ;spi2_driver.h: 39: unsigned char spi2_exchangeByte(unsigned char b);
+[; ;spi2_driver.h: 41: void spi2_exchangeBlock(void *block, size_t blockSize);
+[; ;spi2_driver.h: 42: void spi2_writeBlock(void *block, size_t blockSize);
+[; ;spi2_driver.h: 43: void spi2_readBlock(void *block, size_t blockSize);
+[; ;spi2_driver.h: 45: void spi2_writeByte(unsigned char byte);
+[; ;spi2_driver.h: 46: unsigned char spi2_readByte(void);
+[; ;spi2_driver.h: 48: void spi2_isr(void);
+[; ;spi2_driver.h: 49: void spi2_setSpiISR(void(*handler)(void));
+[; ;spi_master.h: 33: typedef enum {
+[; ;spi_master.h: 34: MASTER
+[; ;spi_master.h: 35: } spi_master_configurations_t;
+[; ;spi_master.h: 37: typedef struct { void (*spiClose)(void);
+[; ;spi_master.h: 38: bool (*spiOpen)(void);
+[; ;spi_master.h: 39: uint8_t (*exchangeByte)(uint8_t b);
+[; ;spi_master.h: 40: void (*exchangeBlock)(void * block, size_t blockSize);
+[; ;spi_master.h: 41: void (*writeBlock)(void * block, size_t blockSize);
+[; ;spi_master.h: 42: void (*readBlock)(void * block, size_t blockSize);
+[; ;spi_master.h: 43: void (*writeByte)(uint8_t byte);
+[; ;spi_master.h: 44: uint8_t (*readByte)(void);
+[; ;spi_master.h: 45: void (*setSpiISR)(void(*handler)(void));
+[; ;spi_master.h: 46: void (*spiISR)(void);
+[; ;spi_master.h: 47: } spi_master_functions_t;
+[; ;spi_master.h: 49: extern const spi_master_functions_t spiMaster[];
+[; ;spi_master.h: 51: inline bool spi_master_open(spi_master_configurations_t config);
 [; ;mcc.h: 80: void SYSTEM_Initialize(void);
 [; ;mcc.h: 93: void OSCILLATOR_Initialize(void);
 [; ;mcc.h: 106: void PMD_Initialize(void);
-[; ;mcc.h: 107: void I2C1_Initialize(void);
-[; ;mcc.h: 108: void SPI2_Initialize(void);
 [; ;main.h: 34: enum LedStateMode {
 [; ;main.h: 35: HOLD,
 [; ;main.h: 36: ON,
@@ -11615,8 +11653,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.h: 47: RGB_B,
 [; ;main.h: 48: };
 [; ;main.h: 50: void Delay_Xms(long delay);
-[; ;main.h: 51: void INT0_Custom_ISR(void);
-[; ;main.h: 52: void I2C_Custom_ISR(void);
+[; ;main.h: 51: void Delay_Xus(long delay);
+[; ;main.h: 52: void INT0_Custom_ISR(void);
+[; ;main.h: 53: void I2C_Custom_ISR(void);
 [; ;LedBlink.h: 36: void SetLed(int ledIndex, int Mode);
 [; ;LedBlink.h: 37: int GetLed(int ledIndex);
 [; ;LedBlink.h: 38: int ToggleLed(int ledIndex);
@@ -11668,7 +11707,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "58
 [v _R_State `i ~T0 @X0 1 e ]
 [i _R_State
--> . `E10400 3 `i
+-> . `E10437 3 `i
 ]
 [; ;LedBlink.h: 58: int R_State = UNIDENTIFIED;
 "60
@@ -11716,7 +11755,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "67
 [v _G_State `i ~T0 @X0 1 e ]
 [i _G_State
--> . `E10400 3 `i
+-> . `E10437 3 `i
 ]
 [; ;LedBlink.h: 67: int G_State = UNIDENTIFIED;
 "69
@@ -11764,7 +11803,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "76
 [v _B_State `i ~T0 @X0 1 e ]
 [i _B_State
--> . `E10400 3 `i
+-> . `E10437 3 `i
 ]
 [; ;LedBlink.h: 76: int B_State = UNIDENTIFIED;
 "78
@@ -11812,7 +11851,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "85
 [v _RGB_R_State `i ~T0 @X0 1 e ]
 [i _RGB_R_State
--> . `E10400 3 `i
+-> . `E10437 3 `i
 ]
 [; ;LedBlink.h: 85: int RGB_R_State = UNIDENTIFIED;
 "87
@@ -11860,7 +11899,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "94
 [v _RGB_G_State `i ~T0 @X0 1 e ]
 [i _RGB_G_State
--> . `E10400 3 `i
+-> . `E10437 3 `i
 ]
 [; ;LedBlink.h: 94: int RGB_G_State = UNIDENTIFIED;
 "96
@@ -11908,7 +11947,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "103
 [v _RGB_B_State `i ~T0 @X0 1 e ]
 [i _RGB_B_State
--> . `E10400 3 `i
+-> . `E10437 3 `i
 ]
 [; ;LedBlink.h: 103: int RGB_B_State = UNIDENTIFIED;
 "37 ext_rf_receiver.h
@@ -11919,6 +11958,29 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ext_rf_receiver.h: 37: unsigned char EXT_TARGET_RF_RX = 0;
 [; ;ext_rf_receiver.h: 39: void ext_rf_initialize(void);
 [; ;ext_rf_receiver.h: 40: void ext_rf_runcmd(void);
+[; ;MRF89XA.h: 34: enum MRF89XA_Mode {
+[; ;MRF89XA.h: 35: MRF89XA_MODE_RX,
+[; ;MRF89XA.h: 36: MRF89XA_MODE_TX,
+[; ;MRF89XA.h: 37: MRF89XA_MODE_STANDBY,
+[; ;MRF89XA.h: 38: MRF89XA_MODE_SLEEP,
+[; ;MRF89XA.h: 40: MRF89XA_MODULATION_FSK,
+[; ;MRF89XA.h: 41: MRF89XA_MODULATION_OOK,
+[; ;MRF89XA.h: 42: };
+[; ;MRF89XA.h: 44: void MRF89XA_Initialize(unsigned char Address, unsigned char Mode, unsigned char Modulation);
+[; ;MRF89XA.h: 45: void MRF89XA_SetMode(unsigned char Mode);
+[; ;MRF89XA.h: 46: void MRF89XA_SetModulation(unsigned char Modulation);
+[; ;MRF89XA.h: 47: unsigned char MRF89XA_WriteConfig(unsigned char Address, unsigned char Data);
+[; ;MRF89XA.h: 48: unsigned char MRF89XA_ReadConfig(unsigned char Address);
+[; ;MRF89XA.h: 49: void MRF89XA_ReadAllConfigs(void);
+[; ;MRF89XA.h: 50: unsigned char MRF89XA_ReadFifo(void);
+[; ;MRF89XA.h: 51: void MRF89XA_WriteFifo(unsigned char Data);
+[; ;MRF89XA.h: 52: unsigned char MRF89XA_ExchangeFifo(unsigned char Data);
+[; ;MRF89XA.h: 53: void MRF89XA_SendData(unsigned char TargetAddress, unsigned char Data);
+[; ;MRF89XA.h: 54: void MRF89XA_SendCommand(unsigned char TargetAddress, unsigned char Command, unsigned char Param);
+[; ;MRF89XA.h: 55: unsigned char MRF89XA_IsPLRReady(void);
+[; ;MRF89XA.h: 56: unsigned char MRF89XA_IsCRCOK(void);
+[; ;MRF89XA.h: 57: unsigned char MRF89XA_IsFIFO_THRESHOLD(void);
+[; ;MRF89XA.h: 58: unsigned char MRF89XA_IsTxDone(void);
 "19 main.c
 [v _SentI2CCmd `uc ~T0 @X0 1 e ]
 [i _SentI2CCmd
@@ -11937,8 +11999,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 {
 [v _i `l ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `l ]
-[e $U 1489  ]
-[e :U 1486 ]
+[e $U 1490  ]
+[e :U 1487 ]
 {
 [; ;main.c: 23: _delay((unsigned long)((1)*(24000000/4000.0)));
 "23
@@ -11947,180 +12009,297 @@ Version 3.2 HI-TECH Software Intermediate Code
 }
 "22
 [e ++ _i -> -> 1 `i `l ]
-[e :U 1489 ]
-[e $ < _i _delay 1486  ]
-[e :U 1487 ]
+[e :U 1490 ]
+[e $ < _i _delay 1487  ]
+[e :U 1488 ]
 "24
 }
 [; ;main.c: 24: }
 [; ;main.c: 25: }
 "25
-[e :UE 1485 ]
+[e :UE 1486 ]
 }
 "27
+[v _Delay_Xus `(v ~T0 @X0 1 ef1`l ]
+{
+[; ;main.c: 27: void Delay_Xus(long delay) {
+[e :U _Delay_Xus ]
+[v _delay `l ~T0 @X0 1 r1 ]
+[f ]
+[; ;main.c: 28: for(long i = 0; i < delay; i++) {
+"28
+{
+[v _i `l ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `l ]
+[e $U 1495  ]
+[e :U 1492 ]
+{
+[; ;main.c: 29: _delay((unsigned long)((1)*(24000000/4000000.0)));
+"29
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 24000000 `l `d .4000000.0 `ul ]
+"30
+}
+"28
+[e ++ _i -> -> 1 `i `l ]
+[e :U 1495 ]
+[e $ < _i _delay 1492  ]
+[e :U 1493 ]
+"30
+}
+[; ;main.c: 30: }
+[; ;main.c: 31: }
+"31
+[e :UE 1491 ]
+}
+"33
 [v _INT0_Custom_ISR `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 27: void INT0_Custom_ISR(void) {
+[; ;main.c: 33: void INT0_Custom_ISR(void) {
 [e :U _INT0_Custom_ISR ]
 [f ]
-"30
+"35
 [v _index `uc ~T0 @X0 1 a ]
-[; ;main.c: 30: unsigned char index = I2C_SendCommand(EXT_TARGET_RF_RX,0x50);
+[; ;main.c: 35: unsigned char index = I2C_SendCommand(EXT_TARGET_RF_RX,0x50);
 [e = _index ( _I2C_SendCommand (2 , _EXT_TARGET_RF_RX -> -> 80 `i `uc ]
-[; ;main.c: 32: if(index == 0x01) {
-"32
-[e $ ! == -> _index `i -> 1 `i 1491  ]
-{
-[; ;main.c: 33: ext_rf_runcmd();
-"33
-[e ( _ext_rf_runcmd ..  ]
-"34
-}
-[e :U 1491 ]
-[; ;main.c: 34: }
-[; ;main.c: 36: ToggleLed(R);
-"36
-[e ( _ToggleLed (1 -> . `E10405 0 `i ]
-[; ;main.c: 37: }
+[; ;main.c: 37: if(index == 0x01) {
 "37
-[e :UE 1490 ]
-}
+[e $ ! == -> _index `i -> 1 `i 1497  ]
+{
+[; ;main.c: 38: ext_rf_runcmd();
+"38
+[e ( _ext_rf_runcmd ..  ]
 "39
+}
+[e :U 1497 ]
+[; ;main.c: 39: }
+[; ;main.c: 40: }
+"40
+[e :UE 1496 ]
+}
+"42
 [v _RunLoop `(v ~T0 @X0 1 ef ]
 {
-[; ;main.c: 39: void RunLoop(void) {
+[; ;main.c: 42: void RunLoop(void) {
 [e :U _RunLoop ]
 [f ]
-[; ;main.c: 41: if(EUSART1_is_rx_ready() != 0) {
-"41
-[e $ ! != -> ( _EUSART1_is_rx_ready ..  `i -> 0 `i 1493  ]
-{
-[; ;main.c: 43: SetLedBlink(B, 5, 95, 0, 1);
-"43
-[e ( _SetLedBlink (4 , , , , -> . `E10405 2 `i -> 5 `i -> 95 `i -> 0 `i -> 1 `i ]
-[; ;main.c: 44: while(EUSART1_is_rx_ready() != 0)
+[; ;main.c: 44: if(EUSART1_is_rx_ready() != 0) {
 "44
-[e $U 1494  ]
-[e :U 1495 ]
-[; ;main.c: 45: {
-"45
+[e $ ! != -> ( _EUSART1_is_rx_ready ..  `i -> 0 `i 1499  ]
 {
-[; ;main.c: 46: while(!EUSART1_is_tx_ready());
+[; ;main.c: 46: SetLedBlink(B, 5, 95, 0, 1);
 "46
-[e $U 1497  ]
-[e :U 1498 ]
-[e :U 1497 ]
-[e $ ! != -> ( _EUSART1_is_tx_ready ..  `i -> -> -> 0 `i `uc `i 1498  ]
-[e :U 1499 ]
-[; ;main.c: 48: EUSART1_Write(EUSART1_Read());
+[e ( _SetLedBlink (4 , , , , -> . `E10442 2 `i -> 5 `i -> 95 `i -> 0 `i -> 1 `i ]
+[; ;main.c: 47: while(EUSART1_is_rx_ready() != 0)
+"47
+[e $U 1500  ]
+[e :U 1501 ]
+[; ;main.c: 48: {
 "48
-[e ( _EUSART1_Write (1 ( _EUSART1_Read ..  ]
+{
+[; ;main.c: 49: while(!EUSART1_is_tx_ready());
 "49
-}
-[e :U 1494 ]
-"44
-[e $ != -> ( _EUSART1_is_rx_ready ..  `i -> 0 `i 1495  ]
-[e :U 1496 ]
-"50
-}
-[e :U 1493 ]
-[; ;main.c: 49: }
-[; ;main.c: 50: }
-[; ;main.c: 51: }
+[e $U 1503  ]
+[e :U 1504 ]
+[e :U 1503 ]
+[e $ ! != -> ( _EUSART1_is_tx_ready ..  `i -> -> -> 0 `i `uc `i 1504  ]
+[e :U 1505 ]
+[; ;main.c: 51: EUSART1_Write(EUSART1_Read());
 "51
-[e :UE 1492 ]
+[e ( _EUSART1_Write (1 ( _EUSART1_Read ..  ]
+"52
+}
+[e :U 1500 ]
+"47
+[e $ != -> ( _EUSART1_is_rx_ready ..  `i -> 0 `i 1501  ]
+[e :U 1502 ]
+"53
+}
+[e :U 1499 ]
+[; ;main.c: 52: }
+[; ;main.c: 53: }
+[; ;main.c: 54: }
+"54
+[e :UE 1498 ]
+}
+"57
+[v _IRQ0_ISR `(v ~T0 @X0 1 ef ]
+{
+[; ;main.c: 57: void IRQ0_ISR(void) {
+[e :U _IRQ0_ISR ]
+[f ]
+"61
+[v _Address `uc ~T0 @X0 1 a ]
+[; ;main.c: 61: unsigned char Address = MRF89XA_ReadFifo();
+[e = _Address ( _MRF89XA_ReadFifo ..  ]
+"63
+[v _Data1 `uc ~T0 @X0 1 a ]
+[; ;main.c: 63: unsigned char Data1 = MRF89XA_ReadFifo();
+[e = _Data1 ( _MRF89XA_ReadFifo ..  ]
+"66
+[v _Dummy `Vuc ~T0 @X0 1 a ]
+[; ;main.c: 66: volatile unsigned char Dummy = 0;
+[e = _Dummy -> -> 0 `i `uc ]
+[; ;main.c: 67: while(PORTCbits.RC4 == 1) {
+"67
+[e $U 1507  ]
+[e :U 1508 ]
+{
+[; ;main.c: 68: Dummy = MRF89XA_ReadFifo();
+"68
+[e = _Dummy ( _MRF89XA_ReadFifo ..  ]
+"69
+}
+[e :U 1507 ]
+"67
+[e $ == -> . . _PORTCbits 0 4 `i -> 1 `i 1508  ]
+[e :U 1509 ]
+[; ;main.c: 69: }
+[; ;main.c: 71: if(Data1 == 0xAA) {
+"71
+[e $ ! == -> _Data1 `i -> 170 `i 1510  ]
+{
+[; ;main.c: 72: do { LATDbits.LATD7 = 0; } while(0);
+"72
+[e :U 1513 ]
+{
+[e = . . _LATDbits 0 7 -> -> 0 `i `uc ]
+}
+[e :U 1512 ]
+[; ;main.c: 73: Delay_Xms(500);
+"73
+[e ( _Delay_Xms (1 -> -> 500 `i `l ]
+[; ;main.c: 74: do { LATDbits.LATD7 = 1; } while(0);
+"74
+[e :U 1516 ]
+{
+[e = . . _LATDbits 0 7 -> -> 1 `i `uc ]
+}
+[e :U 1515 ]
+[; ;main.c: 75: Delay_Xms(500);
+"75
+[e ( _Delay_Xms (1 -> -> 500 `i `l ]
+"76
+}
+[e :U 1510 ]
+[; ;main.c: 76: }
+[; ;main.c: 78: asm("nop");
+"78
+[; <" nop ;# ">
+[; ;main.c: 79: }
+"79
+[e :UE 1506 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"53
+"81
 [v _main `(v ~T0 @X0 1 ef ]
-"54
+"82
 {
-[; ;main.c: 53: void main(void)
-[; ;main.c: 54: {
+[; ;main.c: 81: void main(void)
+[; ;main.c: 82: {
 [e :U _main ]
 [f ]
-[; ;main.c: 56: SYSTEM_Initialize();
-"56
+[; ;main.c: 84: SYSTEM_Initialize();
+"84
 [e ( _SYSTEM_Initialize ..  ]
-[; ;main.c: 59: ext_rf_initialize();
-"59
+[; ;main.c: 87: do { LATCbits.LATC0 = 0; } while(0);
+"87
+[e :U 1520 ]
+{
+[e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
+}
+[e :U 1519 ]
+[; ;main.c: 88: do { LATCbits.LATC1 = 1; } while(0);
+"88
+[e :U 1523 ]
+{
+[e = . . _LATCbits 0 1 -> -> 1 `i `uc ]
+}
+[e :U 1522 ]
+[; ;main.c: 91: ext_rf_initialize();
+"91
 [e ( _ext_rf_initialize ..  ]
-[; ;main.c: 66: (INTCONbits.GIE = 1);
-"66
+[; ;main.c: 98: SetLedBlink(RGB_R,20,40,0,1);
+"98
+[e ( _SetLedBlink (4 , , , , -> . `E10442 3 `i -> 20 `i -> 40 `i -> 0 `i -> 1 `i ]
+[; ;main.c: 99: SetLedBlink(RGB_G,20,40,20,1);
+"99
+[e ( _SetLedBlink (4 , , , , -> . `E10442 4 `i -> 20 `i -> 40 `i -> 20 `i -> 1 `i ]
+[; ;main.c: 100: SetLedBlink(RGB_B,20,40,40,1);
+"100
+[e ( _SetLedBlink (4 , , , , -> . `E10442 5 `i -> 20 `i -> 40 `i -> 40 `i -> 1 `i ]
+[; ;main.c: 101: SetLedBlink(R,20,40,0,1);
+"101
+[e ( _SetLedBlink (4 , , , , -> . `E10442 0 `i -> 20 `i -> 40 `i -> 0 `i -> 1 `i ]
+[; ;main.c: 102: SetLedBlink(G,20,40,20,1);
+"102
+[e ( _SetLedBlink (4 , , , , -> . `E10442 1 `i -> 20 `i -> 40 `i -> 20 `i -> 1 `i ]
+[; ;main.c: 103: SetLedBlink(B,20,40,40,1);
+"103
+[e ( _SetLedBlink (4 , , , , -> . `E10442 2 `i -> 20 `i -> 40 `i -> 40 `i -> 1 `i ]
+[; ;main.c: 106: (INTCONbits.GIE = 1);
+"106
 [e = . . _INTCONbits 1 2 -> -> 1 `i `uc ]
-[; ;main.c: 69: (INTCONbits.PEIE = 1);
-"69
+[; ;main.c: 108: (INTCONbits.PEIE = 1);
+"108
 [e = . . _INTCONbits 1 1 -> -> 1 `i `uc ]
-[; ;main.c: 77: TMR2_SetInterruptHandler(TMR2_Custom_ISR);
-"77
-[e ( _TMR2_SetInterruptHandler (1 &U _TMR2_Custom_ISR ]
-[; ;main.c: 78: INT0_SetInterruptHandler(INT0_Custom_ISR);
-"78
-[e ( _INT0_SetInterruptHandler (1 &U _INT0_Custom_ISR ]
-[; ;main.c: 81: do { LATCbits.LATC0 = 1; } while(0);
-"81
-[e :U 1503 ]
+[; ;main.c: 111: do { LATCbits.LATC0 = 1; } while(0);
+"111
+[e :U 1526 ]
 {
 [e = . . _LATCbits 0 0 -> -> 1 `i `uc ]
 }
-[e :U 1502 ]
-[; ;main.c: 82: do { LATCbits.LATC1 = 0; } while(0);
-"82
-[e :U 1506 ]
+[e :U 1525 ]
+[; ;main.c: 112: do { LATCbits.LATC1 = 0; } while(0);
+"112
+[e :U 1529 ]
 {
 [e = . . _LATCbits 0 1 -> -> 0 `i `uc ]
 }
-[e :U 1505 ]
-[; ;main.c: 86: SetLedBlink(RGB_R,20,40,0,2);
-"86
-[e ( _SetLedBlink (4 , , , , -> . `E10405 3 `i -> 20 `i -> 40 `i -> 0 `i -> 2 `i ]
-[; ;main.c: 87: SetLedBlink(RGB_G,20,40,20,2);
-"87
-[e ( _SetLedBlink (4 , , , , -> . `E10405 4 `i -> 20 `i -> 40 `i -> 20 `i -> 2 `i ]
-[; ;main.c: 88: SetLedBlink(RGB_B,20,40,40,2);
-"88
-[e ( _SetLedBlink (4 , , , , -> . `E10405 5 `i -> 20 `i -> 40 `i -> 40 `i -> 2 `i ]
-[; ;main.c: 90: SetLedBlink(R,20,40,0,2);
-"90
-[e ( _SetLedBlink (4 , , , , -> . `E10405 0 `i -> 20 `i -> 40 `i -> 0 `i -> 2 `i ]
-[; ;main.c: 91: SetLedBlink(G,20,40,20,2);
-"91
-[e ( _SetLedBlink (4 , , , , -> . `E10405 1 `i -> 20 `i -> 40 `i -> 20 `i -> 2 `i ]
-[; ;main.c: 92: SetLedBlink(B,20,40,40,2);
-"92
-[e ( _SetLedBlink (4 , , , , -> . `E10405 2 `i -> 20 `i -> 40 `i -> 40 `i -> 2 `i ]
-[; ;main.c: 94: Delay_Xms(1200);
-"94
-[e ( _Delay_Xms (1 -> -> 1200 `i `l ]
-[; ;main.c: 96: SetLedBlink(G,5,95,0,-1);
-"96
-[e ( _SetLedBlink (4 , , , , -> . `E10405 1 `i -> 5 `i -> 95 `i -> 0 `i -U -> 1 `i ]
-[; ;main.c: 98: while (1)
-"98
-[e :U 1508 ]
-[; ;main.c: 99: {
-"99
+[e :U 1528 ]
+[; ;main.c: 115: Delay_Xms(600);
+"115
+[e ( _Delay_Xms (1 -> -> 600 `i `l ]
+[; ;main.c: 118: SetLedBlink(G,5,95,0,-1);
+"118
+[e ( _SetLedBlink (4 , , , , -> . `E10442 1 `i -> 5 `i -> 95 `i -> 0 `i -U -> 1 `i ]
+[; ;main.c: 121: MRF89XA_Initialize(0x40, MRF89XA_MODE_TX, MRF89XA_MODULATION_OOK);
+"121
+[e ( _MRF89XA_Initialize (3 , , -> -> 64 `i `uc -> . `E10528 1 `uc -> . `E10528 5 `uc ]
+[; ;main.c: 123: Delay_Xms(5);
+"123
+[e ( _Delay_Xms (1 -> -> 5 `i `l ]
+[; ;main.c: 126: TMR2_SetInterruptHandler(TMR2_Custom_ISR);
+"126
+[e ( _TMR2_SetInterruptHandler (1 &U _TMR2_Custom_ISR ]
+[; ;main.c: 127: INT0_SetInterruptHandler(INT0_Custom_ISR);
+"127
+[e ( _INT0_SetInterruptHandler (1 &U _INT0_Custom_ISR ]
+[; ;main.c: 129: while (1)
+"129
+[e :U 1531 ]
+[; ;main.c: 130: {
+"130
 {
-[; ;main.c: 100: RunLoop();
-"100
+[; ;main.c: 131: RunLoop();
+"131
 [e ( _RunLoop ..  ]
-[; ;main.c: 101: Delay_Xms(100);
-"101
+[; ;main.c: 132: Delay_Xms(100);
+"132
 [e ( _Delay_Xms (1 -> -> 100 `i `l ]
-"102
+"133
 }
-[e :U 1507 ]
-"98
-[e $U 1508  ]
-[e :U 1509 ]
-[; ;main.c: 102: }
-[; ;main.c: 104: while (1);
-"104
-[e :U 1511 ]
-[e :U 1510 ]
-[e $U 1511  ]
-[e :U 1512 ]
-[; ;main.c: 105: }
-"105
-[e :UE 1500 ]
+[e :U 1530 ]
+"129
+[e $U 1531  ]
+[e :U 1532 ]
+[; ;main.c: 133: }
+[; ;main.c: 135: while (1);
+"135
+[e :U 1534 ]
+[e :U 1533 ]
+[e $U 1534  ]
+[e :U 1535 ]
+[; ;main.c: 136: }
+"136
+[e :UE 1517 ]
 }

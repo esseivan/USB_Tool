@@ -54,7 +54,7 @@
 #define CMD_RF_RECEIVE_INTERRUPT_ENABLE 0xA4
 #define CMD_RF_RECEIVE_INTERRUPT_DISABLE 0xA5
 
-// ***** Extensions (I2C))
+// ***** Extensions (I2C)
 // Bridge I2C <-> Uart
 #define CMD_EXT_ENABLE_BRIDGE 0xB0
 // Send on I2C

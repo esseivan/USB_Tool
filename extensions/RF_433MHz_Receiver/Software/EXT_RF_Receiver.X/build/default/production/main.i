@@ -10702,8 +10702,6 @@ void I2C_WriteData(unsigned char Target, unsigned char Data);
 
 void I2C_WriteLength(unsigned char Target, unsigned char Length, unsigned char *Data);
 
-unsigned char I2C_ReadData(unsigned char Target);
-
 void I2C_ReadLength(unsigned char Target, unsigned char Length, unsigned char *Output);
 
 unsigned char I2C_SendCommand(unsigned char Target, unsigned char CMD);
@@ -10713,6 +10711,7 @@ void I2C_SendCommand_L(unsigned char Target, unsigned char CMD, unsigned char Le
 void I2C_BusCollisionISR(void);
 
 unsigned char GetTarget(unsigned char Address);
+
 void I2C_Slave_ISR(void);
 # 55 "./mcc_generated_files/mcc.h" 2
 # 70 "./mcc_generated_files/mcc.h"
@@ -10733,6 +10732,7 @@ unsigned char d1 = 0;
 unsigned char d2 = 0;
 unsigned char d3 = 0;
 
+void Delay_Xms(long delay);
 void I2C_RX_Handler(void);
 void I2C_TX_Handler(void);
 # 45 "main.c" 2

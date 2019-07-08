@@ -1,55 +1,24 @@
 Version 3.2 HI-TECH Software Intermediate Code
-[v F10315 `(v ~T0 @X0 0 tf ]
-[v F10318 `(v ~T0 @X0 0 tf ]
+[v F10221 `(v ~T0 @X0 0 tf ]
+[v F10224 `(v ~T0 @X0 0 tf ]
 "58 LedBlink.h
-[c E10400 0 1 2 3 .. ]
-[n E10400 LedStateMode HOLD ON OFF UNIDENTIFIED  ]
-"45 mcc_generated_files/../iic.h
+[c E10437 0 1 2 3 .. ]
+[n E10437 LedStateMode HOLD ON OFF UNIDENTIFIED  ]
+"36 mcc_generated_files/../iic.h
 [v _GetTarget `(uc ~T0 @X0 0 ef1`uc ]
+"30
+[v _I2C_SendCommand `(uc ~T0 @X0 0 ef2`uc`uc ]
 "38 LedBlink.h
 [v _ToggleLed `(i ~T0 @X0 0 ef1`i ]
-"19 ext_rf_receiver.c
-[c E10405 0 1 2 3 4 5 .. ]
-[n E10405 ledIndex R G B RGB_R RGB_G RGB_B  ]
-"39 mcc_generated_files/../iic.h
-[v _I2C_SendCommand `(uc ~T0 @X0 0 ef2`uc`uc ]
-"16807 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18lf46k40.h
-[s S828 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S828 . LATE0 LATE1 LATE2 ]
-"16812
-[s S829 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S829 . LE0 LE1 LE2 ]
-"16817
-[s S830 :3 `uc 1 :1 `uc 1 ]
-[n S830 . . LE3 ]
-"16821
-[s S831 :4 `uc 1 :1 `uc 1 ]
-[n S831 . . LE4 ]
-"16825
-[s S832 :5 `uc 1 :1 `uc 1 ]
-[n S832 . . LE5 ]
-"16829
-[s S833 :6 `uc 1 :1 `uc 1 ]
-[n S833 . . LE6 ]
-"16833
-[s S834 :7 `uc 1 :1 `uc 1 ]
-[n S834 . . LE7 ]
-"16806
-[u S827 `S828 1 `S829 1 `S830 1 `S831 1 `S832 1 `S833 1 `S834 1 ]
-[n S827 . . . . . . . . ]
-"16838
-[v _LATEbits `VS827 ~T0 @X0 0 e@3975 ]
-"16695
-[s S825 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S825 . LATD0 LATD1 LATD2 LATD3 LATD4 LATD5 LATD6 LATD7 ]
-"16705
-[s S826 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S826 . LD0 LD1 LD2 LD3 LD4 LD5 LD6 LD7 ]
-"16694
-[u S824 `S825 1 `S826 1 ]
-[n S824 . . . ]
-"16716
-[v _LATDbits `VS824 ~T0 @X0 0 e@3974 ]
+"23 ext_rf_receiver.c
+[c E10442 0 1 2 3 4 5 .. ]
+[n E10442 ledIndex R G B RGB_R RGB_G RGB_B  ]
+"49 MRF89XA.h
+[v _MRF89XA_ReadAllConfigs `(v ~T0 @X0 0 ef ]
+"39 LedBlink.h
+[v _SetLedBlink `(v ~T0 @X0 0 ef5`i`i`i`i`i ]
+"53 MRF89XA.h
+[v _MRF89XA_SendData `(v ~T0 @X0 0 ef2`uc`uc ]
 [; ;xc.h: 18: extern const char __xc8_OPTIM_SPEED;
 [; ;xc.h: 20: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -11347,52 +11316,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 294: typedef uint16_t uintptr_t;
 [; ;stdbool.h: 15: typedef unsigned char bool;
 [; ;interrupt_manager.h: 110: void INTERRUPT_Initialize (void);
-[; ;__size_t.h: 4: typedef unsigned size_t;
-[; ;stdarg.h: 7: typedef void * va_list[1];
-[; ;stdarg.h: 10: extern void * __va_start(void);
-[; ;stdarg.h: 13: extern void * __va_arg(void *, ...);
-[; ;stdio.h: 43: struct __prbuf
-[; ;stdio.h: 44: {
-[; ;stdio.h: 45: char * ptr;
-[; ;stdio.h: 46: void (* func)(char);
-[; ;stdio.h: 47: };
-[; ;errno.h: 29: extern int errno;
-[; ;conio.h: 12: extern void init_uart(void);
-[; ;conio.h: 14: extern char getch(void);
-[; ;conio.h: 15: extern char getche(void);
-[; ;conio.h: 16: extern void putch(char);
-[; ;conio.h: 17: extern void ungetch(char);
-[; ;conio.h: 19: extern __bit kbhit(void);
-[; ;conio.h: 23: extern char * cgets(char *);
-[; ;conio.h: 24: extern void cputs(const char *);
-[; ;stdio.h: 88: extern int cprintf(char *, ...);
-[; ;stdio.h: 93: extern int _doprnt(struct __prbuf *, const register char *, register va_list);
-[; ;stdio.h: 183: extern char * gets(char *);
-[; ;stdio.h: 184: extern int puts(const char *);
-[; ;stdio.h: 185: extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
-[; ;stdio.h: 186: extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
-[; ;stdio.h: 187: extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
-[; ;stdio.h: 188: extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
-[; ;stdio.h: 189: extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
-[; ;stdio.h: 190: extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
-[; ;stdio.h: 194: extern int sprintf(char *, const char *, ...);
-[; ;stdio.h: 195: extern int printf(const char *, ...);
-[; ;stdbool.h: 15: typedef unsigned char bool;
-[; ;spi2_types.h: 27: typedef enum {
-[; ;spi2_types.h: 28: MASTER0_CONFIG,
-[; ;spi2_types.h: 29: SPI2_DEFAULT
-[; ;spi2_types.h: 30: } spi2_modes;
-[; ;spi2_driver.h: 35: inline void spi2_close(void);
-[; ;spi2_driver.h: 37: bool spi2_open(spi2_modes spiUniqueConfiguration);
-[; ;spi2_driver.h: 39: uint8_t spi2_exchangeByte(uint8_t b);
-[; ;spi2_driver.h: 41: void spi2_exchangeBlock(void *block, size_t blockSize);
-[; ;spi2_driver.h: 42: void spi2_writeBlock(void *block, size_t blockSize);
-[; ;spi2_driver.h: 43: void spi2_readBlock(void *block, size_t blockSize);
-[; ;spi2_driver.h: 45: void spi2_writeByte(uint8_t byte);
-[; ;spi2_driver.h: 46: uint8_t spi2_readByte(void);
-[; ;spi2_driver.h: 48: void spi2_isr(void);
-[; ;spi2_driver.h: 49: void spi2_runIsr(void);
-[; ;spi2_driver.h: 50: void spi2_setSpiISR(void(*handler)(void));
 [; ;stdbool.h: 15: typedef unsigned char bool;
 [; ;tmr4.h: 79: typedef enum
 [; ;tmr4.h: 80: {
@@ -11543,10 +11466,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eusart1.h: 88: extern volatile uint8_t eusart1TxBufferRemaining;
 [; ;eusart1.h: 89: extern volatile uint8_t eusart1RxCount;
 "95 mcc_generated_files/eusart1.h
-[v _EUSART1_TxDefaultInterruptHandler `*F10315 ~T0 @X0 1 e ]
+[v _EUSART1_TxDefaultInterruptHandler `*F10221 ~T0 @X0 1 e ]
 [; ;eusart1.h: 95: void (*EUSART1_TxDefaultInterruptHandler)(void);
 "96
-[v _EUSART1_RxDefaultInterruptHandler `*F10318 ~T0 @X0 1 e ]
+[v _EUSART1_RxDefaultInterruptHandler `*F10224 ~T0 @X0 1 e ]
 [; ;eusart1.h: 96: void (*EUSART1_RxDefaultInterruptHandler)(void);
 [; ;eusart1.h: 118: void EUSART1_Initialize(void);
 [; ;eusart1.h: 171: uint8_t EUSART1_is_tx_ready(void);
@@ -11565,26 +11488,80 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eusart1.h: 515: void EUSART1_SetRxInterruptHandler(void (* interruptHandler)(void));
 [; ;stdbool.h: 15: typedef unsigned char bool;
 [; ;clkref.h: 92: void CLKREF_Initialize(void);
-"22 mcc_generated_files/../iic.h
-[v _I2C_RX_CMD `uc ~T0 @X0 1 e ]
-[i _I2C_RX_CMD
--> -> 0 `i `uc
-]
-[; ;iic.h: 22: unsigned char I2C_RX_CMD = 0;
-[; ;iic.h: 29: void I2C_Master_Init(void);
-[; ;iic.h: 31: void I2C_WriteData(unsigned char Target, unsigned char Data);
-[; ;iic.h: 33: void I2C_WriteLength(unsigned char Target, unsigned char Length, unsigned char *Data);
-[; ;iic.h: 35: unsigned char I2C_ReadData(unsigned char Target);
-[; ;iic.h: 37: void I2C_ReadLength(unsigned char Target, unsigned char Length, unsigned char *Output);
-[; ;iic.h: 39: unsigned char I2C_SendCommand(unsigned char Target, unsigned char CMD);
-[; ;iic.h: 41: void I2C_SendCommand_L(unsigned char Target, unsigned char CMD, unsigned char Length, unsigned char *Output);
-[; ;iic.h: 43: void I2C_BusCollisionISR(void);
-[; ;iic.h: 45: unsigned char GetTarget(unsigned char Address);
+[; ;iic.h: 22: void I2C_Master_Init(void);
+[; ;iic.h: 24: void I2C_WriteData(unsigned char Target, unsigned char Data);
+[; ;iic.h: 26: void I2C_WriteLength(unsigned char Target, unsigned char Length, unsigned char *Data);
+[; ;iic.h: 28: void I2C_ReadLength(unsigned char Target, unsigned char Length, unsigned char *Output);
+[; ;iic.h: 30: unsigned char I2C_SendCommand(unsigned char Target, unsigned char CMD);
+[; ;iic.h: 32: void I2C_SendCommand_L(unsigned char Target, unsigned char CMD, unsigned char Length, unsigned char *Output);
+[; ;iic.h: 34: void I2C_BusCollisionISR(void);
+[; ;iic.h: 36: unsigned char GetTarget(unsigned char Address);
+[; ;iic.h: 38: void I2C_Slave_ISR(void);
+[; ;stdbool.h: 15: typedef unsigned char bool;
+[; ;__size_t.h: 4: typedef unsigned size_t;
+[; ;stdarg.h: 7: typedef void * va_list[1];
+[; ;stdarg.h: 10: extern void * __va_start(void);
+[; ;stdarg.h: 13: extern void * __va_arg(void *, ...);
+[; ;stdio.h: 43: struct __prbuf
+[; ;stdio.h: 44: {
+[; ;stdio.h: 45: char * ptr;
+[; ;stdio.h: 46: void (* func)(char);
+[; ;stdio.h: 47: };
+[; ;errno.h: 29: extern int errno;
+[; ;conio.h: 12: extern void init_uart(void);
+[; ;conio.h: 14: extern char getch(void);
+[; ;conio.h: 15: extern char getche(void);
+[; ;conio.h: 16: extern void putch(char);
+[; ;conio.h: 17: extern void ungetch(char);
+[; ;conio.h: 19: extern __bit kbhit(void);
+[; ;conio.h: 23: extern char * cgets(char *);
+[; ;conio.h: 24: extern void cputs(const char *);
+[; ;stdio.h: 88: extern int cprintf(char *, ...);
+[; ;stdio.h: 93: extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+[; ;stdio.h: 183: extern char * gets(char *);
+[; ;stdio.h: 184: extern int puts(const char *);
+[; ;stdio.h: 185: extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+[; ;stdio.h: 186: extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+[; ;stdio.h: 187: extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+[; ;stdio.h: 188: extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+[; ;stdio.h: 189: extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+[; ;stdio.h: 190: extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+[; ;stdio.h: 194: extern int sprintf(char *, const char *, ...);
+[; ;stdio.h: 195: extern int printf(const char *, ...);
+[; ;stdbool.h: 15: typedef unsigned char bool;
+[; ;spi2_types.h: 27: typedef enum {
+[; ;spi2_types.h: 28: MASTER_CONFIG,
+[; ;spi2_types.h: 29: SPI2_DEFAULT
+[; ;spi2_types.h: 30: } spi2_modes;
+[; ;spi2_driver.h: 35: inline void spi2_close(void);
+[; ;spi2_driver.h: 37: bool spi2_open(spi2_modes spiUniqueConfiguration);
+[; ;spi2_driver.h: 39: unsigned char spi2_exchangeByte(unsigned char b);
+[; ;spi2_driver.h: 41: void spi2_exchangeBlock(void *block, size_t blockSize);
+[; ;spi2_driver.h: 42: void spi2_writeBlock(void *block, size_t blockSize);
+[; ;spi2_driver.h: 43: void spi2_readBlock(void *block, size_t blockSize);
+[; ;spi2_driver.h: 45: void spi2_writeByte(unsigned char byte);
+[; ;spi2_driver.h: 46: unsigned char spi2_readByte(void);
+[; ;spi2_driver.h: 48: void spi2_isr(void);
+[; ;spi2_driver.h: 49: void spi2_setSpiISR(void(*handler)(void));
+[; ;spi_master.h: 33: typedef enum {
+[; ;spi_master.h: 34: MASTER
+[; ;spi_master.h: 35: } spi_master_configurations_t;
+[; ;spi_master.h: 37: typedef struct { void (*spiClose)(void);
+[; ;spi_master.h: 38: bool (*spiOpen)(void);
+[; ;spi_master.h: 39: uint8_t (*exchangeByte)(uint8_t b);
+[; ;spi_master.h: 40: void (*exchangeBlock)(void * block, size_t blockSize);
+[; ;spi_master.h: 41: void (*writeBlock)(void * block, size_t blockSize);
+[; ;spi_master.h: 42: void (*readBlock)(void * block, size_t blockSize);
+[; ;spi_master.h: 43: void (*writeByte)(uint8_t byte);
+[; ;spi_master.h: 44: uint8_t (*readByte)(void);
+[; ;spi_master.h: 45: void (*setSpiISR)(void(*handler)(void));
+[; ;spi_master.h: 46: void (*spiISR)(void);
+[; ;spi_master.h: 47: } spi_master_functions_t;
+[; ;spi_master.h: 49: extern const spi_master_functions_t spiMaster[];
+[; ;spi_master.h: 51: inline bool spi_master_open(spi_master_configurations_t config);
 [; ;mcc.h: 80: void SYSTEM_Initialize(void);
 [; ;mcc.h: 93: void OSCILLATOR_Initialize(void);
 [; ;mcc.h: 106: void PMD_Initialize(void);
-[; ;mcc.h: 107: void I2C1_Initialize(void);
-[; ;mcc.h: 108: void SPI2_Initialize(void);
 [; ;main.h: 34: enum LedStateMode {
 [; ;main.h: 35: HOLD,
 [; ;main.h: 36: ON,
@@ -11600,8 +11577,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.h: 47: RGB_B,
 [; ;main.h: 48: };
 [; ;main.h: 50: void Delay_Xms(long delay);
-[; ;main.h: 51: void INT0_Custom_ISR(void);
-[; ;main.h: 52: void I2C_Custom_ISR(void);
+[; ;main.h: 51: void Delay_Xus(long delay);
+[; ;main.h: 52: void INT0_Custom_ISR(void);
+[; ;main.h: 53: void I2C_Custom_ISR(void);
 [; ;LedBlink.h: 36: void SetLed(int ledIndex, int Mode);
 [; ;LedBlink.h: 37: int GetLed(int ledIndex);
 [; ;LedBlink.h: 38: int ToggleLed(int ledIndex);
@@ -11653,7 +11631,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "58
 [v _R_State `i ~T0 @X0 1 e ]
 [i _R_State
--> . `E10400 3 `i
+-> . `E10437 3 `i
 ]
 [; ;LedBlink.h: 58: int R_State = UNIDENTIFIED;
 "60
@@ -11701,7 +11679,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "67
 [v _G_State `i ~T0 @X0 1 e ]
 [i _G_State
--> . `E10400 3 `i
+-> . `E10437 3 `i
 ]
 [; ;LedBlink.h: 67: int G_State = UNIDENTIFIED;
 "69
@@ -11749,7 +11727,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "76
 [v _B_State `i ~T0 @X0 1 e ]
 [i _B_State
--> . `E10400 3 `i
+-> . `E10437 3 `i
 ]
 [; ;LedBlink.h: 76: int B_State = UNIDENTIFIED;
 "78
@@ -11797,7 +11775,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "85
 [v _RGB_R_State `i ~T0 @X0 1 e ]
 [i _RGB_R_State
--> . `E10400 3 `i
+-> . `E10437 3 `i
 ]
 [; ;LedBlink.h: 85: int RGB_R_State = UNIDENTIFIED;
 "87
@@ -11845,7 +11823,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "94
 [v _RGB_G_State `i ~T0 @X0 1 e ]
 [i _RGB_G_State
--> . `E10400 3 `i
+-> . `E10437 3 `i
 ]
 [; ;LedBlink.h: 94: int RGB_G_State = UNIDENTIFIED;
 "96
@@ -11893,7 +11871,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "103
 [v _RGB_B_State `i ~T0 @X0 1 e ]
 [i _RGB_B_State
--> . `E10400 3 `i
+-> . `E10437 3 `i
 ]
 [; ;LedBlink.h: 103: int RGB_B_State = UNIDENTIFIED;
 "37 ext_rf_receiver.h
@@ -11904,83 +11882,102 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ext_rf_receiver.h: 37: unsigned char EXT_TARGET_RF_RX = 0;
 [; ;ext_rf_receiver.h: 39: void ext_rf_initialize(void);
 [; ;ext_rf_receiver.h: 40: void ext_rf_runcmd(void);
-"14 ext_rf_receiver.c
+[; ;MRF89XA.h: 34: enum MRF89XA_Mode {
+[; ;MRF89XA.h: 35: MRF89XA_MODE_RX,
+[; ;MRF89XA.h: 36: MRF89XA_MODE_TX,
+[; ;MRF89XA.h: 37: MRF89XA_MODE_STANDBY,
+[; ;MRF89XA.h: 38: MRF89XA_MODE_SLEEP,
+[; ;MRF89XA.h: 40: MRF89XA_MODULATION_FSK,
+[; ;MRF89XA.h: 41: MRF89XA_MODULATION_OOK,
+[; ;MRF89XA.h: 42: };
+[; ;MRF89XA.h: 44: void MRF89XA_Initialize(unsigned char Address, unsigned char Mode, unsigned char Modulation);
+[; ;MRF89XA.h: 45: void MRF89XA_SetMode(unsigned char Mode);
+[; ;MRF89XA.h: 46: void MRF89XA_SetModulation(unsigned char Modulation);
+[; ;MRF89XA.h: 47: unsigned char MRF89XA_WriteConfig(unsigned char Address, unsigned char Data);
+[; ;MRF89XA.h: 48: unsigned char MRF89XA_ReadConfig(unsigned char Address);
+[; ;MRF89XA.h: 49: void MRF89XA_ReadAllConfigs(void);
+[; ;MRF89XA.h: 50: unsigned char MRF89XA_ReadFifo(void);
+[; ;MRF89XA.h: 51: void MRF89XA_WriteFifo(unsigned char Data);
+[; ;MRF89XA.h: 52: unsigned char MRF89XA_ExchangeFifo(unsigned char Data);
+[; ;MRF89XA.h: 53: void MRF89XA_SendData(unsigned char TargetAddress, unsigned char Data);
+[; ;MRF89XA.h: 54: void MRF89XA_SendCommand(unsigned char TargetAddress, unsigned char Command, unsigned char Param);
+[; ;MRF89XA.h: 55: unsigned char MRF89XA_IsPLRReady(void);
+[; ;MRF89XA.h: 56: unsigned char MRF89XA_IsCRCOK(void);
+[; ;MRF89XA.h: 57: unsigned char MRF89XA_IsFIFO_THRESHOLD(void);
+[; ;MRF89XA.h: 58: unsigned char MRF89XA_IsTxDone(void);
+"15 ext_rf_receiver.c
 [v _ext_rf_initialize `(v ~T0 @X0 1 ef ]
 {
-[; ;ext_rf_receiver.c: 14: void ext_rf_initialize(void) {
+[; ;ext_rf_receiver.c: 15: void ext_rf_initialize(void) {
 [e :U _ext_rf_initialize ]
 [f ]
-[; ;ext_rf_receiver.c: 15: EXT_TARGET_RF_RX = GetTarget(0x70);
-"15
-[e = _EXT_TARGET_RF_RX ( _GetTarget (1 -> -> 112 `i `uc ]
-[; ;ext_rf_receiver.c: 16: }
+[; ;ext_rf_receiver.c: 16: EXT_TARGET_RF_RX = GetTarget(0x70);
 "16
-[e :UE 1485 ]
+[e = _EXT_TARGET_RF_RX ( _GetTarget (1 -> -> 112 `i `uc ]
+[; ;ext_rf_receiver.c: 17: }
+"17
+[e :UE 1486 ]
 }
-"18
+"19
 [v _ext_rf_runcmd `(v ~T0 @X0 1 ef ]
 {
-[; ;ext_rf_receiver.c: 18: void ext_rf_runcmd(void) {
+[; ;ext_rf_receiver.c: 19: void ext_rf_runcmd(void) {
 [e :U _ext_rf_runcmd ]
 [f ]
-[; ;ext_rf_receiver.c: 19: ToggleLed(B);
-"19
-[e ( _ToggleLed (1 -> . `E10405 2 `i ]
 "21
 [v _dx `uc ~T0 @X0 1 a ]
 [; ;ext_rf_receiver.c: 21: unsigned char dx = I2C_SendCommand(EXT_TARGET_RF_RX, 0x51);
 [e = _dx ( _I2C_SendCommand (2 , _EXT_TARGET_RF_RX -> -> 81 `i `uc ]
-[; ;ext_rf_receiver.c: 22: if(dx & 0b0001 > 0)
+[; ;ext_rf_receiver.c: 22: if((dx & 0b0001) > 0)
 "22
-[e $ ! != & -> _dx `i -> > -> 1 `i -> 0 `i `i -> 0 `i 1487  ]
-[; ;ext_rf_receiver.c: 23: do { LATEbits.LATE2 = 0; } while(0);
+[e $ ! > & -> _dx `i -> 1 `i -> 0 `i 1488  ]
+[; ;ext_rf_receiver.c: 23: ToggleLed(RGB_R);
 "23
-[e :U 1490 ]
-{
-[e = . . _LATEbits 0 2 -> -> 0 `i `uc ]
-}
-[e :U 1489 ]
-[e $U 1491  ]
+[e ( _ToggleLed (1 -> . `E10442 3 `i ]
+[e $U 1489  ]
 "24
-[e :U 1487 ]
-[; ;ext_rf_receiver.c: 24: else if (dx & 0b0010 > 0)
-[e $ ! != & -> _dx `i -> > -> 2 `i -> 0 `i `i -> 0 `i 1492  ]
-[; ;ext_rf_receiver.c: 25: do { LATEbits.LATE1 = 0; } while(0);
+[e :U 1488 ]
+[; ;ext_rf_receiver.c: 24: else if ((dx & 0b0010) > 0)
+[e $ ! > & -> _dx `i -> 2 `i -> 0 `i 1490  ]
+[; ;ext_rf_receiver.c: 25: ToggleLed(RGB_G);
 "25
-[e :U 1495 ]
+[e ( _ToggleLed (1 -> . `E10442 4 `i ]
+[e $U 1491  ]
+"26
+[e :U 1490 ]
+[; ;ext_rf_receiver.c: 26: else if ((dx & 0b0100) > 0)
+[e $ ! > & -> _dx `i -> 4 `i -> 0 `i 1492  ]
+[; ;ext_rf_receiver.c: 27: ToggleLed(RGB_B);
+"27
+[e ( _ToggleLed (1 -> . `E10442 5 `i ]
+[e $U 1493  ]
+"28
+[e :U 1492 ]
+[; ;ext_rf_receiver.c: 28: else if ((dx & 0b1000) > 0)
+[e $ ! > & -> _dx `i -> 8 `i -> 0 `i 1494  ]
+[; ;ext_rf_receiver.c: 29: {
+"29
 {
-[e = . . _LATEbits 0 1 -> -> 0 `i `uc ]
+[; ;ext_rf_receiver.c: 30: MRF89XA_ReadAllConfigs();
+"30
+[e ( _MRF89XA_ReadAllConfigs ..  ]
+[; ;ext_rf_receiver.c: 32: SetLedBlink(B,20,20,0,-1);
+"32
+[e ( _SetLedBlink (4 , , , , -> . `E10442 2 `i -> 20 `i -> 20 `i -> 0 `i -U -> 1 `i ]
+[; ;ext_rf_receiver.c: 33: MRF89XA_SendData(0x00, 0x55);
+"33
+[e ( _MRF89XA_SendData (2 , -> -> 0 `i `uc -> -> 85 `i `uc ]
+[; ;ext_rf_receiver.c: 35: SetLedBlink(B,20,0,0,1);
+"35
+[e ( _SetLedBlink (4 , , , , -> . `E10442 2 `i -> 20 `i -> 0 `i -> 0 `i -> 1 `i ]
+"36
 }
 [e :U 1494 ]
-[e $U 1496  ]
-"26
-[e :U 1492 ]
-[; ;ext_rf_receiver.c: 26: else if (dx & 0b0100 > 0)
-[e $ ! != & -> _dx `i -> > -> 4 `i -> 0 `i `i -> 0 `i 1497  ]
-[; ;ext_rf_receiver.c: 27: do { LATEbits.LATE0 = 0; } while(0);
-"27
-[e :U 1500 ]
-{
-[e = . . _LATEbits 0 0 -> -> 0 `i `uc ]
-}
-[e :U 1499 ]
-[e $U 1501  ]
-"28
-[e :U 1497 ]
-[; ;ext_rf_receiver.c: 28: else if (dx & 0b1000 > 0)
-[e $ ! != & -> _dx `i -> > -> 8 `i -> 0 `i `i -> 0 `i 1502  ]
-[; ;ext_rf_receiver.c: 29: do { LATDbits.LATD5 = 0; } while(0);
-"29
-[e :U 1505 ]
-{
-[e = . . _LATDbits 0 5 -> -> 0 `i `uc ]
-}
-[e :U 1504 ]
-[e :U 1502 ]
-"30
-[e :U 1501 ]
-[e :U 1496 ]
+"37
+[e :U 1493 ]
 [e :U 1491 ]
-[; ;ext_rf_receiver.c: 30: }
-[e :UE 1486 ]
+[e :U 1489 ]
+[; ;ext_rf_receiver.c: 36: }
+[; ;ext_rf_receiver.c: 37: }
+[e :UE 1487 ]
 }

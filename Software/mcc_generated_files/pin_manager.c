@@ -72,7 +72,7 @@ void PIN_MANAGER_Initialize(void)
     LATD = 0xF8;
     LATA = 0x00;
     LATB = 0x00;
-    LATC = 0x00;
+    LATC = 0x02;
 
     /**
     TRISx registers
@@ -202,22 +202,16 @@ void PIN_MANAGER_Initialize(void)
     PIE0bits.IOCIE = 1; 
     
 	
-    SSP1CLKPPS = 0x0A;   //RB2->MSSP1:SCL1;   
-    RB2PPS = 0x0F;   //RB2->MSSP1:SCL1;    
-    SSP1DATPPS = 0x0B;   //RB3->MSSP1:SDA1;   
-    RB3PPS = 0x00;   //RB3->MSSP1:SDA1;    
-    
-    SSP2CLKPPS = 0x18;   //RD0->MSSP2:SCK2;      
-    RD0PPS = 0x11;   //RD0->MSSP2:SCK2;   
-    SSP2DATPPS = 0x19;   //RD1->MSSP2:SDI2;  
-    RD2PPS = 0x12;   //RD2->MSSP2:SDO2;     
-    
+    RD2PPS = 0x12;   //RD2->MSSP2:SDO2;    
+    RX1PPS = 0x08;   //RB0->EUSART1:RX1;    
+    SSP2DATPPS = 0x19;   //RD1->MSSP2:SDI2;    
+    RB1PPS = 0x09;   //RB1->EUSART1:TX1;    
     INT0PPS = 0x05;   //RA5->EXT_INT:INT0;    
     RB4PPS = 0x14;   //RB4->CLKREF:CLKR;    
+    RD0PPS = 0x11;   //RD0->MSSP2:SCK2;    
     INT2PPS = 0x07;   //RA7->EXT_INT:INT2;    
     INT1PPS = 0x06;   //RA6->EXT_INT:INT1;     
-    RX1PPS = 0x08;   //RB0->EUSART1:RX1;    
-    RB1PPS = 0x09;   //RB1->EUSART1:TX1;   
+    SSP2CLKPPS = 0x18;   //RD0->MSSP2:SCK2;    
 }
   
 void PIN_MANAGER_IOC(void)

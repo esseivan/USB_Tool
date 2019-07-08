@@ -2432,7 +2432,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="I2CSLAVE" name="pubSubI2CSLAVE_I2C/Functions"/>
-         <value>435.85182725423</value>
+         <value>2267.158492509975</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="WPUA" settingAlias="WPUA4"/>

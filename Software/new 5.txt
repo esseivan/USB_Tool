@@ -1,0 +1,9 @@
+// CLKOUTREG
+CLKOCNTRL       0   // Clock output disabled
+CLKOFREQ        0   // Clock frequency, unused
+
+
+60.2083 =  (75*(P+1) + S) / (R+1)
+let s = 0
+60.2083 =  75*(P+1) / (R+1)
+0.8027 = (P+1) / (R+1)

@@ -158,7 +158,7 @@ typedef unsigned char bool;
 
 # 27 "mcc_generated_files/drivers/../spi2_types.h"
 typedef enum {
-MASTER0_CONFIG,
+MASTER_CONFIG,
 SPI2_DEFAULT
 } spi2_modes;
 
@@ -167,22 +167,21 @@ inline void spi2_close(void);
 
 bool spi2_open(spi2_modes spiUniqueConfiguration);
 
-uint8_t spi2_exchangeByte(uint8_t b);
+unsigned char spi2_exchangeByte(unsigned char b);
 
 void spi2_exchangeBlock(void *block, size_t blockSize);
 void spi2_writeBlock(void *block, size_t blockSize);
 void spi2_readBlock(void *block, size_t blockSize);
 
-void spi2_writeByte(uint8_t byte);
-uint8_t spi2_readByte(void);
+void spi2_writeByte(unsigned char byte);
+unsigned char spi2_readByte(void);
 
 void spi2_isr(void);
-void spi2_runIsr(void);
 void spi2_setSpiISR(void(*handler)(void));
 
 # 33 "mcc_generated_files/drivers/spi_master.h"
 typedef enum {
-MASTER0
+MASTER
 } spi_master_configurations_t;
 
 typedef struct { void (*spiClose)(void);
@@ -202,21 +201,21 @@ extern const spi_master_functions_t spiMaster[];
 inline bool spi_master_open(spi_master_configurations_t config);
 
 # 29 "mcc_generated_files/drivers/spi_master.c"
-inline bool MASTER0_open(void);
+inline bool MASTER_open(void);
 
 const spi_master_functions_t spiMaster[] = {
-{ spi2_close, MASTER0_open, spi2_exchangeByte, spi2_exchangeBlock, spi2_writeBlock, spi2_readBlock, spi2_writeByte, spi2_readByte, spi2_setSpiISR, spi2_isr }
+{ spi2_close, MASTER_open, spi2_exchangeByte, spi2_exchangeBlock, spi2_writeBlock, spi2_readBlock, spi2_writeByte, spi2_readByte, spi2_setSpiISR, spi2_isr }
 };
 
-inline bool MASTER0_open(void){
-return spi2_open(MASTER0_CONFIG);
+inline bool MASTER_open(void){
+return spi2_open(MASTER_CONFIG);
 }
 
 
 inline bool spi_master_open(spi_master_configurations_t config){
 switch(config){
-case MASTER0:
-return MASTER0_open();
+case MASTER:
+return MASTER_open();
 default:
 return 0;
 }

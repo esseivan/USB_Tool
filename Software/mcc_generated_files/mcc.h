@@ -52,7 +52,6 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include "interrupt_manager.h"
-#include "spi2_driver.h"
 #include "tmr4.h"
 #include "tmr2.h"
 #include "fvr.h"
@@ -62,6 +61,7 @@
 #include "eusart1.h"
 #include "clkref.h"
 #include "../iic.h"
+#include "drivers/spi_master.h"
 
 
 #define I2C_Address 0x60
@@ -104,8 +104,6 @@ void OSCILLATOR_Initialize(void);
     PMD_Initialize(void);
  */
 void PMD_Initialize(void);
-void I2C1_Initialize(void);
-void SPI2_Initialize(void);
 
 #endif	/* MCC_H */
 /**

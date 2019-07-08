@@ -48,6 +48,7 @@ enum ledIndex {
 };
 
 void Delay_Xms(long delay);
+void Delay_Xus(long delay);
 void INT0_Custom_ISR(void);
 void I2C_Custom_ISR(void);
 

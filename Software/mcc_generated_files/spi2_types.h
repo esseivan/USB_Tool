@@ -25,7 +25,7 @@
 
 /* SPI interfaces */
 typedef enum { 
-    MASTER0_CONFIG,
+    MASTER_CONFIG,
     SPI2_DEFAULT
 } spi2_modes;
 

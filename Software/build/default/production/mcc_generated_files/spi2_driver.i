@@ -17131,7 +17131,7 @@ typedef unsigned char bool;
 
 # 27 "mcc_generated_files/spi2_types.h"
 typedef enum {
-MASTER0_CONFIG,
+MASTER_CONFIG,
 SPI2_DEFAULT
 } spi2_modes;
 
@@ -17140,17 +17140,16 @@ inline void spi2_close(void);
 
 bool spi2_open(spi2_modes spiUniqueConfiguration);
 
-uint8_t spi2_exchangeByte(uint8_t b);
+unsigned char spi2_exchangeByte(unsigned char b);
 
 void spi2_exchangeBlock(void *block, size_t blockSize);
 void spi2_writeBlock(void *block, size_t blockSize);
 void spi2_readBlock(void *block, size_t blockSize);
 
-void spi2_writeByte(uint8_t byte);
-uint8_t spi2_readByte(void);
+void spi2_writeByte(unsigned char byte);
+unsigned char spi2_readByte(void);
 
 void spi2_isr(void);
-void spi2_runIsr(void);
 void spi2_setSpiISR(void(*handler)(void));
 
 
@@ -17165,10 +17164,10 @@ SSP2CON1bits.SSPEN = 0;
 }
 
 
-typedef struct { uint8_t con1; uint8_t stat; uint8_t add; uint8_t operation; } spi2_configuration_t;
+typedef struct { unsigned char con1; unsigned char stat; unsigned char add; unsigned char operation; } spi2_configuration_t;
 static const spi2_configuration_t spi2_configuration[] = {
-{ 0xa, 0x40, 0xe, 0 },
-{ 0xa, 0x40, 0xe, 0 }
+{ 0xa, 0x40, 0x3b, 0 },
+{ 0xa, 0x40, 0x3b, 0 }
 };
 
 
@@ -17184,18 +17183,18 @@ RD2PPS = 18;
 
 
 SSP2STAT = spi2_configuration[spiUniqueConfiguration].stat;
-SSP2CON1 = (uint8_t)(spi2_configuration[spiUniqueConfiguration].con1 | 0x20);
+SSP2CON1 = (unsigned char)(spi2_configuration[spiUniqueConfiguration].con1 | 0x20);
 SSP2CON2 = 0x00;
-SSP2ADD = (uint8_t)(spi2_configuration[spiUniqueConfiguration].add);
+SSP2ADD = (unsigned char)(spi2_configuration[spiUniqueConfiguration].add);
 
-TRISDbits.TRISD0 = (uint8_t)(spi2_configuration[spiUniqueConfiguration].operation);
+TRISDbits.TRISD0 = (unsigned char)(spi2_configuration[spiUniqueConfiguration].operation);
 return 1;
 }
 return 0;
 }
 
 
-uint8_t spi2_exchangeByte(uint8_t b)
+unsigned char spi2_exchangeByte(unsigned char b)
 {
 SSP2BUF = b;
 while(!PIR3bits.SSP2IF);
@@ -17205,7 +17204,7 @@ return SSP2BUF;
 
 void spi2_exchangeBlock(void *block, size_t blockSize)
 {
-uint8_t *data = block;
+unsigned char *data = block;
 while(blockSize--)
 {
 *data = spi2_exchangeByte(*data );
@@ -17216,7 +17215,7 @@ data++;
 
 void spi2_writeBlock(void *block, size_t blockSize)
 {
-uint8_t *data = block;
+unsigned char *data = block;
 while(blockSize--)
 {
 spi2_exchangeByte(*data++);
@@ -17225,32 +17224,28 @@ spi2_exchangeByte(*data++);
 
 void spi2_readBlock(void *block, size_t blockSize)
 {
-uint8_t *data = block;
+unsigned char *data = block;
 while(blockSize--)
 {
 *data++ = spi2_exchangeByte(0);
 }
 }
 
-void spi2_writeByte(uint8_t byte){
+void spi2_writeByte(unsigned char byte){
 SSP2BUF = byte;
 }
 
-uint8_t spi2_readByte(void){
+unsigned char spi2_readByte(void){
 return SSP2BUF;
 }
 
 # 118
 void spi2_isr(void){
 if(PIR3bits.SSP2IF == 1){
-spi2_runIsr();
-PIR3bits.SSP2IF = 0;
-}
-}
-
-void spi2_runIsr(void) {
 if(spi2_interruptHandler){
 spi2_interruptHandler();
+}
+PIR3bits.SSP2IF = 0;
 }
 }
 

@@ -31,7 +31,7 @@
 #include "../spi2_driver.h"
 
 typedef enum { 
-    MASTER0
+    MASTER
 } spi_master_configurations_t;
 
 typedef struct {    void (*spiClose)(void);

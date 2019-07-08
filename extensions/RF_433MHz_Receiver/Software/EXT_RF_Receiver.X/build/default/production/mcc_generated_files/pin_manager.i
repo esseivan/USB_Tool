@@ -10598,6 +10598,7 @@ unsigned char d1 = 0;
 unsigned char d2 = 0;
 unsigned char d3 = 0;
 
+void Delay_Xms(long delay);
 void I2C_RX_Handler(void);
 void I2C_TX_Handler(void);
 # 50 "mcc_generated_files/pin_manager.c" 2

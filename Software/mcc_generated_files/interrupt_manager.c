@@ -48,6 +48,7 @@
 
 #include "interrupt_manager.h"
 #include "mcc.h"
+#include "spi2_driver.h"
 
 void  INTERRUPT_Initialize (void)
 {
@@ -87,6 +88,11 @@ void __interrupt() INTERRUPT_InterruptManager (void)
         else if(PIE3bits.RC1IE == 1 && PIR3bits.RC1IF == 1)
         {
             EUSART1_RxDefaultInterruptHandler();
+        } 
+        // SPI receive
+        else if(PIE3bits.SSP2IE == 1 && PIR3bits.SSP2IF == 1)
+        {
+            spi2_isr();
         } 
         else if(PIE4bits.TMR4IE == 1 && PIR4bits.TMR4IF == 1)
         {

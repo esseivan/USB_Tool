@@ -61,8 +61,10 @@ void SYSTEM_Initialize(void)
     EXT_INT_Initialize();
     EUSART1_Initialize();
     CLKREF_Initialize();
-    I2C1_Initialize();
-    SPI2_Initialize();
+    I2C_Master_Init();
+    if(spi_master_open(MASTER) == false) {
+        SetLed(R,ON);
+    }
 }
 
 void OSCILLATOR_Initialize(void)
@@ -93,14 +95,6 @@ void PMD_Initialize(void)
     PMD4 = 0x00;
     // DSMMD DSM enabled; 
     PMD5 = 0x00;
-}
-
-void I2C1_Initialize(void) {
-    I2C_Master_Init();
-}
-
-void SPI2_Initialize(void) {
-    spi2_open(SPI2_DEFAULT);
 }
 
 /**

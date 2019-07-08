@@ -10,9 +10,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "75
 [u S1482 `S1483 1 `uc 1 ]
 [n S1482 . . status ]
-[v F10042 `(v ~T0 @X0 0 tf ]
-[v F10045 `(v ~T0 @X0 0 tf ]
-[v F10048 `(v ~T0 @X0 0 tf ]
+[v F10044 `(v ~T0 @X0 0 tf ]
+[v F10047 `(v ~T0 @X0 0 tf ]
+[v F10050 `(v ~T0 @X0 0 tf ]
 "4532 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18lf46k40.h
 [s S287 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S287 . SSP1IE BCL1IE SSP2IE BCL2IE TX1IE RC1IE TX2IE RC2IE ]
@@ -11427,8 +11427,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.h: 47: RGB_B,
 [; ;main.h: 48: };
 [; ;main.h: 50: void Delay_Xms(long delay);
-[; ;main.h: 51: void INT0_Custom_ISR(void);
-[; ;main.h: 52: void I2C_Custom_ISR(void);
+[; ;main.h: 51: void Delay_Xus(long delay);
+[; ;main.h: 52: void INT0_Custom_ISR(void);
+[; ;main.h: 53: void I2C_Custom_ISR(void);
 [; ;LedBlink.h: 36: void SetLed(int ledIndex, int Mode);
 [; ;LedBlink.h: 37: int GetLed(int ledIndex);
 [; ;LedBlink.h: 38: int ToggleLed(int ledIndex);
@@ -11766,13 +11767,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _eusart1RxLastError `VS1482 ~T0 @X0 1 e ]
 [; ;eusart1.c: 73: volatile eusart1_status_t eusart1RxLastError;
 "78
-[v _EUSART1_FramingErrorHandler `*F10042 ~T0 @X0 1 e ]
+[v _EUSART1_FramingErrorHandler `*F10044 ~T0 @X0 1 e ]
 [; ;eusart1.c: 78: void (*EUSART1_FramingErrorHandler)(void);
 "79
-[v _EUSART1_OverrunErrorHandler `*F10045 ~T0 @X0 1 e ]
+[v _EUSART1_OverrunErrorHandler `*F10047 ~T0 @X0 1 e ]
 [; ;eusart1.c: 79: void (*EUSART1_OverrunErrorHandler)(void);
 "80
-[v _EUSART1_ErrorHandler `*F10048 ~T0 @X0 1 e ]
+[v _EUSART1_ErrorHandler `*F10050 ~T0 @X0 1 e ]
 [; ;eusart1.c: 80: void (*EUSART1_ErrorHandler)(void);
 [; ;eusart1.c: 82: void EUSART1_DefaultFramingErrorHandler(void);
 [; ;eusart1.c: 83: void EUSART1_DefaultOverrunErrorHandler(void);
@@ -12238,8 +12239,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 {
 [; ;eusart1.c: 263: void EUSART1_SetFramingErrorHandler(void (* interruptHandler)(void)){
 [e :U _EUSART1_SetFramingErrorHandler ]
-[v F10076 `(v ~T0 @X0 0 tf ]
-[v _interruptHandler `*F10076 ~T0 @X0 1 r1 ]
+[v F10078 `(v ~T0 @X0 0 tf ]
+[v _interruptHandler `*F10078 ~T0 @X0 1 r1 ]
 [f ]
 [; ;eusart1.c: 264: EUSART1_FramingErrorHandler = interruptHandler;
 "264
@@ -12253,8 +12254,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 {
 [; ;eusart1.c: 267: void EUSART1_SetOverrunErrorHandler(void (* interruptHandler)(void)){
 [e :U _EUSART1_SetOverrunErrorHandler ]
-[v F10079 `(v ~T0 @X0 0 tf ]
-[v _interruptHandler `*F10079 ~T0 @X0 1 r1 ]
+[v F10081 `(v ~T0 @X0 0 tf ]
+[v _interruptHandler `*F10081 ~T0 @X0 1 r1 ]
 [f ]
 [; ;eusart1.c: 268: EUSART1_OverrunErrorHandler = interruptHandler;
 "268
@@ -12268,8 +12269,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 {
 [; ;eusart1.c: 271: void EUSART1_SetErrorHandler(void (* interruptHandler)(void)){
 [e :U _EUSART1_SetErrorHandler ]
-[v F10082 `(v ~T0 @X0 0 tf ]
-[v _interruptHandler `*F10082 ~T0 @X0 1 r1 ]
+[v F10084 `(v ~T0 @X0 0 tf ]
+[v _interruptHandler `*F10084 ~T0 @X0 1 r1 ]
 [f ]
 [; ;eusart1.c: 272: EUSART1_ErrorHandler = interruptHandler;
 "272
@@ -12283,8 +12284,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 {
 [; ;eusart1.c: 275: void EUSART1_SetTxInterruptHandler(void (* interruptHandler)(void)){
 [e :U _EUSART1_SetTxInterruptHandler ]
-[v F10085 `(v ~T0 @X0 0 tf ]
-[v _interruptHandler `*F10085 ~T0 @X0 1 r1 ]
+[v F10087 `(v ~T0 @X0 0 tf ]
+[v _interruptHandler `*F10087 ~T0 @X0 1 r1 ]
 [f ]
 [; ;eusart1.c: 276: EUSART1_TxDefaultInterruptHandler = interruptHandler;
 "276
@@ -12298,8 +12299,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 {
 [; ;eusart1.c: 279: void EUSART1_SetRxInterruptHandler(void (* interruptHandler)(void)){
 [e :U _EUSART1_SetRxInterruptHandler ]
-[v F10088 `(v ~T0 @X0 0 tf ]
-[v _interruptHandler `*F10088 ~T0 @X0 1 r1 ]
+[v F10090 `(v ~T0 @X0 0 tf ]
+[v _interruptHandler `*F10090 ~T0 @X0 1 r1 ]
 [f ]
 [; ;eusart1.c: 280: EUSART1_RxDefaultInterruptHandler = interruptHandler;
 "280

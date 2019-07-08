@@ -17192,96 +17192,6 @@ typedef unsigned char bool;
 # 110 "mcc_generated_files/interrupt_manager.h"
 void INTERRUPT_Initialize (void);
 
-# 4 "C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\__size_t.h"
-typedef unsigned size_t;
-
-# 7 "C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c90\stdarg.h"
-typedef void * va_list[1];
-
-#pragma intrinsic(__va_start)
-extern void * __va_start(void);
-
-#pragma intrinsic(__va_arg)
-extern void * __va_arg(void *, ...);
-
-# 43 "C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c90\stdio.h"
-struct __prbuf
-{
-char * ptr;
-void (* func)(char);
-};
-
-# 29 "C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c90\errno.h"
-extern int errno;
-
-# 12 "C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c90\conio.h"
-extern void init_uart(void);
-
-extern char getch(void);
-extern char getche(void);
-extern void putch(char);
-extern void ungetch(char);
-
-extern __bit kbhit(void);
-
-# 23
-extern char * cgets(char *);
-extern void cputs(const char *);
-
-# 88 "C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c90\stdio.h"
-extern int cprintf(char *, ...);
-#pragma printf_check(cprintf)
-
-
-
-extern int _doprnt(struct __prbuf *, const register char *, register va_list);
-
-
-# 180
-#pragma printf_check(vprintf) const
-#pragma printf_check(vsprintf) const
-
-extern char * gets(char *);
-extern int puts(const char *);
-extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
-extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
-extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
-extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
-extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
-extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
-
-#pragma printf_check(printf) const
-#pragma printf_check(sprintf) const
-extern int sprintf(char *, const char *, ...);
-extern int printf(const char *, ...);
-
-# 15 "C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c90\stdbool.h"
-typedef unsigned char bool;
-
-# 27 "mcc_generated_files/spi2_types.h"
-typedef enum {
-MASTER0_CONFIG,
-SPI2_DEFAULT
-} spi2_modes;
-
-# 35 "mcc_generated_files/spi2_driver.h"
-inline void spi2_close(void);
-
-bool spi2_open(spi2_modes spiUniqueConfiguration);
-
-uint8_t spi2_exchangeByte(uint8_t b);
-
-void spi2_exchangeBlock(void *block, size_t blockSize);
-void spi2_writeBlock(void *block, size_t blockSize);
-void spi2_readBlock(void *block, size_t blockSize);
-
-void spi2_writeByte(uint8_t byte);
-uint8_t spi2_readByte(void);
-
-void spi2_isr(void);
-void spi2_runIsr(void);
-void spi2_setSpiISR(void(*handler)(void));
-
 # 15 "C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c90\stdbool.h"
 typedef unsigned char bool;
 
@@ -17755,16 +17665,11 @@ typedef unsigned char bool;
 void CLKREF_Initialize(void);
 
 # 22 "mcc_generated_files/../iic.h"
-unsigned char I2C_RX_CMD = 0;
-
-# 29
 void I2C_Master_Init(void);
 
 void I2C_WriteData(unsigned char Target, unsigned char Data);
 
 void I2C_WriteLength(unsigned char Target, unsigned char Length, unsigned char *Data);
-
-unsigned char I2C_ReadData(unsigned char Target);
 
 void I2C_ReadLength(unsigned char Target, unsigned char Length, unsigned char *Output);
 
@@ -17776,6 +17681,121 @@ void I2C_BusCollisionISR(void);
 
 unsigned char GetTarget(unsigned char Address);
 
+void I2C_Slave_ISR(void);
+
+# 15 "C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c90\stdbool.h"
+typedef unsigned char bool;
+
+# 4 "C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\__size_t.h"
+typedef unsigned size_t;
+
+# 7 "C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c90\stdarg.h"
+typedef void * va_list[1];
+
+#pragma intrinsic(__va_start)
+extern void * __va_start(void);
+
+#pragma intrinsic(__va_arg)
+extern void * __va_arg(void *, ...);
+
+# 43 "C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c90\stdio.h"
+struct __prbuf
+{
+char * ptr;
+void (* func)(char);
+};
+
+# 29 "C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c90\errno.h"
+extern int errno;
+
+# 12 "C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c90\conio.h"
+extern void init_uart(void);
+
+extern char getch(void);
+extern char getche(void);
+extern void putch(char);
+extern void ungetch(char);
+
+extern __bit kbhit(void);
+
+# 23
+extern char * cgets(char *);
+extern void cputs(const char *);
+
+# 88 "C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c90\stdio.h"
+extern int cprintf(char *, ...);
+#pragma printf_check(cprintf)
+
+
+
+extern int _doprnt(struct __prbuf *, const register char *, register va_list);
+
+
+# 180
+#pragma printf_check(vprintf) const
+#pragma printf_check(vsprintf) const
+
+extern char * gets(char *);
+extern int puts(const char *);
+extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
+extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
+extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
+extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
+extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
+extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
+
+#pragma printf_check(printf) const
+#pragma printf_check(sprintf) const
+extern int sprintf(char *, const char *, ...);
+extern int printf(const char *, ...);
+
+# 15 "C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\c90\stdbool.h"
+typedef unsigned char bool;
+
+# 27 "mcc_generated_files/drivers/../spi2_types.h"
+typedef enum {
+MASTER_CONFIG,
+SPI2_DEFAULT
+} spi2_modes;
+
+# 35 "mcc_generated_files/drivers/../spi2_driver.h"
+inline void spi2_close(void);
+
+bool spi2_open(spi2_modes spiUniqueConfiguration);
+
+unsigned char spi2_exchangeByte(unsigned char b);
+
+void spi2_exchangeBlock(void *block, size_t blockSize);
+void spi2_writeBlock(void *block, size_t blockSize);
+void spi2_readBlock(void *block, size_t blockSize);
+
+void spi2_writeByte(unsigned char byte);
+unsigned char spi2_readByte(void);
+
+void spi2_isr(void);
+void spi2_setSpiISR(void(*handler)(void));
+
+# 33 "mcc_generated_files/drivers/spi_master.h"
+typedef enum {
+MASTER
+} spi_master_configurations_t;
+
+typedef struct { void (*spiClose)(void);
+bool (*spiOpen)(void);
+uint8_t (*exchangeByte)(uint8_t b);
+void (*exchangeBlock)(void * block, size_t blockSize);
+void (*writeBlock)(void * block, size_t blockSize);
+void (*readBlock)(void * block, size_t blockSize);
+void (*writeByte)(uint8_t byte);
+uint8_t (*readByte)(void);
+void (*setSpiISR)(void(*handler)(void));
+void (*spiISR)(void);
+} spi_master_functions_t;
+
+extern const spi_master_functions_t spiMaster[];
+
+inline bool spi_master_open(spi_master_configurations_t config);
+
 # 80 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
 
@@ -17784,8 +17804,6 @@ void OSCILLATOR_Initialize(void);
 
 # 106
 void PMD_Initialize(void);
-void I2C1_Initialize(void);
-void SPI2_Initialize(void);
 
 # 34 "mcc_generated_files/../main.h"
 enum LedStateMode {
@@ -17805,6 +17823,7 @@ RGB_B,
 };
 
 void Delay_Xms(long delay);
+void Delay_Xus(long delay);
 void INT0_Custom_ISR(void);
 void I2C_Custom_ISR(void);
 
@@ -17892,8 +17911,10 @@ TMR2_Initialize();
 EXT_INT_Initialize();
 EUSART1_Initialize();
 CLKREF_Initialize();
-I2C1_Initialize();
-SPI2_Initialize();
+I2C_Master_Init();
+if(spi_master_open(MASTER) == 0) {
+SetLed(R,ON);
+}
 }
 
 void OSCILLATOR_Initialize(void)
@@ -17924,13 +17945,5 @@ PMD3 = 0x00;
 PMD4 = 0x00;
 
 PMD5 = 0x00;
-}
-
-void I2C1_Initialize(void) {
-I2C_Master_Init();
-}
-
-void SPI2_Initialize(void) {
-spi2_open(SPI2_DEFAULT);
 }
 

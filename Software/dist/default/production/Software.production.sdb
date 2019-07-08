@@ -1,0 +1,2363 @@
+[p GLOBOPT AUTOSTATIC LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18LF46K40 ]
+[d frameptr 4065 ]
+"36 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/drivers/spi_master.c
+[e E92 . `uc
+MASTER_CONFIG 0
+SPI2_DEFAULT 1
+]
+"40
+[e E122 . `uc
+MASTER 0
+]
+"97 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/tmr2.c
+[e E9892 . `uc
+TMR2_ROP_STARTS_TMRON 0
+TMR2_ROP_STARTS_TMRON_ERSHIGH 1
+TMR2_ROP_STARTS_TMRON_ERSLOW 2
+TMR2_ROP_RESETS_ERSBOTHEDGE 3
+TMR2_ROP_RESETS_ERSRISINGEDGE 4
+TMR2_ROP_RESETS_ERSFALLINGEDGE 5
+TMR2_ROP_RESETS_ERSLOW 6
+TMR2_ROP_RESETS_ERSHIGH 7
+TMR2_OS_STARTS_TMRON 8
+TMR2_OS_STARTS_ERSRISINGEDGE 9
+TMR2_OS_STARTS_ERSFALLINGEDGE 10
+TMR2_OS_STARTS_ERSBOTHEDGE 11
+TMR2_OS_STARTS_ERSFIRSTRISINGEDGE 12
+TMR2_OS_STARTS_ERSFIRSTFALLINGEDGE 13
+TMR2_OS_STARTS_ERSRISINGEDGEDETECT 14
+TMR2_OS_STARTS_ERSFALLINGEDGEDETECT 15
+TMR2_OS_STARTS_TMRON_ERSHIGH 22
+TMR2_OS_STARTS_TMRON_ERSLOW 23
+TMR2_MS_STARTS_TMRON_ERSRISINGEDGEDETECT 17
+TMR2_MS_STARTS_TMRON_ERSFALLINGEDGEDETECT 18
+TMR2_MS_STARTS_TMRON_ERSBOTHEDGE 19
+]
+"103
+[e E9915 . `uc
+TMR2_T2INPPS 0
+TMR2_RESERVED 1
+TMR2_T4POSTSCALED 2
+TMR2_T6POSTSCALED 3
+TMR2_CCP1_OUT 4
+TMR2_CCP2_OUT 5
+TMR2_PWM3_OUT 6
+TMR2_PWM4_OUT 7
+TMR2_C1_OUT_SYNC 8
+TMR2_C2_OUT_SYNC 9
+TMR2_ZCD_OUTPUT 10
+]
+"58 C:\WorkSpace\Projects\USB_Tool\Software/LedBlink.h
+[e E10437 LedStateMode `uc
+HOLD 0
+ON 1
+OFF 2
+UNIDENTIFIED 3
+]
+"65 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/mcc.c
+[e E10387 . `uc
+MASTER 0
+]
+"66
+[e E10442 ledIndex `uc
+R 0
+G 1
+B 2
+RGB_R 3
+RGB_G 4
+RGB_B 5
+]
+"58 C:\WorkSpace\Projects\USB_Tool\Software/LedBlink.h
+[e E9949 LedStateMode `uc
+HOLD 0
+ON 1
+OFF 2
+UNIDENTIFIED 3
+]
+"97 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/tmr4.c
+[e E9892 . `uc
+TMR4_ROP_STARTS_TMRON 0
+TMR4_ROP_STARTS_TMRON_ERSHIGH 1
+TMR4_ROP_STARTS_TMRON_ERSLOW 2
+TMR4_ROP_RESETS_ERSBOTHEDGE 3
+TMR4_ROP_RESETS_ERSRISINGEDGE 4
+TMR4_ROP_RESETS_ERSFALLINGEDGE 5
+TMR4_ROP_RESETS_ERSLOW 6
+TMR4_ROP_RESETS_ERSHIGH 7
+TMR4_OS_STARTS_TMRON 8
+TMR4_OS_STARTS_ERSRISINGEDGE 9
+TMR4_OS_STARTS_ERSFALLINGEDGE 10
+TMR4_OS_STARTS_ERSBOTHEDGE 11
+TMR4_OS_STARTS_ERSFIRSTRISINGEDGE 12
+TMR4_OS_STARTS_ERSFIRSTFALLINGEDGE 13
+TMR4_OS_STARTS_ERSRISINGEDGEDETECT 14
+TMR4_OS_STARTS_ERSFALLINGEDGEDETECT 15
+TMR4_OS_STARTS_TMRON_ERSHIGH 22
+TMR4_OS_STARTS_TMRON_ERSLOW 23
+TMR4_MS_STARTS_TMRON_ERSRISINGEDGEDETECT 17
+TMR4_MS_STARTS_TMRON_ERSFALLINGEDGEDETECT 18
+TMR4_MS_STARTS_TMRON_ERSBOTHEDGE 19
+]
+"103
+[e E9915 . `uc
+TMR4_T4INPPS 0
+TMR4_T2POSTSCALED 1
+TMR4_RESERVED 2
+TMR4_T6POSTSCALED 3
+TMR4_CCP1_OUT 4
+TMR4_CCP2_OUT 5
+TMR4_PWM3_OUT 6
+TMR4_PWM4_OUT 7
+TMR4_C1_OUT_SYNC 8
+TMR4_C2_OUT_SYNC 9
+TMR4_ZCD_OUTPUT 10
+]
+"47 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/spi2_driver.c
+[e E9954 . `uc
+MASTER_CONFIG 0
+SPI2_DEFAULT 1
+]
+"58 C:\WorkSpace\Projects\USB_Tool\Software\LedBlink.h
+[e E10437 LedStateMode `uc
+HOLD 0
+ON 1
+OFF 2
+UNIDENTIFIED 3
+]
+"46 C:\WorkSpace\Projects\USB_Tool\Software\main.c
+[e E10442 ledIndex `uc
+R 0
+G 1
+B 2
+RGB_R 3
+RGB_G 4
+RGB_B 5
+]
+"121
+[e E10528 MRF89XA_Mode `uc
+MRF89XA_MODE_RX 0
+MRF89XA_MODE_TX 1
+MRF89XA_MODE_STANDBY 2
+MRF89XA_MODE_SLEEP 3
+MRF89XA_MODULATION_FSK 4
+MRF89XA_MODULATION_OOK 5
+]
+"58 C:\WorkSpace\Projects\USB_Tool\Software\LedBlink.h
+[e E1 LedStateMode `uc
+HOLD 0
+ON 1
+OFF 2
+UNIDENTIFIED 3
+]
+"16 C:\WorkSpace\Projects\USB_Tool\Software\LedBlink.c
+[e E6 ledIndex `uc
+R 0
+G 1
+B 2
+RGB_R 3
+RGB_G 4
+RGB_B 5
+]
+"58 C:\WorkSpace\Projects\USB_Tool\Software\LedBlink.h
+[e E10437 LedStateMode `uc
+HOLD 0
+ON 1
+OFF 2
+UNIDENTIFIED 3
+]
+"23 C:\WorkSpace\Projects\USB_Tool\Software\ext_rf_receiver.c
+[e E10442 ledIndex `uc
+R 0
+G 1
+B 2
+RGB_R 3
+RGB_G 4
+RGB_B 5
+]
+"58 C:\WorkSpace\Projects\USB_Tool\Software\LedBlink.h
+[e E10437 LedStateMode `uc
+HOLD 0
+ON 1
+OFF 2
+UNIDENTIFIED 3
+]
+"191 C:\WorkSpace\Projects\USB_Tool\Software\iic.c
+[e E10442 ledIndex `uc
+R 0
+G 1
+B 2
+RGB_R 3
+RGB_G 4
+RGB_B 5
+]
+"53 C:\WorkSpace\Projects\USB_Tool\Software\MRF89XA.c
+[e E10437 MRF89XA_Mode `uc
+MRF89XA_MODE_RX 0
+MRF89XA_MODE_TX 1
+MRF89XA_MODE_STANDBY 2
+MRF89XA_MODE_SLEEP 3
+MRF89XA_MODULATION_FSK 4
+MRF89XA_MODULATION_OOK 5
+]
+"62 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"54 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"19 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 3 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 3 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 3 0 ]
+"11 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 3 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 3 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\sources\c90\common\Umul64.c
+[v ___omul __omul `(ul  1 e 4 0 ]
+"15 C:\WorkSpace\Projects\USB_Tool\Software\ext_rf_receiver.c
+[v _ext_rf_initialize ext_rf_initialize `(v  1 e 1 0 ]
+"19
+[v _ext_rf_runcmd ext_rf_runcmd `(v  1 e 1 0 ]
+"38 C:\WorkSpace\Projects\USB_Tool\Software\iic.c
+[v _I2C_Master_Init I2C_Master_Init `(v  1 e 1 0 ]
+"159
+[v _I2C_Master_Start I2C_Master_Start `(v  1 e 1 0 ]
+"168
+[v _I2C_Master_Stop I2C_Master_Stop `(v  1 e 1 0 ]
+"177
+[v _I2C_Master_Send_ACK I2C_Master_Send_ACK `(v  1 e 1 0 ]
+"187
+[v _I2C_Master_Write I2C_Master_Write `(v  1 e 1 0 ]
+"328
+[v _I2C_SendCommand I2C_SendCommand `(uc  1 e 1 0 ]
+"439
+[v _I2C_BusCollisionISR I2C_BusCollisionISR `(v  1 e 1 0 ]
+"447
+[v _GetTarget GetTarget `(uc  1 e 1 0 ]
+"11 C:\WorkSpace\Projects\USB_Tool\Software\LedBlink.c
+[v _SetLed SetLed `(v  1 e 1 0 ]
+[v i2_SetLed SetLed `(v  1 e 1 0 ]
+"47
+[v _ToggleLed ToggleLed `(i  1 e 2 0 ]
+"64
+[v _SetLedBlink SetLedBlink `(v  1 e 1 0 ]
+[v i2_SetLedBlink SetLedBlink `(v  1 e 1 0 ]
+"174
+[v _TMR2_Custom_ISR TMR2_Custom_ISR `(v  1 e 1 0 ]
+"21 C:\WorkSpace\Projects\USB_Tool\Software\main.c
+[v _Delay_Xms Delay_Xms `(v  1 e 1 0 ]
+[v i2_Delay_Xms Delay_Xms `(v  1 e 1 0 ]
+"27
+[v _Delay_Xus Delay_Xus `(v  1 e 1 0 ]
+[v i2_Delay_Xus Delay_Xus `(v  1 e 1 0 ]
+"33
+[v _INT0_Custom_ISR INT0_Custom_ISR `(v  1 e 1 0 ]
+"42
+[v _RunLoop RunLoop `(v  1 e 1 0 ]
+"81
+[v _main main `(v  1 e 1 0 ]
+"58 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/clkref.c
+[v _CLKREF_Initialize CLKREF_Initialize `(v  1 e 1 0 ]
+"58 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/dac1.c
+[v _DAC1_Initialize DAC1_Initialize `(v  1 e 1 0 ]
+"35 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/drivers/spi_master.c
+[v _MASTER_open MASTER_open `T(uc  1 e 1 0 ]
+"40
+[v _spi_master_open spi_master_open `T(uc  1 e 1 0 ]
+"86 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/eusart1.c
+[v _EUSART1_Initialize EUSART1_Initialize `(v  1 e 1 0 ]
+"130
+[v _EUSART1_is_tx_ready EUSART1_is_tx_ready `(uc  1 e 1 0 ]
+"135
+[v _EUSART1_is_rx_ready EUSART1_is_rx_ready `(uc  1 e 1 0 ]
+"149
+[v _EUSART1_Read EUSART1_Read `(uc  1 e 1 0 ]
+"171
+[v _EUSART1_Write EUSART1_Write `(v  1 e 1 0 ]
+"195
+[v _EUSART1_Transmit_ISR EUSART1_Transmit_ISR `(v  1 e 1 0 ]
+"214
+[v _EUSART1_Receive_ISR EUSART1_Receive_ISR `(v  1 e 1 0 ]
+"239
+[v _EUSART1_RxDataHandler EUSART1_RxDataHandler `(v  1 e 1 0 ]
+"249
+[v _EUSART1_DefaultFramingErrorHandler EUSART1_DefaultFramingErrorHandler `(v  1 e 1 0 ]
+"251
+[v _EUSART1_DefaultOverrunErrorHandler EUSART1_DefaultOverrunErrorHandler `(v  1 e 1 0 ]
+"259
+[v _EUSART1_DefaultErrorHandler EUSART1_DefaultErrorHandler `(v  1 e 1 0 ]
+"263
+[v _EUSART1_SetFramingErrorHandler EUSART1_SetFramingErrorHandler `(v  1 e 1 0 ]
+"267
+[v _EUSART1_SetOverrunErrorHandler EUSART1_SetOverrunErrorHandler `(v  1 e 1 0 ]
+"271
+[v _EUSART1_SetErrorHandler EUSART1_SetErrorHandler `(v  1 e 1 0 ]
+"275
+[v _EUSART1_SetTxInterruptHandler EUSART1_SetTxInterruptHandler `(v  1 e 1 0 ]
+"279
+[v _EUSART1_SetRxInterruptHandler EUSART1_SetRxInterruptHandler `(v  1 e 1 0 ]
+"34 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/ext_int.c
+[v _INT0_ISR INT0_ISR `(v  1 e 1 0 ]
+"43
+[v _INT0_CallBack INT0_CallBack `(v  1 e 1 0 ]
+"52
+[v _INT0_SetInterruptHandler INT0_SetInterruptHandler `(v  1 e 1 0 ]
+"56
+[v _INT0_DefaultInterruptHandler INT0_DefaultInterruptHandler `(v  1 e 1 0 ]
+"60
+[v _INT1_ISR INT1_ISR `(v  1 e 1 0 ]
+"69
+[v _INT1_CallBack INT1_CallBack `(v  1 e 1 0 ]
+"78
+[v _INT1_SetInterruptHandler INT1_SetInterruptHandler `(v  1 e 1 0 ]
+"82
+[v _INT1_DefaultInterruptHandler INT1_DefaultInterruptHandler `(v  1 e 1 0 ]
+"86
+[v _INT2_ISR INT2_ISR `(v  1 e 1 0 ]
+"95
+[v _INT2_CallBack INT2_CallBack `(v  1 e 1 0 ]
+"104
+[v _INT2_SetInterruptHandler INT2_SetInterruptHandler `(v  1 e 1 0 ]
+"108
+[v _INT2_DefaultInterruptHandler INT2_DefaultInterruptHandler `(v  1 e 1 0 ]
+"113
+[v _EXT_INT_Initialize EXT_INT_Initialize `(v  1 e 1 0 ]
+"58 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/fvr.c
+[v _FVR_Initialize FVR_Initialize `(v  1 e 1 0 ]
+"53 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
+"59
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `IIH(v  1 e 1 0 ]
+"51 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+"70
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+"84
+[v _PMD_Initialize PMD_Initialize `(v  1 e 1 0 ]
+"66 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+"217
+[v _PIN_MANAGER_IOC PIN_MANAGER_IOC `(v  1 e 1 0 ]
+"274
+[v _IOCAF0_ISR IOCAF0_ISR `(v  1 e 1 0 ]
+"289
+[v _IOCAF0_SetInterruptHandler IOCAF0_SetInterruptHandler `(v  1 e 1 0 ]
+"296
+[v _IOCAF0_DefaultInterruptHandler IOCAF0_DefaultInterruptHandler `(v  1 e 1 0 ]
+"304
+[v _IOCAF1_ISR IOCAF1_ISR `(v  1 e 1 0 ]
+"319
+[v _IOCAF1_SetInterruptHandler IOCAF1_SetInterruptHandler `(v  1 e 1 0 ]
+"326
+[v _IOCAF1_DefaultInterruptHandler IOCAF1_DefaultInterruptHandler `(v  1 e 1 0 ]
+"334
+[v _IOCAF3_ISR IOCAF3_ISR `(v  1 e 1 0 ]
+"349
+[v _IOCAF3_SetInterruptHandler IOCAF3_SetInterruptHandler `(v  1 e 1 0 ]
+"356
+[v _IOCAF3_DefaultInterruptHandler IOCAF3_DefaultInterruptHandler `(v  1 e 1 0 ]
+"364
+[v _IOCAF4_ISR IOCAF4_ISR `(v  1 e 1 0 ]
+"379
+[v _IOCAF4_SetInterruptHandler IOCAF4_SetInterruptHandler `(v  1 e 1 0 ]
+"386
+[v _IOCAF4_DefaultInterruptHandler IOCAF4_DefaultInterruptHandler `(v  1 e 1 0 ]
+"394
+[v _IOCBF5_ISR IOCBF5_ISR `(v  1 e 1 0 ]
+"409
+[v _IOCBF5_SetInterruptHandler IOCBF5_SetInterruptHandler `(v  1 e 1 0 ]
+"416
+[v _IOCBF5_DefaultInterruptHandler IOCBF5_DefaultInterruptHandler `(v  1 e 1 0 ]
+"424
+[v _IOCCF3_ISR IOCCF3_ISR `(v  1 e 1 0 ]
+"439
+[v _IOCCF3_SetInterruptHandler IOCCF3_SetInterruptHandler `(v  1 e 1 0 ]
+"446
+[v _IOCCF3_DefaultInterruptHandler IOCCF3_DefaultInterruptHandler `(v  1 e 1 0 ]
+"454
+[v _IOCCF4_ISR IOCCF4_ISR `(v  1 e 1 0 ]
+"469
+[v _IOCCF4_SetInterruptHandler IOCCF4_SetInterruptHandler `(v  1 e 1 0 ]
+"476
+[v _IOCCF4_DefaultInterruptHandler IOCCF4_DefaultInterruptHandler `(v  1 e 1 0 ]
+"484
+[v _IOCCF5_ISR IOCCF5_ISR `(v  1 e 1 0 ]
+"499
+[v _IOCCF5_SetInterruptHandler IOCCF5_SetInterruptHandler `(v  1 e 1 0 ]
+"506
+[v _IOCCF5_DefaultInterruptHandler IOCCF5_DefaultInterruptHandler `(v  1 e 1 0 ]
+"514
+[v _IOCCF6_ISR IOCCF6_ISR `(v  1 e 1 0 ]
+"529
+[v _IOCCF6_SetInterruptHandler IOCCF6_SetInterruptHandler `(v  1 e 1 0 ]
+"536
+[v _IOCCF6_DefaultInterruptHandler IOCCF6_DefaultInterruptHandler `(v  1 e 1 0 ]
+"544
+[v _IOCCF7_ISR IOCCF7_ISR `(v  1 e 1 0 ]
+"559
+[v _IOCCF7_SetInterruptHandler IOCCF7_SetInterruptHandler `(v  1 e 1 0 ]
+"566
+[v _IOCCF7_DefaultInterruptHandler IOCCF7_DefaultInterruptHandler `(v  1 e 1 0 ]
+"33 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/spi2_driver.c
+[v _spi2_close spi2_close `T(v  1 e 1 0 ]
+"46
+[v _spi2_open spi2_open `(uc  1 e 1 0 ]
+"69
+[v _spi2_exchangeByte spi2_exchangeByte `(uc  1 e 1 0 ]
+[v i2_spi2_exchangeByte spi2_exchangeByte `(uc  1 e 1 0 ]
+"77
+[v _spi2_exchangeBlock spi2_exchangeBlock `(v  1 e 1 0 ]
+"88
+[v _spi2_writeBlock spi2_writeBlock `(v  1 e 1 0 ]
+"97
+[v _spi2_readBlock spi2_readBlock `(v  1 e 1 0 ]
+"106
+[v _spi2_writeByte spi2_writeByte `(v  1 e 1 0 ]
+"110
+[v _spi2_readByte spi2_readByte `(uc  1 e 1 0 ]
+"118
+[v _spi2_isr spi2_isr `(v  1 e 1 0 ]
+"127
+[v _spi2_setSpiISR spi2_setSpiISR `(v  1 e 1 0 ]
+"64 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/tmr2.c
+[v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
+"108
+[v _TMR2_Start TMR2_Start `(v  1 e 1 0 ]
+"119
+[v _TMR2_Stop TMR2_Stop `(v  1 e 1 0 ]
+"130
+[v _TMR2_Counter8BitGet TMR2_Counter8BitGet `(uc  1 e 1 0 ]
+"144
+[v _TMR2_Counter8BitSet TMR2_Counter8BitSet `(v  1 e 1 0 ]
+"155
+[v _TMR2_Period8BitSet TMR2_Period8BitSet `(v  1 e 1 0 ]
+"165
+[v _TMR2_ISR TMR2_ISR `(v  1 e 1 0 ]
+"176
+[v _TMR2_CallBack TMR2_CallBack `(v  1 e 1 0 ]
+"186
+[v _TMR2_SetInterruptHandler TMR2_SetInterruptHandler `(v  1 e 1 0 ]
+"190
+[v _TMR2_DefaultInterruptHandler TMR2_DefaultInterruptHandler `(v  1 e 1 0 ]
+"64 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/tmr4.c
+[v _TMR4_Initialize TMR4_Initialize `(v  1 e 1 0 ]
+"108
+[v _TMR4_Start TMR4_Start `(v  1 e 1 0 ]
+"119
+[v _TMR4_Stop TMR4_Stop `(v  1 e 1 0 ]
+"130
+[v _TMR4_Counter8BitGet TMR4_Counter8BitGet `(uc  1 e 1 0 ]
+"144
+[v _TMR4_Counter8BitSet TMR4_Counter8BitSet `(v  1 e 1 0 ]
+"155
+[v _TMR4_Period8BitSet TMR4_Period8BitSet `(v  1 e 1 0 ]
+"165
+[v _TMR4_ISR TMR4_ISR `(v  1 e 1 0 ]
+"183
+[v _TMR4_CallBack TMR4_CallBack `(v  1 e 1 0 ]
+"193
+[v _TMR4_SetInterruptHandler TMR4_SetInterruptHandler `(v  1 e 1 0 ]
+"197
+[v _TMR4_DefaultInterruptHandler TMR4_DefaultInterruptHandler `(v  1 e 1 0 ]
+"17 C:\WorkSpace\Projects\USB_Tool\Software\MRF89XA.c
+[v _MRF89XA_Initialize MRF89XA_Initialize `(v  1 e 1 0 ]
+"51
+[v _MRF89XA_SetMode MRF89XA_SetMode `(v  1 e 1 0 ]
+"65
+[v _MRF89XA_SetModulation MRF89XA_SetModulation `(v  1 e 1 0 ]
+"75
+[v _MRF89XA_ExchangeByte MRF89XA_ExchangeByte `(uc  1 e 1 0 ]
+[v i2_MRF89XA_ExchangeByte MRF89XA_ExchangeByte `(uc  1 e 1 0 ]
+"83
+[v _MRF89XA_ReadAllConfigs MRF89XA_ReadAllConfigs `(v  1 e 1 0 ]
+"99
+[v _MRF89XA_WriteConfig MRF89XA_WriteConfig `(uc  1 e 1 0 ]
+"103
+[v _MRF89XA_ReadConfig MRF89XA_ReadConfig `(uc  1 e 1 0 ]
+"107
+[v _MRF89XA_ReadFifo MRF89XA_ReadFifo `(uc  1 e 1 0 ]
+"115
+[v _MRF89XA_ExchangeFifo MRF89XA_ExchangeFifo `(uc  1 e 1 0 ]
+"123
+[v _MRF89XA_SendData MRF89XA_SendData `(v  1 e 1 0 ]
+"148
+[v _MRF89XA_GetAddress MRF89XA_GetAddress `(uc  1 e 1 0 ]
+[v i2_MRF89XA_GetAddress MRF89XA_GetAddress `(uc  1 e 1 0 ]
+"158
+[v _MRF89XA_SendConfig MRF89XA_SendConfig `(uc  1 e 1 0 ]
+[v i2_MRF89XA_SendConfig MRF89XA_SendConfig `(uc  1 e 1 0 ]
+"184
+[v _MRF89XA_IsTxDone MRF89XA_IsTxDone `(uc  1 e 1 0 ]
+"152 C:\Program Files (x86)\Microchip\xc8\v2.05\pic\include\pic18lf46k40.h
+[v _SSP2CLKPPS SSP2CLKPPS `VEuc  1 e 1 @3727 ]
+"186
+[v _SSP2DATPPS SSP2DATPPS `VEuc  1 e 1 @3728 ]
+"254
+[v _SSP2BUF SSP2BUF `VEuc  1 e 1 @3730 ]
+"274
+[v _SSP2ADD SSP2ADD `VEuc  1 e 1 @3731 ]
+"464
+[v _SSP2STAT SSP2STAT `VEuc  1 e 1 @3733 ]
+"918
+[v _SSP2CON1 SSP2CON1 `VEuc  1 e 1 @3734 ]
+[s S2111 . 1 `uc 1 SSPM 1 0 :4:0 
+`uc 1 CKP 1 0 :1:4 
+`uc 1 SSPEN 1 0 :1:5 
+`uc 1 SSPOV 1 0 :1:6 
+`uc 1 WCOL 1 0 :1:7 
+]
+"948
+[s S2117 . 1 `uc 1 SSPM0 1 0 :1:0 
+`uc 1 SSPM1 1 0 :1:1 
+`uc 1 SSPM2 1 0 :1:2 
+`uc 1 SSPM3 1 0 :1:3 
+]
+[s S2122 . 1 `uc 1 SSPM02 1 0 :1:0 
+`uc 1 SSPM12 1 0 :1:1 
+`uc 1 SSPM22 1 0 :1:2 
+`uc 1 SSPM32 1 0 :1:3 
+`uc 1 CKP2 1 0 :1:4 
+`uc 1 SSPEN2 1 0 :1:5 
+`uc 1 SSPOV2 1 0 :1:6 
+`uc 1 WCOL2 1 0 :1:7 
+]
+[u S2131 . 1 `S2111 1 . 1 0 `S2117 1 . 1 0 `S2122 1 . 1 0 ]
+[v _SSP2CON1bits SSP2CON1bits `VES2131  1 e 1 @3734 ]
+"1038
+[v _SSP2CON2 SSP2CON2 `VEuc  1 e 1 @3735 ]
+"2159
+[v _INT0PPS INT0PPS `VEuc  1 e 1 @3745 ]
+"2219
+[v _INT1PPS INT1PPS `VEuc  1 e 1 @3746 ]
+"2279
+[v _INT2PPS INT2PPS `VEuc  1 e 1 @3747 ]
+"3599
+[v _RX1PPS RX1PPS `VEuc  1 e 1 @3765 ]
+"3791
+[v _SSP1CLKPPS SSP1CLKPPS `VEuc  1 e 1 @3767 ]
+"3857
+[v _SSP1DATPPS SSP1DATPPS `VEuc  1 e 1 @3768 ]
+[s S515 . 1 `uc 1 INT0IE 1 0 :1:0 
+`uc 1 INT1IE 1 0 :1:1 
+`uc 1 INT2IE 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 IOCIE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+]
+"4400
+[u S522 . 1 `S515 1 . 1 0 ]
+[v _PIE0bits PIE0bits `VES522  1 e 1 @3778 ]
+[s S629 . 1 `uc 1 SSP1IE 1 0 :1:0 
+`uc 1 BCL1IE 1 0 :1:1 
+`uc 1 SSP2IE 1 0 :1:2 
+`uc 1 BCL2IE 1 0 :1:3 
+`uc 1 TX1IE 1 0 :1:4 
+`uc 1 RC1IE 1 0 :1:5 
+`uc 1 TX2IE 1 0 :1:6 
+`uc 1 RC2IE 1 0 :1:7 
+]
+"4556
+[s S638 . 1 `uc 1 RXB0IE 1 0 :1:0 
+`uc 1 RXB1IE 1 0 :1:1 
+`uc 1 TXB0IE 1 0 :1:2 
+`uc 1 TXB1IE 1 0 :1:3 
+`uc 1 TXB2IE 1 0 :1:4 
+]
+[s S644 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 RXBNIE 1 0 :1:1 
+`uc 1 . 1 0 :2:2 
+`uc 1 TXBNIE 1 0 :1:4 
+]
+[u S649 . 1 `S629 1 . 1 0 `S638 1 . 1 0 `S644 1 . 1 0 ]
+[v _PIE3bits PIE3bits `VES649  1 e 1 @3781 ]
+[s S173 . 1 `uc 1 TMR1IE 1 0 :1:0 
+`uc 1 TMR2IE 1 0 :1:1 
+`uc 1 TMR3IE 1 0 :1:2 
+`uc 1 TMR4IE 1 0 :1:3 
+`uc 1 TMR5IE 1 0 :1:4 
+`uc 1 TMR6IE 1 0 :1:5 
+]
+"4651
+[u S180 . 1 `S173 1 . 1 0 ]
+[v _PIE4bits PIE4bits `VES180  1 e 1 @3782 ]
+[s S446 . 1 `uc 1 INT0IF 1 0 :1:0 
+`uc 1 INT1IF 1 0 :1:1 
+`uc 1 INT2IF 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 IOCIF 1 0 :1:4 
+`uc 1 TMR0IF 1 0 :1:5 
+]
+"4806
+[u S453 . 1 `S446 1 . 1 0 ]
+[v _PIR0bits PIR0bits `VES453  1 e 1 @3786 ]
+[s S674 . 1 `uc 1 SSP1IF 1 0 :1:0 
+`uc 1 BCL1IF 1 0 :1:1 
+`uc 1 SSP2IF 1 0 :1:2 
+`uc 1 BCL2IF 1 0 :1:3 
+`uc 1 TX1IF 1 0 :1:4 
+`uc 1 RC1IF 1 0 :1:5 
+`uc 1 TX2IF 1 0 :1:6 
+`uc 1 RC2IF 1 0 :1:7 
+]
+"4955
+[s S683 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 RXBNIF 1 0 :1:1 
+`uc 1 . 1 0 :2:2 
+`uc 1 TXBNIF 1 0 :1:4 
+]
+[u S688 . 1 `S674 1 . 1 0 `S683 1 . 1 0 ]
+[v _PIR3bits PIR3bits `VES688  1 e 1 @3789 ]
+[s S156 . 1 `uc 1 TMR1IF 1 0 :1:0 
+`uc 1 TMR2IF 1 0 :1:1 
+`uc 1 TMR3IF 1 0 :1:2 
+`uc 1 TMR4IF 1 0 :1:3 
+`uc 1 TMR5IF 1 0 :1:4 
+`uc 1 TMR6IF 1 0 :1:5 
+]
+"5025
+[u S163 . 1 `S156 1 . 1 0 ]
+[v _PIR4bits PIR4bits `VES163  1 e 1 @3790 ]
+"5743
+[v _OSCCON1 OSCCON1 `VEuc  1 e 1 @3800 ]
+"5883
+[v _OSCCON3 OSCCON3 `VEuc  1 e 1 @3802 ]
+"6035
+[v _OSCEN OSCEN `VEuc  1 e 1 @3804 ]
+"6086
+[v _OSCTUNE OSCTUNE `VEuc  1 e 1 @3805 ]
+"6144
+[v _OSCFRQ OSCFRQ `VEuc  1 e 1 @3806 ]
+"6217
+[v _PMD0 PMD0 `VEuc  1 e 1 @3809 ]
+"6294
+[v _PMD1 PMD1 `VEuc  1 e 1 @3810 ]
+"6358
+[v _PMD2 PMD2 `VEuc  1 e 1 @3811 ]
+"6403
+[v _PMD3 PMD3 `VEuc  1 e 1 @3812 ]
+"6441
+[v _PMD4 PMD4 `VEuc  1 e 1 @3813 ]
+"6494
+[v _PMD5 PMD5 `VEuc  1 e 1 @3814 ]
+"6910
+[v _RB1PPS RB1PPS `VEuc  1 e 1 @3824 ]
+"6954
+[v _RB2PPS RB2PPS `VEuc  1 e 1 @3825 ]
+"6998
+[v _RB3PPS RB3PPS `VEuc  1 e 1 @3826 ]
+"7042
+[v _RB4PPS RB4PPS `VEuc  1 e 1 @3827 ]
+"7570
+[v _RD0PPS RD0PPS `VEuc  1 e 1 @3839 ]
+"7658
+[v _RD2PPS RD2PPS `VEuc  1 e 1 @3841 ]
+[s S940 . 1 `uc 1 IOCAF0 1 0 :1:0 
+`uc 1 IOCAF1 1 0 :1:1 
+`uc 1 IOCAF2 1 0 :1:2 
+`uc 1 IOCAF3 1 0 :1:3 
+`uc 1 IOCAF4 1 0 :1:4 
+`uc 1 IOCAF5 1 0 :1:5 
+`uc 1 IOCAF6 1 0 :1:6 
+`uc 1 IOCAF7 1 0 :1:7 
+]
+"8071
+[u S949 . 1 `S940 1 . 1 0 ]
+[v _IOCAFbits IOCAFbits `VES949  1 e 1 @3850 ]
+[s S961 . 1 `uc 1 IOCAN0 1 0 :1:0 
+`uc 1 IOCAN1 1 0 :1:1 
+`uc 1 IOCAN2 1 0 :1:2 
+`uc 1 IOCAN3 1 0 :1:3 
+`uc 1 IOCAN4 1 0 :1:4 
+`uc 1 IOCAN5 1 0 :1:5 
+`uc 1 IOCAN6 1 0 :1:6 
+`uc 1 IOCAN7 1 0 :1:7 
+]
+"8133
+[u S970 . 1 `S961 1 . 1 0 ]
+[v _IOCANbits IOCANbits `VES970  1 e 1 @3851 ]
+[s S982 . 1 `uc 1 IOCAP0 1 0 :1:0 
+`uc 1 IOCAP1 1 0 :1:1 
+`uc 1 IOCAP2 1 0 :1:2 
+`uc 1 IOCAP3 1 0 :1:3 
+`uc 1 IOCAP4 1 0 :1:4 
+`uc 1 IOCAP5 1 0 :1:5 
+`uc 1 IOCAP6 1 0 :1:6 
+`uc 1 IOCAP7 1 0 :1:7 
+]
+"8195
+[u S991 . 1 `S982 1 . 1 0 ]
+[v _IOCAPbits IOCAPbits `VES991  1 e 1 @3852 ]
+"8302
+[v _SLRCONA SLRCONA `VEuc  1 e 1 @3854 ]
+"8364
+[v _ODCONA ODCONA `VEuc  1 e 1 @3855 ]
+"8426
+[v _WPUA WPUA `VEuc  1 e 1 @3856 ]
+"8488
+[v _ANSELA ANSELA `VEuc  1 e 1 @3857 ]
+[s S1003 . 1 `uc 1 IOCBF0 1 0 :1:0 
+`uc 1 IOCBF1 1 0 :1:1 
+`uc 1 IOCBF2 1 0 :1:2 
+`uc 1 IOCBF3 1 0 :1:3 
+`uc 1 IOCBF4 1 0 :1:4 
+`uc 1 IOCBF5 1 0 :1:5 
+`uc 1 IOCBF6 1 0 :1:6 
+`uc 1 IOCBF7 1 0 :1:7 
+]
+"8567
+[u S1012 . 1 `S1003 1 . 1 0 ]
+[v _IOCBFbits IOCBFbits `VES1012  1 e 1 @3858 ]
+[s S1024 . 1 `uc 1 IOCBN0 1 0 :1:0 
+`uc 1 IOCBN1 1 0 :1:1 
+`uc 1 IOCBN2 1 0 :1:2 
+`uc 1 IOCBN3 1 0 :1:3 
+`uc 1 IOCBN4 1 0 :1:4 
+`uc 1 IOCBN5 1 0 :1:5 
+`uc 1 IOCBN6 1 0 :1:6 
+`uc 1 IOCBN7 1 0 :1:7 
+]
+"8629
+[u S1033 . 1 `S1024 1 . 1 0 ]
+[v _IOCBNbits IOCBNbits `VES1033  1 e 1 @3859 ]
+[s S1045 . 1 `uc 1 IOCBP0 1 0 :1:0 
+`uc 1 IOCBP1 1 0 :1:1 
+`uc 1 IOCBP2 1 0 :1:2 
+`uc 1 IOCBP3 1 0 :1:3 
+`uc 1 IOCBP4 1 0 :1:4 
+`uc 1 IOCBP5 1 0 :1:5 
+`uc 1 IOCBP6 1 0 :1:6 
+`uc 1 IOCBP7 1 0 :1:7 
+]
+"8691
+[u S1054 . 1 `S1045 1 . 1 0 ]
+[v _IOCBPbits IOCBPbits `VES1054  1 e 1 @3860 ]
+"8798
+[v _SLRCONB SLRCONB `VEuc  1 e 1 @3862 ]
+"8860
+[v _ODCONB ODCONB `VEuc  1 e 1 @3863 ]
+"8922
+[v _WPUB WPUB `VEuc  1 e 1 @3864 ]
+"8984
+[v _ANSELB ANSELB `VEuc  1 e 1 @3865 ]
+[s S2827 . 1 `uc 1 ANSELB0 1 0 :1:0 
+`uc 1 ANSELB1 1 0 :1:1 
+`uc 1 ANSELB2 1 0 :1:2 
+`uc 1 ANSELB3 1 0 :1:3 
+`uc 1 ANSELB4 1 0 :1:4 
+`uc 1 ANSELB5 1 0 :1:5 
+`uc 1 ANSELB6 1 0 :1:6 
+`uc 1 ANSELB7 1 0 :1:7 
+]
+"9001
+[u S2836 . 1 `S2827 1 . 1 0 ]
+[v _ANSELBbits ANSELBbits `VES2836  1 e 1 @3865 ]
+[s S1066 . 1 `uc 1 IOCCF0 1 0 :1:0 
+`uc 1 IOCCF1 1 0 :1:1 
+`uc 1 IOCCF2 1 0 :1:2 
+`uc 1 IOCCF3 1 0 :1:3 
+`uc 1 IOCCF4 1 0 :1:4 
+`uc 1 IOCCF5 1 0 :1:5 
+`uc 1 IOCCF6 1 0 :1:6 
+`uc 1 IOCCF7 1 0 :1:7 
+]
+"9063
+[u S1075 . 1 `S1066 1 . 1 0 ]
+[v _IOCCFbits IOCCFbits `VES1075  1 e 1 @3866 ]
+[s S1087 . 1 `uc 1 IOCCN0 1 0 :1:0 
+`uc 1 IOCCN1 1 0 :1:1 
+`uc 1 IOCCN2 1 0 :1:2 
+`uc 1 IOCCN3 1 0 :1:3 
+`uc 1 IOCCN4 1 0 :1:4 
+`uc 1 IOCCN5 1 0 :1:5 
+`uc 1 IOCCN6 1 0 :1:6 
+`uc 1 IOCCN7 1 0 :1:7 
+]
+"9125
+[u S1096 . 1 `S1087 1 . 1 0 ]
+[v _IOCCNbits IOCCNbits `VES1096  1 e 1 @3867 ]
+[s S1108 . 1 `uc 1 IOCCP0 1 0 :1:0 
+`uc 1 IOCCP1 1 0 :1:1 
+`uc 1 IOCCP2 1 0 :1:2 
+`uc 1 IOCCP3 1 0 :1:3 
+`uc 1 IOCCP4 1 0 :1:4 
+`uc 1 IOCCP5 1 0 :1:5 
+`uc 1 IOCCP6 1 0 :1:6 
+`uc 1 IOCCP7 1 0 :1:7 
+]
+"9187
+[u S1117 . 1 `S1108 1 . 1 0 ]
+[v _IOCCPbits IOCCPbits `VES1117  1 e 1 @3868 ]
+"9294
+[v _SLRCONC SLRCONC `VEuc  1 e 1 @3870 ]
+"9356
+[v _ODCONC ODCONC `VEuc  1 e 1 @3871 ]
+"9418
+[v _WPUC WPUC `VEuc  1 e 1 @3872 ]
+"9480
+[v _ANSELC ANSELC `VEuc  1 e 1 @3873 ]
+"9604
+[v _SLRCOND SLRCOND `VEuc  1 e 1 @3875 ]
+"9666
+[v _ODCOND ODCOND `VEuc  1 e 1 @3876 ]
+"9728
+[v _WPUD WPUD `VEuc  1 e 1 @3877 ]
+"9790
+[v _ANSELD ANSELD `VEuc  1 e 1 @3878 ]
+"9953
+[v _SLRCONE SLRCONE `VEuc  1 e 1 @3883 ]
+"9985
+[v _ODCONE ODCONE `VEuc  1 e 1 @3884 ]
+"10017
+[v _WPUE WPUE `VEuc  1 e 1 @3885 ]
+"10055
+[v _ANSELE ANSELE `VEuc  1 e 1 @3886 ]
+"10239
+[v _FVRCON FVRCON `VEuc  1 e 1 @3889 ]
+[s S1800 . 1 `uc 1 ADFVR 1 0 :2:0 
+`uc 1 CDAFVR 1 0 :2:2 
+`uc 1 TSRNG 1 0 :1:4 
+`uc 1 TSEN 1 0 :1:5 
+`uc 1 RDY 1 0 :1:6 
+`uc 1 EN 1 0 :1:7 
+]
+"10263
+[s S1807 . 1 `uc 1 ADFVR0 1 0 :1:0 
+`uc 1 ADFVR1 1 0 :1:1 
+`uc 1 CDAFVR0 1 0 :1:2 
+`uc 1 CDAFVR1 1 0 :1:3 
+`uc 1 . 1 0 :2:4 
+`uc 1 FVRRDY 1 0 :1:6 
+`uc 1 FVREN 1 0 :1:7 
+]
+[u S1815 . 1 `S1800 1 . 1 0 `S1807 1 . 1 0 ]
+[v _FVRCONbits FVRCONbits `VES1815  1 e 1 @3889 ]
+"10408
+[v _DAC1CON0 DAC1CON0 `VEuc  1 e 1 @3891 ]
+"10509
+[v _DAC1CON1 DAC1CON1 `VEuc  1 e 1 @3892 ]
+"11067
+[v _CLKRCON CLKRCON `VEuc  1 e 1 @3902 ]
+"11171
+[v _CLKRCLK CLKRCLK `VEuc  1 e 1 @3903 ]
+"16353
+[v _LATA LATA `VEuc  1 e 1 @3971 ]
+"16465
+[v _LATB LATB `VEuc  1 e 1 @3972 ]
+"16577
+[v _LATC LATC `VEuc  1 e 1 @3973 ]
+[s S2383 . 1 `uc 1 LATC0 1 0 :1:0 
+`uc 1 LATC1 1 0 :1:1 
+`uc 1 LATC2 1 0 :1:2 
+`uc 1 LATC3 1 0 :1:3 
+`uc 1 LATC4 1 0 :1:4 
+`uc 1 LATC5 1 0 :1:5 
+`uc 1 LATC6 1 0 :1:6 
+`uc 1 LATC7 1 0 :1:7 
+]
+"16604
+[s S2392 . 1 `uc 1 LC0 1 0 :1:0 
+`uc 1 LC1 1 0 :1:1 
+`uc 1 LC2 1 0 :1:2 
+`uc 1 LC3 1 0 :1:3 
+`uc 1 LC4 1 0 :1:4 
+`uc 1 LC5 1 0 :1:5 
+`uc 1 LC6 1 0 :1:6 
+`uc 1 LC7 1 0 :1:7 
+]
+[u S2401 . 1 `S2383 1 . 1 0 `S2392 1 . 1 0 ]
+[v _LATCbits LATCbits `VES2401  1 e 1 @3973 ]
+"16689
+[v _LATD LATD `VEuc  1 e 1 @3974 ]
+[s S2342 . 1 `uc 1 LATD0 1 0 :1:0 
+`uc 1 LATD1 1 0 :1:1 
+`uc 1 LATD2 1 0 :1:2 
+`uc 1 LATD3 1 0 :1:3 
+`uc 1 LATD4 1 0 :1:4 
+`uc 1 LATD5 1 0 :1:5 
+`uc 1 LATD6 1 0 :1:6 
+`uc 1 LATD7 1 0 :1:7 
+]
+"16716
+[s S2351 . 1 `uc 1 LD0 1 0 :1:0 
+`uc 1 LD1 1 0 :1:1 
+`uc 1 LD2 1 0 :1:2 
+`uc 1 LD3 1 0 :1:3 
+`uc 1 LD4 1 0 :1:4 
+`uc 1 LD5 1 0 :1:5 
+`uc 1 LD6 1 0 :1:6 
+`uc 1 LD7 1 0 :1:7 
+]
+[u S2360 . 1 `S2342 1 . 1 0 `S2351 1 . 1 0 ]
+[v _LATDbits LATDbits `VES2360  1 e 1 @3974 ]
+"16801
+[v _LATE LATE `VEuc  1 e 1 @3975 ]
+[s S2607 . 1 `uc 1 LATE0 1 0 :1:0 
+`uc 1 LATE1 1 0 :1:1 
+`uc 1 LATE2 1 0 :1:2 
+]
+"16838
+[s S2611 . 1 `uc 1 LE0 1 0 :1:0 
+`uc 1 LE1 1 0 :1:1 
+`uc 1 LE2 1 0 :1:2 
+]
+[s S2615 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 LE3 1 0 :1:3 
+]
+[s S2618 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 LE4 1 0 :1:4 
+]
+[s S2621 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 LE5 1 0 :1:5 
+]
+[s S2624 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 LE6 1 0 :1:6 
+]
+[s S2627 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 LE7 1 0 :1:7 
+]
+[u S2630 . 1 `S2607 1 . 1 0 `S2611 1 . 1 0 `S2615 1 . 1 0 `S2618 1 . 1 0 `S2621 1 . 1 0 `S2624 1 . 1 0 `S2627 1 . 1 0 ]
+[v _LATEbits LATEbits `VES2630  1 e 1 @3975 ]
+"16898
+[v _TRISA TRISA `VEuc  1 e 1 @3976 ]
+"17020
+[v _TRISB TRISB `VEuc  1 e 1 @3977 ]
+[s S2848 . 1 `uc 1 TRISB0 1 0 :1:0 
+`uc 1 TRISB1 1 0 :1:1 
+`uc 1 TRISB2 1 0 :1:2 
+`uc 1 TRISB3 1 0 :1:3 
+`uc 1 TRISB4 1 0 :1:4 
+`uc 1 TRISB5 1 0 :1:5 
+`uc 1 TRISB6 1 0 :1:6 
+`uc 1 TRISB7 1 0 :1:7 
+]
+"17042
+[u S2857 . 1 `S2848 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES2857  1 e 1 @3977 ]
+"17142
+[v _TRISC TRISC `VEuc  1 e 1 @3978 ]
+"17264
+[v _TRISD TRISD `VEuc  1 e 1 @3979 ]
+[s S2172 . 1 `uc 1 TRISD0 1 0 :1:0 
+`uc 1 TRISD1 1 0 :1:1 
+`uc 1 TRISD2 1 0 :1:2 
+`uc 1 TRISD3 1 0 :1:3 
+`uc 1 TRISD4 1 0 :1:4 
+`uc 1 TRISD5 1 0 :1:5 
+`uc 1 TRISD6 1 0 :1:6 
+`uc 1 TRISD7 1 0 :1:7 
+]
+"17286
+[u S2181 . 1 `S2172 1 . 1 0 ]
+[v _TRISDbits TRISDbits `VES2181  1 e 1 @3979 ]
+"17386
+[v _TRISE TRISE `VEuc  1 e 1 @3980 ]
+[s S2305 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 RC3 1 0 :1:3 
+`uc 1 RC4 1 0 :1:4 
+`uc 1 RC5 1 0 :1:5 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+"17629
+[s S2314 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 CCP2 1 0 :1:1 
+`uc 1 PA1 1 0 :1:2 
+]
+[s S2318 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 PA2 1 0 :1:1 
+]
+[u S2321 . 1 `S2305 1 . 1 0 `S2314 1 . 1 0 `S2318 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES2321  1 e 1 @3983 ]
+"17967
+[v _SSP1BUF SSP1BUF `VEuc  1 e 1 @3986 ]
+"17987
+[v _SSP1ADD SSP1ADD `VEuc  1 e 1 @3987 ]
+"18107
+[v _SSP1MSK SSP1MSK `VEuc  1 e 1 @3988 ]
+"18177
+[v _SSP1STAT SSP1STAT `VEuc  1 e 1 @3989 ]
+[s S3074 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_NOT_W 1 0 :1:2 
+]
+"18326
+[s S3077 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 D_NOT_A 1 0 :1:5 
+]
+[s S3080 . 1 `uc 1 BF 1 0 :1:0 
+`uc 1 UA 1 0 :1:1 
+`uc 1 R_nW 1 0 :1:2 
+`uc 1 S 1 0 :1:3 
+`uc 1 P 1 0 :1:4 
+`uc 1 D_nA 1 0 :1:5 
+`uc 1 CKE 1 0 :1:6 
+`uc 1 SMP 1 0 :1:7 
+]
+[s S3089 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_W 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D_A 1 0 :1:5 
+]
+[s S3094 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nW 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nA 1 0 :1:5 
+]
+[s S3099 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_WRITE 1 0 :1:2 
+]
+[s S3102 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 NOT_ADDRESS 1 0 :1:5 
+]
+[s S3105 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nWRITE 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nADDRESS 1 0 :1:5 
+]
+[s S3110 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 READ_WRITE 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 DATA_ADDRESS 1 0 :1:5 
+]
+[s S3115 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 I2C_READ 1 0 :1:2 
+`uc 1 I2C_START 1 0 :1:3 
+`uc 1 I2C_STOP 1 0 :1:4 
+`uc 1 I2C_DAT 1 0 :1:5 
+]
+[s S3121 . 1 `uc 1 BF1 1 0 :1:0 
+`uc 1 UA1 1 0 :1:1 
+`uc 1 R 1 0 :1:2 
+`uc 1 START 1 0 :1:3 
+`uc 1 STOP 1 0 :1:4 
+`uc 1 D 1 0 :1:5 
+`uc 1 CKE1 1 0 :1:6 
+`uc 1 SMP1 1 0 :1:7 
+]
+[s S3130 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 RW 1 0 :1:2 
+`uc 1 START1 1 0 :1:3 
+`uc 1 STOP1 1 0 :1:4 
+`uc 1 DA 1 0 :1:5 
+]
+[s S3136 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 RW1 1 0 :1:2 
+`uc 1 I2C_START1 1 0 :1:3 
+`uc 1 I2C_STOP2 1 0 :1:4 
+`uc 1 DA1 1 0 :1:5 
+]
+[s S3142 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 I2C_READ1 1 0 :1:2 
+`uc 1 S2 1 0 :1:3 
+`uc 1 P2 1 0 :1:4 
+`uc 1 DATA_ADDRESS1 1 0 :1:5 
+]
+[s S3148 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 READ_WRITE1 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D_A1 1 0 :1:5 
+]
+[s S3153 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 D_NOT_A1 1 0 :1:5 
+]
+[s S3156 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_W1 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D_nA1 1 0 :1:5 
+]
+[s S3161 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_NOT_W1 1 0 :1:2 
+]
+[s S3164 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_nW1 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 I2C_DAT1 1 0 :1:5 
+]
+[s S3169 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_W2 1 0 :1:2 
+]
+[s S3172 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 NOT_A2 1 0 :1:5 
+]
+[s S3175 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nW2 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nA2 1 0 :1:5 
+]
+[s S3180 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_WRITE1 1 0 :1:2 
+]
+[s S3183 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 NOT_ADDRESS1 1 0 :1:5 
+]
+[s S3186 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nWRITE1 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nADDRESS1 1 0 :1:5 
+]
+[u S3191 . 1 `S3074 1 . 1 0 `S3077 1 . 1 0 `S3080 1 . 1 0 `S3089 1 . 1 0 `S3094 1 . 1 0 `S3099 1 . 1 0 `S3102 1 . 1 0 `S3105 1 . 1 0 `S3110 1 . 1 0 `S3115 1 . 1 0 `S3121 1 . 1 0 `S3130 1 . 1 0 `S3136 1 . 1 0 `S3142 1 . 1 0 `S3148 1 . 1 0 `S3153 1 . 1 0 `S3156 1 . 1 0 `S3161 1 . 1 0 `S3164 1 . 1 0 `S3169 1 . 1 0 `S3172 1 . 1 0 `S3175 1 . 1 0 `S3180 1 . 1 0 `S3183 1 . 1 0 `S3186 1 . 1 0 ]
+[v _SSP1STATbits SSP1STATbits `VES3191  1 e 1 @3989 ]
+"18631
+[v _SSP1CON1 SSP1CON1 `VEuc  1 e 1 @3990 ]
+"18661
+[s S3032 . 1 `uc 1 SSPM01 1 0 :1:0 
+`uc 1 SSPM11 1 0 :1:1 
+`uc 1 SSPM21 1 0 :1:2 
+`uc 1 SSPM31 1 0 :1:3 
+`uc 1 CKP1 1 0 :1:4 
+`uc 1 SSPEN1 1 0 :1:5 
+`uc 1 SSPOV1 1 0 :1:6 
+`uc 1 WCOL1 1 0 :1:7 
+]
+[u S3041 . 1 `S2111 1 . 1 0 `S2117 1 . 1 0 `S3032 1 . 1 0 ]
+[v _SSP1CON1bits SSP1CON1bits `VES3041  1 e 1 @3990 ]
+"18751
+[v _SSP1CON2 SSP1CON2 `VEuc  1 e 1 @3991 ]
+[s S2943 . 1 `uc 1 SEN 1 0 :1:0 
+`uc 1 RSEN 1 0 :1:1 
+`uc 1 PEN 1 0 :1:2 
+`uc 1 RCEN 1 0 :1:3 
+`uc 1 ACKEN 1 0 :1:4 
+`uc 1 ACKDT 1 0 :1:5 
+`uc 1 ACKSTAT 1 0 :1:6 
+`uc 1 GCEN 1 0 :1:7 
+]
+"18798
+[s S2952 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 ADMSK 1 0 :5:1 
+]
+[s S2955 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 ADMSK1 1 0 :1:1 
+`uc 1 ADMSK2 1 0 :1:2 
+`uc 1 ADMSK3 1 0 :1:3 
+`uc 1 ADMSK4 1 0 :1:4 
+`uc 1 ADMSK5 1 0 :1:5 
+]
+[s S2962 . 1 `uc 1 SEN1 1 0 :1:0 
+`uc 1 ADMSK11 1 0 :1:1 
+`uc 1 ADMSK21 1 0 :1:2 
+`uc 1 ADMSK31 1 0 :1:3 
+`uc 1 ACKEN1 1 0 :1:4 
+`uc 1 ACKDT1 1 0 :1:5 
+`uc 1 ACKSTAT1 1 0 :1:6 
+`uc 1 GCEN1 1 0 :1:7 
+]
+[s S2971 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 RSEN1 1 0 :1:1 
+`uc 1 PEN1 1 0 :1:2 
+`uc 1 RCEN1 1 0 :1:3 
+`uc 1 ADMSK41 1 0 :1:4 
+`uc 1 ADMSK51 1 0 :1:5 
+]
+[u S2978 . 1 `S2943 1 . 1 0 `S2952 1 . 1 0 `S2955 1 . 1 0 `S2962 1 . 1 0 `S2971 1 . 1 0 ]
+[v _SSP1CON2bits SSP1CON2bits `VES2978  1 e 1 @3991 ]
+"18938
+[v _SSP1CON3 SSP1CON3 `VEuc  1 e 1 @3992 ]
+[s S2922 . 1 `uc 1 DHEN 1 0 :1:0 
+`uc 1 AHEN 1 0 :1:1 
+`uc 1 SBCDE 1 0 :1:2 
+`uc 1 SDAHT 1 0 :1:3 
+`uc 1 BOEN 1 0 :1:4 
+`uc 1 SCIE 1 0 :1:5 
+`uc 1 PCIE 1 0 :1:6 
+`uc 1 ACKTIM 1 0 :1:7 
+]
+"18955
+[u S2931 . 1 `S2922 1 . 1 0 ]
+[v _SSP1CON3bits SSP1CON3bits `VES2931  1 e 1 @3992 ]
+"19000
+[v _RC1REG RC1REG `VEuc  1 e 1 @3993 ]
+"19054
+[v _TX1REG TX1REG `VEuc  1 e 1 @3994 ]
+"19115
+[v _SP1BRGL SP1BRGL `VEuc  1 e 1 @3995 ]
+"19185
+[v _SP1BRGH SP1BRGH `VEuc  1 e 1 @3996 ]
+"19239
+[v _RC1STA RC1STA `VEuc  1 e 1 @3997 ]
+[s S1619 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"19280
+[s S1628 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 RC8_9 1 0 :1:6 
+]
+[s S1631 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 RC9 1 0 :1:6 
+]
+[s S1634 . 1 `uc 1 RCD8 1 0 :1:0 
+]
+[s S1636 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 SRENA 1 0 :1:5 
+]
+[u S1639 . 1 `S1619 1 . 1 0 `S1628 1 . 1 0 `S1631 1 . 1 0 `S1634 1 . 1 0 `S1636 1 . 1 0 ]
+[v _RC1STAbits RC1STAbits `VES1639  1 e 1 @3997 ]
+"19524
+[v _TX1STA TX1STA `VEuc  1 e 1 @3998 ]
+[s S1531 . 1 `uc 1 TX9D 1 0 :1:0 
+`uc 1 TRMT 1 0 :1:1 
+`uc 1 BRGH 1 0 :1:2 
+`uc 1 SENDB 1 0 :1:3 
+`uc 1 SYNC 1 0 :1:4 
+`uc 1 TXEN 1 0 :1:5 
+`uc 1 TX9 1 0 :1:6 
+`uc 1 CSRC 1 0 :1:7 
+]
+"19588
+[s S1540 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 TX8_9 1 0 :1:6 
+]
+[s S1543 . 1 `uc 1 TXD8 1 0 :1:0 
+]
+[s S1545 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 BRGH1 1 0 :1:2 
+]
+[s S1548 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 CSRC1 1 0 :1:7 
+]
+[s S1551 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 SENDB1 1 0 :1:3 
+]
+[s S1554 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 SYNC1 1 0 :1:4 
+]
+[s S1557 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 TRMT1 1 0 :1:1 
+]
+[s S1560 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 TX91 1 0 :1:6 
+]
+[s S1563 . 1 `uc 1 TX9D1 1 0 :1:0 
+]
+[s S1565 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 TXEN1 1 0 :1:5 
+]
+[u S1568 . 1 `S1531 1 . 1 0 `S1540 1 . 1 0 `S1543 1 . 1 0 `S1545 1 . 1 0 `S1548 1 . 1 0 `S1551 1 . 1 0 `S1554 1 . 1 0 `S1557 1 . 1 0 `S1560 1 . 1 0 `S1563 1 . 1 0 `S1565 1 . 1 0 ]
+[v _TX1STAbits TX1STAbits `VES1568  1 e 1 @3998 ]
+"19968
+[v _BAUD1CON BAUD1CON `VEuc  1 e 1 @3999 ]
+"22483
+[v _T4TMR T4TMR `VEuc  1 e 1 @4021 ]
+"22488
+[v _TMR4 TMR4 `VEuc  1 e 1 @4021 ]
+"22521
+[v _T4PR T4PR `VEuc  1 e 1 @4022 ]
+"22526
+[v _PR4 PR4 `VEuc  1 e 1 @4022 ]
+"22559
+[v _T4CON T4CON `VEuc  1 e 1 @4023 ]
+[s S319 . 1 `uc 1 OUTPS 1 0 :4:0 
+`uc 1 CKPS 1 0 :3:4 
+`uc 1 ON 1 0 :1:7 
+]
+"22595
+[s S2002 . 1 `uc 1 T4OUTPS 1 0 :4:0 
+`uc 1 T4CKPS 1 0 :3:4 
+`uc 1 T4ON 1 0 :1:7 
+]
+[s S2006 . 1 `uc 1 T4OUTPS0 1 0 :1:0 
+`uc 1 T4OUTPS1 1 0 :1:1 
+`uc 1 T4OUTPS2 1 0 :1:2 
+`uc 1 T4OUTPS3 1 0 :1:3 
+`uc 1 T4CKPS0 1 0 :1:4 
+`uc 1 T4CKPS1 1 0 :1:5 
+`uc 1 T4CKPS2 1 0 :1:6 
+]
+[s S2014 . 1 `uc 1 OUTPS0 1 0 :1:0 
+`uc 1 OUTPS1 1 0 :1:1 
+`uc 1 OUTPS2 1 0 :1:2 
+`uc 1 OUTPS3 1 0 :1:3 
+`uc 1 CKPS0 1 0 :1:4 
+`uc 1 CKPS1 1 0 :1:5 
+`uc 1 CKPS2 1 0 :1:6 
+`uc 1 TMR4ON 1 0 :1:7 
+]
+[u S2023 . 1 `S319 1 . 1 0 `S2002 1 . 1 0 `S2006 1 . 1 0 `S2014 1 . 1 0 ]
+[v _T4CONbits T4CONbits `VES2023  1 e 1 @4023 ]
+"22705
+[v _T4HLT T4HLT `VEuc  1 e 1 @4024 ]
+[s S223 . 1 `uc 1 MODE 1 0 :5:0 
+`uc 1 CKSYNC 1 0 :1:5 
+`uc 1 CKPOL 1 0 :1:6 
+`uc 1 PSYNC 1 0 :1:7 
+]
+"22738
+[s S228 . 1 `uc 1 MODE0 1 0 :1:0 
+`uc 1 MODE1 1 0 :1:1 
+`uc 1 MODE2 1 0 :1:2 
+`uc 1 MODE3 1 0 :1:3 
+`uc 1 MODE4 1 0 :1:4 
+]
+[s S1913 . 1 `uc 1 T4MODE 1 0 :5:0 
+`uc 1 T4CKSYNC 1 0 :1:5 
+`uc 1 T4CKPOL 1 0 :1:6 
+`uc 1 T4PSYNC 1 0 :1:7 
+]
+[s S1918 . 1 `uc 1 T4MODE0 1 0 :1:0 
+`uc 1 T4MODE1 1 0 :1:1 
+`uc 1 T4MODE2 1 0 :1:2 
+`uc 1 T4MODE3 1 0 :1:3 
+`uc 1 T4MODE4 1 0 :1:4 
+]
+[u S1924 . 1 `S223 1 . 1 0 `S228 1 . 1 0 `S1913 1 . 1 0 `S1918 1 . 1 0 ]
+[v _T4HLTbits T4HLTbits `VES1924  1 e 1 @4024 ]
+"22833
+[v _T4CLKCON T4CLKCON `VEuc  1 e 1 @4025 ]
+"22991
+[v _T4RST T4RST `VEuc  1 e 1 @4026 ]
+[s S285 . 1 `uc 1 RSEL 1 0 :5:0 
+]
+"23016
+[s S287 . 1 `uc 1 RSEL0 1 0 :1:0 
+`uc 1 RSEL1 1 0 :1:1 
+`uc 1 RSEL2 1 0 :1:2 
+`uc 1 RSEL3 1 0 :1:3 
+]
+[s S1971 . 1 `uc 1 T4RSEL 1 0 :5:0 
+]
+[s S1973 . 1 `uc 1 T4RSEL0 1 0 :1:0 
+`uc 1 T4RSEL1 1 0 :1:1 
+`uc 1 T4RSEL2 1 0 :1:2 
+`uc 1 T4RSEL3 1 0 :1:3 
+]
+[u S1978 . 1 `S285 1 . 1 0 `S287 1 . 1 0 `S1971 1 . 1 0 `S1973 1 . 1 0 ]
+[v _T4RSTbits T4RSTbits `VES1978  1 e 1 @4026 ]
+"23071
+[v _T2TMR T2TMR `VEuc  1 e 1 @4027 ]
+"23076
+[v _TMR2 TMR2 `VEuc  1 e 1 @4027 ]
+"23109
+[v _T2PR T2PR `VEuc  1 e 1 @4028 ]
+"23114
+[v _PR2 PR2 `VEuc  1 e 1 @4028 ]
+"23147
+[v _T2CON T2CON `VEuc  1 e 1 @4029 ]
+"23183
+[s S323 . 1 `uc 1 T2OUTPS 1 0 :4:0 
+`uc 1 T2CKPS 1 0 :3:4 
+`uc 1 T2ON 1 0 :1:7 
+]
+[s S327 . 1 `uc 1 T2OUTPS0 1 0 :1:0 
+`uc 1 T2OUTPS1 1 0 :1:1 
+`uc 1 T2OUTPS2 1 0 :1:2 
+`uc 1 T2OUTPS3 1 0 :1:3 
+`uc 1 T2CKPS0 1 0 :1:4 
+`uc 1 T2CKPS1 1 0 :1:5 
+`uc 1 T2CKPS2 1 0 :1:6 
+]
+[s S335 . 1 `uc 1 OUTPS0 1 0 :1:0 
+`uc 1 OUTPS1 1 0 :1:1 
+`uc 1 OUTPS2 1 0 :1:2 
+`uc 1 OUTPS3 1 0 :1:3 
+`uc 1 CKPS0 1 0 :1:4 
+`uc 1 CKPS1 1 0 :1:5 
+`uc 1 CKPS2 1 0 :1:6 
+`uc 1 TMR2ON 1 0 :1:7 
+]
+[u S344 . 1 `S319 1 . 1 0 `S323 1 . 1 0 `S327 1 . 1 0 `S335 1 . 1 0 ]
+[v _T2CONbits T2CONbits `VES344  1 e 1 @4029 ]
+"23293
+[v _T2HLT T2HLT `VEuc  1 e 1 @4030 ]
+"23326
+[s S234 . 1 `uc 1 T2MODE 1 0 :5:0 
+`uc 1 T2CKSYNC 1 0 :1:5 
+`uc 1 T2CKPOL 1 0 :1:6 
+`uc 1 T2PSYNC 1 0 :1:7 
+]
+[s S239 . 1 `uc 1 T2MODE0 1 0 :1:0 
+`uc 1 T2MODE1 1 0 :1:1 
+`uc 1 T2MODE2 1 0 :1:2 
+`uc 1 T2MODE3 1 0 :1:3 
+`uc 1 T2MODE4 1 0 :1:4 
+]
+[u S245 . 1 `S223 1 . 1 0 `S228 1 . 1 0 `S234 1 . 1 0 `S239 1 . 1 0 ]
+[v _T2HLTbits T2HLTbits `VES245  1 e 1 @4030 ]
+"23421
+[v _T2CLKCON T2CLKCON `VEuc  1 e 1 @4031 ]
+"23579
+[v _T2RST T2RST `VEuc  1 e 1 @4032 ]
+"23604
+[s S292 . 1 `uc 1 T2RSEL 1 0 :5:0 
+]
+[s S294 . 1 `uc 1 T2RSEL0 1 0 :1:0 
+`uc 1 T2RSEL1 1 0 :1:1 
+`uc 1 T2RSEL2 1 0 :1:2 
+`uc 1 T2RSEL3 1 0 :1:3 
+]
+[u S299 . 1 `S285 1 . 1 0 `S287 1 . 1 0 `S292 1 . 1 0 `S294 1 . 1 0 ]
+[v _T2RSTbits T2RSTbits `VES299  1 e 1 @4032 ]
+[s S478 . 1 `uc 1 INT0EDG 1 0 :1:0 
+`uc 1 INT1EDG 1 0 :1:1 
+`uc 1 INT2EDG 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 IPEN 1 0 :1:5 
+`uc 1 PEIE_GIEL 1 0 :1:6 
+`uc 1 GIE_GIEH 1 0 :1:7 
+]
+"27750
+[s S486 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+[s S490 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 GIEL 1 0 :1:6 
+`uc 1 GIEH 1 0 :1:7 
+]
+[u S494 . 1 `S478 1 . 1 0 `S486 1 . 1 0 `S490 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES494  1 e 1 @4082 ]
+"37 C:\WorkSpace\Projects\USB_Tool\Software\ext_rf_receiver.h
+[v _EXT_TARGET_RF_RX EXT_TARGET_RF_RX `uc  1 e 1 0 ]
+"44 C:\WorkSpace\Projects\USB_Tool\Software\LedBlink.h
+[v _R_OnTime R_OnTime `i  1 e 2 0 ]
+"46
+[v _R_OffTime R_OffTime `i  1 e 2 0 ]
+"48
+[v _R_Enabled R_Enabled `i  1 e 2 0 ]
+"50
+[v _R_Counter R_Counter `i  1 e 2 0 ]
+"52
+[v _R_StartAfter R_StartAfter `i  1 e 2 0 ]
+"54
+[v _R_BlinkCount R_BlinkCount `i  1 e 2 0 ]
+"56
+[v _R_BlinkCounter R_BlinkCounter `i  1 e 2 0 ]
+"58
+[v _R_State R_State `i  1 e 2 0 ]
+"60
+[v _G_OnTime G_OnTime `i  1 e 2 0 ]
+"61
+[v _G_OffTime G_OffTime `i  1 e 2 0 ]
+"62
+[v _G_Enabled G_Enabled `i  1 e 2 0 ]
+"63
+[v _G_Counter G_Counter `i  1 e 2 0 ]
+"64
+[v _G_StartAfter G_StartAfter `i  1 e 2 0 ]
+"65
+[v _G_BlinkCount G_BlinkCount `i  1 e 2 0 ]
+"66
+[v _G_BlinkCounter G_BlinkCounter `i  1 e 2 0 ]
+"67
+[v _G_State G_State `i  1 e 2 0 ]
+"69
+[v _B_OnTime B_OnTime `i  1 e 2 0 ]
+"70
+[v _B_OffTime B_OffTime `i  1 e 2 0 ]
+"71
+[v _B_Enabled B_Enabled `i  1 e 2 0 ]
+"72
+[v _B_Counter B_Counter `i  1 e 2 0 ]
+"73
+[v _B_StartAfter B_StartAfter `i  1 e 2 0 ]
+"74
+[v _B_BlinkCount B_BlinkCount `i  1 e 2 0 ]
+"75
+[v _B_BlinkCounter B_BlinkCounter `i  1 e 2 0 ]
+"76
+[v _B_State B_State `i  1 e 2 0 ]
+"78
+[v _RGB_R_OnTime RGB_R_OnTime `i  1 e 2 0 ]
+"79
+[v _RGB_R_OffTime RGB_R_OffTime `i  1 e 2 0 ]
+"80
+[v _RGB_R_Enabled RGB_R_Enabled `i  1 e 2 0 ]
+"81
+[v _RGB_R_Counter RGB_R_Counter `i  1 e 2 0 ]
+"82
+[v _RGB_R_StartAfter RGB_R_StartAfter `i  1 e 2 0 ]
+"83
+[v _RGB_R_BlinkCount RGB_R_BlinkCount `i  1 e 2 0 ]
+"84
+[v _RGB_R_BlinkCounter RGB_R_BlinkCounter `i  1 e 2 0 ]
+"85
+[v _RGB_R_State RGB_R_State `i  1 e 2 0 ]
+"87
+[v _RGB_G_OnTime RGB_G_OnTime `i  1 e 2 0 ]
+"88
+[v _RGB_G_OffTime RGB_G_OffTime `i  1 e 2 0 ]
+"89
+[v _RGB_G_Enabled RGB_G_Enabled `i  1 e 2 0 ]
+"90
+[v _RGB_G_Counter RGB_G_Counter `i  1 e 2 0 ]
+"91
+[v _RGB_G_StartAfter RGB_G_StartAfter `i  1 e 2 0 ]
+"92
+[v _RGB_G_BlinkCount RGB_G_BlinkCount `i  1 e 2 0 ]
+"93
+[v _RGB_G_BlinkCounter RGB_G_BlinkCounter `i  1 e 2 0 ]
+"94
+[v _RGB_G_State RGB_G_State `i  1 e 2 0 ]
+"96
+[v _RGB_B_OnTime RGB_B_OnTime `i  1 e 2 0 ]
+"97
+[v _RGB_B_OffTime RGB_B_OffTime `i  1 e 2 0 ]
+"98
+[v _RGB_B_Enabled RGB_B_Enabled `i  1 e 2 0 ]
+"99
+[v _RGB_B_Counter RGB_B_Counter `i  1 e 2 0 ]
+"100
+[v _RGB_B_StartAfter RGB_B_StartAfter `i  1 e 2 0 ]
+"101
+[v _RGB_B_BlinkCount RGB_B_BlinkCount `i  1 e 2 0 ]
+"102
+[v _RGB_B_BlinkCounter RGB_B_BlinkCounter `i  1 e 2 0 ]
+"103
+[v _RGB_B_State RGB_B_State `i  1 e 2 0 ]
+"63 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/eusart1.c
+[v _eusart1TxHead eusart1TxHead `VEuc  1 e 1 0 ]
+"64
+[v _eusart1TxTail eusart1TxTail `VEuc  1 e 1 0 ]
+"65
+[v _eusart1TxBuffer eusart1TxBuffer `VE[64]uc  1 e 64 0 ]
+"66
+[v _eusart1TxBufferRemaining eusart1TxBufferRemaining `VEuc  1 e 1 0 ]
+"68
+[v _eusart1RxHead eusart1RxHead `VEuc  1 e 1 0 ]
+"69
+[v _eusart1RxTail eusart1RxTail `VEuc  1 e 1 0 ]
+"70
+[v _eusart1RxBuffer eusart1RxBuffer `VE[64]uc  1 e 64 0 ]
+[s S1440 . 1 `uc 1 perr 1 0 :1:0 
+`uc 1 ferr 1 0 :1:1 
+`uc 1 oerr 1 0 :1:2 
+`uc 1 reserved 1 0 :5:3 
+]
+"71
+[u S1445 . 1 `S1440 1 . 1 0 `uc 1 status 1 0 ]
+[v _eusart1RxStatusBuffer eusart1RxStatusBuffer `VE[64]S1445  1 e 64 0 ]
+"72
+[v _eusart1RxCount eusart1RxCount `VEuc  1 e 1 0 ]
+"73
+[v _eusart1RxLastError eusart1RxLastError `VES1445  1 e 1 0 ]
+"78
+[v _EUSART1_FramingErrorHandler EUSART1_FramingErrorHandler `*.37(v  1 e 2 0 ]
+"79
+[v _EUSART1_OverrunErrorHandler EUSART1_OverrunErrorHandler `*.37(v  1 e 2 0 ]
+"80
+[v _EUSART1_ErrorHandler EUSART1_ErrorHandler `*.37(v  1 e 2 0 ]
+"95 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/eusart1.h
+[v _EUSART1_TxDefaultInterruptHandler EUSART1_TxDefaultInterruptHandler `*.37(v  1 e 2 0 ]
+"96
+[v _EUSART1_RxDefaultInterruptHandler EUSART1_RxDefaultInterruptHandler `*.37(v  1 e 2 0 ]
+"30 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/ext_int.c
+[v _INT0_InterruptHandler INT0_InterruptHandler `*.37(v  1 e 2 0 ]
+"31
+[v _INT1_InterruptHandler INT1_InterruptHandler `*.37(v  1 e 2 0 ]
+"32
+[v _INT2_InterruptHandler INT2_InterruptHandler `*.37(v  1 e 2 0 ]
+"54 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/pin_manager.c
+[v _IOCAF0_InterruptHandler IOCAF0_InterruptHandler `*.37(v  1 e 2 0 ]
+"55
+[v _IOCAF1_InterruptHandler IOCAF1_InterruptHandler `*.37(v  1 e 2 0 ]
+"56
+[v _IOCAF3_InterruptHandler IOCAF3_InterruptHandler `*.37(v  1 e 2 0 ]
+"57
+[v _IOCAF4_InterruptHandler IOCAF4_InterruptHandler `*.37(v  1 e 2 0 ]
+"58
+[v _IOCBF5_InterruptHandler IOCBF5_InterruptHandler `*.37(v  1 e 2 0 ]
+"59
+[v _IOCCF3_InterruptHandler IOCCF3_InterruptHandler `*.37(v  1 e 2 0 ]
+"60
+[v _IOCCF4_InterruptHandler IOCCF4_InterruptHandler `*.37(v  1 e 2 0 ]
+"61
+[v _IOCCF5_InterruptHandler IOCCF5_InterruptHandler `*.37(v  1 e 2 0 ]
+"62
+[v _IOCCF6_InterruptHandler IOCCF6_InterruptHandler `*.37(v  1 e 2 0 ]
+"63
+[v _IOCCF7_InterruptHandler IOCCF7_InterruptHandler `*.37(v  1 e 2 0 ]
+"31 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/spi2_driver.c
+[v _spi2_interruptHandler spi2_interruptHandler `*.37(v  1 e 2 0 ]
+[s S2156 . 4 `uc 1 con1 1 0 `uc 1 stat 1 1 `uc 1 add 1 2 `uc 1 operation 1 3 ]
+"40
+[v _spi2_configuration spi2_configuration `C[2]S2156  1 s 8 spi2_configuration ]
+"58 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/tmr2.c
+[v _TMR2_InterruptHandler TMR2_InterruptHandler `*.37(v  1 e 2 0 ]
+"58 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/tmr4.c
+[v _TMR4_InterruptHandler TMR4_InterruptHandler `*.37(v  1 e 2 0 ]
+"81 C:\WorkSpace\Projects\USB_Tool\Software\main.c
+[v _main main `(v  1 e 1 0 ]
+{
+"136
+} 0
+"15 C:\WorkSpace\Projects\USB_Tool\Software\ext_rf_receiver.c
+[v _ext_rf_initialize ext_rf_initialize `(v  1 e 1 0 ]
+{
+"17
+} 0
+"447 C:\WorkSpace\Projects\USB_Tool\Software\iic.c
+[v _GetTarget GetTarget `(uc  1 e 1 0 ]
+{
+[v GetTarget@Address Address `uc  1 a 1 wreg ]
+"448
+[v GetTarget@ret ret `uc  1 a 1 1 ]
+"447
+[v GetTarget@Address Address `uc  1 a 1 wreg ]
+[v GetTarget@Address Address `uc  1 a 1 0 ]
+"451
+} 0
+"51 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/mcc.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+{
+"68
+} 0
+"40 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/drivers/spi_master.c
+[v _spi_master_open spi_master_open `T(uc  1 e 1 0 ]
+{
+[v spi_master_open@config config `E122  1 a 1 wreg ]
+[v spi_master_open@config config `E122  1 a 1 wreg ]
+[v spi_master_open@config config `E122  1 a 1 2 ]
+"47
+} 0
+"35
+[v _MASTER_open MASTER_open `T(uc  1 e 1 0 ]
+{
+"37
+} 0
+"46 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/spi2_driver.c
+[v _spi2_open spi2_open `(uc  1 e 1 0 ]
+{
+[v spi2_open@spiUniqueConfiguration spiUniqueConfiguration `E9954  1 a 1 wreg ]
+[v spi2_open@spiUniqueConfiguration spiUniqueConfiguration `E9954  1 a 1 wreg ]
+"48
+[v spi2_open@spiUniqueConfiguration spiUniqueConfiguration `E9954  1 a 1 1 ]
+"66
+} 0
+"64 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/tmr4.c
+[v _TMR4_Initialize TMR4_Initialize `(v  1 e 1 0 ]
+{
+"94
+} 0
+"193
+[v _TMR4_SetInterruptHandler TMR4_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v TMR4_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"195
+} 0
+"64 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/tmr2.c
+[v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
+{
+"94
+} 0
+"186
+[v _TMR2_SetInterruptHandler TMR2_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v TMR2_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"188
+} 0
+"11 C:\WorkSpace\Projects\USB_Tool\Software\LedBlink.c
+[v _SetLed SetLed `(v  1 e 1 0 ]
+{
+"12
+[v SetLed@mode2 mode2 `i  1 a 2 4 ]
+"11
+[v SetLed@ledIndex ledIndex `i  1 p 2 0 ]
+[v SetLed@Mode Mode `i  1 p 2 2 ]
+"29
+} 0
+"84 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/mcc.c
+[v _PMD_Initialize PMD_Initialize `(v  1 e 1 0 ]
+{
+"98
+} 0
+"66 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+{
+"215
+} 0
+"559
+[v _IOCCF7_SetInterruptHandler IOCCF7_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v IOCCF7_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"561
+} 0
+"529
+[v _IOCCF6_SetInterruptHandler IOCCF6_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v IOCCF6_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"531
+} 0
+"499
+[v _IOCCF5_SetInterruptHandler IOCCF5_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v IOCCF5_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"501
+} 0
+"469
+[v _IOCCF4_SetInterruptHandler IOCCF4_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v IOCCF4_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"471
+} 0
+"439
+[v _IOCCF3_SetInterruptHandler IOCCF3_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v IOCCF3_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"441
+} 0
+"409
+[v _IOCBF5_SetInterruptHandler IOCBF5_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v IOCBF5_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"411
+} 0
+"379
+[v _IOCAF4_SetInterruptHandler IOCAF4_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v IOCAF4_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"381
+} 0
+"349
+[v _IOCAF3_SetInterruptHandler IOCAF3_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v IOCAF3_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"351
+} 0
+"319
+[v _IOCAF1_SetInterruptHandler IOCAF1_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v IOCAF1_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"321
+} 0
+"289
+[v _IOCAF0_SetInterruptHandler IOCAF0_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v IOCAF0_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"291
+} 0
+"70 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/mcc.c
+[v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
+{
+"82
+} 0
+"53 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
+{
+"57
+} 0
+"38 C:\WorkSpace\Projects\USB_Tool\Software\iic.c
+[v _I2C_Master_Init I2C_Master_Init `(v  1 e 1 0 ]
+{
+"86
+} 0
+"58 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/fvr.c
+[v _FVR_Initialize FVR_Initialize `(v  1 e 1 0 ]
+{
+"62
+} 0
+"113 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/ext_int.c
+[v _EXT_INT_Initialize EXT_INT_Initialize `(v  1 e 1 0 ]
+{
+"142
+} 0
+"104
+[v _INT2_SetInterruptHandler INT2_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v INT2_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"106
+} 0
+"78
+[v _INT1_SetInterruptHandler INT1_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v INT1_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"80
+} 0
+"52
+[v _INT0_SetInterruptHandler INT0_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v INT0_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"54
+} 0
+"86 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/eusart1.c
+[v _EUSART1_Initialize EUSART1_Initialize `(v  1 e 1 0 ]
+{
+"128
+} 0
+"275
+[v _EUSART1_SetTxInterruptHandler EUSART1_SetTxInterruptHandler `(v  1 e 1 0 ]
+{
+[v EUSART1_SetTxInterruptHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
+"277
+} 0
+"279
+[v _EUSART1_SetRxInterruptHandler EUSART1_SetRxInterruptHandler `(v  1 e 1 0 ]
+{
+[v EUSART1_SetRxInterruptHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
+"281
+} 0
+"267
+[v _EUSART1_SetOverrunErrorHandler EUSART1_SetOverrunErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART1_SetOverrunErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
+"269
+} 0
+"263
+[v _EUSART1_SetFramingErrorHandler EUSART1_SetFramingErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART1_SetFramingErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
+"265
+} 0
+"271
+[v _EUSART1_SetErrorHandler EUSART1_SetErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART1_SetErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
+"273
+} 0
+"58 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/dac1.c
+[v _DAC1_Initialize DAC1_Initialize `(v  1 e 1 0 ]
+{
+"64
+} 0
+"58 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/clkref.c
+[v _CLKREF_Initialize CLKREF_Initialize `(v  1 e 1 0 ]
+{
+"64
+} 0
+"42 C:\WorkSpace\Projects\USB_Tool\Software\main.c
+[v _RunLoop RunLoop `(v  1 e 1 0 ]
+{
+"54
+} 0
+"64 C:\WorkSpace\Projects\USB_Tool\Software\LedBlink.c
+[v _SetLedBlink SetLedBlink `(v  1 e 1 0 ]
+{
+[v SetLedBlink@ledIndex ledIndex `i  1 p 2 0 ]
+[v SetLedBlink@OnTime OnTime `i  1 p 2 2 ]
+[v SetLedBlink@OffTime OffTime `i  1 p 2 4 ]
+[v SetLedBlink@StartAfter StartAfter `i  1 p 2 6 ]
+[v SetLedBlink@BlinkCount BlinkCount `i  1 p 2 8 ]
+"120
+} 0
+"130 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/eusart1.c
+[v _EUSART1_is_tx_ready EUSART1_is_tx_ready `(uc  1 e 1 0 ]
+{
+"133
+} 0
+"135
+[v _EUSART1_is_rx_ready EUSART1_is_rx_ready `(uc  1 e 1 0 ]
+{
+"138
+} 0
+"171
+[v _EUSART1_Write EUSART1_Write `(v  1 e 1 0 ]
+{
+[v EUSART1_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART1_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART1_Write@txData txData `uc  1 a 1 0 ]
+"192
+} 0
+"149
+[v _EUSART1_Read EUSART1_Read `(uc  1 e 1 0 ]
+{
+"151
+[v EUSART1_Read@readValue readValue `uc  1 a 1 0 ]
+"169
+} 0
+"17 C:\WorkSpace\Projects\USB_Tool\Software\MRF89XA.c
+[v _MRF89XA_Initialize MRF89XA_Initialize `(v  1 e 1 0 ]
+{
+[v MRF89XA_Initialize@Address Address `uc  1 a 1 wreg ]
+[v MRF89XA_Initialize@Address Address `uc  1 a 1 wreg ]
+[v MRF89XA_Initialize@Mode Mode `uc  1 p 1 16 ]
+[v MRF89XA_Initialize@Modulation Modulation `uc  1 p 1 17 ]
+[v MRF89XA_Initialize@Address Address `uc  1 a 1 18 ]
+"49
+} 0
+"65
+[v _MRF89XA_SetModulation MRF89XA_SetModulation `(v  1 e 1 0 ]
+{
+[v MRF89XA_SetModulation@Modulation Modulation `uc  1 a 1 wreg ]
+"66
+[v MRF89XA_SetModulation@mask mask `uc  1 a 1 15 ]
+"65
+[v MRF89XA_SetModulation@Modulation Modulation `uc  1 a 1 wreg ]
+[v MRF89XA_SetModulation@Modulation Modulation `uc  1 a 1 14 ]
+"73
+} 0
+"51
+[v _MRF89XA_SetMode MRF89XA_SetMode `(v  1 e 1 0 ]
+{
+[v MRF89XA_SetMode@Mode Mode `uc  1 a 1 wreg ]
+"52
+[v MRF89XA_SetMode@mask mask `uc  1 a 1 14 ]
+"51
+[v MRF89XA_SetMode@Mode Mode `uc  1 a 1 wreg ]
+[v MRF89XA_SetMode@Mode Mode `uc  1 a 1 15 ]
+"63
+} 0
+"99
+[v _MRF89XA_WriteConfig MRF89XA_WriteConfig `(uc  1 e 1 0 ]
+{
+[v MRF89XA_WriteConfig@Address Address `uc  1 a 1 wreg ]
+[v MRF89XA_WriteConfig@Address Address `uc  1 a 1 wreg ]
+[v MRF89XA_WriteConfig@Data Data `uc  1 p 1 12 ]
+[v MRF89XA_WriteConfig@Address Address `uc  1 a 1 13 ]
+"101
+} 0
+"158
+[v _MRF89XA_SendConfig MRF89XA_SendConfig `(uc  1 e 1 0 ]
+{
+[v MRF89XA_SendConfig@Address Address `uc  1 a 1 wreg ]
+"164
+[v MRF89XA_SendConfig@ret ret `uc  1 a 1 11 ]
+"158
+[v MRF89XA_SendConfig@Address Address `uc  1 a 1 wreg ]
+[v MRF89XA_SendConfig@Data Data `uc  1 p 1 9 ]
+[v MRF89XA_SendConfig@Address Address `uc  1 a 1 10 ]
+"168
+} 0
+"75
+[v _MRF89XA_ExchangeByte MRF89XA_ExchangeByte `(uc  1 e 1 0 ]
+{
+[v MRF89XA_ExchangeByte@byte byte `uc  1 a 1 wreg ]
+[v MRF89XA_ExchangeByte@byte byte `uc  1 a 1 wreg ]
+[v MRF89XA_ExchangeByte@byte byte `uc  1 a 1 1 ]
+"77
+} 0
+"69 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/spi2_driver.c
+[v _spi2_exchangeByte spi2_exchangeByte `(uc  1 e 1 0 ]
+{
+[v spi2_exchangeByte@b b `uc  1 a 1 wreg ]
+[v spi2_exchangeByte@b b `uc  1 a 1 wreg ]
+"71
+[v spi2_exchangeByte@b b `uc  1 a 1 0 ]
+"75
+} 0
+"27 C:\WorkSpace\Projects\USB_Tool\Software\main.c
+[v _Delay_Xus Delay_Xus `(v  1 e 1 0 ]
+{
+"28
+[v Delay_Xus@i i `l  1 a 4 5 ]
+"27
+[v Delay_Xus@delay delay `l  1 p 4 0 ]
+"31
+} 0
+"148 C:\WorkSpace\Projects\USB_Tool\Software\MRF89XA.c
+[v _MRF89XA_GetAddress MRF89XA_GetAddress `(uc  1 e 1 0 ]
+{
+[v MRF89XA_GetAddress@Address Address `uc  1 a 1 wreg ]
+"149
+[v MRF89XA_GetAddress@ret ret `uc  1 a 1 2 ]
+"148
+[v MRF89XA_GetAddress@Address Address `uc  1 a 1 wreg ]
+[v MRF89XA_GetAddress@Read Read `uc  1 p 1 0 ]
+[v MRF89XA_GetAddress@Address Address `uc  1 a 1 1 ]
+"156
+} 0
+"21 C:\WorkSpace\Projects\USB_Tool\Software\main.c
+[v _Delay_Xms Delay_Xms `(v  1 e 1 0 ]
+{
+"22
+[v Delay_Xms@i i `l  1 a 4 5 ]
+"21
+[v Delay_Xms@delay delay `l  1 p 4 0 ]
+"25
+} 0
+"59 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `IIH(v  1 e 1 0 ]
+{
+"114
+} 0
+"118 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/spi2_driver.c
+[v _spi2_isr spi2_isr `(v  1 e 1 0 ]
+{
+"125
+} 0
+"165 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/tmr4.c
+[v _TMR4_ISR TMR4_ISR `(v  1 e 1 0 ]
+{
+"167
+[v TMR4_ISR@CountCallBack CountCallBack `VEui  1 s 2 CountCallBack ]
+"181
+} 0
+"183
+[v _TMR4_CallBack TMR4_CallBack `(v  1 e 1 0 ]
+{
+"191
+} 0
+"197
+[v _TMR4_DefaultInterruptHandler TMR4_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"200
+} 0
+"165 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/tmr2.c
+[v _TMR2_ISR TMR2_ISR `(v  1 e 1 0 ]
+{
+"174
+} 0
+"176
+[v _TMR2_CallBack TMR2_CallBack `(v  1 e 1 0 ]
+{
+"184
+} 0
+"174 C:\WorkSpace\Projects\USB_Tool\Software\LedBlink.c
+[v _TMR2_Custom_ISR TMR2_Custom_ISR `(v  1 e 1 0 ]
+{
+"385
+} 0
+"190 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/tmr2.c
+[v _TMR2_DefaultInterruptHandler TMR2_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"193
+} 0
+"11 C:\WorkSpace\Projects\USB_Tool\Software\LedBlink.c
+[v i2_SetLed SetLed `(v  1 e 1 0 ]
+{
+[v i2SetLed@mode2 SetLed `i  1 a 2 4 ]
+[v i2SetLed@ledIndex ledIndex `i  1 p 2 0 ]
+[v i2SetLed@Mode Mode `i  1 p 2 2 ]
+"29
+} 0
+"217 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/pin_manager.c
+[v _PIN_MANAGER_IOC PIN_MANAGER_IOC `(v  1 e 1 0 ]
+{
+"269
+} 0
+"544
+[v _IOCCF7_ISR IOCCF7_ISR `(v  1 e 1 0 ]
+{
+"554
+} 0
+"566
+[v _IOCCF7_DefaultInterruptHandler IOCCF7_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"569
+} 0
+"514
+[v _IOCCF6_ISR IOCCF6_ISR `(v  1 e 1 0 ]
+{
+"524
+} 0
+"536
+[v _IOCCF6_DefaultInterruptHandler IOCCF6_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"539
+} 0
+"484
+[v _IOCCF5_ISR IOCCF5_ISR `(v  1 e 1 0 ]
+{
+"494
+} 0
+"506
+[v _IOCCF5_DefaultInterruptHandler IOCCF5_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"509
+} 0
+"454
+[v _IOCCF4_ISR IOCCF4_ISR `(v  1 e 1 0 ]
+{
+"464
+} 0
+"476
+[v _IOCCF4_DefaultInterruptHandler IOCCF4_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"479
+} 0
+"424
+[v _IOCCF3_ISR IOCCF3_ISR `(v  1 e 1 0 ]
+{
+"434
+} 0
+"446
+[v _IOCCF3_DefaultInterruptHandler IOCCF3_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"449
+} 0
+"394
+[v _IOCBF5_ISR IOCBF5_ISR `(v  1 e 1 0 ]
+{
+"404
+} 0
+"416
+[v _IOCBF5_DefaultInterruptHandler IOCBF5_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"419
+} 0
+"364
+[v _IOCAF4_ISR IOCAF4_ISR `(v  1 e 1 0 ]
+{
+"374
+} 0
+"386
+[v _IOCAF4_DefaultInterruptHandler IOCAF4_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"389
+} 0
+"334
+[v _IOCAF3_ISR IOCAF3_ISR `(v  1 e 1 0 ]
+{
+"344
+} 0
+"356
+[v _IOCAF3_DefaultInterruptHandler IOCAF3_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"359
+} 0
+"304
+[v _IOCAF1_ISR IOCAF1_ISR `(v  1 e 1 0 ]
+{
+"314
+} 0
+"326
+[v _IOCAF1_DefaultInterruptHandler IOCAF1_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"329
+} 0
+"274
+[v _IOCAF0_ISR IOCAF0_ISR `(v  1 e 1 0 ]
+{
+"284
+} 0
+"296
+[v _IOCAF0_DefaultInterruptHandler IOCAF0_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"299
+} 0
+"86 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/ext_int.c
+[v _INT2_ISR INT2_ISR `(v  1 e 1 0 ]
+{
+"92
+} 0
+"95
+[v _INT2_CallBack INT2_CallBack `(v  1 e 1 0 ]
+{
+"102
+} 0
+"108
+[v _INT2_DefaultInterruptHandler INT2_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"111
+} 0
+"60
+[v _INT1_ISR INT1_ISR `(v  1 e 1 0 ]
+{
+"66
+} 0
+"69
+[v _INT1_CallBack INT1_CallBack `(v  1 e 1 0 ]
+{
+"76
+} 0
+"82
+[v _INT1_DefaultInterruptHandler INT1_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"85
+} 0
+"34
+[v _INT0_ISR INT0_ISR `(v  1 e 1 0 ]
+{
+"40
+} 0
+"43
+[v _INT0_CallBack INT0_CallBack `(v  1 e 1 0 ]
+{
+"50
+} 0
+"33 C:\WorkSpace\Projects\USB_Tool\Software\main.c
+[v _INT0_Custom_ISR INT0_Custom_ISR `(v  1 e 1 0 ]
+{
+"35
+[v INT0_Custom_ISR@index index `uc  1 a 1 17 ]
+"40
+} 0
+"56 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/ext_int.c
+[v _INT0_DefaultInterruptHandler INT0_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"59
+} 0
+"19 C:\WorkSpace\Projects\USB_Tool\Software\ext_rf_receiver.c
+[v _ext_rf_runcmd ext_rf_runcmd `(v  1 e 1 0 ]
+{
+"21
+[v ext_rf_runcmd@dx dx `uc  1 a 1 16 ]
+"37
+} 0
+"47 C:\WorkSpace\Projects\USB_Tool\Software\LedBlink.c
+[v _ToggleLed ToggleLed `(i  1 e 2 0 ]
+{
+[v ToggleLed@ledIndex ledIndex `i  1 p 2 0 ]
+"61
+} 0
+"123 C:\WorkSpace\Projects\USB_Tool\Software\MRF89XA.c
+[v _MRF89XA_SendData MRF89XA_SendData `(v  1 e 1 0 ]
+{
+[v MRF89XA_SendData@TargetAddress TargetAddress `uc  1 a 1 wreg ]
+[v MRF89XA_SendData@TargetAddress TargetAddress `uc  1 a 1 wreg ]
+[v MRF89XA_SendData@Data Data `uc  1 p 1 14 ]
+[v MRF89XA_SendData@TargetAddress TargetAddress `uc  1 a 1 15 ]
+"133
+} 0
+"184
+[v _MRF89XA_IsTxDone MRF89XA_IsTxDone `(uc  1 e 1 0 ]
+{
+"185
+[v MRF89XA_IsTxDone@reg reg `uc  1 a 1 13 ]
+"187
+} 0
+"83
+[v _MRF89XA_ReadAllConfigs MRF89XA_ReadAllConfigs `(v  1 e 1 0 ]
+{
+"86
+[v MRF89XA_ReadAllConfigs@counter counter `uc  1 a 1 15 ]
+"85
+[v MRF89XA_ReadAllConfigs@cond cond `uc  1 a 1 14 ]
+"97
+} 0
+"103
+[v _MRF89XA_ReadConfig MRF89XA_ReadConfig `(uc  1 e 1 0 ]
+{
+[v MRF89XA_ReadConfig@Address Address `uc  1 a 1 wreg ]
+[v MRF89XA_ReadConfig@Address Address `uc  1 a 1 wreg ]
+[v MRF89XA_ReadConfig@Address Address `uc  1 a 1 12 ]
+"105
+} 0
+"158
+[v i2_MRF89XA_SendConfig MRF89XA_SendConfig `(uc  1 e 1 0 ]
+{
+[v i2MRF89XA_SendConfig@Address Address `uc  1 a 1 wreg ]
+[v i2MRF89XA_SendConfig@ret MRF89XA_SendConfig `uc  1 a 1 11 ]
+[v i2MRF89XA_SendConfig@Address Address `uc  1 a 1 wreg ]
+[v i2MRF89XA_SendConfig@Data Data `uc  1 p 1 9 ]
+[v i2MRF89XA_SendConfig@Address Address `uc  1 a 1 10 ]
+"168
+} 0
+"75
+[v i2_MRF89XA_ExchangeByte MRF89XA_ExchangeByte `(uc  1 e 1 0 ]
+{
+[v i2MRF89XA_ExchangeByte@byte byte `uc  1 a 1 wreg ]
+[v i2MRF89XA_ExchangeByte@byte byte `uc  1 a 1 wreg ]
+[v i2MRF89XA_ExchangeByte@byte byte `uc  1 a 1 1 ]
+"77
+} 0
+"69 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/spi2_driver.c
+[v i2_spi2_exchangeByte spi2_exchangeByte `(uc  1 e 1 0 ]
+{
+[v i2spi2_exchangeByte@b b `uc  1 a 1 wreg ]
+[v i2spi2_exchangeByte@b b `uc  1 a 1 wreg ]
+"71
+[v i2spi2_exchangeByte@b b `uc  1 a 1 0 ]
+"75
+} 0
+"27 C:\WorkSpace\Projects\USB_Tool\Software\main.c
+[v i2_Delay_Xus Delay_Xus `(v  1 e 1 0 ]
+{
+[v i2Delay_Xus@i Delay_Xus `l  1 a 4 5 ]
+[v i2Delay_Xus@delay delay `l  1 p 4 0 ]
+"31
+} 0
+"148 C:\WorkSpace\Projects\USB_Tool\Software\MRF89XA.c
+[v i2_MRF89XA_GetAddress MRF89XA_GetAddress `(uc  1 e 1 0 ]
+{
+[v i2MRF89XA_GetAddress@Address Address `uc  1 a 1 wreg ]
+[v i2MRF89XA_GetAddress@ret MRF89XA_GetAddress `uc  1 a 1 2 ]
+[v i2MRF89XA_GetAddress@Address Address `uc  1 a 1 wreg ]
+[v i2MRF89XA_GetAddress@Read Read `uc  1 p 1 0 ]
+[v i2MRF89XA_GetAddress@Address Address `uc  1 a 1 1 ]
+"156
+} 0
+"328 C:\WorkSpace\Projects\USB_Tool\Software\iic.c
+[v _I2C_SendCommand I2C_SendCommand `(uc  1 e 1 0 ]
+{
+[v I2C_SendCommand@Target Target `uc  1 a 1 wreg ]
+"371
+[v I2C_SendCommand@result result `uc  1 a 1 12 ]
+"328
+[v I2C_SendCommand@Target Target `uc  1 a 1 wreg ]
+[v I2C_SendCommand@CMD CMD `uc  1 p 1 11 ]
+"330
+[v I2C_SendCommand@Target Target `uc  1 a 1 13 ]
+"377
+} 0
+"21 C:\WorkSpace\Projects\USB_Tool\Software\main.c
+[v i2_Delay_Xms Delay_Xms `(v  1 e 1 0 ]
+{
+[v i2Delay_Xms@i Delay_Xms `l  1 a 4 5 ]
+[v i2Delay_Xms@delay delay `l  1 p 4 0 ]
+"25
+} 0
+"187 C:\WorkSpace\Projects\USB_Tool\Software\iic.c
+[v _I2C_Master_Write I2C_Master_Write `(v  1 e 1 0 ]
+{
+[v I2C_Master_Write@data data `uc  1 a 1 wreg ]
+[v I2C_Master_Write@data data `uc  1 a 1 wreg ]
+[v I2C_Master_Write@data data `uc  1 a 1 10 ]
+"195
+} 0
+"64 C:\WorkSpace\Projects\USB_Tool\Software\LedBlink.c
+[v i2_SetLedBlink SetLedBlink `(v  1 e 1 0 ]
+{
+[v i2SetLedBlink@ledIndex ledIndex `i  1 p 2 0 ]
+[v i2SetLedBlink@OnTime OnTime `i  1 p 2 2 ]
+[v i2SetLedBlink@OffTime OffTime `i  1 p 2 4 ]
+[v i2SetLedBlink@StartAfter StartAfter `i  1 p 2 6 ]
+[v i2SetLedBlink@BlinkCount BlinkCount `i  1 p 2 8 ]
+"120
+} 0
+"168 C:\WorkSpace\Projects\USB_Tool\Software\iic.c
+[v _I2C_Master_Stop I2C_Master_Stop `(v  1 e 1 0 ]
+{
+"172
+} 0
+"159
+[v _I2C_Master_Start I2C_Master_Start `(v  1 e 1 0 ]
+{
+"163
+} 0
+"177
+[v _I2C_Master_Send_ACK I2C_Master_Send_ACK `(v  1 e 1 0 ]
+{
+[v I2C_Master_Send_ACK@Ack Ack `uc  1 a 1 wreg ]
+[v I2C_Master_Send_ACK@Ack Ack `uc  1 a 1 wreg ]
+[v I2C_Master_Send_ACK@Ack Ack `uc  1 a 1 1 ]
+"182
+} 0
+"439
+[v _I2C_BusCollisionISR I2C_BusCollisionISR `(v  1 e 1 0 ]
+{
+"442
+} 0
+"195 C:\WorkSpace\Projects\USB_Tool\Software\mcc_generated_files/eusart1.c
+[v _EUSART1_Transmit_ISR EUSART1_Transmit_ISR `(v  1 e 1 0 ]
+{
+"212
+} 0
+"214
+[v _EUSART1_Receive_ISR EUSART1_Receive_ISR `(v  1 e 1 0 ]
+{
+"237
+} 0
+"251
+[v _EUSART1_DefaultOverrunErrorHandler EUSART1_DefaultOverrunErrorHandler `(v  1 e 1 0 ]
+{
+"257
+} 0
+"249
+[v _EUSART1_DefaultFramingErrorHandler EUSART1_DefaultFramingErrorHandler `(v  1 e 1 0 ]
+{
+} 0
+"259
+[v _EUSART1_DefaultErrorHandler EUSART1_DefaultErrorHandler `(v  1 e 1 0 ]
+{
+"261
+} 0
+"239
+[v _EUSART1_RxDataHandler EUSART1_RxDataHandler `(v  1 e 1 0 ]
+{
+"247
+} 0
