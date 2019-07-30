@@ -11689,9 +11689,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;MRF89XA.c: 37: MRF89XA_WriteConfig(0x11, 0b00111000);
 "37
 [e ( _MRF89XA_WriteConfig (2 , -> -> 17 `i `uc -> -> 56 `i `uc ]
-[; ;MRF89XA.c: 39: MRF89XA_WriteConfig(0x12,0b10000000);
+[; ;MRF89XA.c: 39: MRF89XA_WriteConfig(0x12,0b10101010);
 "39
-[e ( _MRF89XA_WriteConfig (2 , -> -> 18 `i `uc -> -> 128 `i `uc ]
+[e ( _MRF89XA_WriteConfig (2 , -> -> 18 `i `uc -> -> 170 `i `uc ]
 [; ;MRF89XA.c: 40: MRF89XA_WriteConfig(0x19,0x01);
 "40
 [e ( _MRF89XA_WriteConfig (2 , -> -> 25 `i `uc -> -> 1 `i `uc ]
@@ -11713,9 +11713,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;MRF89XA.c: 48: MRF89XA_WriteConfig(0x1D,Address);
 "48
 [e ( _MRF89XA_WriteConfig (2 , -> -> 29 `i `uc _Address ]
-[; ;MRF89XA.c: 49: MRF89XA_WriteConfig(0x1E,0b00100010);
+[; ;MRF89XA.c: 49: MRF89XA_WriteConfig(0x1E,0b00100000);
 "49
-[e ( _MRF89XA_WriteConfig (2 , -> -> 30 `i `uc -> -> 34 `i `uc ]
+[e ( _MRF89XA_WriteConfig (2 , -> -> 30 `i `uc -> -> 32 `i `uc ]
 [; ;MRF89XA.c: 50: MRF89XA_WriteConfig(0x1F,0b00000000);
 "50
 [e ( _MRF89XA_WriteConfig (2 , -> -> 31 `i `uc -> -> 0 `i `uc ]
@@ -11798,9 +11798,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "72
 [e = _mask -> -> 64 `i `uc ]
 [e :U 1496 ]
-[; ;MRF89XA.c: 74: MRF89XA_WriteConfig(0x01,0b00001100 | mask);
+[; ;MRF89XA.c: 74: MRF89XA_WriteConfig(0x01,0b00101000 | mask);
 "74
-[e ( _MRF89XA_WriteConfig (2 , -> -> 1 `i `uc -> | -> 12 `i -> _mask `i `uc ]
+[e ( _MRF89XA_WriteConfig (2 , -> -> 1 `i `uc -> | -> 40 `i -> _mask `i `uc ]
 [; ;MRF89XA.c: 75: }
 "75
 [e :UE 1494 ]

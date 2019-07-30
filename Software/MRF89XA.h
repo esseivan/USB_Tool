@@ -128,11 +128,11 @@ unsigned char MRF89XA_IsFifoOverrun(void);
  *                                +++------ CMOD2..0    = 0b000 : Chip Mode
  */
 // Packet mode, NO modulation (defined with mask), peak mode, Gain 0dB
-#define REG_DMODREG_VALUE       0b00001100  // 0x88, Edited
+#define REG_DMODREG_VALUE       0b00101000  // 0x88, Edited
 /*                                ||||||++- IFGAIN1..0  = 0b00 : IF Gain
- *                                |||||+--- DMODE1      = 1 : Data Mode bit 1
+ *                                |||||+--- DMODE1      = 0 : Data Mode bit 1
  *                                |||++---- OOKTYP1..0  = 0b01 : OOK Demodulator Threshold Type
- *                                ||+------ DMODE0      = 0 : Data Mode bit 0
+ *                                ||+------ DMODE0      = 1 : Data Mode bit 0
  *                                ++------- MODSEL1..0  = 0b00 : Modulation Type Selection
  */
 // FDev 100kHz
@@ -215,7 +215,7 @@ unsigned char MRF89XA_IsFifoOverrun(void);
  *                                ++++----- POLCFV3..0  = 0b0011 : Polyphase Centre Frequency Value
  */
 // Sync off, Polyphase on
-#define REG_SYNCREG_VALUE       0b10000000  // 0x18, Edited
+#define REG_SYNCREG_VALUE       0b10101010  // 0x18, Edited
 /*                                |||||||+- RESERVED
  *                                |||||++-- SYNCTEN1..0 = 0b00 : SYNC Word Tolerated Error Numbers 
  *                                |||++---- SYNCWSZ1..0 = 0b00 : SYNC Word Size
@@ -275,7 +275,7 @@ unsigned char MRF89XA_IsFifoOverrun(void);
 /*                                ++++++++- NLADDR7..0  = 0x40 : Node Local Address
  */
 // Packet length fixed, Preamble size 2, Whitening OFF, CRC OFF, Adress local & 0x00
-#define REG_PKTCREG_VALUE       0b00100010  // 0x48
+#define REG_PKTCREG_VALUE       0b00100000  // 0x48
 /*                                |||||||+- STSCRCEN    = 0 : Status Check CRC Enable
  *                                |||||++-- ADDFIL1..0  = 0b01 : Address Filtering
  *                                ||||+---- CHKCRCEN    = 0 : Check (or Calculation) CRC Enable

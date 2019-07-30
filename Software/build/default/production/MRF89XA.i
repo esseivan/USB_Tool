@@ -17885,7 +17885,7 @@ MRF89XA_WriteConfig(0x0C, 0b00100000);
 MRF89XA_WriteConfig(0x10, 0b10010011);
 MRF89XA_WriteConfig(0x11, 0b00111000);
 
-MRF89XA_WriteConfig(0x12,0b10000000);
+MRF89XA_WriteConfig(0x12,0b10101010);
 MRF89XA_WriteConfig(0x19,0x01);
 MRF89XA_WriteConfig(0x18,0x45);
 
@@ -17895,7 +17895,7 @@ MRF89XA_WriteConfig(0x1A,0b01110000);
 MRF89XA_WriteConfig(0x1B,0b00111100);
 MRF89XA_WriteConfig(0x1C,0b00000100);
 MRF89XA_WriteConfig(0x1D,Address);
-MRF89XA_WriteConfig(0x1E,0b00100010);
+MRF89XA_WriteConfig(0x1E,0b00100000);
 MRF89XA_WriteConfig(0x1F,0b00000000);
 }
 
@@ -17920,7 +17920,7 @@ mask = 0b10000000;
 else
 mask = 0b01000000;
 
-MRF89XA_WriteConfig(0x01,0b00001100 | mask);
+MRF89XA_WriteConfig(0x01,0b00101000 | mask);
 }
 
 unsigned char MRF89XA_SPI_ExchangeByte(unsigned char byte) {

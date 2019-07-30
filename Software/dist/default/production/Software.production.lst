@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.05 build -831301201 
-                                                                                               Tue Jul 09 00:18:46 2019
+                                                                                               Tue Jul 09 00:46:36 2019
 
 Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1 
      1                           	processor	18LF46K40
@@ -5342,8 +5342,8 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   5087  001BFC  0E11               	movlw	17
   5088  001BFE  EC67  F014         	call	_MRF89XA_WriteConfig
   5089                           
-  5090                           ;MRF89XA.c: 39: MRF89XA_WriteConfig(0x12,0b10000000);
-  5091  001C02  0E80               	movlw	128
+  5090                           ;MRF89XA.c: 39: MRF89XA_WriteConfig(0x12,0b10101010);
+  5091  001C02  0EAA               	movlw	170
   5092  001C04  0100               	movlb	0	; () banked
   5093  001C06  6FFE               	movwf	MRF89XA_WriteConfig@Data& (0+255),b
   5094  001C08  0E12               	movlw	18
@@ -5396,8 +5396,8 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   5141  001C5A  0E1D               	movlw	29
   5142  001C5C  EC67  F014         	call	_MRF89XA_WriteConfig
   5143                           
-  5144                           ;MRF89XA.c: 49: MRF89XA_WriteConfig(0x1E,0b00100010);
-  5145  001C60  0E22               	movlw	34
+  5144                           ;MRF89XA.c: 49: MRF89XA_WriteConfig(0x1E,0b00100000);
+  5145  001C60  0E20               	movlw	32
   5146  001C62  0100               	movlb	0	; () banked
   5147  001C64  6FFE               	movwf	MRF89XA_WriteConfig@Data& (0+255),b
   5148  001C66  0E1E               	movlw	30
@@ -5480,9 +5480,9 @@ Microchip MPLAB XC8 C Compiler v2.05 (Free license) build 20181220022703 Og1
   5220  0025E8  6F81               	movwf	MRF89XA_SetModulation@mask& (0+255),b
   5221                           
   5222                           ; BSR set to: 1
-  5223                           ;MRF89XA.c: 74: MRF89XA_WriteConfig(0x01,0b00001100 | mask);
+  5223                           ;MRF89XA.c: 74: MRF89XA_WriteConfig(0x01,0b00101000 | mask);
   5224  0025EA  5181               	movf	MRF89XA_SetModulation@mask& (0+255),w,b
-  5225  0025EC  090C               	iorlw	12
+  5225  0025EC  0928               	iorlw	40
   5226  0025EE  0100               	movlb	0	; () banked
   5227  0025F0  6FFE               	movwf	MRF89XA_WriteConfig@Data& (0+255),b
   5228  0025F2  0E01               	movlw	1
@@ -13339,7 +13339,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.05 build -831301201 
-Symbol Table                                                                                   Tue Jul 09 00:18:46 2019
+Symbol Table                                                                                   Tue Jul 09 00:46:36 2019
 
             __end_ofi2_MRF89XA_ExchangeConfig_A 291C                      i2_MRF89XA_ExchangeConfig_A 2902  
               __end_of_TMR2_SetInterruptHandler 2A32                        _eusart1TxBufferRemaining 0051  
