@@ -79,7 +79,7 @@ unsigned char MRF89XA_SPI_ExchangeByte(unsigned char byte) {
 }
 
 void MRF89XA_SetIndicationLed(unsigned char State) {
-    LED_R_LAT = (State & 0x01 == 0);
+    LED_R_LAT = (State & 0x01) == 0;
 }
 
 #if MRF_DEBUG == 1
